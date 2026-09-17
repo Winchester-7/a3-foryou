@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --header-h: 88px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: theme('colors.paper');
+  color: theme('colors.ink.DEFAULT');
+  font-feature-settings: 'cv05' 1, 'ss01' 1;
+}
+
+::selection {
+  background: theme('colors.ink.DEFAULT');
+  color: #fff;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1360px] px-5 lg:px-8 xl:px-10;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-wide2 text-ink-faint;
+  }
+
+  .h-display {
+    @apply font-semibold leading-[1.04] tracking-[-0.02em] text-ink;
+    font-size: clamp(2.4rem, 6vw, 4.75rem);
+  }
+
+  .h-section {
+    @apply font-semibold leading-[1.08] tracking-[-0.018em] text-ink;
+    font-size: clamp(1.8rem, 3.4vw, 2.9rem);
+  }
+
+  .link-underline {
+    @apply relative inline-flex items-center;
+  }
+  .link-underline::after {
+    content: '';
+    @apply absolute -bottom-0.5 left-0 h-px w-0 bg-current transition-[width] duration-300 ease-premium;
+  }
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium
+    tracking-wide2 uppercase transition-all duration-300 ease-premium;
+  }
+  .btn-solid {
+    @apply btn bg-ink text-paper hover:bg-black hover:shadow-float hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply btn border border-line bg-transparent text-ink hover:border-ink hover:-translate-y-0.5;
+  }
+  .btn-accent {
+    @apply btn bg-accent text-paper hover:bg-accent-ink hover:-translate-y-0.5 hover:shadow-float;
+  }
+}
+
+@layer utilities {
+  .skeleton-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.6s infinite;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ---- Hero intro (CSS-driven so it self-heals in background tabs) ---- */
+@keyframes heroSceneIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes heroSlabRise {
+  from { opacity: 0; transform: translate3d(0, 42%, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes heroTintLift {
+  from { opacity: 0.58; }
+  to { opacity: 0.1; }
+}
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroCurtain {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes heroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.055); }
+}
+@keyframes heroBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.hero-scene { animation: heroSceneIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both; }
+.img-in { animation: heroSceneIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero-zoom { animation: heroZoom 26s ease-in-out 2.4s infinite alternate; }
+.hero-tint { animation: heroTintLift 1.1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both; }
+.hero-slab { animation: heroSlabRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero-fade { animation: heroFadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero-curtain { animation: heroCurtain 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero-bob { animation: heroBob 2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scene, .hero-tint, .hero-slab, .hero-fade, .hero-curtain { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .hero-tint { opacity: 0.14 !important; }
+  .hero-curtain { opacity: 0 !important; }
+  .hero-zoom, .hero-bob { animation: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
