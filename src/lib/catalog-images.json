@@ -1,0 +1,795 @@
+{
+ "lusso": {
+  "brand": "idalgo",
+  "look": "marble",
+  "gallery": [
+   "/catalog/lusso/g1.jpg",
+   "/catalog/lusso/g2.jpg",
+   "/catalog/lusso/g3.jpg"
+  ],
+  "swatches": [
+   "/catalog/lusso/s1.jpg",
+   "/catalog/lusso/s2.jpg",
+   "/catalog/lusso/s3.jpg",
+   "/catalog/lusso/s4.jpg",
+   "/catalog/lusso/s5.jpg",
+   "/catalog/lusso/s6.jpg"
+  ],
+  "hero": "/catalog/lusso/hero.jpg"
+ },
+ "siena": {
+  "brand": "idalgo",
+  "look": "marble",
+  "gallery": [
+   "/catalog/siena/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/siena/s1.jpg",
+   "/catalog/siena/s2.jpg"
+  ],
+  "hero": "/catalog/siena/hero.jpg"
+ },
+ "anna": {
+  "brand": "idalgo",
+  "look": "marble",
+  "gallery": [
+   "/catalog/anna/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/anna/s1.jpg",
+   "/catalog/anna/s2.jpg"
+  ],
+  "hero": "/catalog/anna/hero.jpg"
+ },
+ "calacatta": {
+  "brand": "idalgo",
+  "look": "marble",
+  "gallery": [
+   "/catalog/calacatta/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/calacatta/s1.jpg",
+   "/catalog/calacatta/s2.jpg",
+   "/catalog/calacatta/s3.jpg"
+  ],
+  "hero": "/catalog/calacatta/hero.jpg"
+ },
+ "pallisandro": {
+  "brand": "idalgo",
+  "look": "marble",
+  "gallery": [
+   "/catalog/pallisandro/g1.jpg",
+   "/catalog/pallisandro/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/pallisandro/s1.jpg",
+   "/catalog/pallisandro/s2.jpg",
+   "/catalog/pallisandro/s3.jpg",
+   "/catalog/pallisandro/s4.jpg",
+   "/catalog/pallisandro/s5.jpg"
+  ],
+  "hero": "/catalog/pallisandro/hero.jpg"
+ },
+ "arabesco": {
+  "brand": "idalgo",
+  "look": "marble",
+  "gallery": [
+   "/catalog/arabesco/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/arabesco/s1.jpg",
+   "/catalog/arabesco/s2.jpg"
+  ],
+  "hero": "/catalog/arabesco/hero.jpg"
+ },
+ "sandra": {
+  "brand": "idalgo",
+  "look": "marble",
+  "gallery": [
+   "/catalog/sandra/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/sandra/s1.jpg",
+   "/catalog/sandra/s2.jpg",
+   "/catalog/sandra/s3.jpg",
+   "/catalog/sandra/s4.jpg"
+  ],
+  "hero": "/catalog/sandra/hero.jpg"
+ },
+ "sofia": {
+  "brand": "idalgo",
+  "look": "marble",
+  "gallery": [
+   "/catalog/sofia/g1.jpg",
+   "/catalog/sofia/g2.jpg",
+   "/catalog/sofia/g3.jpg",
+   "/catalog/sofia/g4.jpg"
+  ],
+  "swatches": [
+   "/catalog/sofia/s1.jpg",
+   "/catalog/sofia/s2.jpg",
+   "/catalog/sofia/s3.jpg",
+   "/catalog/sofia/s4.jpg",
+   "/catalog/sofia/s5.jpg"
+  ],
+  "hero": "/catalog/sofia/hero.jpg"
+ },
+ "villa-alba-cross": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/villa-alba-cross/g1.jpg",
+   "/catalog/villa-alba-cross/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/villa-alba-cross/s1.jpg",
+   "/catalog/villa-alba-cross/s2.jpg",
+   "/catalog/villa-alba-cross/s3.jpg"
+  ],
+  "hero": "/catalog/villa-alba-cross/hero.jpg"
+ },
+ "villa-alba-river": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/villa-alba-river/g1.jpg",
+   "/catalog/villa-alba-river/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/villa-alba-river/s1.jpg",
+   "/catalog/villa-alba-river/s2.jpg",
+   "/catalog/villa-alba-river/s3.jpg"
+  ],
+  "hero": "/catalog/villa-alba-river/hero.jpg"
+ },
+ "denia-marfil": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/denia-marfil/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/denia-marfil/s1.jpg"
+  ],
+  "hero": "/catalog/denia-marfil/hero.jpg"
+ },
+ "dolomiti": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/dolomiti/g1.jpg",
+   "/catalog/dolomiti/g2.jpg",
+   "/catalog/dolomiti/g3.jpg",
+   "/catalog/dolomiti/g4.jpg",
+   "/catalog/dolomiti/g5.jpg"
+  ],
+  "swatches": [
+   "/catalog/dolomiti/s1.jpg",
+   "/catalog/dolomiti/s2.jpg",
+   "/catalog/dolomiti/s3.jpg",
+   "/catalog/dolomiti/s4.jpg",
+   "/catalog/dolomiti/s5.jpg",
+   "/catalog/dolomiti/s6.jpg"
+  ],
+  "hero": "/catalog/dolomiti/hero.jpg"
+ },
+ "gerda": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/gerda/g1.jpg",
+   "/catalog/gerda/g2.jpg",
+   "/catalog/gerda/g3.jpg"
+  ],
+  "swatches": [
+   "/catalog/gerda/s1.jpg",
+   "/catalog/gerda/s2.jpg",
+   "/catalog/gerda/s3.jpg",
+   "/catalog/gerda/s4.jpg",
+   "/catalog/gerda/s5.jpg"
+  ],
+  "hero": "/catalog/gerda/hero.jpg"
+ },
+ "onix": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/onix/g1.jpg",
+   "/catalog/onix/g2.jpg",
+   "/catalog/onix/g3.jpg"
+  ],
+  "swatches": [
+   "/catalog/onix/s1.jpg",
+   "/catalog/onix/s2.jpg",
+   "/catalog/onix/s3.jpg"
+  ],
+  "hero": "/catalog/onix/hero.jpg"
+ },
+ "sunset": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/sunset/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/sunset/s1.jpg",
+   "/catalog/sunset/s2.jpg",
+   "/catalog/sunset/s3.jpg",
+   "/catalog/sunset/s4.jpg"
+  ],
+  "hero": "/catalog/sunset/hero.jpg"
+ },
+ "silver": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/silver/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/silver/s1.jpg",
+   "/catalog/silver/s2.jpg"
+  ],
+  "hero": "/catalog/silver/hero.jpg"
+ },
+ "namibia": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/namibia/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/namibia/s1.jpg",
+   "/catalog/namibia/s2.jpg"
+  ],
+  "hero": "/catalog/namibia/hero.jpg"
+ },
+ "bardiglio": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/bardiglio/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/bardiglio/s1.jpg",
+   "/catalog/bardiglio/s2.jpg"
+  ],
+  "hero": "/catalog/bardiglio/hero.jpg"
+ },
+ "amarillo": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/amarillo/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/amarillo/s1.jpg",
+   "/catalog/amarillo/s2.jpg"
+  ],
+  "hero": "/catalog/amarillo/hero.jpg"
+ },
+ "ardesio": {
+  "brand": "idalgo",
+  "look": "stone",
+  "gallery": [
+   "/catalog/ardesio/g1.jpg",
+   "/catalog/ardesio/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/ardesio/s1.jpg"
+  ],
+  "hero": "/catalog/ardesio/hero.jpg"
+ },
+ "natura": {
+  "brand": "idalgo",
+  "look": "wood",
+  "gallery": [
+   "/catalog/natura/g1.jpg",
+   "/catalog/natura/g2.jpg",
+   "/catalog/natura/g3.jpg",
+   "/catalog/natura/g4.jpg",
+   "/catalog/natura/g5.jpg"
+  ],
+  "swatches": [],
+  "hero": "/catalog/natura/hero.jpg"
+ },
+ "avellano": {
+  "brand": "idalgo",
+  "look": "wood",
+  "gallery": [
+   "/catalog/avellano/g1.jpg",
+   "/catalog/avellano/g2.jpg"
+  ],
+  "swatches": [],
+  "hero": "/catalog/avellano/hero.jpg"
+ },
+ "ethno-wood": {
+  "brand": "idalgo",
+  "look": "wood",
+  "gallery": [
+   "/catalog/ethno-wood/g1.jpg",
+   "/catalog/ethno-wood/g2.jpg"
+  ],
+  "swatches": [],
+  "hero": "/catalog/ethno-wood/hero.jpg"
+ },
+ "wood-classic": {
+  "brand": "idalgo",
+  "look": "wood",
+  "gallery": [
+   "/catalog/wood-classic/g1.jpg",
+   "/catalog/wood-classic/g2.jpg",
+   "/catalog/wood-classic/g3.jpg",
+   "/catalog/wood-classic/g4.jpg",
+   "/catalog/wood-classic/g5.jpg",
+   "/catalog/wood-classic/g6.jpg"
+  ],
+  "swatches": [],
+  "hero": "/catalog/wood-classic/hero.jpg"
+ },
+ "concepta": {
+  "brand": "idalgo",
+  "look": "loft",
+  "gallery": [
+   "/catalog/concepta/g1.jpg",
+   "/catalog/concepta/g2.jpg",
+   "/catalog/concepta/g3.jpg",
+   "/catalog/concepta/g4.jpg",
+   "/catalog/concepta/g5.jpg"
+  ],
+  "swatches": [
+   "/catalog/concepta/s1.jpg",
+   "/catalog/concepta/s2.jpg",
+   "/catalog/concepta/s3.jpg",
+   "/catalog/concepta/s4.jpg",
+   "/catalog/concepta/s5.jpg",
+   "/catalog/concepta/s6.jpg",
+   "/catalog/concepta/s7.jpg"
+  ],
+  "hero": "/catalog/concepta/hero.jpg"
+ },
+ "armor": {
+  "brand": "idalgo",
+  "look": "loft",
+  "gallery": [
+   "/catalog/armor/g1.jpg",
+   "/catalog/armor/g2.jpg",
+   "/catalog/armor/g3.jpg"
+  ],
+  "swatches": [
+   "/catalog/armor/s1.jpg",
+   "/catalog/armor/s2.jpg",
+   "/catalog/armor/s3.jpg",
+   "/catalog/armor/s4.jpg"
+  ],
+  "hero": "/catalog/armor/hero.jpg"
+ },
+ "cement": {
+  "brand": "idalgo",
+  "look": "loft",
+  "gallery": [
+   "/catalog/cement/g1.jpg",
+   "/catalog/cement/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/cement/s1.jpg",
+   "/catalog/cement/s2.jpg",
+   "/catalog/cement/s3.jpg"
+  ],
+  "hero": "/catalog/cement/hero.jpg"
+ },
+ "marta": {
+  "brand": "idalgo",
+  "look": "loft",
+  "gallery": [
+   "/catalog/marta/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/marta/s1.jpg",
+   "/catalog/marta/s2.jpg"
+  ],
+  "hero": "/catalog/marta/hero.jpg"
+ },
+ "gloria": {
+  "brand": "idalgo",
+  "look": "loft",
+  "gallery": [
+   "/catalog/gloria/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/gloria/s1.jpg",
+   "/catalog/gloria/s2.jpg"
+  ],
+  "hero": "/catalog/gloria/hero.jpg"
+ },
+ "carolina": {
+  "brand": "idalgo",
+  "look": "loft",
+  "gallery": [
+   "/catalog/carolina/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/carolina/s1.jpg",
+   "/catalog/carolina/s2.jpg"
+  ],
+  "hero": "/catalog/carolina/hero.jpg"
+ },
+ "perla": {
+  "brand": "idalgo",
+  "look": "loft",
+  "gallery": [
+   "/catalog/perla/g1.jpg",
+   "/catalog/perla/g2.jpg",
+   "/catalog/perla/g3.jpg",
+   "/catalog/perla/g4.jpg",
+   "/catalog/perla/g5.jpg"
+  ],
+  "swatches": [
+   "/catalog/perla/s1.jpg",
+   "/catalog/perla/s2.jpg",
+   "/catalog/perla/s3.jpg"
+  ],
+  "hero": "/catalog/perla/hero.jpg"
+ },
+ "neiva": {
+  "brand": "granitea",
+  "look": "marble",
+  "gallery": [
+   "/catalog/neiva/g1.jpg",
+   "/catalog/neiva/g2.jpg",
+   "/catalog/neiva/g3.jpg",
+   "/catalog/neiva/g4.jpg",
+   "/catalog/neiva/g5.jpg",
+   "/catalog/neiva/g6.jpg",
+   "/catalog/neiva/g7.jpg"
+  ],
+  "swatches": [
+   "/catalog/neiva/s1.jpg",
+   "/catalog/neiva/s2.jpg",
+   "/catalog/neiva/s3.jpg",
+   "/catalog/neiva/s4.jpg",
+   "/catalog/neiva/s5.jpg",
+   "/catalog/neiva/s6.jpg",
+   "/catalog/neiva/s7.jpg",
+   "/catalog/neiva/s8.jpg"
+  ],
+  "hero": "/catalog/neiva/hero.jpg"
+ },
+ "iset": {
+  "brand": "granitea",
+  "look": "marble",
+  "gallery": [
+   "/catalog/iset/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/iset/s1.jpg",
+   "/catalog/iset/s2.jpg",
+   "/catalog/iset/s3.jpg"
+  ],
+  "hero": "/catalog/iset/hero.jpg"
+ },
+ "karatash": {
+  "brand": "granitea",
+  "look": "marble",
+  "gallery": [
+   "/catalog/karatash/g1.jpg",
+   "/catalog/karatash/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/karatash/s1.jpg",
+   "/catalog/karatash/s2.jpg",
+   "/catalog/karatash/s3.jpg",
+   "/catalog/karatash/s4.jpg",
+   "/catalog/karatash/s5.jpg"
+  ],
+  "hero": "/catalog/karatash/hero.jpg"
+ },
+ "kirety": {
+  "brand": "granitea",
+  "look": "marble",
+  "gallery": [
+   "/catalog/kirety/g1.jpg",
+   "/catalog/kirety/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/kirety/s1.jpg",
+   "/catalog/kirety/s2.jpg",
+   "/catalog/kirety/s3.jpg",
+   "/catalog/kirety/s4.jpg",
+   "/catalog/kirety/s5.jpg"
+  ],
+  "hero": "/catalog/kirety/hero.jpg"
+ },
+ "kukazar": {
+  "brand": "granitea",
+  "look": "marble",
+  "gallery": [
+   "/catalog/kukazar/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/kukazar/s1.jpg",
+   "/catalog/kukazar/s2.jpg",
+   "/catalog/kukazar/s3.jpg"
+  ],
+  "hero": "/catalog/kukazar/hero.jpg"
+ },
+ "payer": {
+  "brand": "granitea",
+  "look": "marble",
+  "gallery": [
+   "/catalog/payer/g1.jpg",
+   "/catalog/payer/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/payer/s1.jpg",
+   "/catalog/payer/s2.jpg",
+   "/catalog/payer/s3.jpg",
+   "/catalog/payer/s4.jpg",
+   "/catalog/payer/s5.jpg",
+   "/catalog/payer/s6.jpg"
+  ],
+  "hero": "/catalog/payer/hero.jpg"
+ },
+ "sinara": {
+  "brand": "granitea",
+  "look": "marble",
+  "gallery": [
+   "/catalog/sinara/g1.jpg",
+   "/catalog/sinara/g2.jpg",
+   "/catalog/sinara/g3.jpg"
+  ],
+  "swatches": [
+   "/catalog/sinara/s1.jpg",
+   "/catalog/sinara/s2.jpg",
+   "/catalog/sinara/s3.jpg",
+   "/catalog/sinara/s4.jpg",
+   "/catalog/sinara/s5.jpg",
+   "/catalog/sinara/s6.jpg",
+   "/catalog/sinara/s7.jpg",
+   "/catalog/sinara/s8.jpg"
+  ],
+  "hero": "/catalog/sinara/hero.jpg"
+ },
+ "sugomak": {
+  "brand": "granitea",
+  "look": "marble",
+  "gallery": [
+   "/catalog/sugomak/g1.jpg",
+   "/catalog/sugomak/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/sugomak/s1.jpg",
+   "/catalog/sugomak/s2.jpg",
+   "/catalog/sugomak/s3.jpg",
+   "/catalog/sugomak/s4.jpg",
+   "/catalog/sugomak/s5.jpg"
+  ],
+  "hero": "/catalog/sugomak/hero.jpg"
+ },
+ "uvildy": {
+  "brand": "granitea",
+  "look": "marble",
+  "gallery": [
+   "/catalog/uvildy/g1.jpg",
+   "/catalog/uvildy/g2.jpg",
+   "/catalog/uvildy/g3.jpg"
+  ],
+  "swatches": [
+   "/catalog/uvildy/s1.jpg",
+   "/catalog/uvildy/s2.jpg",
+   "/catalog/uvildy/s3.jpg"
+  ],
+  "hero": "/catalog/uvildy/hero.jpg"
+ },
+ "allaki": {
+  "brand": "granitea",
+  "look": "stone",
+  "gallery": [
+   "/catalog/allaki/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/allaki/s1.jpg",
+   "/catalog/allaki/s2.jpg",
+   "/catalog/allaki/s3.jpg"
+  ],
+  "hero": "/catalog/allaki/hero.jpg"
+ },
+ "shikhan": {
+  "brand": "granitea",
+  "look": "stone",
+  "gallery": [
+   "/catalog/shikhan/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/shikhan/s1.jpg",
+   "/catalog/shikhan/s2.jpg",
+   "/catalog/shikhan/s3.jpg"
+  ],
+  "hero": "/catalog/shikhan/hero.jpg"
+ },
+ "sungul": {
+  "brand": "granitea",
+  "look": "stone",
+  "gallery": [
+   "/catalog/sungul/g1.jpg"
+  ],
+  "swatches": [
+   "/catalog/sungul/s1.jpg",
+   "/catalog/sungul/s2.jpg",
+   "/catalog/sungul/s3.jpg"
+  ],
+  "hero": "/catalog/sungul/hero.jpg"
+ },
+ "yurma": {
+  "brand": "granitea",
+  "look": "stone",
+  "gallery": [
+   "/catalog/yurma/g1.jpg",
+   "/catalog/yurma/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/yurma/s1.jpg",
+   "/catalog/yurma/s2.jpg"
+  ],
+  "hero": "/catalog/yurma/hero.jpg"
+ },
+ "artbeton": {
+  "brand": "granitea",
+  "look": "loft",
+  "gallery": [
+   "/catalog/artbeton/g1.jpg",
+   "/catalog/artbeton/g2.jpg",
+   "/catalog/artbeton/g3.jpg"
+  ],
+  "swatches": [
+   "/catalog/artbeton/s1.jpg",
+   "/catalog/artbeton/s2.jpg",
+   "/catalog/artbeton/s3.jpg",
+   "/catalog/artbeton/s4.jpg",
+   "/catalog/artbeton/s5.jpg",
+   "/catalog/artbeton/s6.jpg",
+   "/catalog/artbeton/s7.jpg",
+   "/catalog/artbeton/s8.jpg"
+  ],
+  "hero": "/catalog/artbeton/hero.jpg"
+ },
+ "arkaim": {
+  "brand": "granitea",
+  "look": "loft",
+  "gallery": [
+   "/catalog/arkaim/g1.jpg",
+   "/catalog/arkaim/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/arkaim/s1.jpg",
+   "/catalog/arkaim/s2.jpg",
+   "/catalog/arkaim/s3.jpg",
+   "/catalog/arkaim/s4.jpg",
+   "/catalog/arkaim/s5.jpg"
+  ],
+  "hero": "/catalog/arkaim/hero.jpg"
+ },
+ "iremel": {
+  "brand": "granitea",
+  "look": "loft",
+  "gallery": [
+   "/catalog/iremel/g1.jpg",
+   "/catalog/iremel/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/iremel/s1.jpg",
+   "/catalog/iremel/s2.jpg",
+   "/catalog/iremel/s3.jpg",
+   "/catalog/iremel/s4.jpg",
+   "/catalog/iremel/s5.jpg"
+  ],
+  "hero": "/catalog/iremel/hero.jpg"
+ },
+ "kondjak": {
+  "brand": "granitea",
+  "look": "loft",
+  "gallery": [
+   "/catalog/kondjak/g1.jpg",
+   "/catalog/kondjak/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/kondjak/s1.jpg",
+   "/catalog/kondjak/s2.jpg",
+   "/catalog/kondjak/s3.jpg",
+   "/catalog/kondjak/s4.jpg",
+   "/catalog/kondjak/s5.jpg"
+  ],
+  "hero": "/catalog/kondjak/hero.jpg"
+ },
+ "taganay": {
+  "brand": "granitea",
+  "look": "loft",
+  "gallery": [
+   "/catalog/taganay/g1.jpg",
+   "/catalog/taganay/g2.jpg",
+   "/catalog/taganay/g3.jpg"
+  ],
+  "swatches": [
+   "/catalog/taganay/s1.jpg",
+   "/catalog/taganay/s2.jpg",
+   "/catalog/taganay/s3.jpg",
+   "/catalog/taganay/s4.jpg",
+   "/catalog/taganay/s5.jpg",
+   "/catalog/taganay/s6.jpg",
+   "/catalog/taganay/s7.jpg",
+   "/catalog/taganay/s8.jpg"
+  ],
+  "hero": "/catalog/taganay/hero.jpg"
+ },
+ "turgoyak": {
+  "brand": "granitea",
+  "look": "loft",
+  "gallery": [
+   "/catalog/turgoyak/g1.jpg",
+   "/catalog/turgoyak/g2.jpg"
+  ],
+  "swatches": [
+   "/catalog/turgoyak/s1.jpg",
+   "/catalog/turgoyak/s2.jpg",
+   "/catalog/turgoyak/s3.jpg"
+  ],
+  "hero": "/catalog/turgoyak/hero.jpg"
+ },
+ "uralstandart": {
+  "brand": "uralgranit",
+  "look": "technical",
+  "gallery": [
+   "/catalog/uralstandart/g1.jpg",
+   "/catalog/uralstandart/g2.jpg"
+  ],
+  "swatches": [],
+  "hero": "/catalog/uralstandart/hero.jpg"
+ },
+ "uralreinforced": {
+  "brand": "uralgranit",
+  "look": "technical",
+  "gallery": [
+   "/catalog/uralreinforced/g1.jpg",
+   "/catalog/uralreinforced/g2.jpg"
+  ],
+  "swatches": [],
+  "hero": "/catalog/uralreinforced/hero.jpg"
+ },
+ "uralfacades": {
+  "brand": "uralgranit",
+  "look": "facade",
+  "gallery": [
+   "/catalog/uralfacades/g1.jpg",
+   "/catalog/uralfacades/g2.jpg",
+   "/catalog/uralfacades/g3.jpg",
+   "/catalog/uralfacades/g4.jpg",
+   "/catalog/uralfacades/g5.jpg",
+   "/catalog/uralfacades/g6.jpg"
+  ],
+  "swatches": [
+   "/catalog/uralfacades/s1.jpg",
+   "/catalog/uralfacades/s2.jpg",
+   "/catalog/uralfacades/s3.jpg",
+   "/catalog/uralfacades/s4.jpg",
+   "/catalog/uralfacades/s5.jpg"
+  ],
+  "hero": "/catalog/uralfacades/hero.jpg"
+ },
+ "uralpalette": {
+  "brand": "uralgranit",
+  "look": "palette",
+  "gallery": [
+   "/catalog/uralpalette/g1.jpg",
+   "/catalog/uralpalette/g2.jpg",
+   "/catalog/uralpalette/g3.jpg",
+   "/catalog/uralpalette/g4.jpg",
+   "/catalog/uralpalette/g5.jpg"
+  ],
+  "swatches": [
+   "/catalog/uralpalette/s1.jpg",
+   "/catalog/uralpalette/s2.jpg",
+   "/catalog/uralpalette/s3.jpg",
+   "/catalog/uralpalette/s4.jpg"
+  ],
+  "hero": "/catalog/uralpalette/hero.jpg"
+ }
+}
