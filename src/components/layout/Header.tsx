@@ -18,7 +18,7 @@ const ease = easeOut;
 const FURNITURE_LINKS = [
   { href: '/doors', title: 'Двери', tagline: 'Межкомнатные двери Diford' },
   { href: '/sofas', title: 'Диваны', tagline: 'Диваны и кресла Delavega' },
-  { href: '/configurator', title: 'Создать свой интерьер', tagline: 'Подбор керамогранита в комнате' },
+  { href: site.plannerUrl, title: 'Создать свой интерьер', tagline: '3D-планировщик: ваша комната, наш керамогранит' },
 ];
 
 const WA_ICON = (
@@ -282,7 +282,7 @@ function MobileNav({
                     ),
                   )}
                   <li>
-                    <Link href="/configurator" onClick={onClose} className="block py-3 text-lg font-medium text-ink">Создать свой интерьер</Link>
+                    <a href={site.plannerUrl} className="block py-3 text-lg font-medium text-ink">Создать свой интерьер в 3D</a>
                   </li>
                 </ul>
               )}

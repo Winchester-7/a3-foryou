@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "planner",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "planner", "run", "dev"],
+      "port": 5174
     }
   ]
 }
