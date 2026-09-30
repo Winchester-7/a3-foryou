@@ -8,7 +8,7 @@ export function CollectionCard({ collection, priority = false }: { collection: C
     <article className="group">
       <Link href={`/collection/${collection.slug}`} className="block">
         <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface">
-          <div className="absolute inset-0 transition-transform duration-[900ms] ease-premium group-hover:scale-[1.06]">
+          <div className="absolute inset-0 transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
             <TileImage
               src={collection.hero}
               alt={`${collection.nameRu} — ${collection.name}`}

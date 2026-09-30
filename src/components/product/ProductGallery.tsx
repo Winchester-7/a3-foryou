@@ -1,10 +1,10 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { TileImage } from '@/components/media/TileImage';
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const ease = [0.23, 1, 0.32, 1] as const;
 
 export function ProductGallery({ images, name }: { images: string[]; name: string }) {
   const reduce = useReducedMotion();
@@ -34,12 +34,12 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
           <motion.div
             key={active}
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease }}
+            transition={{ duration: 0.25, ease }}
             className="absolute inset-0"
             style={
               zoom
-                ? { transform: 'scale(1.7)', transformOrigin: `${pos.x}% ${pos.y}%`, transition: 'transform 0.2s ease-out' }
-                : { transform: 'scale(1)', transition: 'transform 0.4s ease-out' }
+                ? { transform: 'scale(1.7)', transformOrigin: `${pos.x}% ${pos.y}%`, transition: 'transform 0.25s cubic-bezier(0.23, 1, 0.32, 1)' }
+                : { transform: 'scale(1)', transition: 'transform 0.35s cubic-bezier(0.23, 1, 0.32, 1)' }
             }
           >
             <TileImage src={list[active]} alt={name} sizes="(max-width: 1024px) 100vw, 50vw" priority />

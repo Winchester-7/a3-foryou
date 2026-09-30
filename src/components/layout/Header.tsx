@@ -3,14 +3,17 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { Logo } from '@/components/brand/Logo';
 import { mainNav, site } from '@/lib/site';
 import type { SearchDoc } from './SiteHeader';
+import { useCart } from '@/components/cart/CartProvider';
+import { CartIcon } from '@/components/cart/CartDrawer';
+import { drawerIn, drawerOut, easeOut } from '@/lib/motion';
 
 type MenuItem = { slug: string; title: string; tagline: string };
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const ease = easeOut;
 
 const FURNITURE_LINKS = [
   { href: '/doors', title: 'Двери', tagline: 'Межкомнатные двери Diford' },
@@ -82,7 +85,7 @@ export function Header({
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-premium ${
+        className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ease-out-strong ${
           solid ? 'border-b border-line bg-paper/90 backdrop-blur-md' : 'border-b border-transparent bg-transparent'
         }`}
         onMouseLeave={() => setOpenMega(null)}
@@ -144,6 +147,8 @@ export function Header({
               </svg>
             </button>
 
+            <CartButton className={iconBtn} />
+
             <button
               type="button"
               aria-label="Открыть меню"
@@ -152,9 +157,9 @@ export function Header({
               className={`grid h-10 w-10 place-items-center rounded-full lg:hidden ${iconBtn}`}
             >
               <span className="relative block h-3.5 w-5">
-                <span className={`absolute left-0 top-0 h-0.5 w-full bg-current transition-all duration-300 ${mobileOpen ? 'translate-y-1.5 rotate-45' : ''}`} />
-                <span className={`absolute left-0 top-1.5 h-0.5 w-full bg-current transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
-                <span className={`absolute left-0 top-3 h-0.5 w-full bg-current transition-all duration-300 ${mobileOpen ? '-translate-y-1.5 -rotate-45' : ''}`} />
+                <span className={`absolute left-0 top-0 h-0.5 w-full bg-current transition-[transform,opacity] duration-200 ease-out-strong ${mobileOpen ? 'translate-y-1.5 rotate-45' : ''}`} />
+                <span className={`absolute left-0 top-1.5 h-0.5 w-full bg-current transition-[transform,opacity] duration-200 ease-out-strong ${mobileOpen ? 'opacity-0' : ''}`} />
+                <span className={`absolute left-0 top-3 h-0.5 w-full bg-current transition-[transform,opacity] duration-200 ease-out-strong ${mobileOpen ? '-translate-y-1.5 -rotate-45' : ''}`} />
               </span>
             </button>
           </div>
@@ -166,8 +171,8 @@ export function Header({
               key={openMega}
               initial={reduce ? { opacity: 0 } : { opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={reduce ? { opacity: 0 } : { opacity: 0, y: -8 }}
-              transition={{ duration: 0.28, ease }}
+              exit={reduce ? { opacity: 0 } : { opacity: 0, y: -4, transition: { duration: 0.15, ease } }}
+              transition={{ duration: 0.22, ease }}
               className="absolute inset-x-0 top-[var(--header-h)] hidden border-t border-line bg-paper shadow-card lg:block"
             >
               <div className="container-x py-10">
@@ -247,10 +252,10 @@ function MobileNav({
     <AnimatePresence>
       {open && (
         <>
-          <motion.div className="fixed inset-0 z-40 bg-ink/30 lg:hidden" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose} />
+          <motion.div className="fixed inset-0 z-40 bg-ink/30 lg:hidden" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.18 } }} onClick={onClose} />
           <motion.aside
             className="fixed inset-y-0 right-0 z-50 flex w-[86%] max-w-sm flex-col bg-paper lg:hidden"
-            initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ duration: 0.4, ease }}
+            initial={{ x: '100%' }} animate={{ x: 0, transition: drawerIn }} exit={{ x: '100%', transition: drawerOut }}
           >
             <div className="flex h-[var(--header-h)] items-center justify-between border-b border-line px-5">
               <span className="eyebrow">Меню</span>
@@ -424,5 +429,45 @@ function SearchOverlay({ open, onClose, index }: { open: boolean; onClose: () =>
         </motion.div>
       )}
     </AnimatePresence>
+  );
+}
+
+function CartButton({ className }: { className: string }) {
+  const { count, openCart } = useCart();
+  const reduce = useReducedMotion();
+  return (
+    <button
+      type="button"
+      aria-label={count ? `Корзина: ${count}` : 'Корзина'}
+      onClick={openCart}
+      className={`relative grid h-10 w-10 place-items-center rounded-full transition-[background-color,color,transform] duration-150 ease-out-strong active:scale-95 ${className}`}
+    >
+      <CartIcon />
+      <AnimatePresence initial={false}>
+        {count > 0 && (
+          <motion.span
+            key="badge"
+            className="absolute right-0.5 top-0.5 grid h-[18px] min-w-[18px] place-items-center overflow-hidden rounded-full bg-accent px-1 text-[10px] font-semibold leading-none text-paper"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.12 } }}
+            transition={{ type: 'spring', duration: 0.35, bounce: 0.25 }}
+          >
+            <AnimatePresence mode="popLayout" initial={false}>
+              <motion.span
+                key={count}
+                className="tabular-nums"
+                initial={reduce ? { opacity: 0 } : { y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={reduce ? { opacity: 0 } : { y: -8, opacity: 0 }}
+                transition={{ type: 'spring', duration: 0.3, bounce: 0 }}
+              >
+                {count}
+              </motion.span>
+            </AnimatePresence>
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </button>
   );
 }

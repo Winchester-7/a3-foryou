@@ -60,6 +60,7 @@ export default function DoorPage({ params }: { params: { slug: string } }) {
         colors={d.colors.map((c) => ({ name: c.name, hex: c.hex, image: c.image }))}
         colorLabel="Цвет покрытия"
         sizes={d.sizes}
+        sizeUnit="мм"
         specs={d.specs}
         gallery={d.gallery}
         requestSubject={`Дверь ${d.name}`}
@@ -74,7 +75,7 @@ export default function DoorPage({ params }: { params: { slug: string } }) {
                 <Link key={x.slug} href={`/doors/${x.slug}`} className="group block">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface2">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={x.image} alt={x.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={x.image} alt={x.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]" />
                   </div>
                   <p className="mt-3 text-base font-medium text-ink transition-colors group-hover:text-accent">{x.name}</p>
                 </Link>

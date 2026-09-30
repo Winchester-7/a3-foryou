@@ -1,10 +1,11 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, useReducedMotion, type Variants } from 'framer-motion';
+import { motion, useReducedMotion, type Variants } from 'motion/react';
+import { easeOut } from '@/lib/motion';
 import type { ReactNode } from 'react';
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const ease = easeOut;
 
 /**
  * Reveal strategy — content is VISIBLE by default (SSR + first paint).
@@ -96,7 +97,7 @@ export function Reveal({
             ? { opacity: 0 }
             : { opacity: 0, y }
       }
-      transition={{ duration: 0.7, ease, delay: state === 'show' ? delay : 0 }}
+      transition={{ duration: 0.6, ease, delay: state === 'show' ? delay : 0 }}
     >
       {children}
     </motion.div>
@@ -105,12 +106,12 @@ export function Reveal({
 
 const parent: Variants = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.04 } },
+  show: { transition: { staggerChildren: 0.06, delayChildren: 0.04 } },
 };
 
 export const staggerChild: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease } },
 };
 
 export function StaggerGroup({ children, className }: { children: ReactNode; className?: string }) {

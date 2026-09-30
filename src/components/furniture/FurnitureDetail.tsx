@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { blurData } from '@/lib/media';
 import { ColorPicker, type Swatch } from './ColorPicker';
 import { useLeadDialog } from '@/components/forms/LeadDialog';
-import { site } from '@/lib/site';
+import { usePathname } from 'next/navigation';
+import { AddToCart } from '@/components/cart/AddToCart';
 
 export function FurnitureDetail({
   kicker,
@@ -15,6 +16,7 @@ export function FurnitureDetail({
   colors,
   colorLabel,
   sizes,
+  sizeUnit = 'см',
   specs,
   gallery,
   requestSubject,
@@ -26,11 +28,14 @@ export function FurnitureDetail({
   colors: Swatch[];
   colorLabel: string;
   sizes: string[];
+  sizeUnit?: 'см' | 'мм';
   specs: [string, string][];
   gallery: string[];
   requestSubject: string;
 }) {
   const { open } = useLeadDialog();
+  const pathname = usePathname();
+  const kind = pathname.startsWith('/sofas') ? 'sofa' : 'door';
   const [color, setColor] = useState(colors[0]?.name ?? '');
   const [size, setSize] = useState(sizes[0] ?? '');
   const [imgIdx, setImgIdx] = useState(0);
@@ -109,7 +114,7 @@ export function FurnitureDetail({
 
           {sizes.length > 1 && (
             <div className="mt-7">
-              <p className="text-[13px] font-medium uppercase tracking-wide2 text-ink">Размер, см</p>
+              <p className="text-[13px] font-medium uppercase tracking-wide2 text-ink">Размер, {sizeUnit}</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {sizes.map((s) => (
                   <button
@@ -117,7 +122,7 @@ export function FurnitureDetail({
                     type="button"
                     onClick={() => setSize(s)}
                     aria-pressed={s === size}
-                    className={`rounded-full border px-4 py-2 text-xs transition-all duration-200 ${
+                    className={`rounded-full border px-4 py-2 text-xs transition-[color,background-color,border-color,transform] duration-200 ease-out-strong active:scale-[0.96] ${
                       s === size ? 'border-accent bg-accent text-paper' : 'border-line text-ink-soft hover:border-ink-faint hover:text-ink'
                     }`}
                   >
@@ -128,23 +133,29 @@ export function FurnitureDetail({
             </div>
           )}
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button
-              type="button"
-              onClick={() => open('request', `${requestSubject}${color ? `, цвет: ${color}` : ''}${size ? `, размер: ${size} см` : ''}`)}
-              className="btn-accent flex-1"
-            >
-              Оставить заявку
-            </button>
-            <a href={site.whatsapp} target="_blank" rel="noreferrer noopener" className="btn-outline flex-1">
-              Написать в WhatsApp
-            </a>
-          </div>
+          <AddToCart
+            className="mt-8"
+            item={{
+              id: `${kind}:${pathname}|${color}|${size}`,
+              kind,
+              title,
+              details: [kicker, color && `${colorLabel.toLowerCase()}: ${color}`, size && `размер: ${size} ${sizeUnit}`].filter(Boolean).join(' · '),
+              image: activeColor?.image ?? images[0],
+              href: pathname,
+            }}
+          />
+          <button
+            type="button"
+            onClick={() => open('request', `${requestSubject}${color ? `, цвет: ${color}` : ''}${size ? `, размер: ${size} ${sizeUnit}` : ''}`)}
+            className="btn-outline mt-3 w-full"
+          >
+            Оставить заявку
+          </button>
 
           <div className="mt-10">
             <h2 className="text-[13px] font-medium uppercase tracking-wide2 text-ink">Характеристики</h2>
             <dl className="mt-4 divide-y divide-line border-y border-line">
-              {(sizes.length ? ([['Размеры, см', sizes.join(', ')]] as [string, string][]) : []).concat(specs).map(([k, v]) => (
+              {(sizes.length ? ([[`Размеры, ${sizeUnit}`, sizes.join(', ')]] as [string, string][]) : []).concat(specs).map(([k, v]) => (
                 <div key={k} className="flex justify-between gap-6 py-3.5 text-sm">
                   <dt className="shrink-0 text-ink-faint">{k}</dt>
                   <dd className="text-right text-ink">{v}</dd>

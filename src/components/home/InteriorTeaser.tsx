@@ -20,7 +20,7 @@ export function InteriorTeaser() {
             <StaggerItem key={c.slug}>
               <Link href={`/interior/${c.slug}`} className="group block">
                 <div className="relative aspect-square overflow-hidden rounded-2xl bg-surface2">
-                  <div className="h-full w-full transition-transform duration-700 ease-premium group-hover:scale-105">
+                  <div className="h-full w-full transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
                     <Photo
                       seed={c.bannerSeed}
                       width={480}

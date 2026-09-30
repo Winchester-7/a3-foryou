@@ -1,7 +1,8 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
+import { backdrop, drawerIn, drawerOut } from '@/lib/motion';
 import type { Collection, Facets } from '@/lib/types';
 import { brandName, getLook } from '@/lib/catalog';
 import { CollectionCard } from './CollectionCard';
@@ -116,13 +117,12 @@ export function CatalogView({ collections, facets }: { collections: Collection[]
           <>
             <motion.div
               className="fixed inset-0 z-[70] bg-ink/30 lg:hidden"
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              {...backdrop}
               onClick={() => setDrawer(false)}
             />
             <motion.div
               className="fixed inset-y-0 left-0 z-[71] w-[88%] max-w-sm overflow-y-auto bg-paper p-6 lg:hidden"
-              initial={{ x: '-100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ x: '-100%' }} animate={{ x: 0, transition: drawerIn }} exit={{ x: '-100%', transition: drawerOut }}
             >
               <div className="mb-4 flex items-center justify-between">
                 <p className="eyebrow">Фильтры</p>

@@ -39,7 +39,7 @@ export default function CatalogPage() {
               <StaggerItem key={c.slug}>
                 <Link href={`/catalog/${c.slug}`} className="group block">
                   <div className="relative aspect-[5/4] overflow-hidden rounded-2xl bg-surface">
-                    <div className="absolute inset-0 transition-transform duration-700 ease-premium group-hover:scale-105">
+                    <div className="absolute inset-0 transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
                       <TileImage src={hero} alt={c.title} sizes="(max-width: 768px) 50vw, 33vw" />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/45 to-transparent" />

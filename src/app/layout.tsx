@@ -5,6 +5,7 @@ import { site } from '@/lib/site';
 import { LeadDialogProvider } from '@/components/forms/LeadDialog';
 import { Footer } from '@/components/layout/Footer';
 import { FloatingContacts } from '@/components/layout/FloatingContacts';
+import { CartProvider } from '@/components/cart/CartProvider';
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
@@ -21,7 +22,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — премиальный керамогранит для современных интерьеров`,
+    default: `${site.name} — керамогранит под любой интерьер и бюджет`,
     template: `%s — ${site.name}`,
   },
   description: site.shortDescription,
@@ -36,12 +37,12 @@ export const metadata: Metadata = {
     locale: site.locale,
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — премиальный керамогранит`,
+    title: `${site.name} — керамогранит под любой интерьер и бюджет`,
     description: site.shortDescription,
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${site.name} — премиальный керамогранит`,
+    title: `${site.name} — керамогранит под любой интерьер и бюджет`,
     description: site.shortDescription,
   },
   robots: { index: true, follow: true },
@@ -60,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Бишкек',
-      streetAddress: site.address,
+      streetAddress: site.street,
       addressCountry: 'KG',
     },
     areaServed: 'Кыргызстан',
@@ -82,9 +83,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           К основному содержанию
         </a>
         <LeadDialogProvider>
-          {children}
-          <Footer />
-          <FloatingContacts />
+          <CartProvider>
+            {children}
+            <Footer />
+            <FloatingContacts />
+          </CartProvider>
         </LeadDialogProvider>
       </body>
     </html>

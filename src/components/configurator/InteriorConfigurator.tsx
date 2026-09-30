@@ -95,7 +95,7 @@ export function InteriorConfigurator({ rooms, tiles }: { rooms: ConfRoom[]; tile
                 key={l}
                 type="button"
                 onClick={() => setLook(l)}
-                className={`rounded-full border px-3 py-1.5 text-xs transition-all ${
+                className={`rounded-full border px-3 py-1.5 text-xs transition-[color,background-color,border-color,transform] duration-200 ease-out-strong active:scale-[0.96] ${
                   look === l ? 'border-accent bg-accent text-paper' : 'border-line text-ink-soft hover:border-ink-faint hover:text-ink'
                 }`}
               >

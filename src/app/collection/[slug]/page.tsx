@@ -152,7 +152,7 @@ export default function CollectionPage({ params }: { params: { slug: string } })
                 <Link key={c.slug} href={`/collection/${c.slug}`} className="group block">
                   <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-surface2">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={c.hero} alt={c.nameRu} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={c.hero} alt={c.nameRu} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]" />
                   </div>
                   <p className="mt-3 text-base font-medium text-ink transition-colors group-hover:text-accent">{c.nameRu}</p>
                   <p className="text-xs text-ink-faint">{c.tagline}</p>

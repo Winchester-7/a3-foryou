@@ -27,6 +27,7 @@ export function ProductGrid({
       key={it.product.slug}
       product={it.product}
       brand={brandName(it.collection.brand)}
+      collection={it.collection}
       onQuickView={(slug) => setQuick(bySlug.get(slug) ?? null)}
       priority={i < 3}
     />
