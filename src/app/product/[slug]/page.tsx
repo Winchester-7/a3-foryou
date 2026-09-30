@@ -12,6 +12,7 @@ import { colorHex } from '@/lib/color';
 import { allProducts, getProduct, getRelatedProducts, getLook, brandName, getCollectionByProduct, PRICE_LABEL } from '@/lib/catalog';
 import { TECH_SPECS } from '@/lib/specs';
 import { site } from '@/lib/site';
+import { tileCartItem } from '@/lib/cart-items';
 
 export function generateStaticParams() {
   return allProducts.map((p) => ({ slug: p.slug }));
@@ -106,7 +107,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 </div>
               )}
 
-              <ProductActions productName={`${product.nameRu} — ${collection.nameRu}`} />
+              <ProductActions
+                productName={`${product.nameRu} — ${collection.nameRu}`}
+                cartItem={tileCartItem(product, collection)}
+              />
 
               <div className="mt-10">
                 <h2 className="text-[13px] font-medium uppercase tracking-wide2 text-ink">Характеристики</h2>

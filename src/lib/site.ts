@@ -2,7 +2,7 @@ export const site = {
   name: 'A3 FOR YOU',
   legalName: 'A3 FOR YOU — керамогранит и материалы для интерьера',
   shortDescription:
-    'Премиальный керамогранит IDALGO, GRANITEA и «Уральский Гранит» в Бишкеке: коллекции под мрамор, камень, дерево и бетон.',
+    'Керамогранит IDALGO, GRANITEA и «Уральский Гранит» в Бишкеке — от доступных решений до дизайнерских коллекций под мрамор, камень, дерево и бетон.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://a3foryou.kg',
   locale: 'ru_KG',
   city: 'Бишкек',
@@ -12,7 +12,8 @@ export const site = {
   whatsapp: 'https://wa.me/996706010321',
   whatsappNumber: '+996 706 010 321',
   email: 'hello@a3foryou.kg',
-  address: 'г. Бишкек, Кыргызская Республика',
+  street: 'ул. Анкара, 1А',
+  address: 'г. Бишкек, ул. Анкара, 1А',
   hours: 'Ежедневно 09:00 – 19:00',
   instagram: 'https://instagram.com/a3foryou.kg',
   socials: [

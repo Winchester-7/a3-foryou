@@ -24,7 +24,7 @@ export default function NewsPage() {
       <section className="container-x pb-20">
         <Link href={`/news/${lead.slug}`} className="group grid gap-8 lg:grid-cols-2 lg:items-center">
           <div className="relative aspect-[3/2] overflow-hidden rounded-3xl bg-surface">
-            <div className="h-full w-full transition-transform duration-700 ease-premium group-hover:scale-105">
+            <div className="h-full w-full transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
               <Photo seed={lead.imageSeed} width={900} height={600} alt={lead.title} sizes="(max-width: 1024px) 90vw, 45vw" className="h-full w-full object-cover" />
             </div>
           </div>
@@ -45,7 +45,7 @@ export default function NewsPage() {
             <StaggerItem key={post.slug}>
               <Link href={`/news/${post.slug}`} className="group block">
                 <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-surface">
-                  <div className="h-full w-full transition-transform duration-700 ease-premium group-hover:scale-105">
+                  <div className="h-full w-full transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
                     <Photo seed={post.imageSeed} width={640} height={426} alt={post.title} sizes="(max-width: 768px) 90vw, 30vw" className="h-full w-full object-cover" />
                   </div>
                 </div>

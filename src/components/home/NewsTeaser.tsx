@@ -19,7 +19,7 @@ export function NewsTeaser() {
           <StaggerItem key={post.slug}>
             <Link href={`/news/${post.slug}`} className="group block">
               <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-surface">
-                <div className="h-full w-full transition-transform duration-700 ease-premium group-hover:scale-105">
+                <div className="h-full w-full transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
                   <Photo
                     seed={post.imageSeed}
                     width={640}

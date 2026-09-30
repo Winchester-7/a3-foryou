@@ -2,6 +2,8 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: ['./src/**/*.{ts,tsx,mdx}'],
+  // hover: styles only on devices that can really hover — no sticky hover on touch
+  future: { hoverOnlyWhenSupported: true },
   theme: {
     container: {
       center: true,
@@ -37,6 +39,9 @@ const config: Config = {
       },
       transitionTimingFunction: {
         premium: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        'out-strong': 'cubic-bezier(0.23, 1, 0.32, 1)',
+        'in-out-strong': 'cubic-bezier(0.77, 0, 0.175, 1)',
+        drawer: 'cubic-bezier(0.32, 0.72, 0, 1)',
       },
       boxShadow: {
         card: '0 1px 2px rgba(35,35,35,0.04), 0 12px 40px -18px rgba(35,35,35,0.18)',

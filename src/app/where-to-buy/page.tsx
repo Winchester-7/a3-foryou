@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   alternates: { canonical: '/where-to-buy' },
 };
 
+const MAP_QUERY = encodeURIComponent('Бишкек, улица Анкара, 1А');
+const MAP_GOOGLE = `https://www.google.com/maps/search/?api=1&query=${MAP_QUERY}`;
+const MAP_2GIS = `https://2gis.kg/bishkek/search/${MAP_QUERY}`;
+
 const points = [
   {
     city: 'Бишкек',
@@ -25,7 +29,7 @@ const points = [
   {
     city: 'Бишкек',
     name: 'Отдел для дизайнеров и архитекторов',
-    address: 'г. Бишкек, по предварительной записи',
+    address: `${site.address}, по предварительной записи`,
     phone: site.phone,
     hours: 'Пн–Сб 10:00 – 18:00',
     note: 'Образцы для проектов, спецификации, расчёт и раскладка',
@@ -77,12 +81,27 @@ export default function WhereToBuyPage() {
           ))}
         </StaggerGroup>
 
-        <div className="mt-12 overflow-hidden rounded-3xl border border-line">
+        <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="eyebrow">Адрес шоурума</p>
+            <p className="mt-2 text-xl font-medium text-ink">{site.address}</p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a href={MAP_2GIS} target="_blank" rel="noreferrer noopener" className="btn-outline">
+              Открыть в 2ГИС
+            </a>
+            <a href={MAP_GOOGLE} target="_blank" rel="noreferrer noopener" className="btn-outline">
+              Google Карты
+            </a>
+          </div>
+        </div>
+        <div className="mt-6 overflow-hidden rounded-3xl border border-line">
           <iframe
-            title="Карта — Бишкек"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=74.54%2C42.83%2C74.66%2C42.90&layer=mapnik"
-            className="h-[380px] w-full grayscale"
+            title={`Карта — ${site.address}`}
+            src={`https://maps.google.com/maps?q=${MAP_QUERY}&z=16&output=embed`}
+            className="h-[380px] w-full grayscale-[0.6]"
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
       </section>

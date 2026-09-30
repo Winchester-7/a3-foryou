@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import type { Facets } from '@/lib/types';
 
 export type FilterKey = 'looks' | 'brands' | 'sizes' | 'surfaces' | 'applications';
@@ -91,7 +91,7 @@ export function Filters({
                             type="button"
                             onClick={() => onToggle(g.key, opt)}
                             aria-pressed={selected}
-                            className={`rounded-full border px-3.5 py-1.5 text-xs transition-all duration-200 ${
+                            className={`rounded-full border px-3.5 py-1.5 text-xs transition-[color,background-color,border-color,transform] duration-200 ease-out-strong active:scale-[0.96] ${
                               selected
                                 ? 'border-accent bg-accent text-paper'
                                 : 'border-line text-ink-soft hover:border-ink-faint hover:text-ink'

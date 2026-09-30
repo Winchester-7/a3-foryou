@@ -47,7 +47,7 @@ export function FurnitureCatalog({
               type="button"
               onClick={() => toggle(t)}
               aria-pressed={active.includes(t)}
-              className={`rounded-full border px-3.5 py-1.5 text-xs transition-all duration-200 ${
+              className={`rounded-full border px-3.5 py-1.5 text-xs transition-[color,background-color,border-color,transform] duration-200 ease-out-strong active:scale-[0.96] ${
                 active.includes(t) ? 'border-accent bg-accent text-paper' : 'border-line text-ink-soft hover:border-ink-faint hover:text-ink'
               }`}
             >
@@ -78,7 +78,7 @@ export function FurnitureCatalog({
               <article className="group">
                 <Link href={`${basePath}/${i.slug}`} className="block">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface">
-                    <div className="absolute inset-0 transition-transform duration-[900ms] ease-premium group-hover:scale-[1.06]">
+                    <div className="absolute inset-0 transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
                       <Image src={i.image} alt={i.name} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" placeholder="blur" blurDataURL={blurData('#e8e4de')} />
                     </div>
                     <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide2 text-ink">{i.tag}</span>

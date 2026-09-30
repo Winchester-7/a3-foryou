@@ -33,7 +33,7 @@ export default function InteriorIndexPage() {
             <StaggerItem key={c.slug}>
               <Link href={`/interior/${c.slug}`} className="group block">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface">
-                  <div className="h-full w-full transition-transform duration-700 ease-premium group-hover:scale-105">
+                  <div className="h-full w-full transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
                     <Photo
                       seed={c.bannerSeed}
                       width={720}

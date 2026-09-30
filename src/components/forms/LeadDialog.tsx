@@ -1,7 +1,8 @@
 'use client';
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
+import { backdrop, modalIn, modalOut } from '@/lib/motion';
 import { LeadForm, type LeadKind } from './LeadForm';
 
 type DialogState = { kind: LeadKind; subject?: string } | null;
@@ -19,7 +20,6 @@ export function useLeadDialog(): Ctx {
   return ctx;
 }
 
-const ease = [0.22, 1, 0.36, 1] as const;
 
 const TITLES: Record<LeadKind, { title: string; text: string }> = {
   callback: {
@@ -64,9 +64,7 @@ export function LeadDialogProvider({ children }: { children: ReactNode }) {
         {state && (
           <motion.div
             className="fixed inset-0 z-[80] flex items-end justify-center bg-ink/40 p-0 backdrop-blur-sm sm:items-center sm:p-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            {...backdrop}
             onClick={close}
           >
             <motion.div
@@ -74,10 +72,9 @@ export function LeadDialogProvider({ children }: { children: ReactNode }) {
               aria-modal="true"
               aria-label={TITLES[state.kind].title}
               className="relative w-full max-w-lg overflow-hidden rounded-t-3xl bg-paper p-7 sm:rounded-3xl sm:p-9"
-              initial={{ y: 40, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 40, opacity: 0 }}
-              transition={{ duration: 0.4, ease }}
+              initial={{ y: 24, scale: 0.98, opacity: 0 }}
+              animate={{ y: 0, scale: 1, opacity: 1, transition: modalIn }}
+              exit={{ y: 12, scale: 0.98, opacity: 0, transition: modalOut }}
               onClick={(e) => e.stopPropagation()}
             >
               <button

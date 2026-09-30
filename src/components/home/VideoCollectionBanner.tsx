@@ -79,7 +79,7 @@ export function VideoCollectionBanner({
           <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-white/80">{text}</p>
           <Link
             href={href}
-            className="btn mt-7 w-fit bg-paper text-ink transition-transform duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-float"
+            className="btn mt-7 w-fit bg-paper text-ink hover:bg-white hover:shadow-float"
           >
             {cta}
           </Link>

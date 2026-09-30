@@ -29,7 +29,7 @@ export default function PromotionsPage() {
                 }`}
               >
                 <div className="relative aspect-[16/9] overflow-hidden bg-surface">
-                  <div className="h-full w-full transition-transform duration-700 ease-premium group-hover:scale-105">
+                  <div className="h-full w-full transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
                     <Photo seed={p.imageSeed} width={900} height={506} alt={p.title} sizes="(max-width: 768px) 90vw, 45vw" grayscale className="h-full w-full object-cover" />
                   </div>
                   <span
@@ -62,7 +62,7 @@ export default function PromotionsPage() {
           <CallbackTrigger
             kind="request"
             label="Оставить заявку"
-            className="btn bg-paper text-ink hover:-translate-y-0.5 hover:bg-white"
+            className="btn bg-paper text-ink hover:bg-white"
           />
         </div>
       </section>

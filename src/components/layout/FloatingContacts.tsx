@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
+import { easeOut } from '@/lib/motion';
 import { site } from '@/lib/site';
 import { useLeadDialog } from '@/components/forms/LeadDialog';
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const ease = easeOut;
 
 export function FloatingContacts() {
   const { open } = useLeadDialog();
@@ -26,10 +27,10 @@ export function FloatingContacts() {
             type="button"
             aria-label="Наверх"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            className="grid h-11 w-11 place-items-center rounded-full border border-line bg-paper text-ink shadow-card transition-transform hover:-translate-y-0.5 hover:shadow-float"
+            initial={{ opacity: 0, scale: 0.9, y: 6 }}
+            animate={{ opacity: 1, scale: 1, y: 0, transition: { duration: 0.25, ease } }}
+            exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.15, ease } }}
+            className="grid h-11 w-11 place-items-center rounded-full border border-line bg-paper text-ink shadow-card transition-[transform,box-shadow,border-color,color] duration-200 ease-out-strong hover:-translate-y-0.5 active:scale-95 hover:shadow-float"
           >
             <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden>
               <path d="M8 13V4M3 8l5-5 5 5" stroke="currentColor" strokeWidth="1.6" fill="none" />
@@ -43,7 +44,7 @@ export function FloatingContacts() {
         type="button"
         onClick={() => open('callback')}
         aria-label="Заказать обратный звонок"
-        className="grid h-12 w-12 place-items-center rounded-full border border-line bg-paper text-ink shadow-card transition-transform hover:-translate-y-0.5 hover:border-accent hover:text-accent md:hidden"
+        className="grid h-12 w-12 place-items-center rounded-full border border-line bg-paper text-ink shadow-card transition-[transform,box-shadow,border-color,color] duration-200 ease-out-strong hover:-translate-y-0.5 active:scale-95 hover:border-accent hover:text-accent md:hidden"
       >
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden>
           <path d="M4 5c0 8.3 6.7 15 15 15 .6 0 1-.4 1-1v-3.3c0-.4-.3-.8-.7-.9l-3.6-1a1 1 0 0 0-1 .3l-1 1.2A12 12 0 0 1 8.4 9.3l1.2-1a1 1 0 0 0 .3-1l-1-3.6A1 1 0 0 0 8 3H4.7c-.4 0-.7.3-.7.7Z" stroke="currentColor" strokeWidth="1.6" />
@@ -56,9 +57,9 @@ export function FloatingContacts() {
         target="_blank"
         rel="noreferrer noopener"
         aria-label={`WhatsApp ${site.whatsappNumber}`}
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.95 }}
-        transition={{ duration: 0.3, ease }}
+        transition={{ type: 'spring', duration: 0.3, bounce: 0.2 }}
         className="grid h-14 w-14 place-items-center rounded-full text-white shadow-float"
         style={{ background: '#25D366' }}
       >

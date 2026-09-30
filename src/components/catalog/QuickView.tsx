@@ -2,14 +2,17 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import type { Collection, Product } from '@/lib/types';
 import { brandName } from '@/lib/catalog';
 import { PRICE_LABEL } from '@/lib/catalog';
 import { TileImage } from '@/components/media/TileImage';
 import { useLeadDialog } from '@/components/forms/LeadDialog';
+import { AddToCart } from '@/components/cart/AddToCart';
+import { tileCartItem } from '@/lib/cart-items';
+import { backdrop, easeOut, modalIn, modalOut } from '@/lib/motion';
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const ease = easeOut;
 
 export function QuickView({
   data,
@@ -34,14 +37,15 @@ export function QuickView({
       {data && (
         <motion.div
           className="fixed inset-0 z-[70] flex items-end justify-center bg-ink/45 backdrop-blur-sm sm:items-center sm:p-6"
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+          {...backdrop}
           onClick={onClose}
         >
           <motion.div
             role="dialog" aria-modal="true" aria-label={data.product.nameRu}
             className="relative grid w-full max-w-4xl overflow-hidden rounded-t-3xl bg-paper sm:rounded-3xl md:grid-cols-2"
-            initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 40, opacity: 0 }}
-            transition={{ duration: 0.4, ease }}
+            initial={{ y: 24, scale: 0.98, opacity: 0 }}
+            animate={{ y: 0, scale: 1, opacity: 1, transition: modalIn }}
+            exit={{ y: 12, scale: 0.98, opacity: 0, transition: modalOut }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -95,8 +99,9 @@ export function QuickView({
                 <Row label="Применение">{data.collection.applications.slice(0, 4).join(', ')}</Row>
               </dl>
 
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Link href={`/product/${data.product.slug}`} className="btn-solid flex-1">Открыть товар</Link>
+              <AddToCart className="mt-7" item={tileCartItem(data.product, data.collection)} />
+              <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+                <Link href={`/product/${data.product.slug}`} className="btn-outline flex-1">Открыть товар</Link>
                 <button type="button" onClick={() => open('consult', data.product.nameRu)} className="btn-outline flex-1">
                   Консультация
                 </button>

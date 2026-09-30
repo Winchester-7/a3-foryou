@@ -74,7 +74,7 @@ export default function SofaPage({ params }: { params: { slug: string } }) {
                 <Link key={x.slug} href={`/sofas/${x.slug}`} className="group block">
                   <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface2">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={x.image} alt={x.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={x.image} alt={x.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]" />
                   </div>
                   <p className="mt-3 text-base font-medium text-ink transition-colors group-hover:text-accent">{x.kind} {x.name}</p>
                 </Link>

@@ -29,9 +29,9 @@ export function CtaSection() {
               <CallbackTrigger
                 kind="consult"
                 label="Запросить консультацию"
-                className="btn bg-paper text-ink hover:-translate-y-0.5 hover:bg-white hover:shadow-float"
+                className="btn bg-paper text-ink hover:bg-white hover:shadow-float"
               />
-              <Link href="/where-to-buy" className="btn border border-white/40 text-white hover:-translate-y-0.5 hover:border-white">
+              <Link href="/where-to-buy" className="btn border border-white/40 text-white hover:border-white">
                 Адреса и точки продаж
               </Link>
             </div>

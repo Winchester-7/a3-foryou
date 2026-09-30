@@ -48,7 +48,7 @@ export default function InteriorCategoryPage({ params }: { params: { category: s
             <StaggerItem key={item.slug}>
               <article className="group">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface">
-                  <div className="h-full w-full transition-transform duration-700 ease-premium group-hover:scale-[1.06]">
+                  <div className="h-full w-full transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
                     <Photo
                       seed={item.imageSeed}
                       width={560}
