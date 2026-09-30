@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'motion/react';
+import { site } from '@/lib/site';
 
 // Frame geometry of /hero/hero-showroom.mp4 (1924×1076). The hotspot stage is
 // sized with the same "cover" math as the video so each hotspot stays glued to
@@ -210,9 +211,9 @@ export function Hero() {
           <Link href="/catalog" className="btn bg-paper text-ink hover:bg-white">
             Подобрать керамогранит
           </Link>
-          <Link href="/configurator" className="btn border border-white/40 text-white hover:border-white hover:bg-white/10">
-            Создать свой интерьер
-          </Link>
+          <a href={site.plannerUrl} className="btn border border-white/40 text-white hover:border-white hover:bg-white/10">
+            Создать свой интерьер в 3D
+          </a>
         </div>
       </div>
 

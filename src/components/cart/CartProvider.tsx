@@ -46,6 +46,35 @@ export function useCart(): CartCtx {
 }
 
 export const defaultUnit = (kind: CartItem['kind']): CartUnit => (kind === 'tile' ? 'м²' : 'шт.');
+
+const isPath = (v: unknown): v is string => typeof v === 'string' && v.startsWith('/') && !v.startsWith('//') && v.length < 300;
+const isText = (v: unknown, max: number): v is string => typeof v === 'string' && v.length <= max;
+
+/** Items handed over by the 3D planner as `?cart=<base64url JSON>`; strictly validated, read once. */
+let plannerImport: CartItem[] | undefined;
+function readPlannerImport(): CartItem[] {
+  if (plannerImport) return plannerImport;
+  plannerImport = [];
+  try {
+    const url = new URL(window.location.href);
+    const raw = url.searchParams.get('cart');
+    if (!raw) return plannerImport;
+    url.searchParams.delete('cart');
+    window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+    const json = decodeURIComponent(escape(atob(raw.replace(/-/g, '+').replace(/_/g, '/'))));
+    const list: unknown = JSON.parse(json);
+    if (!Array.isArray(list)) return plannerImport;
+    plannerImport = list.slice(0, 50).flatMap((i): CartItem[] => {
+      if (!i || !isText(i.id, 300) || !['tile', 'door', 'sofa'].includes(i.kind)) return [];
+      if (!isText(i.title, 200) || !isText(i.details, 500) || !isPath(i.image) || !isPath(i.href)) return [];
+      const unit: CartUnit = i.unit === 'шт.' ? 'шт.' : 'м²';
+      return [{ id: i.id, kind: i.kind, title: i.title, details: i.details, image: i.image, href: i.href, qty: clampQty(Number(i.qty)), unit }];
+    });
+  } catch {
+    plannerImport = [];
+  }
+  return plannerImport;
+}
 const clampQty = (n: number) => Math.min(MAX_QTY, Math.max(1, Math.round(n) || 1));
 
 export function CartProvider({ children }: { children: ReactNode }) {
@@ -59,15 +88,28 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Restore after mount so SSR and first client render agree.
   useEffect(() => {
+    let saved: CartItem[] = [];
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed)) setItems(parsed.filter((i) => i && typeof i.id === 'string'));
+        if (Array.isArray(parsed)) saved = parsed.filter((i) => i && typeof i.id === 'string');
       }
     } catch {
       /* storage unavailable — cart just starts empty */
     }
+    const imported = readPlannerImport();
+    if (imported.length) {
+      const merged = [...saved];
+      for (const it of imported) {
+        const hit = merged.find((m) => m.id === it.id);
+        if (hit) hit.qty = clampQty(hit.qty + it.qty);
+        else merged.push(it);
+      }
+      saved = merged;
+      setOpen(true);
+    }
+    setItems(saved);
     setReady(true);
   }, []);
 

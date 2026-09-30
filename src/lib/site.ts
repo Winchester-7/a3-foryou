@@ -4,6 +4,8 @@ export const site = {
   shortDescription:
     'Керамогранит IDALGO, GRANITEA и «Уральский Гранит» в Бишкеке — от доступных решений до дизайнерских коллекций под мрамор, камень, дерево и бетон.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://a3foryou.kg',
+  /** 3D room planner — a separate app on its own domain so the heavy 3D engine never slows the shop */
+  plannerUrl: process.env.NEXT_PUBLIC_PLANNER_URL ?? 'https://a3-foryou-3d.netlify.app',
   locale: 'ru_KG',
   city: 'Бишкек',
   country: 'Кыргызская Республика',

@@ -58,7 +58,7 @@ export function Footer() {
                 <Link href="/sofas" className="text-ink-soft transition-colors hover:text-ink">Диваны и кресла</Link>
               </li>
               <li>
-                <Link href="/configurator" className="text-ink-soft transition-colors hover:text-ink">Создать свой интерьер</Link>
+                <a href={site.plannerUrl} className="text-ink-soft transition-colors hover:text-ink">Создать свой интерьер в 3D</a>
               </li>
               {interiorCategories
                 .filter((c) => c.slug !== 'divany' && c.slug !== 'dveri')

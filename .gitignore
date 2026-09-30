@@ -9,3 +9,4 @@ npm-debug.log*
 .vercel
 next-env.d.ts.bak
 tsconfig.tsbuildinfo
+public/catalog/_wood/
