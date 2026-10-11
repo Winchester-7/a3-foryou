@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import { Suspense, useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { Canvas, useFrame, useThree, type ThreeEvent } from '@react-three/fiber';
@@ -6,7 +7,7 @@ import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import { usePlanner } from '../store';
 import { Room } from './Room';
 import { FurnitureModel } from './Furniture';
-import { footprint, type PlacedObject } from '../data/objects';
+import { footprint, modelScale, type PlacedObject } from '../data/objects';
 import { canvasRef } from './canvasRef';
 
 
@@ -70,7 +71,9 @@ function Placed({ o }: { o: PlacedObject }) {
       }}
       onPointerOut={() => (document.body.style.cursor = '')}
     >
-      <FurnitureModel o={o} />
+      <group scale={modelScale(o)}>
+        <FurnitureModel o={o} />
+      </group>
       {selected && (
         <group position-y={0.012}>
           <mesh rotation-x={-Math.PI / 2}>

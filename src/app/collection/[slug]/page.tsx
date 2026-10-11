@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -7,7 +8,8 @@ import { CategoryBanner } from '@/components/catalog/CategoryBanner';
 import { ProductGrid } from '@/components/catalog/ProductGrid';
 import { Reveal } from '@/components/motion/Reveal';
 import { CallbackTrigger } from '@/components/forms/CallbackTrigger';
-import { collections, getCollection, getLook, brandName, PRICE_LABEL } from '@/lib/catalog';
+import { collections, getCollection, getLook, brandName, formatM2, FALLBACK_HERO, PRICE_LABEL } from '@/lib/catalog';
+import { BrandBadge } from '@/components/brand/BrandLogo';
 import { TECH_SPECS } from '@/lib/specs';
 import { site } from '@/lib/site';
 
@@ -22,7 +24,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: `${c.nameRu} (${c.name}) — ${brandName(c.brand)}`,
     description: c.description,
     alternates: { canonical: `/collection/${c.slug}` },
-    openGraph: { title: `${c.nameRu} — ${site.name}`, description: c.tagline, images: [c.hero] },
+    openGraph: { title: `${c.nameRu} — ${site.name}`, description: c.tagline, images: c.hero ? [c.hero] : [] },
   };
 }
 
@@ -56,14 +58,19 @@ export default function CollectionPage({ params }: { params: { slug: string } })
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <CategoryBanner
-        eyebrow={`${brandName(collection.brand)} · ${look.title}`}
+        eyebrow={
+          <span className="inline-flex flex-wrap items-center gap-3">
+            <BrandBadge brand={collection.brand} />
+            <span>{look.title}</span>
+          </span>
+        }
         title={`${collection.nameRu} · ${collection.name}`}
         text={collection.description}
-        src={collection.hero}
+        src={collection.hero || FALLBACK_HERO}
         stats={[
           { value: String(collection.products.length), label: 'декоров' },
-          { value: collection.sizes.join(' · '), label: 'форматы, см' },
-          { value: collection.thickness, label: 'толщина' },
+          { value: collection.sizes.join(' · '), label: 'форматы, мм' },
+          ...(collection.stockM2 ? [{ value: formatM2(collection.stockM2), label: 'в наличии' }] : []),
         ]}
       />
       <Breadcrumbs
@@ -83,24 +90,25 @@ export default function CollectionPage({ params }: { params: { slug: string } })
               <dl className="mt-5 divide-y divide-line border-y border-line">
                 <Spec label="Бренд">{brandName(collection.brand)}</Spec>
                 <Spec label="Тип">{look.title}</Spec>
-                <Spec label="Форматы">{collection.sizes.join(', ')} см{collection.formatNote ? ` · ${collection.formatNote}` : ''}</Spec>
-                <Spec label="Толщина">{collection.thickness}</Spec>
-                <Spec label="Поверхности">{collection.surfaces.join(', ')}</Spec>
-                <Spec label="Край">Ректифицированный</Spec>
+                <Spec label="Форматы">{collection.sizes.join(', ')} мм{collection.formatNote ? ` · ${collection.formatNote}` : ''}</Spec>
+                {collection.thickness && <Spec label="Толщина">{collection.thickness}</Spec>}
+                {collection.surfaces.length > 0 && <Spec label="Поверхности">{collection.surfaces.join(', ')}</Spec>}
                 <Spec label="Применение">{collection.applications.join(', ')}</Spec>
               </dl>
             </Reveal>
 
-            <Reveal delay={0.05}>
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                {TECH_SPECS.slice(0, 3).map(([k, v]) => (
-                  <div key={k} className="rounded-xl bg-surface p-4">
-                    <p className="text-lg font-semibold text-ink">{v}</p>
-                    <p className="mt-1 text-xs text-ink-faint">{k}</p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
+            {['idalgo', 'granitea', 'uralgranit'].includes(collection.brand) && (
+              <Reveal delay={0.05}>
+                <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                  {TECH_SPECS.slice(0, 3).map(([k, v]) => (
+                    <div key={k} className="rounded-xl bg-surface p-4">
+                      <p className="text-lg font-semibold text-ink">{v}</p>
+                      <p className="mt-1 text-xs text-ink-faint">{k}</p>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            )}
           </div>
 
           <Reveal delay={0.1}>
@@ -152,7 +160,7 @@ export default function CollectionPage({ params }: { params: { slug: string } })
                 <Link key={c.slug} href={`/collection/${c.slug}`} className="group block">
                   <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-surface2">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={c.hero} alt={c.nameRu} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]" />
+                    <img src={c.hero || FALLBACK_HERO} alt={c.nameRu} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]" />
                   </div>
                   <p className="mt-3 text-base font-medium text-ink transition-colors group-hover:text-accent">{c.nameRu}</p>
                   <p className="text-xs text-ink-faint">{c.tagline}</p>

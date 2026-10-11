@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -6,6 +7,7 @@ import { LeadDialogProvider } from '@/components/forms/LeadDialog';
 import { Footer } from '@/components/layout/Footer';
 import { FloatingContacts } from '@/components/layout/FloatingContacts';
 import { CartProvider } from '@/components/cart/CartProvider';
+import { LocaleProvider } from '@/components/i18n/LocaleProvider';
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
@@ -82,13 +84,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           К основному содержанию
         </a>
-        <LeadDialogProvider>
-          <CartProvider>
-            {children}
-            <Footer />
-            <FloatingContacts />
-          </CartProvider>
-        </LeadDialogProvider>
+        <LocaleProvider>
+          <LeadDialogProvider>
+            <CartProvider>
+              {children}
+              <Footer />
+              <FloatingContacts />
+            </CartProvider>
+          </LeadDialogProvider>
+        </LocaleProvider>
       </body>
     </html>
   );

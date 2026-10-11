@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { SVGProps } from 'react';
 
 const base = { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, strokeLinecap: 'round', strokeLinejoin: 'round' } as const;

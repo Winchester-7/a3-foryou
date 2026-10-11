@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useCart, defaultUnit, MAX_QTY, type CartItem } from './CartProvider';

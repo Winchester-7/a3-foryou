@@ -1,3 +1,4 @@
+/** @author Erbol king */
 /** Tile layout options — kept free of three.js so the UI shell can import them cheaply. */
 export type Layout = 'straight' | 'offset' | 'vertical';
 export type Grout = 'light' | 'mid' | 'dark';

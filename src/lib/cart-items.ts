@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { Collection, Product } from './types';
 import type { CartItem } from '@/components/cart/CartProvider';
 import { brandName } from './catalog';
@@ -7,7 +8,7 @@ export function tileCartItem(product: Product, collection?: Collection): Omit<Ca
   const details = [
     collection && `${brandName(collection.brand)}, коллекция «${collection.nameRu}»`,
     product.article && `арт. ${product.article}`,
-    product.sizes.length && `${product.sizes.join(', ')} см`,
+    product.sizes.length && `${product.sizes.join(', ')} мм`,
   ].filter(Boolean);
   return {
     id: `tile:${product.slug}`,

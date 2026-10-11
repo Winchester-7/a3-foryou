@@ -1,8 +1,12 @@
+/**
+ * A3 FOR YOU — site-wide settings and navigation.
+ * @author Erbol king
+ */
 export const site = {
   name: 'A3 FOR YOU',
   legalName: 'A3 FOR YOU — керамогранит и материалы для интерьера',
   shortDescription:
-    'Керамогранит IDALGO, GRANITEA и «Уральский Гранит» в Бишкеке — от доступных решений до дизайнерских коллекций под мрамор, камень, дерево и бетон.',
+    'Керамогранит IDALGO, GRANITEA, KERRANOVA, GRASARO и других заводов в Бишкеке — всё из наличия на складе: мрамор, камень, дерево и бетон.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://a3foryou.kg',
   /** 3D room planner — a separate app on its own domain so the heavy 3D engine never slows the shop */
   plannerUrl: process.env.NEXT_PUBLIC_PLANNER_URL ?? 'https://a3-foryou-3d.netlify.app',
@@ -25,20 +29,28 @@ export const site = {
   ],
 } as const;
 
-export type NavChild = { label: string; href: string; hint?: string };
 export type NavItem = {
   label: string;
   href: string;
-  mega?: 'catalog' | 'interior';
+  /** opens the catalog mega menu */
+  mega?: 'catalog';
+  /** leaves the shop (3D planner lives on its own domain) */
+  external?: boolean;
+  /** rendered as an accent call-to-action */
+  highlight?: boolean;
 };
+
+/** Doors and sofas are part of the catalog now, not separate top-level entries. */
+export const catalogExtras = [
+  { href: '/doors', title: 'Двери', tagline: 'Межкомнатные и входные двери' },
+  { href: '/sofas', title: 'Диваны', tagline: 'Диваны и кресла для интерьера' },
+] as const;
 
 export const mainNav: NavItem[] = [
   { label: 'Каталог', href: '/catalog', mega: 'catalog' },
-  { label: 'Двери', href: '/doors' },
-  { label: 'Диваны', href: '/sofas' },
   { label: 'Где купить', href: '/where-to-buy' },
   { label: 'О продукции', href: '/about' },
-  { label: 'Новости', href: '/news' },
+  { label: 'Портфолио', href: '/portfolio' },
   { label: 'Акции', href: '/promotions' },
-  { label: 'Интерьер и мебель', href: '/interior', mega: 'interior' },
+  { label: 'Создать свой интерьер', href: site.plannerUrl, external: true, highlight: true },
 ];

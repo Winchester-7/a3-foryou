@@ -1,43 +1,74 @@
+/** @author Erbol king */
+import Image from 'next/image';
 import Link from 'next/link';
-import { interiorCategories } from '@/lib/interior';
-import { Photo } from '@/components/media/Photo';
+import { doorModels } from '@/lib/doors';
+import { sofaModels } from '@/lib/sofas';
+import { site } from '@/lib/site';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
 
+/** Doors, sofas and the 3D planner — the part of the offer beyond tile. */
 export function InteriorTeaser() {
+  const cards = [
+    {
+      title: 'Двери',
+      text: 'Межкомнатные и входные двери: десятки моделей, цвета и размеры.',
+      href: '/doors',
+      image: doorModels[0]?.image,
+    },
+    {
+      title: 'Диваны',
+      text: 'Диваны и кресла в тканях и цветах под вашу палитру.',
+      href: '/sofas',
+      image: sofaModels[0]?.image,
+    },
+    {
+      title: 'Создать свой интерьер',
+      text: '3D-планировщик: примерьте плитку, двери и мебель в вашей комнате.',
+      href: site.plannerUrl,
+      external: true,
+      image: '/hero/keramo-scene.jpg',
+    },
+  ] as const;
+
   return (
     <section className="bg-surface py-20 lg:py-28">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Интерьер и мебель"
-          title="Не только плитка — цельный интерьер"
-          text="Диваны, двери, раковины, смесители и мебель для ванной, подобранные под палитру и фактуру наших коллекций керамогранита."
-          link={{ href: '/interior', label: 'Открыть раздел' }}
+          eyebrow="Не только плитка"
+          title="Цельный интерьер от пола до дверей"
+          text="Керамогранит, двери и мебель, подобранные в одну палитру — и 3D-планировщик, чтобы увидеть результат до покупки."
         />
 
-        <StaggerGroup className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
-          {interiorCategories.map((c) => (
-            <StaggerItem key={c.slug}>
-              <Link href={`/interior/${c.slug}`} className="group block">
-                <div className="relative aspect-square overflow-hidden rounded-2xl bg-surface2">
-                  <div className="h-full w-full transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
-                    <Photo
-                      seed={c.bannerSeed}
-                      width={480}
-                      height={480}
+        <StaggerGroup className="mt-14 grid gap-6 md:grid-cols-3">
+          {cards.map((c) => {
+            const body = (
+              <>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface2">
+                  {c.image && (
+                    <Image
+                      src={c.image}
                       alt={c.title}
-                      sizes="(max-width: 768px) 45vw, 18vw"
-                      grayscale
-                      className="h-full w-full object-cover"
+                      fill
+                      sizes="(max-width: 768px) 92vw, 31vw"
+                      className="object-cover transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]"
                     />
-                  </div>
+                  )}
                 </div>
-                <p className="mt-3 text-sm font-medium text-ink transition-colors group-hover:text-accent">
-                  {c.menuTitle}
-                </p>
-              </Link>
-            </StaggerItem>
-          ))}
+                <h3 className="mt-4 text-lg font-medium text-ink transition-colors group-hover:text-accent">{c.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{c.text}</p>
+              </>
+            );
+            return (
+              <StaggerItem key={c.title}>
+                {'external' in c ? (
+                  <a href={c.href} className="group block">{body}</a>
+                ) : (
+                  <Link href={c.href} className="group block">{body}</Link>
+                )}
+              </StaggerItem>
+            );
+          })}
         </StaggerGroup>
       </div>
     </section>

@@ -1,8 +1,12 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import type { Facets } from '@/lib/types';
+import { BrandLogo, hasBrandLogo } from '@/components/brand/BrandLogo';
+import { brandKeyFromName } from '@/lib/catalog';
 
 export type FilterKey = 'looks' | 'brands' | 'sizes' | 'surfaces' | 'applications';
 export type FilterState = Record<FilterKey, string[]>;
@@ -10,7 +14,7 @@ export type FilterState = Record<FilterKey, string[]>;
 const GROUPS: { key: FilterKey; label: string }[] = [
   { key: 'looks', label: 'Тип поверхности' },
   { key: 'brands', label: 'Бренд' },
-  { key: 'sizes', label: 'Размеры, см' },
+  { key: 'sizes', label: 'Размеры, мм' },
   { key: 'surfaces', label: 'Поверхность' },
   { key: 'applications', label: 'Применение' },
 ];
@@ -97,7 +101,13 @@ export function Filters({
                                 : 'border-line text-ink-soft hover:border-ink-faint hover:text-ink'
                             }`}
                           >
-                            {opt}
+                            {g.key === 'brands' && hasBrandLogo(brandKeyFromName(opt)) ? (
+                              <span className={`inline-flex rounded-full px-1.5 ${selected ? 'bg-white' : ''}`}>
+                                <BrandLogo brand={brandKeyFromName(opt)} height={14} />
+                              </span>
+                            ) : (
+                              opt
+                            )}
                           </button>
                         );
                       })}

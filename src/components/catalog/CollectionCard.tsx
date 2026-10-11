@@ -1,6 +1,8 @@
+/** @author Erbol king */
 import Link from 'next/link';
 import type { Collection } from '@/lib/types';
-import { brandName } from '@/lib/catalog';
+import { formatM2 } from '@/lib/catalog';
+import { BrandBadge } from '@/components/brand/BrandLogo';
 import { TileImage } from '@/components/media/TileImage';
 
 export function CollectionCard({ collection, priority = false }: { collection: Collection; priority?: boolean }) {
@@ -17,9 +19,7 @@ export function CollectionCard({ collection, priority = false }: { collection: C
             />
           </div>
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-ink/5 to-transparent" />
-          <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide2 text-ink">
-            {brandName(collection.brand)}
-          </span>
+          <BrandBadge brand={collection.brand} className="absolute left-4 top-4" />
           <div className="absolute inset-x-5 bottom-5 text-white">
             <p className="text-lg font-medium leading-tight">{collection.nameRu}</p>
             <p className="text-[11px] uppercase tracking-wide2 text-white/70">{collection.name}</p>
@@ -28,7 +28,8 @@ export function CollectionCard({ collection, priority = false }: { collection: C
       </Link>
       <p className="mt-3 text-xs leading-snug text-ink-faint">
         {collection.products.length}{' '}
-        {plural(collection.products.length, 'декор', 'декора', 'декоров')} · {collection.sizes.join(', ')} см
+        {plural(collection.products.length, 'декор', 'декора', 'декоров')} · {collection.sizes.join(', ')} мм
+        {collection.stockM2 ? ` · в наличии ${formatM2(collection.stockM2)}` : ''}
       </p>
     </article>
   );

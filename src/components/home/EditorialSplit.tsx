@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import Link from 'next/link';
 import { ParallaxImage } from '@/components/media/ParallaxImage';
 import { Reveal } from '@/components/motion/Reveal';

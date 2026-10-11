@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'motion/react';
 

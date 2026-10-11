@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import { AnimatePresence, motion } from 'motion/react';
 import { usePlanner } from './store';
 import { Setup } from './ui/Setup';

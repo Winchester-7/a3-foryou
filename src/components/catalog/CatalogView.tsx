@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { backdrop, drawerIn, drawerOut } from '@/lib/motion';

@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import Link from 'next/link';
 import { site } from '@/lib/site';
 

@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'motion/react';
@@ -7,6 +9,7 @@ import type { Collection, Product } from '@/lib/types';
 import { brandName } from '@/lib/catalog';
 import { PRICE_LABEL } from '@/lib/catalog';
 import { TileImage } from '@/components/media/TileImage';
+import { BrandBadge } from '@/components/brand/BrandLogo';
 import { useLeadDialog } from '@/components/forms/LeadDialog';
 import { AddToCart } from '@/components/cart/AddToCart';
 import { tileCartItem } from '@/lib/cart-items';
@@ -57,6 +60,7 @@ export function QuickView({
 
             <div className="bg-surface p-3">
               <div className="relative aspect-square overflow-hidden rounded-2xl">
+                <BrandBadge brand={data.collection.brand} className="absolute left-3 top-3 z-10" />
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={active}
@@ -93,9 +97,9 @@ export function QuickView({
 
               <dl className="mt-6 space-y-3 text-sm">
                 {data.product.article && <Row label="Артикул">{data.product.article}</Row>}
-                <Row label="Размеры">{data.product.sizes.join(', ')} см</Row>
+                <Row label="Размеры">{data.product.sizes.join(', ')} мм</Row>
                 <Row label="Поверхность">{data.product.surfaces.join(', ')}</Row>
-                <Row label="Толщина">{data.collection.thickness}</Row>
+                {data.collection.thickness && <Row label="Толщина">{data.collection.thickness}</Row>}
                 <Row label="Применение">{data.collection.applications.slice(0, 4).join(', ')}</Row>
               </dl>
 

@@ -1,6 +1,6 @@
+/** @author Erbol king */
 import Link from 'next/link';
 import { categories } from '@/lib/catalog';
-import { interiorCategories } from '@/lib/interior';
 import { site } from '@/lib/site';
 import { Logo } from '@/components/brand/Logo';
 import { CallbackTrigger } from '@/components/forms/CallbackTrigger';
@@ -48,8 +48,8 @@ export function Footer() {
             </ul>
           </nav>
 
-          <nav aria-label="Интерьер и мебель">
-            <p className="eyebrow">Интерьер и мебель</p>
+          <nav aria-label="Двери, диваны и интерьер">
+            <p className="eyebrow">Двери и мебель</p>
             <ul className="mt-5 space-y-2.5 text-sm">
               <li>
                 <Link href="/doors" className="text-ink-soft transition-colors hover:text-ink">Двери</Link>
@@ -58,17 +58,8 @@ export function Footer() {
                 <Link href="/sofas" className="text-ink-soft transition-colors hover:text-ink">Диваны и кресла</Link>
               </li>
               <li>
-                <a href={site.plannerUrl} className="text-ink-soft transition-colors hover:text-ink">Создать свой интерьер в 3D</a>
+                <a href={site.plannerUrl} className="text-ink-soft transition-colors hover:text-ink">Создать свой интерьер</a>
               </li>
-              {interiorCategories
-                .filter((c) => c.slug !== 'divany' && c.slug !== 'dveri')
-                .map((c) => (
-                  <li key={c.slug}>
-                    <Link href={`/interior/${c.slug}`} className="text-ink-soft transition-colors hover:text-ink">
-                      {c.menuTitle}
-                    </Link>
-                  </li>
-                ))}
             </ul>
           </nav>
 
@@ -101,6 +92,7 @@ export function Footer() {
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link href="/where-to-buy" className="hover:text-ink">Где купить</Link>
             <Link href="/about" className="hover:text-ink">О продукции</Link>
+            <Link href="/portfolio" className="hover:text-ink">Портфолио</Link>
             <Link href="/promotions" className="hover:text-ink">Акции</Link>
             <span>Политика конфиденциальности</span>
           </div>

@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import { Reveal, StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
 
 const ITEMS = [

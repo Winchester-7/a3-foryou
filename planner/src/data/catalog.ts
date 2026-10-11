@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import raw from './catalog.json';
 
 export const SITE_URL = (import.meta.env.VITE_SITE_URL as string | undefined) ?? 'https://legendary-cobbler-91081f.netlify.app';
@@ -15,7 +16,20 @@ export interface TileCollection {
   decors: Decor[];
 }
 export interface Swatch { name: string; hex: string }
-export interface DoorModel { slug: string; name: string; style: string; glass: boolean; colors: Swatch[]; image: string; href: string }
+export interface DoorModel {
+  slug: string;
+  name: string;
+  style: string;
+  /** series the model belongs to */
+  brand: string;
+  kind: 'interior' | 'entrance';
+  glass: boolean;
+  colors: Swatch[];
+  /** "800 × 2000", mm */
+  sizes: string[];
+  image: string;
+  href: string;
+}
 export interface SofaModel { slug: string; name: string; kind: 'Диван' | 'Кресло'; sizes: string[]; fabrics: Swatch[]; image: string; href: string }
 
 const data = raw as unknown as {
@@ -38,6 +52,12 @@ export function findDecor(id: string) {
 }
 export const findDoor = (slug?: string) => doorModels.find((d) => d.slug === slug) ?? doorModels[0];
 export const findSofa = (slug?: string) => sofaModels.find((s) => s.slug === slug) ?? sofaModels[0];
+
+/** "800 × 2000" (mm) → metres */
+export function doorDims(size: string): { w: number; h: number } {
+  const [w, h] = size.split('×').map((n) => parseInt(n, 10) / 1000);
+  return { w: w || 0.8, h: h || 2.0 };
+}
 
 /** "200 × 95" (cm) → metres */
 export function sofaDims(size: string): { w: number; d: number } {

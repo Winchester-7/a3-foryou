@@ -1,7 +1,8 @@
+/** @author Erbol king */
 import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
-import { usePlanner, type Surface } from '../store';
+import { usePlanner, wallTileHeight, type Surface } from '../store';
 import { findDecor, FINISH_ROUGHNESS } from '../data/catalog';
 import { useTileTexture } from './tileTexture';
 
@@ -21,13 +22,30 @@ function Floor() {
   const room = usePlanner((s) => s.room);
   const floor = usePlanner((s) => s.floor);
   const { spec, roughness } = specFor(floor);
-  const map = useTileTexture(spec, room.length, room.width);
+
+  // the tiled zone: a band of `coverage` of the room, starting from one side
+  const f = Math.min(1, Math.max(0.1, floor.coverage));
+  const alongX = floor.from === 'left' || floor.from === 'right';
+  const zoneW = alongX ? room.length * f : room.length; // X
+  const zoneD = alongX ? room.width : room.width * f; // Z
+  const cx = floor.from === 'left' ? -room.length / 2 + zoneW / 2 : floor.from === 'right' ? room.length / 2 - zoneW / 2 : 0;
+  const cz = floor.from === 'back' ? -room.width / 2 + zoneD / 2 : floor.from === 'front' ? room.width / 2 - zoneD / 2 : 0;
+
+  const map = useTileTexture(spec, zoneW, zoneD);
   return (
-    <mesh rotation-x={-Math.PI / 2} receiveShadow name="floor">
-      <planeGeometry args={[room.length, room.width]} />
-      {/* keyed by texture: adding a map to a live material needs a shader rebuild */}
-      <meshStandardMaterial key={map?.uuid ?? 'plain'} map={map} color={map ? '#ffffff' : '#d9d4cc'} roughness={roughness} metalness={0} envMapIntensity={roughness < 0.3 ? 0.9 : 0.5} />
-    </mesh>
+    <group>
+      {f < 1 && (
+        <mesh rotation-x={-Math.PI / 2} receiveShadow>
+          <planeGeometry args={[room.length, room.width]} />
+          <meshStandardMaterial color={floor.base} roughness={0.95} />
+        </mesh>
+      )}
+      <mesh rotation-x={-Math.PI / 2} position={[cx, f < 1 ? 0.002 : 0, cz]} receiveShadow name="floor">
+        <planeGeometry args={[zoneW, zoneD]} />
+        {/* keyed by texture: adding a map to a live material needs a shader rebuild */}
+        <meshStandardMaterial key={map?.uuid ?? 'plain'} map={map} color={map ? '#ffffff' : '#d9d4cc'} roughness={roughness} metalness={0} envMapIntensity={roughness < 0.3 ? 0.9 : 0.5} />
+      </mesh>
+    </group>
   );
 }
 
@@ -39,11 +57,11 @@ function Wall({ index, length }: { index: number; length: number }) {
   const stub = useRef<THREE.Group>(null);
 
   const H = room.height;
-  const tiled = walls.mode !== 'none';
-  const base = walls.mode === 'panel' && room.type === 'kitchen' ? 0.88 : 0;
-  const tileH = walls.mode === 'full' ? H : Math.min(walls.panelHeight, H - base);
+  const { base, height: tileH } = wallTileHeight(walls, room);
+  const tiled = walls.mode !== 'none' && walls.sides[index] !== false && tileH > 0;
+  const tileW = length * Math.min(1, Math.max(0.1, walls.span));
   const { spec, roughness } = specFor(walls);
-  const map = useTileTexture(spec, length, tileH);
+  const map = useTileTexture(spec, tileW, Math.max(tileH, 0.1));
 
   const L = room.length / 2;
   const W = room.width / 2;
@@ -85,7 +103,7 @@ function Wall({ index, length }: { index: number; length: number }) {
         </mesh>
         {tiled && (
           <mesh position={[0, base + tileH / 2, 0.002]} receiveShadow>
-            <planeGeometry args={[length, tileH]} />
+            <planeGeometry args={[tileW, tileH]} />
             <meshStandardMaterial key={map?.uuid ?? 'plain'} map={map} color={map ? '#ffffff' : '#d9d4cc'} roughness={Math.max(roughness, 0.2)} envMapIntensity={0.45} />
           </mesh>
         )}

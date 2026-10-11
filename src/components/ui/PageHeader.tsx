@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { ReactNode } from 'react';
 import { Reveal } from '@/components/motion/Reveal';
 

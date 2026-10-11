@@ -1,3 +1,4 @@
+/** @author Erbol king */
 /** Best-effort mapping of Russian colour / decor words to a swatch hex. */
 const MAP: [RegExp, string][] = [
   [/бел|bianco|white|санто|арктик|молочн|снеж|айс/i, '#f1efe9'],

@@ -1,3 +1,5 @@
+/** @author Erbol king */
+import type { ReactNode } from 'react';
 import { ParallaxImage } from '@/components/media/ParallaxImage';
 import { Reveal } from '@/components/motion/Reveal';
 
@@ -9,7 +11,7 @@ export function CategoryBanner({
   seed,
   stats,
 }: {
-  eyebrow: string;
+  eyebrow: ReactNode;
   title: string;
   text: string;
   src?: string;
@@ -29,7 +31,7 @@ export function CategoryBanner({
       />
       <div className="container-x relative pb-16 pt-[calc(var(--header-h)+72px)] lg:pb-20 lg:pt-[calc(var(--header-h)+120px)]">
         <Reveal>
-          <p className="text-[11px] font-medium uppercase tracking-brand text-white/65">{eyebrow}</p>
+          <div className="text-[11px] font-medium uppercase tracking-brand text-white/65">{eyebrow}</div>
           <h1 className="mt-4 max-w-3xl text-balance font-semibold leading-[1.05] tracking-[-0.02em] text-white" style={{ fontSize: 'clamp(2.1rem, 4.6vw, 3.6rem)' }}>
             {title}
           </h1>

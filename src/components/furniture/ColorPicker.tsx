@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import Link from 'next/link';
 
 export type Swatch = { name: string; hex: string; href?: string; image?: string };

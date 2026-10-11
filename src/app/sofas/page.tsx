@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { Metadata } from 'next';
 import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
@@ -36,7 +37,7 @@ export default function SofasPage() {
           { value: 'по размеру', label: 'изготовление' },
         ]}
       />
-      <Breadcrumbs items={[{ label: 'Интерьер и мебель', href: '/interior' }, { label: 'Диваны' }]} flush />
+      <Breadcrumbs items={[{ label: 'Каталог', href: '/catalog' }, { label: 'Диваны' }]} flush />
 
       <script
         type="application/ld+json"

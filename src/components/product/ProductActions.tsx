@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useLeadDialog } from '@/components/forms/LeadDialog';
 import { AddToCart } from '@/components/cart/AddToCart';
 import type { CartItem } from '@/components/cart/CartProvider';

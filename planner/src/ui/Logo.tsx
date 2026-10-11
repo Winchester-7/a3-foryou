@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import { SITE_URL } from '../data/catalog';
 
 /** Same mark as the main site; always links back to it. */

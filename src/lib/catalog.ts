@@ -1,80 +1,16 @@
-import type { Category, Collection, Facets, Look, LookSlug, Product } from './types';
+/** @author Erbol king */
+import type { Category, Collection, Facets, Product } from './types';
 import { collections } from './collections';
+import { getLook, looks } from './looks';
 
-export { collections };
+export { collections, getLook, looks };
 
-/* ------------------------------------------------------------------ */
-/*  Looks (тип поверхности)                                           */
-/* ------------------------------------------------------------------ */
-
-export const looks: Look[] = [
-  {
-    slug: 'marble',
-    title: 'Керамогранит под мрамор',
-    short: 'Под мрамор',
-    tagline: 'Мрамор Calacatta, Statuario и оникс в керамограните',
-    description:
-      'Благородные текстуры мрамора с узнаваемыми прожилками, глубокой цифровой печатью и поверхностями от матовой до полированной. Роскошь и лоск для гостиных, ванных комнат и ресепшн-зон.',
-  },
-  {
-    slug: 'stone',
-    title: 'Керамогранит под камень',
-    short: 'Под камень',
-    tagline: 'Травертин, известняк, сланец и кварцит',
-    description:
-      'Изысканность природного камня в спокойной палитре: травертин, известняк, доломит, терраццо. Структурные поверхности и крупные форматы для минималистичных пространств.',
-  },
-  {
-    slug: 'wood',
-    title: 'Керамогранит под дерево',
-    short: 'Под дерево',
-    tagline: 'Тепло древесины без ухода и ограничений',
-    description:
-      'Достоверный рисунок древесины с сучками и трещинками, структурная поверхность SR, формат доски 1200×195 мм. Подходит для тёплого пола, влажных зон, террас и фасадов.',
-  },
-  {
-    slug: 'loft',
-    title: 'Керамогранит в стиле лофт',
-    short: 'Лофт',
-    tagline: 'Бетон, цемент и окисленный металл',
-    description:
-      'Индустриальная эстетика: сложные фактуры бетона, цемента и патинированного металла. Брутальный характер и нейтральный фон для городских интерьеров и общественных пространств.',
-  },
-  {
-    slug: 'concrete',
-    title: 'Керамогранит под бетон',
-    short: 'Под бетон',
-    tagline: 'Ровный матовый бетон для архитектурного минимализма',
-    description:
-      'Однородная микрозернистая поверхность, нейтральные оттенки и большие форматы с минимальным швом. База для спокойных, светлых интерьеров и вентилируемых фасадов.',
-  },
-  {
-    slug: 'facade',
-    title: 'Керамогранит для фасадов',
-    short: 'Для фасадов',
-    tagline: 'Вентилируемые фасады с гарантией цвета',
-    description:
-      'Технический керамогранит для навесных фасадных систем: морозостойкость F100, устойчивость к ультрафиолету и городской среде, богатая цветовая палитра, ступени и доборные элементы.',
-  },
-  {
-    slug: 'technical',
-    title: 'Технический керамогранит',
-    short: 'Технический',
-    tagline: 'Износостойкие поверхности R9–R12',
-    description:
-      'Технический и усиленный керамогранит толщиной до 12 мм для помещений с высокой проходимостью: противоскользящие поверхности, ступени, промышленные зоны, входные группы.',
-  },
-];
-
-export function getLook(slug: string): Look | undefined {
-  return looks.find((l) => l.slug === slug);
-}
 
 /* ------------------------------------------------------------------ */
 /*  Categories (главное меню)                                         */
 /* ------------------------------------------------------------------ */
 
-export const categories: Category[] = [
+const ALL_CATEGORIES: Category[] = [
   {
     slug: 'pod-derevo',
     title: 'Керамогранит под дерево',
@@ -161,6 +97,13 @@ export const categories: Category[] = [
   },
 ];
 
+/** Only directions that have something in stock; the banner photo comes from the biggest collection with a photo. */
+export const categories: Category[] = ALL_CATEGORIES.map((c) => {
+  const pool = collections.filter(c.match).filter((x) => x.hero);
+  const best = [...pool].sort((p, q) => (q.stockM2 ?? 0) - (p.stockM2 ?? 0))[0];
+  return { ...c, heroCollection: best?.slug ?? '' };
+}).filter((c) => collections.some(c.match));
+
 export function getCategory(slug: string): Category | undefined {
   return categories.find((c) => c.slug === slug);
 }
@@ -202,15 +145,16 @@ export function getRelatedProducts(collection: Collection, exceptSlug: string, l
   return [...same, ...others].slice(0, limit);
 }
 
+/** Biggest collections that have real photography — shown on the home page. */
 export function getFeaturedCollections(limit = 8): Collection[] {
-  const picks = [
-    'lusso', 'natura', 'armor', 'neiva', 'villa-alba-cross', 'concepta', 'dolomiti', 'karatash',
-  ];
-  return picks
-    .map((s) => getCollection(s))
-    .filter((c): c is Collection => Boolean(c))
+  return collections
+    .filter((c) => c.hero && c.products.some((p) => p.image))
+    .sort((a, b) => (b.stockM2 ?? 0) - (a.stockM2 ?? 0))
     .slice(0, limit);
 }
+
+/** A photo that is guaranteed to exist — used when a banner has no image of its own. */
+export const FALLBACK_HERO: string = collections.find((c) => c.hero)?.hero ?? '/hero/keramo-scene.jpg';
 
 export function buildFacets(list: Collection[]): Facets {
   const uniq = (arr: string[]) => Array.from(new Set(arr)).sort((a, b) => a.localeCompare(b, 'ru'));
@@ -223,8 +167,34 @@ export function buildFacets(list: Collection[]): Facets {
   };
 }
 
+const BRAND_NAMES: Record<string, string> = {
+  idalgo: 'IDALGO',
+  granitea: 'GRANITEA',
+  uralgranit: 'Уральский Гранит',
+  grasaro: 'GRASARO',
+  kerranova: 'KERRANOVA',
+  china: 'Китай',
+  axima: 'Аксима',
+  kazakhstan: 'Казахстан',
+  uzbekistan: 'Узбекистан',
+  tianshan: 'Тянь-Шань',
+};
+
 export function brandName(b: string): string {
-  return b === 'idalgo' ? 'IDALGO' : b === 'granitea' ? 'GRANITEA' : 'Уральский Гранит';
+  return BRAND_NAMES[b] ?? b;
+}
+
+export function brandKeyFromName(name: string): string {
+  return Object.entries(BRAND_NAMES).find(([, v]) => v === name)?.[0] ?? name;
+}
+
+/** Total m² of a product that is on the warehouse list. */
+export function productStockM2(p: Product): number {
+  return Math.round((p.stock ?? []).reduce((n, s) => n + s.m2, 0));
+}
+
+export function formatM2(n: number): string {
+  return `${Math.round(n).toLocaleString('ru-RU')} м²`;
 }
 
 /** Prices are quoted on request — the source catalogs contain no retail pricing. */

@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { InteriorCategory } from './types';
 
 export const interiorCategories: InteriorCategory[] = [
