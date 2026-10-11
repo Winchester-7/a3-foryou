@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { usePlanner, type Tab } from '../store';
@@ -8,6 +9,7 @@ import { ObjectsPanel, SelectionBar } from './ObjectsPanel';
 import { EstimatePanel, shareUrl } from './EstimatePanel';
 import { canvasRef } from '../three/canvasRef';
 import { fmt } from './format';
+import { LanguageSwitch } from '../i18n/LocaleProvider';
 
 // three.js is the heavy part: load it after the shell is on screen
 const Scene = lazy(() => import('../three/Scene').then((m) => ({ default: m.Scene })));
@@ -129,6 +131,7 @@ export function Editor() {
               </button>
             ))}
           </div>
+          <LanguageSwitch className="mr-1 hidden sm:inline-flex" />
           <TopBtn label="Отменить (Ctrl+Z)" icon="undo" onClick={undo} disabled={!canUndo} />
           <TopBtn label="Снимок интерьера" icon="camera" onClick={snapshot} />
           <TopBtn label="Поделиться проектом" icon="share" onClick={share} />

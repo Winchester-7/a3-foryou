@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { Metadata } from 'next';
 import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
@@ -33,7 +34,7 @@ export default function AboutPage() {
 
       <section className="container-x">
         <Reveal>
-          <ParallaxImage src="/catalog/karatash/hero.jpg" alt="Керамогранит в интерьере" className="aspect-[21/9] rounded-3xl" strength={40} />
+          <ParallaxImage src="/tiles/karatash/interior-hero.jpg" alt="Керамогранит в интерьере" className="aspect-[21/9] rounded-3xl" strength={40} />
         </Reveal>
       </section>
 

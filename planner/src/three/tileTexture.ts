@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import * as THREE from 'three';
 import { useEffect, useState } from 'react';
 

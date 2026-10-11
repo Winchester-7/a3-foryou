@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import { ProductGrid, type GridItem } from './ProductGrid';
 
 export function RelatedProducts({ items, title = 'Смотрите также' }: { items: GridItem[]; title?: string }) {

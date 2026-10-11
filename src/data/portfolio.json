@@ -1,0 +1,151 @@
+[
+ {
+  "slug": "interer-allaki",
+  "title": "Коллекция «Аллаки» в интерьере",
+  "subtitle": "GRANITEA · 1200×600, 600×600 мм",
+  "description": "",
+  "kind": "Камень",
+  "collections": [
+   "allaki"
+  ],
+  "cover": "/tiles/allaki/interior-hero.jpg",
+  "gallery": [
+   "/tiles/allaki/interior-hero.jpg",
+   "/tiles/allaki/interior-1.jpg"
+  ]
+ },
+ {
+  "slug": "interer-gerda",
+  "title": "Коллекция «Герда» в интерьере",
+  "subtitle": "IDALGO · 1200×600 мм",
+  "description": "",
+  "kind": "Камень",
+  "collections": [
+   "gerda"
+  ],
+  "cover": "/tiles/gerda/interior-hero.jpg",
+  "gallery": [
+   "/tiles/gerda/interior-hero.jpg",
+   "/tiles/gerda/interior-1.jpg",
+   "/tiles/gerda/interior-2.jpg",
+   "/tiles/gerda/interior-3.jpg"
+  ]
+ },
+ {
+  "slug": "interer-taganay",
+  "title": "Коллекция «Таганай» в интерьере",
+  "subtitle": "GRANITEA · 1200×600, 600×600 мм",
+  "description": "",
+  "kind": "Лофт",
+  "collections": [
+   "taganay"
+  ],
+  "cover": "/tiles/taganay/interior-hero.jpg",
+  "gallery": [
+   "/tiles/taganay/interior-hero.jpg",
+   "/tiles/taganay/interior-1.jpg",
+   "/tiles/taganay/interior-2.jpg",
+   "/tiles/taganay/interior-3.jpg"
+  ]
+ },
+ {
+  "slug": "interer-sandra",
+  "title": "Коллекция «Сандра» в интерьере",
+  "subtitle": "IDALGO · 1200×600 мм",
+  "description": "",
+  "kind": "Мрамор",
+  "collections": [
+   "sandra"
+  ],
+  "cover": "/tiles/sandra/interior-hero.jpg",
+  "gallery": [
+   "/tiles/sandra/interior-hero.jpg",
+   "/tiles/sandra/interior-1.jpg"
+  ]
+ },
+ {
+  "slug": "interer-onix",
+  "title": "Коллекция «Оникс» в интерьере",
+  "subtitle": "IDALGO · 1200×600 мм",
+  "description": "",
+  "kind": "Мрамор",
+  "collections": [
+   "onix"
+  ],
+  "cover": "/tiles/onix/interior-hero.jpg",
+  "gallery": [
+   "/tiles/onix/interior-hero.jpg",
+   "/tiles/onix/interior-1.jpg",
+   "/tiles/onix/interior-2.jpg",
+   "/tiles/onix/interior-3.jpg"
+  ]
+ },
+ {
+  "slug": "interer-wood-classic",
+  "title": "Коллекция «Вуд Классик» в интерьере",
+  "subtitle": "IDALGO · 1200×195, 1200×600 мм",
+  "description": "",
+  "kind": "Дерево",
+  "collections": [
+   "wood-classic"
+  ],
+  "cover": "/tiles/wood-classic/interior-hero.jpg",
+  "gallery": [
+   "/tiles/wood-classic/interior-hero.jpg",
+   "/tiles/wood-classic/interior-1.jpg",
+   "/tiles/wood-classic/interior-2.jpg",
+   "/tiles/wood-classic/interior-3.jpg",
+   "/tiles/wood-classic/interior-4.jpg",
+   "/tiles/wood-classic/interior-5.jpg"
+  ]
+ },
+ {
+  "slug": "interer-kirety",
+  "title": "Коллекция «Киреты» в интерьере",
+  "subtitle": "GRANITEA · 600×600 мм",
+  "description": "",
+  "kind": "Мрамор",
+  "collections": [
+   "kirety"
+  ],
+  "cover": "/tiles/kirety/interior-hero.jpg",
+  "gallery": [
+   "/tiles/kirety/interior-hero.jpg",
+   "/tiles/kirety/interior-1.jpg",
+   "/tiles/kirety/interior-2.jpg"
+  ]
+ },
+ {
+  "slug": "interer-sugomak",
+  "title": "Коллекция «Сугомак» в интерьере",
+  "subtitle": "GRANITEA · 1200×600, 600×600 мм",
+  "description": "",
+  "kind": "Мрамор",
+  "collections": [
+   "sugomak"
+  ],
+  "cover": "/tiles/sugomak/interior-hero.jpg",
+  "gallery": [
+   "/tiles/sugomak/interior-hero.jpg",
+   "/tiles/sugomak/interior-1.jpg",
+   "/tiles/sugomak/interior-2.jpg"
+  ]
+ },
+ {
+  "slug": "interer-sinara",
+  "title": "Коллекция «Синара» в интерьере",
+  "subtitle": "GRANITEA · 1200×600, 600×600 мм",
+  "description": "",
+  "kind": "Мрамор",
+  "collections": [
+   "sinara"
+  ],
+  "cover": "/tiles/sinara/interior-hero.jpg",
+  "gallery": [
+   "/tiles/sinara/interior-hero.jpg",
+   "/tiles/sinara/interior-1.jpg",
+   "/tiles/sinara/interior-2.jpg",
+   "/tiles/sinara/interior-3.jpg"
+  ]
+ }
+]

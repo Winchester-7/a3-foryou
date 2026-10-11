@@ -1,18 +1,21 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { TileImage } from '@/components/media/TileImage';
+import { BrandBadge } from '@/components/brand/BrandLogo';
 
 const ease = [0.23, 1, 0.32, 1] as const;
 
-export function ProductGallery({ images, name }: { images: string[]; name: string }) {
+export function ProductGallery({ images, name, brand }: { images: string[]; name: string; brand?: string }) {
   const reduce = useReducedMotion();
   const [active, setActive] = useState(0);
   const [zoom, setZoom] = useState(false);
   const [pos, setPos] = useState({ x: 50, y: 50 });
   const frameRef = useRef<HTMLDivElement>(null);
-  const list = images.length ? images : ['/catalog/lusso/hero.jpg'];
+  const list = images.length ? images : [''];
 
   function onMove(e: React.MouseEvent) {
     const el = frameRef.current;
@@ -45,9 +48,12 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
             <TileImage src={list[active]} alt={name} sizes="(max-width: 1024px) 100vw, 50vw" priority />
           </motion.div>
         </AnimatePresence>
-        <span className="pointer-events-none absolute right-4 top-4 rounded-full bg-paper/85 px-3 py-1 text-[10px] uppercase tracking-wide2 text-ink-soft">
-          Наведите для увеличения
-        </span>
+        {brand && <BrandBadge brand={brand} className="pointer-events-none absolute left-4 top-4" />}
+        {list[active] && (
+          <span className="pointer-events-none absolute right-4 top-4 rounded-full bg-paper/85 px-3 py-1 text-[10px] uppercase tracking-wide2 text-ink-soft">
+            Наведите для увеличения
+          </span>
+        )}
       </div>
 
       {list.length > 1 && (

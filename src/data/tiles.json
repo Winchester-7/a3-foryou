@@ -1,0 +1,7786 @@
+{
+ "generated": "2026-10-11",
+ "collections": [
+  {
+   "slug": "tianshan-stock",
+   "name": "Tian Shan",
+   "nameRu": "Тянь-Шань",
+   "brand": "tianshan",
+   "look": "stone",
+   "sizes": [
+    "1200×600",
+    "800×400",
+    "600×600"
+   ],
+   "surfaces": [],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "Тянь-Шань · 1200×600, 800×400, 600×600 мм",
+   "description": "",
+   "hero": "",
+   "gallery": [],
+   "swatches": [],
+   "products": [
+    {
+     "slug": "tianshan-66-m-132",
+     "name": "66 M 132",
+     "nameRu": "66 M 132",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 2454,
+       "m2": 883.44,
+       "label": "66 M 132 (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "tianshan-66-m-134",
+     "name": "66 M 134",
+     "nameRu": "66 M 134",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 6291,
+       "m2": 2264.76,
+       "label": "66 M 134 (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "tianshan-66-m-137",
+     "name": "66 M 137",
+     "nameRu": "66 M 137",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 5923,
+       "m2": 2132.28,
+       "label": "66 M 137 (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "tianshan-66-m-135",
+     "name": "66 M 135",
+     "nameRu": "66 M 135",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 3577,
+       "m2": 1287.72,
+       "label": "66 M 135 (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "tianshan-tp-8016",
+     "name": "TP 8016",
+     "nameRu": "TP 8016",
+     "color": "",
+     "article": "TP8016",
+     "sizes": [
+      "800×400"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "800×400",
+       "surface": "",
+       "pcs": 3702,
+       "m2": 1184.64,
+       "label": "TP 8016 (40*80)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "tianshan-tp-8015",
+     "name": "TP 8015",
+     "nameRu": "TP 8015",
+     "color": "",
+     "article": "TP8015",
+     "sizes": [
+      "800×400"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "800×400",
+       "surface": "",
+       "pcs": 1257,
+       "m2": 402.24,
+       "label": "TP 8015 (40*80)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "tianshan-tp-8013",
+     "name": "TP 8013",
+     "nameRu": "TP 8013",
+     "color": "",
+     "article": "TP8013",
+     "sizes": [
+      "800×400"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "800×400",
+       "surface": "",
+       "pcs": 160,
+       "m2": 51.2,
+       "label": "TP 8013 (40*80)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "tianshan-tp-8010",
+     "name": "TP 8010",
+     "nameRu": "TP 8010",
+     "color": "",
+     "article": "TP8010",
+     "sizes": [
+      "800×400"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "800×400",
+       "surface": "",
+       "pcs": 10,
+       "m2": 3.2,
+       "label": "TP 8010 (40*80)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "tianshan-tp612m025",
+     "name": "TP612M025",
+     "nameRu": "TP612M025",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 553,
+       "m2": 398.16,
+       "label": "TP612M025 (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "tianshan-tp612m022",
+     "name": "TP612M022",
+     "nameRu": "TP612M022",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 4416,
+       "m2": 3179.52,
+       "label": "TP612M022 (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "tianshan-tp612m026",
+     "name": "TP612M026",
+     "nameRu": "TP612M026",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 3192,
+       "m2": 2298.24,
+       "label": "TP612M026 (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "tianshan-tp612m023",
+     "name": "TP612M023",
+     "nameRu": "TP612M023",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 4296,
+       "m2": 3093.12,
+       "label": "TP612M023 (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    }
+   ],
+   "stockM2": 17178.5
+  },
+  {
+   "slug": "ural-facades",
+   "name": "Ural Facades",
+   "nameRu": "Уральские фасады",
+   "brand": "uralgranit",
+   "look": "facade",
+   "sizes": [
+    "1200×600",
+    "1200×300",
+    "600×600",
+    "595×595",
+    "592×592"
+   ],
+   "surfaces": [
+    "Матовая",
+    "Полированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Вентилируемые фасады",
+    "Входные группы",
+    "Коммерческие здания",
+    "Цоколь"
+   ],
+   "tagline": "Уральский Гранит · 1200×600, 1200×300, 600×600, 595×595, 592×592 мм",
+   "description": "",
+   "hero": "/tiles/ural-facades/u100-1.jpg",
+   "gallery": [
+    "/tiles/ural-facades/u100-1.jpg",
+    "/tiles/ural-facades/uf000-1.jpg",
+    "/tiles/ural-facades/uf001-1.jpg",
+    "/tiles/ural-facades/uf002-1.jpg",
+    "/tiles/ural-facades/uf003-1.jpg",
+    "/tiles/ural-facades/uf004-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/ural-facades/u100-1.jpg",
+    "/tiles/ural-facades/uf000-1.jpg",
+    "/tiles/ural-facades/uf001-1.jpg",
+    "/tiles/ural-facades/uf002-1.jpg",
+    "/tiles/ural-facades/uf003-1.jpg",
+    "/tiles/ural-facades/uf004-1.jpg",
+    "/tiles/ural-facades/uf005-1.jpg",
+    "/tiles/ural-facades/uf006-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "u100",
+     "name": "U100",
+     "nameRu": "Молочный",
+     "color": "Молочный",
+     "article": "U100",
+     "sizes": [
+      "1200×300",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая",
+      "Полированная"
+     ],
+     "image": "/tiles/ural-facades/u100-1.jpg",
+     "images": [
+      "/tiles/ural-facades/u100-1.jpg",
+      "/tiles/ural-facades/u100-2.jpg",
+      "/tiles/ural-facades/u100-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×300",
+       "surface": "Матовая",
+       "pcs": 408,
+       "m2": 144.43,
+       "label": "U 100 MR (120*30)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 2476,
+       "m2": 891.36,
+       "label": "U 100 MR 60x60 (64Н)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Полированная",
+       "pcs": 138,
+       "m2": 49.68,
+       "label": "U 100 PR 60x60"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/u100/"
+    },
+    {
+     "slug": "uf000",
+     "name": "UF000",
+     "nameRu": "Серый",
+     "color": "Серый",
+     "article": "UF000",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/ural-facades/uf000-1.jpg",
+     "images": [
+      "/tiles/ural-facades/uf000-1.jpg",
+      "/tiles/ural-facades/uf000-2.jpg",
+      "/tiles/ural-facades/uf000-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 13840,
+       "m2": 4982.4,
+       "label": "UF 000 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/uf000/"
+    },
+    {
+     "slug": "uf001",
+     "name": "UF001",
+     "nameRu": "Белый",
+     "color": "Белый",
+     "article": "UF001",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/ural-facades/uf001-1.jpg",
+     "images": [
+      "/tiles/ural-facades/uf001-1.jpg",
+      "/tiles/ural-facades/uf001-2.jpg",
+      "/tiles/ural-facades/uf001-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 972,
+       "m2": 349.92,
+       "label": "UF 001 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/uf001/"
+    },
+    {
+     "slug": "uf002",
+     "name": "UF002",
+     "nameRu": "Светло-серый",
+     "color": "Светло-серый",
+     "article": "UF002",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/ural-facades/uf002-1.jpg",
+     "images": [
+      "/tiles/ural-facades/uf002-1.jpg",
+      "/tiles/ural-facades/uf002-2.jpg",
+      "/tiles/ural-facades/uf002-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 1658,
+       "m2": 596.88,
+       "label": "UF 002 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/uf002/"
+    },
+    {
+     "slug": "uf003",
+     "name": "UF003",
+     "nameRu": "Темно-серый",
+     "color": "Темно-серый",
+     "article": "UF003",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/ural-facades/uf003-1.jpg",
+     "images": [
+      "/tiles/ural-facades/uf003-1.jpg",
+      "/tiles/ural-facades/uf003-2.jpg",
+      "/tiles/ural-facades/uf003-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 586,
+       "m2": 210.96,
+       "label": "UF 003 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/uf003/"
+    },
+    {
+     "slug": "uf004",
+     "name": "UF004",
+     "nameRu": "Асфальт",
+     "color": "Асфальт",
+     "article": "UF004",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/ural-facades/uf004-1.jpg",
+     "images": [
+      "/tiles/ural-facades/uf004-1.jpg",
+      "/tiles/ural-facades/uf004-2.jpg",
+      "/tiles/ural-facades/uf004-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 591,
+       "m2": 212.76,
+       "label": "UF 004 MR 60х60 (48)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/uf004/"
+    },
+    {
+     "slug": "uf005",
+     "name": "UF005",
+     "nameRu": "Кофе с молоком",
+     "color": "молоком",
+     "article": "UF005",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/ural-facades/uf005-1.jpg",
+     "images": [
+      "/tiles/ural-facades/uf005-1.jpg",
+      "/tiles/ural-facades/uf005-2.jpg",
+      "/tiles/ural-facades/uf005-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 297,
+       "m2": 106.92,
+       "label": "UF 005 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/uf005/"
+    },
+    {
+     "slug": "uf006",
+     "name": "UF006",
+     "nameRu": "Шоколад",
+     "color": "Шоколад",
+     "article": "UF006",
+     "sizes": [
+      "1200×300",
+      "600×600",
+      "595×595"
+     ],
+     "surfaces": [
+      "Матовая",
+      "Полированная"
+     ],
+     "image": "/tiles/ural-facades/uf006-1.jpg",
+     "images": [
+      "/tiles/ural-facades/uf006-1.jpg",
+      "/tiles/ural-facades/uf006-2.jpg",
+      "/tiles/ural-facades/uf006-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "595×595",
+       "surface": "Матовая",
+       "pcs": 113,
+       "m2": 40.0,
+       "label": "UF 006 MR (595*595)"
+      },
+      {
+       "size": "1200×300",
+       "surface": "Матовая",
+       "pcs": 948,
+       "m2": 341.28,
+       "label": "UF 006 MR (120*30)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 15,
+       "m2": 5.4,
+       "label": "UF 006 MR 60х60"
+      },
+      {
+       "size": "600×600",
+       "surface": "Полированная",
+       "pcs": 1277,
+       "m2": 459.72,
+       "label": "UF 006 PR 60х60"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/uf006/"
+    },
+    {
+     "slug": "uf010",
+     "name": "UF010",
+     "nameRu": "Светло-молочный",
+     "color": "Светло-молочный",
+     "article": "UF010",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/ural-facades/uf010-1.jpg",
+     "images": [
+      "/tiles/ural-facades/uf010-1.jpg",
+      "/tiles/ural-facades/uf010-2.jpg",
+      "/tiles/ural-facades/uf010-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 4000,
+       "m2": 1440.0,
+       "label": "UF 010 MR 60х60 T-48"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/uf010/"
+    },
+    {
+     "slug": "uf013",
+     "name": "UF013",
+     "nameRu": "Черный",
+     "color": "Черный",
+     "article": "UF013",
+     "sizes": [
+      "1200×600",
+      "600×600",
+      "592×592"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/ural-facades/uf013-1.jpg",
+     "images": [
+      "/tiles/ural-facades/uf013-1.jpg",
+      "/tiles/ural-facades/uf013-2.jpg",
+      "/tiles/ural-facades/uf013-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "592×592",
+       "surface": "Матовая",
+       "pcs": 256,
+       "m2": 89.6,
+       "label": "UF 013 MR (592*592) т-54"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 761,
+       "m2": 547.92,
+       "label": "UF 013 MR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 1272,
+       "m2": 457.92,
+       "label": "UF 013 MR (60*60) т-50"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/uf013/"
+    },
+    {
+     "slug": "uf019",
+     "name": "UF019",
+     "nameRu": "Насыщенно-черный",
+     "color": "Насыщенно-черный",
+     "article": "UF019",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/ural-facades/uf019-1.jpg",
+     "images": [
+      "/tiles/ural-facades/uf019-1.jpg",
+      "/tiles/ural-facades/uf019-2.jpg",
+      "/tiles/ural-facades/uf019-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 608,
+       "m2": 437.76,
+       "label": "UF 019 MR (120*60) т-46b"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 2159,
+       "m2": 777.24,
+       "label": "UF 019 MR 60х60 (Т-к52 )"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/uf019/"
+    },
+    {
+     "slug": "uf015",
+     "name": "UF015",
+     "nameRu": "Горчичный",
+     "color": "Горчичный",
+     "article": "UF015",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/ural-facades/uf015-1.jpg",
+     "images": [
+      "/tiles/ural-facades/uf015-1.jpg",
+      "/tiles/ural-facades/uf015-2.jpg",
+      "/tiles/ural-facades/uf015-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 51,
+       "m2": 18.36,
+       "label": "UF 015 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-facades/uf015/"
+    }
+   ],
+   "stockM2": 12160.5
+  },
+  {
+   "slug": "kazakhstan-stock",
+   "name": "Kazakhstan",
+   "nameRu": "Казахстан",
+   "brand": "kazakhstan",
+   "look": "stone",
+   "sizes": [
+    "1200×600",
+    "600×600",
+    "598×598",
+    "580×580"
+   ],
+   "surfaces": [
+    "Матовая",
+    "Полированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "Казахстан · 1200×600, 600×600, 598×598, 580×580 мм",
+   "description": "",
+   "hero": "",
+   "gallery": [],
+   "swatches": [],
+   "products": [
+    {
+     "slug": "kazakhstan-zf-001-matovyy",
+     "name": "ZF 001 матовый",
+     "nameRu": "ZF 001 матовый",
+     "color": "",
+     "article": "ZF001",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 1808,
+       "m2": 650.88,
+       "label": "ZF 001 матовый (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-z66-f011",
+     "name": "Z66 F011",
+     "nameRu": "Z66 F011",
+     "color": "",
+     "article": "Z66",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 816,
+       "m2": 293.76,
+       "label": "Z66 F011 (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-z66-d-09-matovyy",
+     "name": "Z66 D 09 матовый",
+     "nameRu": "Z66 D 09 матовый",
+     "color": "",
+     "article": "Z66",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 9,
+       "m2": 3.24,
+       "label": "Z66 D 09 матовый (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-z66-d28",
+     "name": "Z66 D28",
+     "nameRu": "Z66 D28",
+     "color": "",
+     "article": "Z66",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 260,
+       "m2": 93.6,
+       "label": "Z66 D28 (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-66-n-26-matovyy",
+     "name": "66 N 26 матовый",
+     "nameRu": "66 N 26 матовый",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 29,
+       "m2": 10.44,
+       "label": "66 N 26 матовый (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-z-66-f-013-matovyy",
+     "name": "Z 66 F 013 матовый",
+     "nameRu": "Z 66 F 013 матовый",
+     "color": "",
+     "article": "Z66",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 22,
+       "m2": 7.92,
+       "label": "Z 66 F 013 матовый (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-66-n-19-matovyy",
+     "name": "66 N 19 матовый",
+     "nameRu": "66 N 19 матовый",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 98,
+       "m2": 35.28,
+       "label": "66 N 19 матовый (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-cf612001",
+     "name": "CF612001",
+     "nameRu": "CF612001",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 48,
+       "m2": 34.56,
+       "label": "CF612001 (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-cf66035",
+     "name": "CF66035",
+     "nameRu": "CF66035",
+     "color": "",
+     "article": "CF66035",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 1800,
+       "m2": 648.0,
+       "label": "CF66035 (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-zg660055",
+     "name": "ZG660055",
+     "nameRu": "ZG660055",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 1050,
+       "m2": 378.0,
+       "label": "ZG660055 (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-cf66033",
+     "name": "CF66033",
+     "nameRu": "CF66033",
+     "color": "",
+     "article": "CF66033",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 1800,
+       "m2": 648.0,
+       "label": "CF66033 (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-zat001",
+     "name": "ZАТ001",
+     "nameRu": "ZАТ001",
+     "color": "",
+     "article": "ZAT001",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 299,
+       "m2": 107.64,
+       "label": "ZАТ001 (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-p-612-j21",
+     "name": "P 612 J21",
+     "nameRu": "P 612 J21",
+     "color": "",
+     "article": "P612",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Полированная",
+       "pcs": 32,
+       "m2": 23.04,
+       "label": "P 612 J21 PR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-p-612-j09",
+     "name": "P 612 J09",
+     "nameRu": "P 612 J09",
+     "color": "",
+     "article": "P612",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Полированная",
+       "pcs": 555,
+       "m2": 399.6,
+       "label": "P 612 J09 PR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-p-612-n08",
+     "name": "P 612 N08",
+     "nameRu": "P 612 N08",
+     "color": "",
+     "article": "P612",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Полированная",
+       "pcs": 186,
+       "m2": 133.92,
+       "label": "P 612 N08 PR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-p-612-n12",
+     "name": "P 612 N12",
+     "nameRu": "P 612 N12",
+     "color": "",
+     "article": "P612",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Полированная",
+       "pcs": 387,
+       "m2": 278.64,
+       "label": "P 612 N12 PR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-x-612-b17",
+     "name": "X 612 B17",
+     "nameRu": "X 612 B17",
+     "color": "",
+     "article": "X612",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 318,
+       "m2": 228.96,
+       "label": "X 612 B17 MR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-x-612-b15",
+     "name": "X 612 B15",
+     "nameRu": "X 612 B15",
+     "color": "",
+     "article": "X612",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 617,
+       "m2": 444.24,
+       "label": "X 612 B15 MR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-p-612-n17",
+     "name": "P 612 N17",
+     "nameRu": "P 612 N17",
+     "color": "",
+     "article": "P612",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Полированная",
+       "pcs": 276,
+       "m2": 198.72,
+       "label": "P 612 N17 PR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-x-612-b11",
+     "name": "X 612 B11",
+     "nameRu": "X 612 B11",
+     "color": "",
+     "article": "X612",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 105,
+       "m2": 75.6,
+       "label": "X 612 B11 MR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-x-612-b13",
+     "name": "X 612 B13",
+     "nameRu": "X 612 B13",
+     "color": "",
+     "article": "X612",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 214,
+       "m2": 154.08,
+       "label": "X 612 B13 MR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-x-612-b18",
+     "name": "X 612 B18",
+     "nameRu": "X 612 B18",
+     "color": "",
+     "article": "X612",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 4,
+       "m2": 2.88,
+       "label": "X 612 B18 (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-concrete-anthracite",
+     "name": "Concrete Anthracite",
+     "nameRu": "Concrete Anthracite",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "598×598"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "598×598",
+       "surface": "",
+       "pcs": 1606,
+       "m2": 578.16,
+       "label": "Concrete Anthracite(598*598)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-beton-anthracite",
+     "name": "Beton anthracite",
+     "nameRu": "Beton anthracite",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "598×598"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "598×598",
+       "surface": "",
+       "pcs": 252,
+       "m2": 90.72,
+       "label": "Beton anthracite (598*598)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-beton-ligth-grey",
+     "name": "Beton ligth Grey",
+     "nameRu": "Beton ligth Grey",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "598×598"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "598×598",
+       "surface": "",
+       "pcs": 1347,
+       "m2": 484.92,
+       "label": "Beton ligth Grey(598*598)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-old-cement-base-grey",
+     "name": "Old cement base Grey",
+     "nameRu": "Old cement base Grey",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "598×598"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "598×598",
+       "surface": "",
+       "pcs": 9,
+       "m2": 3.24,
+       "label": "Old cement base Grey(598*598)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-concrete-grey",
+     "name": "Concrete Grey",
+     "nameRu": "Concrete Grey",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "598×598"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "598×598",
+       "surface": "",
+       "pcs": 69,
+       "m2": 24.84,
+       "label": "Concrete Grey(598*598)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-concrete-light-grey",
+     "name": "Concrete light Grey",
+     "nameRu": "Concrete light Grey",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "598×598"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "598×598",
+       "surface": "",
+       "pcs": 1079,
+       "m2": 388.44,
+       "label": "Concrete light Grey(598*598)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-urban-light-grey",
+     "name": "Urban light Grey",
+     "nameRu": "Urban light Grey",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "598×598"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "598×598",
+       "surface": "",
+       "pcs": 798,
+       "m2": 287.28,
+       "label": "Urban light Grey(598*598)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-trevi-base-grey",
+     "name": "Trevi Base Grey",
+     "nameRu": "Trevi Base Grey",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "598×598"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "598×598",
+       "surface": "",
+       "pcs": 1,
+       "m2": 0.36,
+       "label": "Trevi Base Grey(598*598)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-urdan-grey",
+     "name": "Urdan grey",
+     "nameRu": "Urdan grey",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "598×598"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "598×598",
+       "surface": "",
+       "pcs": 1275,
+       "m2": 459.0,
+       "label": "Urdan grey (598*598)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-luca-beige",
+     "name": "Luca Beige",
+     "nameRu": "Luca Beige",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "580×580"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "580×580",
+       "surface": "",
+       "pcs": 525,
+       "m2": 178.5,
+       "label": "Luca Beige(580*580)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-lagos-black",
+     "name": "Lagos Black",
+     "nameRu": "Lagos Black",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "580×580"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "580×580",
+       "surface": "",
+       "pcs": 919,
+       "m2": 312.46,
+       "label": "Lagos Black(580*580)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-gaia-beige",
+     "name": "Gaia Beige",
+     "nameRu": "Gaia Beige",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "580×580"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "580×580",
+       "surface": "",
+       "pcs": 375,
+       "m2": 127.5,
+       "label": "Gaia Beige(580*580)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-sintra-beige",
+     "name": "Sintra Beige",
+     "nameRu": "Sintra Beige",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "580×580"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "580×580",
+       "surface": "",
+       "pcs": 218,
+       "m2": 74.12,
+       "label": "Sintra Beige(580*580)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-sintra-cream",
+     "name": "Sintra cream",
+     "nameRu": "Sintra cream",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "598×598"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "598×598",
+       "surface": "",
+       "pcs": 384,
+       "m2": 138.24,
+       "label": "Sintra cream(598*598)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kazakhstan-concrete-base-grey",
+     "name": "Concrete base grey",
+     "nameRu": "Concrete base grey",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 887,
+       "m2": 319.32,
+       "label": "Concrete base grey"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    }
+   ],
+   "stockM2": 8318.1
+  },
+  {
+   "slug": "axima-stock",
+   "name": "Axima",
+   "nameRu": "Аксима",
+   "brand": "axima",
+   "look": "stone",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "Аксима · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "",
+   "gallery": [],
+   "swatches": [],
+   "products": [
+    {
+     "slug": "axima-bern-svetlobezhevyy",
+     "name": "BERN светлобежевый",
+     "nameRu": "BERN светлобежевый",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 1408,
+       "m2": 1013.76,
+       "label": "BERN светлобежевый (600*1200*)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "axima-bern-seraya",
+     "name": "BERN серая",
+     "nameRu": "BERN серая",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 1408,
+       "m2": 1013.76,
+       "label": "BERN серая (600*1200*)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "axima-bern-antracit",
+     "name": "BERN антрацит",
+     "nameRu": "BERN антрацит",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 743,
+       "m2": 534.96,
+       "label": "BERN антрацит (600*1200)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "axima-medan-svetlo-seraya",
+     "name": "MEDAN светло-серая",
+     "nameRu": "MEDAN светло-серая",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 650,
+       "m2": 468.0,
+       "label": "MEDAN светло-серая (600*1200)"
+      },
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 1098,
+       "m2": 395.28,
+       "label": "MEDAN светло серая (600*600)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "axima-medan-seraya",
+     "name": "MEDAN серая",
+     "nameRu": "MEDAN серая",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 1642,
+       "m2": 591.12,
+       "label": "MEDAN серая (600*600)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 808,
+       "m2": 581.76,
+       "label": "MEDAN серая (600*1200)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "axima-ronda-svetlo-seraya",
+     "name": "Ронда светло серая",
+     "nameRu": "Ронда светло серая",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 643,
+       "m2": 231.48,
+       "label": "Ронда светло серая (600*600)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "axima-ronda-seraya",
+     "name": "Ронда серая",
+     "nameRu": "Ронда серая",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 883,
+       "m2": 317.88,
+       "label": "Ронда серая (600*600)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    }
+   ],
+   "stockM2": 5148.0
+  },
+  {
+   "slug": "grasaro-beton",
+   "name": "Beton",
+   "nameRu": "Бетон",
+   "brand": "grasaro",
+   "look": "concrete",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры"
+   ],
+   "tagline": "GRASARO · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/grasaro-beton/grasaro-g1101-1.jpg",
+   "gallery": [
+    "/tiles/grasaro-beton/grasaro-g1101-1.jpg",
+    "/tiles/grasaro-beton/grasaro-g1102-1.jpg",
+    "/tiles/grasaro-beton/grasaro-g1103-1.jpg",
+    "/tiles/grasaro-beton/grasaro-g1104-1.jpg",
+    "/tiles/grasaro-beton/grasaro-g1105-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/grasaro-beton/grasaro-g1101-1.jpg",
+    "/tiles/grasaro-beton/grasaro-g1102-1.jpg",
+    "/tiles/grasaro-beton/grasaro-g1103-1.jpg",
+    "/tiles/grasaro-beton/grasaro-g1104-1.jpg",
+    "/tiles/grasaro-beton/grasaro-g1105-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "grasaro-g1101",
+     "name": "G-1101",
+     "nameRu": "Бетон G-1101",
+     "color": "Бежевый",
+     "article": "G1101",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-beton/grasaro-g1101-1.jpg",
+     "images": [
+      "/tiles/grasaro-beton/grasaro-g1101-1.jpg",
+      "/tiles/grasaro-beton/grasaro-g1101-2.jpg",
+      "/tiles/grasaro-beton/grasaro-g1101-3.jpg",
+      "/tiles/grasaro-beton/grasaro-g1101-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 380,
+       "m2": 273.6,
+       "label": "G 1101 MR(120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 246,
+       "m2": 88.56,
+       "label": "G 1101 MR(60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/beton2/beton-g-1101/"
+    },
+    {
+     "slug": "grasaro-g1102",
+     "name": "G-1102",
+     "nameRu": "Бетон G-1102",
+     "color": "Серый",
+     "article": "G1102",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-beton/grasaro-g1102-1.jpg",
+     "images": [
+      "/tiles/grasaro-beton/grasaro-g1102-1.jpg",
+      "/tiles/grasaro-beton/grasaro-g1102-2.jpg",
+      "/tiles/grasaro-beton/grasaro-g1102-3.jpg",
+      "/tiles/grasaro-beton/grasaro-g1102-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 1112,
+       "m2": 800.64,
+       "label": "G 1102 MR (120*60) T40"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 2534,
+       "m2": 912.24,
+       "label": "G 1102 MR (60*60) T33"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/beton2/beton-g-1102/"
+    },
+    {
+     "slug": "grasaro-g1103",
+     "name": "G-1103",
+     "nameRu": "Бетон G-1103",
+     "color": "Антрацит",
+     "article": "G1103",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-beton/grasaro-g1103-1.jpg",
+     "images": [
+      "/tiles/grasaro-beton/grasaro-g1103-1.jpg",
+      "/tiles/grasaro-beton/grasaro-g1103-2.jpg",
+      "/tiles/grasaro-beton/grasaro-g1103-3.jpg",
+      "/tiles/grasaro-beton/grasaro-g1103-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 692,
+       "m2": 498.24,
+       "label": "G 1103 Mr (120*60) T 74"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 1091,
+       "m2": 392.76,
+       "label": "G 1103 MR (60*60) T 74"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/beton2/beton-g-1103/"
+    },
+    {
+     "slug": "grasaro-g1104",
+     "name": "G-1104",
+     "nameRu": "Бетон G-1104",
+     "color": "Белый",
+     "article": "G1104",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-beton/grasaro-g1104-1.jpg",
+     "images": [
+      "/tiles/grasaro-beton/grasaro-g1104-1.jpg",
+      "/tiles/grasaro-beton/grasaro-g1104-2.jpg",
+      "/tiles/grasaro-beton/grasaro-g1104-3.jpg",
+      "/tiles/grasaro-beton/grasaro-g1104-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 1075,
+       "m2": 774.0,
+       "label": "G 1104 MR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 1347,
+       "m2": 484.92,
+       "label": "G 1104 MR (60*60) T 41"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/beton2/beton-g-1104/"
+    },
+    {
+     "slug": "grasaro-g1105",
+     "name": "G-1105",
+     "nameRu": "Бетон G-1105",
+     "color": "Серо-бежевый",
+     "article": "G1105",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-beton/grasaro-g1105-1.jpg",
+     "images": [
+      "/tiles/grasaro-beton/grasaro-g1105-1.jpg",
+      "/tiles/grasaro-beton/grasaro-g1105-2.jpg",
+      "/tiles/grasaro-beton/grasaro-g1105-3.jpg",
+      "/tiles/grasaro-beton/grasaro-g1105-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 2120,
+       "m2": 763.2,
+       "label": "G 1105 МR (60*60) T60"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/beton2/beton-g-1105/"
+    }
+   ],
+   "stockM2": 4988.2
+  },
+  {
+   "slug": "kerranova-krater",
+   "name": "Krater",
+   "nameRu": "Кратер",
+   "brand": "kerranova",
+   "look": "stone",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Структурная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "KERRANOVA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/kerranova-krater/kerranova-k2210-1.jpg",
+   "gallery": [
+    "/tiles/kerranova-krater/kerranova-k2210-1.jpg",
+    "/tiles/kerranova-krater/kerranova-k2211-1.jpg",
+    "/tiles/kerranova-krater/kerranova-k2212-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kerranova-krater/kerranova-k2210-1.jpg",
+    "/tiles/kerranova-krater/kerranova-k2211-1.jpg",
+    "/tiles/kerranova-krater/kerranova-k2212-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "kerranova-k2210",
+     "name": "K-2210",
+     "nameRu": "Кратер K-2210",
+     "color": "Светло-серый",
+     "article": "K2210",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/kerranova-krater/kerranova-k2210-1.jpg",
+     "images": [
+      "/tiles/kerranova-krater/kerranova-k2210-1.jpg",
+      "/tiles/kerranova-krater/kerranova-k2210-2.jpg",
+      "/tiles/kerranova-krater/kerranova-k2210-3.jpg",
+      "/tiles/kerranova-krater/kerranova-k2210-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Структурная",
+       "pcs": 943,
+       "m2": 678.96,
+       "label": "K 2210 SR (120*60) т49"
+      },
+      {
+       "size": "600×600",
+       "surface": "Структурная",
+       "pcs": 6414,
+       "m2": 2309.04,
+       "label": "K 2210 SR (60*60) т44"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/krater1/krater_k_2210/"
+    },
+    {
+     "slug": "kerranova-k2211",
+     "name": "K-2211",
+     "nameRu": "Кратер K-2211",
+     "color": "Серый",
+     "article": "K2211",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/kerranova-krater/kerranova-k2211-1.jpg",
+     "images": [
+      "/tiles/kerranova-krater/kerranova-k2211-1.jpg",
+      "/tiles/kerranova-krater/kerranova-k2211-2.jpg",
+      "/tiles/kerranova-krater/kerranova-k2211-3.jpg",
+      "/tiles/kerranova-krater/kerranova-k2211-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Структурная",
+       "pcs": 746,
+       "m2": 537.12,
+       "label": "K 2211 SR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/krater1/krater_k_2211/"
+    },
+    {
+     "slug": "kerranova-k2212",
+     "name": "K-2212",
+     "nameRu": "Кратер K-2212",
+     "color": "Темно-серый",
+     "article": "K2212",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/kerranova-krater/kerranova-k2212-1.jpg",
+     "images": [
+      "/tiles/kerranova-krater/kerranova-k2212-1.jpg",
+      "/tiles/kerranova-krater/kerranova-k2212-2.jpg",
+      "/tiles/kerranova-krater/kerranova-k2212-3.jpg",
+      "/tiles/kerranova-krater/kerranova-k2212-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Структурная",
+       "pcs": 762,
+       "m2": 548.64,
+       "label": "K 2212 SR (120*60) t62"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/krater1/krater_k_2212/"
+    }
+   ],
+   "stockM2": 4073.8
+  },
+  {
+   "slug": "allaki",
+   "name": "Allaki",
+   "nameRu": "Аллаки",
+   "brand": "granitea",
+   "look": "stone",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRANITEA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/allaki/g202-allaki-beige-1.jpg",
+   "gallery": [
+    "/tiles/allaki/g202-allaki-beige-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/allaki/g202-allaki-beige-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g202-allaki-beige",
+     "name": "Allaki Beige",
+     "nameRu": "Аллаки бежевый",
+     "color": "бежевый",
+     "article": "G202",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/allaki/g202-allaki-beige-1.jpg",
+     "images": [
+      "/tiles/allaki/g202-allaki-beige-1.jpg",
+      "/tiles/allaki/g202-allaki-beige-2.jpg",
+      "/tiles/allaki/g202-allaki-beige-3.jpg",
+      "/tiles/allaki/g202-allaki-beige-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 6841,
+       "m2": 2462.76,
+       "label": "G 202 MR (60*60)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 893,
+       "m2": 642.96,
+       "label": "G 202 МR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/allaki/g202-allaki-beige/"
+    }
+   ],
+   "stockM2": 3105.7
+  },
+  {
+   "slug": "kerranova-stock",
+   "name": "Kerranova",
+   "nameRu": "Керранова",
+   "brand": "kerranova",
+   "look": "stone",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Лаппатированная",
+    "Матовая",
+    "Структурная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "KERRANOVA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "",
+   "gallery": [],
+   "swatches": [],
+   "products": [
+    {
+     "slug": "kerranova-k-101",
+     "name": "K 101",
+     "nameRu": "K 101",
+     "color": "",
+     "article": "K101",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Лаппатированная",
+       "pcs": 104,
+       "m2": 37.44,
+       "label": "K 101 LR (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kerranova-k-103",
+     "name": "K 103",
+     "nameRu": "K 103",
+     "color": "",
+     "article": "K103",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Лаппатированная",
+       "pcs": 1327,
+       "m2": 477.72,
+       "label": "K 103 LR (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kerranova-k-105lr",
+     "name": "K 105LR",
+     "nameRu": "K 105LR",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "",
+       "pcs": 2882,
+       "m2": 1037.52,
+       "label": "K 105LR (60*60)(T-43)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kerranova-k-108",
+     "name": "K 108",
+     "nameRu": "K 108",
+     "color": "",
+     "article": "K108",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Структурная",
+       "pcs": 276,
+       "m2": 99.36,
+       "label": "K 108 SR (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kerranova-k-583",
+     "name": "K 583",
+     "nameRu": "K 583",
+     "color": "",
+     "article": "K583",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 118,
+       "m2": 42.48,
+       "label": "K 583 MR (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kerranova-k-90",
+     "name": "K 90",
+     "nameRu": "K 90",
+     "color": "",
+     "article": "K90",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 378,
+       "m2": 272.16,
+       "label": "K 90 LR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Лаппатированная",
+       "pcs": 1076,
+       "m2": 387.36,
+       "label": "K 90 LR (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "kerranova-k-95",
+     "name": "K 95",
+     "nameRu": "K 95",
+     "color": "",
+     "article": "K95",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 455,
+       "m2": 327.6,
+       "label": "K 95 LR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Лаппатированная",
+       "pcs": 228,
+       "m2": 82.08,
+       "label": "K 95 LR (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    }
+   ],
+   "stockM2": 2763.7
+  },
+  {
+   "slug": "grasaro-stock",
+   "name": "Grasaro",
+   "nameRu": "Грасаро",
+   "brand": "grasaro",
+   "look": "stone",
+   "sizes": [
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая",
+    "Полированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRASARO · 600×600 мм",
+   "description": "",
+   "hero": "",
+   "gallery": [],
+   "swatches": [],
+   "products": [
+    {
+     "slug": "grasaro-g-1150",
+     "name": "G 1150",
+     "nameRu": "G 1150",
+     "color": "",
+     "article": "G1150",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 10,
+       "m2": 3.6,
+       "label": "G 1150 MR (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "grasaro-g-1303",
+     "name": "G 1303",
+     "nameRu": "G 1303",
+     "color": "",
+     "article": "G1303",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 2607,
+       "m2": 938.52,
+       "label": "G 1303 MR (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "grasaro-g-1301",
+     "name": "G 1301",
+     "nameRu": "G 1301",
+     "color": "",
+     "article": "G1301",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 3239,
+       "m2": 1166.04,
+       "label": "G 1301 MR (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "grasaro-g-1153-t58",
+     "name": "G 1153 t58",
+     "nameRu": "G 1153 t58",
+     "color": "",
+     "article": "G1153",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 1183,
+       "m2": 425.88,
+       "label": "G 1153 MR (60*60) t58"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "grasaro-g-610",
+     "name": "G 610",
+     "nameRu": "G 610",
+     "color": "",
+     "article": "G610",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Полированная",
+       "pcs": 124,
+       "m2": 44.64,
+       "label": "G 610 PR (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    }
+   ],
+   "stockM2": 2578.7
+  },
+  {
+   "slug": "kerranova-skala",
+   "name": "Skala",
+   "nameRu": "Скала",
+   "brand": "kerranova",
+   "look": "marble",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Лаппатированная",
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "KERRANOVA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/kerranova-skala/kerranova-k2201-1.jpg",
+   "gallery": [
+    "/tiles/kerranova-skala/kerranova-k2201-1.jpg",
+    "/tiles/kerranova-skala/kerranova-k2202-1.jpg",
+    "/tiles/kerranova-skala/kerranova-k2203-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kerranova-skala/kerranova-k2201-1.jpg",
+    "/tiles/kerranova-skala/kerranova-k2202-1.jpg",
+    "/tiles/kerranova-skala/kerranova-k2203-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "kerranova-k2201",
+     "name": "K-2201",
+     "nameRu": "Скала K-2201",
+     "color": "Белый",
+     "article": "K2201",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Лаппатированная",
+      "Матовая"
+     ],
+     "image": "/tiles/kerranova-skala/kerranova-k2201-1.jpg",
+     "images": [
+      "/tiles/kerranova-skala/kerranova-k2201-1.jpg",
+      "/tiles/kerranova-skala/kerranova-k2201-2.jpg",
+      "/tiles/kerranova-skala/kerranova-k2201-3.jpg",
+      "/tiles/kerranova-skala/kerranova-k2201-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Лаппатированная",
+       "pcs": 969,
+       "m2": 348.84,
+       "label": "K 2201 LR 60*60 (T-50)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 807,
+       "m2": 581.04,
+       "label": "K 2201 MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/skala1/skala_k_2201/"
+    },
+    {
+     "slug": "kerranova-k2202",
+     "name": "K-2202",
+     "nameRu": "Скала K-2202",
+     "color": "Серый",
+     "article": "K2202",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Лаппатированная",
+      "Матовая"
+     ],
+     "image": "/tiles/kerranova-skala/kerranova-k2202-1.jpg",
+     "images": [
+      "/tiles/kerranova-skala/kerranova-k2202-1.jpg",
+      "/tiles/kerranova-skala/kerranova-k2202-2.jpg",
+      "/tiles/kerranova-skala/kerranova-k2202-3.jpg",
+      "/tiles/kerranova-skala/kerranova-k2202-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 28,
+       "m2": 10.08,
+       "label": "K 2202 MR (60*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Лаппатированная",
+       "pcs": 2481,
+       "m2": 893.16,
+       "label": "K 2202 LR (60*60)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 648,
+       "m2": 466.56,
+       "label": "K 2202 MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/skala1/skala_k_2202/"
+    },
+    {
+     "slug": "kerranova-k2203",
+     "name": "K-2203",
+     "nameRu": "Скала K-2203",
+     "color": "Темно-серый",
+     "article": "K2203",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/kerranova-skala/kerranova-k2203-1.jpg",
+     "images": [
+      "/tiles/kerranova-skala/kerranova-k2203-1.jpg",
+      "/tiles/kerranova-skala/kerranova-k2203-2.jpg",
+      "/tiles/kerranova-skala/kerranova-k2203-3.jpg",
+      "/tiles/kerranova-skala/kerranova-k2203-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 120,
+       "m2": 43.2,
+       "label": "K 2203 MR (60*60) т54"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/skala1/skala_k_2203/"
+    }
+   ],
+   "stockM2": 2342.9
+  },
+  {
+   "slug": "granitea-stock",
+   "name": "Granitea",
+   "nameRu": "Гранитея",
+   "brand": "granitea",
+   "look": "stone",
+   "sizes": [
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRANITEA · 600×600 мм",
+   "description": "",
+   "hero": "",
+   "gallery": [],
+   "swatches": [],
+   "products": [
+    {
+     "slug": "granitea-up-072",
+     "name": "UP 072",
+     "nameRu": "UP 072",
+     "color": "",
+     "article": "UP072",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 606,
+       "m2": 218.16,
+       "label": "UP 072 MR (60*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "granitea-u-119-t-66t",
+     "name": "U 119 T-66t)",
+     "nameRu": "U 119 T-66t)",
+     "color": "",
+     "article": "U119",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 2979,
+       "m2": 1072.44,
+       "label": "U 119 MR (60*60) T-66t)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "granitea-u-126-mr-60-60-t-60-b4",
+     "name": "U 126 МR 60*60 T-60 b4",
+     "nameRu": "U 126 МR 60*60 T-60 b4",
+     "color": "",
+     "article": "U126",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 2594,
+       "m2": 933.84,
+       "label": "U 126 МR 60*60 T-60 b4"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    }
+   ],
+   "stockM2": 2224.4
+  },
+  {
+   "slug": "grasaro-granella",
+   "name": "Granella",
+   "nameRu": "Гранелла",
+   "brand": "grasaro",
+   "look": "concrete",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры"
+   ],
+   "tagline": "GRASARO · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/grasaro-granella/grasaro-g40-1.jpg",
+   "gallery": [
+    "/tiles/grasaro-granella/grasaro-g40-1.jpg",
+    "/tiles/grasaro-granella/grasaro-g42-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/grasaro-granella/grasaro-g40-1.jpg",
+    "/tiles/grasaro-granella/grasaro-g42-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "grasaro-g40",
+     "name": "G-40",
+     "nameRu": "Гранелла G-40",
+     "color": "Белый",
+     "article": "G40",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-granella/grasaro-g40-1.jpg",
+     "images": [
+      "/tiles/grasaro-granella/grasaro-g40-1.jpg",
+      "/tiles/grasaro-granella/grasaro-g40-2.jpg",
+      "/tiles/grasaro-granella/grasaro-g40-3.jpg",
+      "/tiles/grasaro-granella/grasaro-g40-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 800,
+       "m2": 576.0,
+       "label": "G 40 MR (120*60) (T-53,K-4)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 1591,
+       "m2": 572.76,
+       "label": "G 40 MR (60*60 )"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/granella2/granella-g-40/"
+    },
+    {
+     "slug": "grasaro-g42",
+     "name": "G-42",
+     "nameRu": "Гранелла G-42",
+     "color": "Серый",
+     "article": "G42",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-granella/grasaro-g42-1.jpg",
+     "images": [
+      "/tiles/grasaro-granella/grasaro-g42-1.jpg",
+      "/tiles/grasaro-granella/grasaro-g42-2.jpg",
+      "/tiles/grasaro-granella/grasaro-g42-3.jpg",
+      "/tiles/grasaro-granella/grasaro-g42-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 559,
+       "m2": 402.48,
+       "label": "G 42 MR (120*60) t28"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 1114,
+       "m2": 401.04,
+       "label": "G 42 MR (60*60 )(T-54)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/granella2/granella-g-42/"
+    }
+   ],
+   "stockM2": 1952.3
+  },
+  {
+   "slug": "gerda",
+   "name": "Gerda",
+   "nameRu": "Герда",
+   "brand": "idalgo",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/gerda/gerda-white-1.jpg",
+   "gallery": [
+    "/tiles/gerda/gerda-white-1.jpg",
+    "/tiles/gerda/gerda-grey-1.jpg",
+    "/tiles/gerda/gerda-natura-dark-1.jpg",
+    "/tiles/gerda/gerda-natura-light-1.jpg",
+    "/tiles/gerda/gerda-festival-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/gerda/gerda-white-1.jpg",
+    "/tiles/gerda/gerda-grey-1.jpg",
+    "/tiles/gerda/gerda-natura-dark-1.jpg",
+    "/tiles/gerda/gerda-natura-light-1.jpg",
+    "/tiles/gerda/gerda-festival-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "gerda-white",
+     "name": "Gerda White",
+     "nameRu": "Герда Белый",
+     "color": "Белый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/gerda/gerda-white-1.jpg",
+     "images": [
+      "/tiles/gerda/gerda-white-1.jpg",
+      "/tiles/gerda/gerda-white-2.jpg",
+      "/tiles/gerda/gerda-white-3.jpg",
+      "/tiles/gerda/gerda-white-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 849,
+       "m2": 611.28,
+       "label": "Герда вайт MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/gerda/gerda-white/"
+    },
+    {
+     "slug": "gerda-grey",
+     "name": "Gerda Grey",
+     "nameRu": "Герда Серый",
+     "color": "Серый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/gerda/gerda-grey-1.jpg",
+     "images": [
+      "/tiles/gerda/gerda-grey-1.jpg",
+      "/tiles/gerda/gerda-grey-2.jpg",
+      "/tiles/gerda/gerda-grey-3.jpg",
+      "/tiles/gerda/gerda-grey-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 874,
+       "m2": 629.28,
+       "label": "Герда грей MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/gerda/gerda-grey/"
+    },
+    {
+     "slug": "gerda-natura-dark",
+     "name": "Gerda Natura Dark",
+     "nameRu": "Герда Натура Тёмный",
+     "color": "Тёмный",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/gerda/gerda-natura-dark-1.jpg",
+     "images": [
+      "/tiles/gerda/gerda-natura-dark-1.jpg",
+      "/tiles/gerda/gerda-natura-dark-2.jpg",
+      "/tiles/gerda/gerda-natura-dark-3.jpg",
+      "/tiles/gerda/gerda-natura-dark-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 140,
+       "m2": 100.8,
+       "label": "Герда натурал дарк MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/gerda/gerda-natura-dark/"
+    },
+    {
+     "slug": "gerda-natura-light",
+     "name": "Gerda Natura Light",
+     "nameRu": "Герда Натура Светлый",
+     "color": "Светлый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/gerda/gerda-natura-light-1.jpg",
+     "images": [
+      "/tiles/gerda/gerda-natura-light-1.jpg",
+      "/tiles/gerda/gerda-natura-light-2.jpg",
+      "/tiles/gerda/gerda-natura-light-3.jpg",
+      "/tiles/gerda/gerda-natura-light-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 80,
+       "m2": 57.6,
+       "label": "Герда натурал лайт MR(120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/gerda/gerda-natura-light/"
+    },
+    {
+     "slug": "gerda-festival",
+     "name": "Gerda Festival",
+     "nameRu": "Герда Фестиваль",
+     "color": "Фестиваль",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/gerda/gerda-festival-1.jpg",
+     "images": [
+      "/tiles/gerda/gerda-festival-1.jpg",
+      "/tiles/gerda/gerda-festival-2.jpg",
+      "/tiles/gerda/gerda-festival-3.jpg",
+      "/tiles/gerda/gerda-festival-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 617,
+       "m2": 444.24,
+       "label": "Герда фестиваль MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/gerda/gerda-festival/"
+    }
+   ],
+   "stockM2": 1843.2
+  },
+  {
+   "slug": "grasaro-domino",
+   "name": "Domino",
+   "nameRu": "Домино",
+   "brand": "grasaro",
+   "look": "concrete",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры"
+   ],
+   "tagline": "GRASARO · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/grasaro-domino/grasaro-g100-1.jpg",
+   "gallery": [
+    "/tiles/grasaro-domino/grasaro-g100-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/grasaro-domino/grasaro-g100-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "grasaro-g100",
+     "name": "G-100",
+     "nameRu": "Домино G-100",
+     "color": "Белый",
+     "article": "G100",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-domino/grasaro-g100-1.jpg",
+     "images": [
+      "/tiles/grasaro-domino/grasaro-g100-1.jpg",
+      "/tiles/grasaro-domino/grasaro-g100-2.jpg",
+      "/tiles/grasaro-domino/grasaro-g100-3.jpg",
+      "/tiles/grasaro-domino/grasaro-g100-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 1949,
+       "m2": 1403.28,
+       "label": "G 100 MR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 1083,
+       "m2": 389.88,
+       "label": "G 100 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/domino2/domino-g-100-128865900/"
+    }
+   ],
+   "stockM2": 1793.2
+  },
+  {
+   "slug": "taganay",
+   "name": "Taganay",
+   "nameRu": "Таганай",
+   "brand": "granitea",
+   "look": "loft",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры"
+   ],
+   "tagline": "GRANITEA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/taganay/g340-taganay-white-1.jpg",
+   "gallery": [
+    "/tiles/taganay/g340-taganay-white-1.jpg",
+    "/tiles/taganay/g341-taganay-elegant-1.jpg",
+    "/tiles/taganay/g343-taganay-grey-1.jpg",
+    "/tiles/taganay/g345-taganay-black-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/taganay/g340-taganay-white-1.jpg",
+    "/tiles/taganay/g341-taganay-elegant-1.jpg",
+    "/tiles/taganay/g343-taganay-grey-1.jpg",
+    "/tiles/taganay/g345-taganay-black-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g340-taganay-white",
+     "name": "Taganay White",
+     "nameRu": "Таганай белый",
+     "color": "белый",
+     "article": "G340",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/taganay/g340-taganay-white-1.jpg",
+     "images": [
+      "/tiles/taganay/g340-taganay-white-1.jpg",
+      "/tiles/taganay/g340-taganay-white-2.jpg",
+      "/tiles/taganay/g340-taganay-white-3.jpg",
+      "/tiles/taganay/g340-taganay-white-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 64,
+       "m2": 46.08,
+       "label": "G 340 МR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 4086,
+       "m2": 1470.96,
+       "label": "G 340 МR 60*60 (Т-12b)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/taganay/g340-taganay-white/"
+    },
+    {
+     "slug": "g341-taganay-elegant",
+     "name": "Taganay Elegant",
+     "nameRu": "Таганай элегантный",
+     "color": "элегантный",
+     "article": "G341",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/taganay/g341-taganay-elegant-1.jpg",
+     "images": [
+      "/tiles/taganay/g341-taganay-elegant-1.jpg",
+      "/tiles/taganay/g341-taganay-elegant-2.jpg",
+      "/tiles/taganay/g341-taganay-elegant-3.jpg",
+      "/tiles/taganay/g341-taganay-elegant-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 34,
+       "m2": 12.24,
+       "label": "G 341 МR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/taganay/g341-taganay-elegant/"
+    },
+    {
+     "slug": "g343-taganay-grey",
+     "name": "Taganay Grey",
+     "nameRu": "Таганай серый",
+     "color": "серый",
+     "article": "G343",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/taganay/g343-taganay-grey-1.jpg",
+     "images": [
+      "/tiles/taganay/g343-taganay-grey-1.jpg",
+      "/tiles/taganay/g343-taganay-grey-2.jpg",
+      "/tiles/taganay/g343-taganay-grey-3.jpg",
+      "/tiles/taganay/g343-taganay-grey-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 215,
+       "m2": 154.8,
+       "label": "G 343 МR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/taganay/g343-taganay-grey/"
+    },
+    {
+     "slug": "g345-taganay-black",
+     "name": "Taganay Black",
+     "nameRu": "Таганай черный",
+     "color": "черный",
+     "article": "G345",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/taganay/g345-taganay-black-1.jpg",
+     "images": [
+      "/tiles/taganay/g345-taganay-black-1.jpg",
+      "/tiles/taganay/g345-taganay-black-2.jpg",
+      "/tiles/taganay/g345-taganay-black-3.jpg",
+      "/tiles/taganay/g345-taganay-black-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 24,
+       "m2": 17.28,
+       "label": "G 345 МR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/taganay/g345-taganay-black/"
+    }
+   ],
+   "stockM2": 1701.4
+  },
+  {
+   "slug": "grasaro-queens",
+   "name": "Queens",
+   "nameRu": "Квинз",
+   "brand": "grasaro",
+   "look": "wood",
+   "sizes": [
+    "1200×200"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Спальни",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Тёплый пол"
+   ],
+   "tagline": "GRASARO · 1200×200 мм",
+   "description": "",
+   "hero": "/tiles/grasaro-queens/grasaro-g800-1.jpg",
+   "gallery": [
+    "/tiles/grasaro-queens/grasaro-g800-1.jpg",
+    "/tiles/grasaro-queens/grasaro-g801-1.jpg",
+    "/tiles/grasaro-queens/grasaro-g802-1.jpg",
+    "/tiles/grasaro-queens/grasaro-g803-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/grasaro-queens/grasaro-g800-1.jpg",
+    "/tiles/grasaro-queens/grasaro-g801-1.jpg",
+    "/tiles/grasaro-queens/grasaro-g802-1.jpg",
+    "/tiles/grasaro-queens/grasaro-g803-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "grasaro-g800",
+     "name": "G-800",
+     "nameRu": "Квинз G-800",
+     "color": "Белый",
+     "article": "G800",
+     "sizes": [
+      "1200×200"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-queens/grasaro-g800-1.jpg",
+     "images": [
+      "/tiles/grasaro-queens/grasaro-g800-1.jpg",
+      "/tiles/grasaro-queens/grasaro-g800-2.jpg",
+      "/tiles/grasaro-queens/grasaro-g800-3.jpg",
+      "/tiles/grasaro-queens/grasaro-g800-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×200",
+       "surface": "Матовая",
+       "pcs": 1636,
+       "m2": 392.64,
+       "label": "G 800 MR (120*20) t-50 k-4"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/kvinz/queens-g-800/"
+    },
+    {
+     "slug": "grasaro-g801",
+     "name": "G-801",
+     "nameRu": "Квинз G-801",
+     "color": "Медовый",
+     "article": "G801",
+     "sizes": [
+      "1200×200"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-queens/grasaro-g801-1.jpg",
+     "images": [
+      "/tiles/grasaro-queens/grasaro-g801-1.jpg",
+      "/tiles/grasaro-queens/grasaro-g801-2.jpg",
+      "/tiles/grasaro-queens/grasaro-g801-3.jpg",
+      "/tiles/grasaro-queens/grasaro-g801-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×200",
+       "surface": "Матовая",
+       "pcs": 1750,
+       "m2": 420.0,
+       "label": "G 801 MR (120*20) t40"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/kvinz/queens-g-801/"
+    },
+    {
+     "slug": "grasaro-g802",
+     "name": "G-802",
+     "nameRu": "Квинз G-802",
+     "color": "Серый",
+     "article": "G802",
+     "sizes": [
+      "1200×200"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-queens/grasaro-g802-1.jpg",
+     "images": [
+      "/tiles/grasaro-queens/grasaro-g802-1.jpg",
+      "/tiles/grasaro-queens/grasaro-g802-2.jpg",
+      "/tiles/grasaro-queens/grasaro-g802-3.jpg",
+      "/tiles/grasaro-queens/grasaro-g802-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×200",
+       "surface": "Матовая",
+       "pcs": 1779,
+       "m2": 426.96,
+       "label": "G 802 MR 120*20 T-56,"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/kvinz/queens-g-802/"
+    },
+    {
+     "slug": "grasaro-g803",
+     "name": "G-803",
+     "nameRu": "Квинз G-803",
+     "color": "Венге",
+     "article": "G803",
+     "sizes": [
+      "1200×200"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-queens/grasaro-g803-1.jpg",
+     "images": [
+      "/tiles/grasaro-queens/grasaro-g803-1.jpg",
+      "/tiles/grasaro-queens/grasaro-g803-2.jpg",
+      "/tiles/grasaro-queens/grasaro-g803-3.jpg",
+      "/tiles/grasaro-queens/grasaro-g803-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×200",
+       "surface": "Матовая",
+       "pcs": 1904,
+       "m2": 456.96,
+       "label": "G 803 MR 20*120 (T-36)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/kvinz/queens-g-803/"
+    }
+   ],
+   "stockM2": 1696.6
+  },
+  {
+   "slug": "kerranova-kharizma",
+   "name": "Kharizma",
+   "nameRu": "Харизма",
+   "brand": "kerranova",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "KERRANOVA · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/kerranova-kharizma/kerranova-k2330-1.jpg",
+   "gallery": [
+    "/tiles/kerranova-kharizma/kerranova-k2330-1.jpg",
+    "/tiles/kerranova-kharizma/kerranova-k2331-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kerranova-kharizma/kerranova-k2330-1.jpg",
+    "/tiles/kerranova-kharizma/kerranova-k2331-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "kerranova-k2330",
+     "name": "K-2330",
+     "nameRu": "Харизма K-2330",
+     "color": "Светло-бежевый",
+     "article": "K2330",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "/tiles/kerranova-kharizma/kerranova-k2330-1.jpg",
+     "images": [
+      "/tiles/kerranova-kharizma/kerranova-k2330-1.jpg",
+      "/tiles/kerranova-kharizma/kerranova-k2330-2.jpg",
+      "/tiles/kerranova-kharizma/kerranova-k2330-3.jpg",
+      "/tiles/kerranova-kharizma/kerranova-k2330-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 1174,
+       "m2": 845.28,
+       "label": "K 2330 DGR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/kharizma/kharizma_k_2330/"
+    },
+    {
+     "slug": "kerranova-k2331",
+     "name": "K-2331",
+     "nameRu": "Харизма K-2331",
+     "color": "Коричневый",
+     "article": "K2331",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "/tiles/kerranova-kharizma/kerranova-k2331-1.jpg",
+     "images": [
+      "/tiles/kerranova-kharizma/kerranova-k2331-1.jpg",
+      "/tiles/kerranova-kharizma/kerranova-k2331-2.jpg",
+      "/tiles/kerranova-kharizma/kerranova-k2331-3.jpg",
+      "/tiles/kerranova-kharizma/kerranova-k2331-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 1081,
+       "m2": 778.32,
+       "label": "K 2331 DGR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/kharizma/kharizma_k_2331/"
+    }
+   ],
+   "stockM2": 1623.6
+  },
+  {
+   "slug": "sandra",
+   "name": "Sandra",
+   "nameRu": "Сандра",
+   "brand": "idalgo",
+   "look": "marble",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/sandra/sandra-black-olive-1.jpg",
+   "gallery": [
+    "/tiles/sandra/sandra-black-olive-1.jpg",
+    "/tiles/sandra/sandra-white-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/sandra/sandra-black-olive-1.jpg",
+    "/tiles/sandra/sandra-white-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "sandra-black-olive",
+     "name": "Sandra Black Olive",
+     "nameRu": "Сандра Чёрно-Оливковый",
+     "color": "Чёрно-Оливковый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/sandra/sandra-black-olive-1.jpg",
+     "images": [
+      "/tiles/sandra/sandra-black-olive-1.jpg",
+      "/tiles/sandra/sandra-black-olive-2.jpg",
+      "/tiles/sandra/sandra-black-olive-3.jpg",
+      "/tiles/sandra/sandra-black-olive-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 1206,
+       "m2": 868.32,
+       "label": "Сандра блек Олив MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/sandra/sandra-black-olive/"
+    },
+    {
+     "slug": "sandra-white",
+     "name": "Sandra White",
+     "nameRu": "Сандра Белый",
+     "color": "Белый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/sandra/sandra-white-1.jpg",
+     "images": [
+      "/tiles/sandra/sandra-white-1.jpg",
+      "/tiles/sandra/sandra-white-2.jpg",
+      "/tiles/sandra/sandra-white-3.jpg",
+      "/tiles/sandra/sandra-white-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 576,
+       "m2": 414.72,
+       "label": "Сандра вайт MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/sandra/sandra-white/"
+    }
+   ],
+   "stockM2": 1283.0
+  },
+  {
+   "slug": "onix",
+   "name": "Onix",
+   "nameRu": "Оникс",
+   "brand": "idalgo",
+   "look": "marble",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Лаппатированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/onix/onix-oro-1.jpg",
+   "gallery": [
+    "/tiles/onix/onix-oro-1.jpg",
+    "/tiles/onix/onix-beige-1.jpg",
+    "/tiles/onix/onix-brown-1.jpg",
+    "/tiles/onix/onix-grey-1.jpg",
+    "/tiles/onix/onix-perla-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/onix/onix-oro-1.jpg",
+    "/tiles/onix/onix-beige-1.jpg",
+    "/tiles/onix/onix-brown-1.jpg",
+    "/tiles/onix/onix-grey-1.jpg",
+    "/tiles/onix/onix-perla-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "onix-oro",
+     "name": "Onix Oro",
+     "nameRu": "Оникс Золото",
+     "color": "Золото",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "/tiles/onix/onix-oro-1.jpg",
+     "images": [
+      "/tiles/onix/onix-oro-1.jpg",
+      "/tiles/onix/onix-oro-2.jpg",
+      "/tiles/onix/onix-oro-3.jpg",
+      "/tiles/onix/onix-oro-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 217,
+       "m2": 156.24,
+       "label": "Оникс Оро LLR (120*60) (Т-N49)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/onix/onix-oro/"
+    },
+    {
+     "slug": "onix-beige",
+     "name": "Onix Beige",
+     "nameRu": "Оникс Бежевый",
+     "color": "Бежевый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "/tiles/onix/onix-beige-1.jpg",
+     "images": [
+      "/tiles/onix/onix-beige-1.jpg",
+      "/tiles/onix/onix-beige-2.jpg",
+      "/tiles/onix/onix-beige-3.jpg",
+      "/tiles/onix/onix-beige-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 324,
+       "m2": 233.28,
+       "label": "Оникс бейдж LR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/onix/onix-beige/"
+    },
+    {
+     "slug": "onix-brown",
+     "name": "Onix Brown",
+     "nameRu": "Оникс Коричневый",
+     "color": "Коричневый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "/tiles/onix/onix-brown-1.jpg",
+     "images": [
+      "/tiles/onix/onix-brown-1.jpg",
+      "/tiles/onix/onix-brown-2.jpg",
+      "/tiles/onix/onix-brown-3.jpg",
+      "/tiles/onix/onix-brown-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 458,
+       "m2": 329.76,
+       "label": "Оникс браун LR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/onix/onix-brown/"
+    },
+    {
+     "slug": "onix-grey",
+     "name": "Onix Grey",
+     "nameRu": "Оникс Серый",
+     "color": "Серый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "/tiles/onix/onix-grey-1.jpg",
+     "images": [
+      "/tiles/onix/onix-grey-1.jpg",
+      "/tiles/onix/onix-grey-2.jpg",
+      "/tiles/onix/onix-grey-3.jpg",
+      "/tiles/onix/onix-grey-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 271,
+       "m2": 195.12,
+       "label": "Оникс грей LR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/onix/onix-grey/"
+    },
+    {
+     "slug": "onix-perla",
+     "name": "Onix Perla",
+     "nameRu": "Оникс Перла",
+     "color": "Перла",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "/tiles/onix/onix-perla-1.jpg",
+     "images": [
+      "/tiles/onix/onix-perla-1.jpg",
+      "/tiles/onix/onix-perla-2.jpg",
+      "/tiles/onix/onix-perla-3.jpg",
+      "/tiles/onix/onix-perla-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 496,
+       "m2": 357.12,
+       "label": "Оникс перла ллр(120*60) т50м"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/onix/onix-perla/"
+    }
+   ],
+   "stockM2": 1271.5
+  },
+  {
+   "slug": "uzbekistan-stock",
+   "name": "Uzbekistan",
+   "nameRu": "Узбекистан",
+   "brand": "uzbekistan",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая",
+    "Полированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "Узбекистан · 1200×600 мм",
+   "description": "",
+   "hero": "",
+   "gallery": [],
+   "swatches": [],
+   "products": [
+    {
+     "slug": "uzbekistan-yx-3p120",
+     "name": "YX 3P120",
+     "nameRu": "YX 3P120",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Полированная",
+       "pcs": 21,
+       "m2": 15.12,
+       "label": "YX 3P120 PR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "uzbekistan-yx5-p120",
+     "name": "YX5 P120",
+     "nameRu": "YX5 P120",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Полированная",
+       "pcs": 680,
+       "m2": 489.6,
+       "label": "YX5 P120 PR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "uzbekistan-gs-p246-m",
+     "name": "GS-P246 M",
+     "nameRu": "GS-P246 M",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 5,
+       "m2": 3.6,
+       "label": "GS-P246 M MR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "uzbekistan-1736-p120",
+     "name": "1736 P120",
+     "nameRu": "1736 P120",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Полированная",
+       "pcs": 168,
+       "m2": 120.96,
+       "label": "1736 P120 PR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "uzbekistan-g-y293p",
+     "name": "G-Y293P",
+     "nameRu": "G-Y293P",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Полированная",
+       "pcs": 278,
+       "m2": 200.16,
+       "label": "G-Y293P PR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    },
+    {
+     "slug": "uzbekistan-1003-m120",
+     "name": "1003 M120",
+     "nameRu": "1003 M120",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 518,
+       "m2": 372.96,
+       "label": "1003 M120 MR (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    }
+   ],
+   "stockM2": 1202.4
+  },
+  {
+   "slug": "wood-classic",
+   "name": "Wood Classic",
+   "nameRu": "Вуд Классик",
+   "brand": "idalgo",
+   "look": "wood",
+   "sizes": [
+    "1200×195",
+    "1200×600"
+   ],
+   "surfaces": [
+    "Лаппатированная",
+    "Матовая",
+    "Мягкая матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Спальни",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Тёплый пол"
+   ],
+   "tagline": "IDALGO · 1200×195, 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/wood-classic/wood-classic-dark-brown-1.jpg",
+   "gallery": [
+    "/tiles/wood-classic/wood-classic-dark-brown-1.jpg",
+    "/tiles/wood-classic/wood-classic-naturel-1.jpg",
+    "/tiles/wood-classic/wood-classic-beige-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/wood-classic/wood-classic-dark-brown-1.jpg",
+    "/tiles/wood-classic/wood-classic-naturel-1.jpg",
+    "/tiles/wood-classic/wood-classic-beige-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "wood-classic-dark-brown",
+     "name": "Wood Classic Dark Brown",
+     "nameRu": "Вуд Классик Тёмно-коричневый",
+     "color": "Тёмно-коричневый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/wood-classic/wood-classic-dark-brown-1.jpg",
+     "images": [
+      "/tiles/wood-classic/wood-classic-dark-brown-1.jpg",
+      "/tiles/wood-classic/wood-classic-dark-brown-2.jpg",
+      "/tiles/wood-classic/wood-classic-dark-brown-3.jpg",
+      "/tiles/wood-classic/wood-classic-dark-brown-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 131,
+       "m2": 94.32,
+       "label": "Вуд класс дарк браун MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/wood-classic/wood-classic-dark-brown/"
+    },
+    {
+     "slug": "wood-classic-naturel",
+     "name": "Wood Classic Naturel",
+     "nameRu": "Вуд Классик Натуральный",
+     "color": "Натуральный",
+     "article": null,
+     "sizes": [
+      "1200×195",
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная",
+      "Матовая",
+      "Мягкая матовая"
+     ],
+     "image": "/tiles/wood-classic/wood-classic-naturel-1.jpg",
+     "images": [
+      "/tiles/wood-classic/wood-classic-naturel-1.jpg",
+      "/tiles/wood-classic/wood-classic-naturel-2.jpg",
+      "/tiles/wood-classic/wood-classic-naturel-3.jpg",
+      "/tiles/wood-classic/wood-classic-naturel-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×195",
+       "surface": "Лаппатированная",
+       "pcs": 34,
+       "m2": 7.96,
+       "label": "Вуд класс натурал LR (120*195)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 577,
+       "m2": 415.44,
+       "label": "Вуд.класс натурал MR (120*60) Tk50"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Мягкая матовая",
+       "pcs": 389,
+       "m2": 280.08,
+       "label": "Вуд классик софт натурал LMR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/wood-classic/wood-classic-naturel/"
+    },
+    {
+     "slug": "wood-classic-beige",
+     "name": "Wood Classic Beige",
+     "nameRu": "Вуд Классик Бежевый",
+     "color": "Бежевый",
+     "article": null,
+     "sizes": [
+      "1200×195",
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная",
+      "Матовая"
+     ],
+     "image": "/tiles/wood-classic/wood-classic-beige-1.jpg",
+     "images": [
+      "/tiles/wood-classic/wood-classic-beige-1.jpg",
+      "/tiles/wood-classic/wood-classic-beige-2.jpg",
+      "/tiles/wood-classic/wood-classic-beige-3.jpg",
+      "/tiles/wood-classic/wood-classic-beige-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×195",
+       "surface": "Лаппатированная",
+       "pcs": 11,
+       "m2": 2.57,
+       "label": "Вуд классик беж LR (120*195)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 521,
+       "m2": 375.12,
+       "label": "Вуд.класс сов.бейдж MR (120*60) Tk49"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/wood-classic/wood-classic-beige/"
+    }
+   ],
+   "stockM2": 1175.5
+  },
+  {
+   "slug": "kerranova-elevator",
+   "name": "Elevator",
+   "nameRu": "Элеватор",
+   "brand": "kerranova",
+   "look": "concrete",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры"
+   ],
+   "tagline": "KERRANOVA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/kerranova-elevator/kerranova-k2010-1.jpg",
+   "gallery": [
+    "/tiles/kerranova-elevator/kerranova-k2010-1.jpg",
+    "/tiles/kerranova-elevator/kerranova-k2011-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kerranova-elevator/kerranova-k2010-1.jpg",
+    "/tiles/kerranova-elevator/kerranova-k2011-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "kerranova-k2010",
+     "name": "K-2010",
+     "nameRu": "Элеватор K-2010",
+     "color": "Светло-бежевый",
+     "article": "K2010",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/kerranova-elevator/kerranova-k2010-1.jpg",
+     "images": [
+      "/tiles/kerranova-elevator/kerranova-k2010-1.jpg",
+      "/tiles/kerranova-elevator/kerranova-k2010-2.jpg",
+      "/tiles/kerranova-elevator/kerranova-k2010-3.jpg",
+      "/tiles/kerranova-elevator/kerranova-k2010-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 504,
+       "m2": 181.44,
+       "label": "K 2010 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/elevator1/elevator_k_2010/"
+    },
+    {
+     "slug": "kerranova-k2011",
+     "name": "K-2011",
+     "nameRu": "Элеватор K-2011",
+     "color": "Серо-бежевый",
+     "article": "K2011",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/kerranova-elevator/kerranova-k2011-1.jpg",
+     "images": [
+      "/tiles/kerranova-elevator/kerranova-k2011-1.jpg",
+      "/tiles/kerranova-elevator/kerranova-k2011-2.jpg",
+      "/tiles/kerranova-elevator/kerranova-k2011-3.jpg",
+      "/tiles/kerranova-elevator/kerranova-k2011-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 354,
+       "m2": 254.88,
+       "label": "K 2011 MR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 1992,
+       "m2": 717.12,
+       "label": "K 2011 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/elevator1/elevator_k_2011/"
+    }
+   ],
+   "stockM2": 1153.4
+  },
+  {
+   "slug": "kirety",
+   "name": "Kirety",
+   "nameRu": "Киреты",
+   "brand": "granitea",
+   "look": "marble",
+   "sizes": [
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая",
+    "Полированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRANITEA · 600×600 мм",
+   "description": "",
+   "hero": "/tiles/kirety/g245-kirety-black-1.jpg",
+   "gallery": [
+    "/tiles/kirety/g245-kirety-black-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kirety/g245-kirety-black-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g245-kirety-black",
+     "name": "Kirety Black",
+     "nameRu": "Киреты черный",
+     "color": "черный",
+     "article": "G245",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая",
+      "Полированная"
+     ],
+     "image": "/tiles/kirety/g245-kirety-black-1.jpg",
+     "images": [
+      "/tiles/kirety/g245-kirety-black-1.jpg",
+      "/tiles/kirety/g245-kirety-black-2.jpg",
+      "/tiles/kirety/g245-kirety-black-3.jpg",
+      "/tiles/kirety/g245-kirety-black-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Полированная",
+       "pcs": 34,
+       "m2": 12.24,
+       "label": "G 245 PR (60*60) (Т-12)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 3129,
+       "m2": 1126.44,
+       "label": "G 245 МR (60*60) (Т-12)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/kirety/g245-kirety-black/"
+    }
+   ],
+   "stockM2": 1138.7
+  },
+  {
+   "slug": "sugomak",
+   "name": "Sugomak",
+   "nameRu": "Сугомак",
+   "brand": "granitea",
+   "look": "marble",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRANITEA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/sugomak/g322-sugomak-beige-1.jpg",
+   "gallery": [
+    "/tiles/sugomak/g322-sugomak-beige-1.jpg",
+    "/tiles/sugomak/g324-sugomak-brown-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/sugomak/g322-sugomak-beige-1.jpg",
+    "/tiles/sugomak/g324-sugomak-brown-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g322-sugomak-beige",
+     "name": "Sugomak Beige",
+     "nameRu": "Сугомак бежевый",
+     "color": "бежевый",
+     "article": "G322",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/sugomak/g322-sugomak-beige-1.jpg",
+     "images": [
+      "/tiles/sugomak/g322-sugomak-beige-1.jpg",
+      "/tiles/sugomak/g322-sugomak-beige-2.jpg",
+      "/tiles/sugomak/g322-sugomak-beige-3.jpg",
+      "/tiles/sugomak/g322-sugomak-beige-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 131,
+       "m2": 94.32,
+       "label": "G 322 МR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 664,
+       "m2": 239.04,
+       "label": "G 322 МR(60*60) (T-9L)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/sugomak/g322-sugomak-beige/"
+    },
+    {
+     "slug": "g324-sugomak-brown",
+     "name": "Sugomak Brown",
+     "nameRu": "Сугомак коричневый",
+     "color": "коричневый",
+     "article": "G324",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/sugomak/g324-sugomak-brown-1.jpg",
+     "images": [
+      "/tiles/sugomak/g324-sugomak-brown-1.jpg",
+      "/tiles/sugomak/g324-sugomak-brown-2.jpg",
+      "/tiles/sugomak/g324-sugomak-brown-3.jpg",
+      "/tiles/sugomak/g324-sugomak-brown-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 518,
+       "m2": 372.96,
+       "label": "G 324 МR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 606,
+       "m2": 218.16,
+       "label": "G 324 МR (60*60) (Т- 9)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/sugomak/g324-sugomak-brown/"
+    }
+   ],
+   "stockM2": 924.5
+  },
+  {
+   "slug": "kerranova-iceberg",
+   "name": "Iceberg",
+   "nameRu": "Айсберг",
+   "brand": "kerranova",
+   "look": "marble",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Лаппатированная",
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "KERRANOVA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/kerranova-iceberg/kerranova-k2001-1.jpg",
+   "gallery": [
+    "/tiles/kerranova-iceberg/kerranova-k2001-1.jpg",
+    "/tiles/kerranova-iceberg/kerranova-k2003-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kerranova-iceberg/kerranova-k2001-1.jpg",
+    "/tiles/kerranova-iceberg/kerranova-k2003-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "kerranova-k2001",
+     "name": "K-2001",
+     "nameRu": "Айсберг K-2001",
+     "color": "Капучино",
+     "article": "K2001",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная",
+      "Матовая"
+     ],
+     "image": "/tiles/kerranova-iceberg/kerranova-k2001-1.jpg",
+     "images": [
+      "/tiles/kerranova-iceberg/kerranova-k2001-1.jpg",
+      "/tiles/kerranova-iceberg/kerranova-k2001-2.jpg",
+      "/tiles/kerranova-iceberg/kerranova-k2001-3.jpg",
+      "/tiles/kerranova-iceberg/kerranova-k2001-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 672,
+       "m2": 483.84,
+       "label": "K 2001 MR (120*60)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 189,
+       "m2": 136.08,
+       "label": "K 2001 LR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/aysberg/iceberg_k_2001/"
+    },
+    {
+     "slug": "kerranova-k2003",
+     "name": "K-2003",
+     "nameRu": "Айсберг K-2003",
+     "color": "Серый",
+     "article": "K2003",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Лаппатированная",
+      "Матовая"
+     ],
+     "image": "/tiles/kerranova-iceberg/kerranova-k2003-1.jpg",
+     "images": [
+      "/tiles/kerranova-iceberg/kerranova-k2003-1.jpg",
+      "/tiles/kerranova-iceberg/kerranova-k2003-2.jpg",
+      "/tiles/kerranova-iceberg/kerranova-k2003-3.jpg",
+      "/tiles/kerranova-iceberg/kerranova-k2003-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 354,
+       "m2": 254.88,
+       "label": "K 2003 MR (120*60)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 14,
+       "m2": 10.08,
+       "label": "K 2003 LR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Лаппатированная",
+       "pcs": 90,
+       "m2": 32.4,
+       "label": "K 2003 LR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/aysberg/iceberg_k_2003/"
+    }
+   ],
+   "stockM2": 917.3
+  },
+  {
+   "slug": "kerranova-canyon",
+   "name": "Canyon",
+   "nameRu": "Каньон",
+   "brand": "kerranova",
+   "look": "marble",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Лаппатированная",
+    "Структурная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы",
+    "Террасы"
+   ],
+   "tagline": "KERRANOVA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/kerranova-canyon/kerranova-k905-1.jpg",
+   "gallery": [
+    "/tiles/kerranova-canyon/kerranova-k905-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kerranova-canyon/kerranova-k905-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "kerranova-k905",
+     "name": "K-905",
+     "nameRu": "Каньон K-905",
+     "color": "Серый",
+     "article": "K905",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Лаппатированная",
+      "Структурная"
+     ],
+     "image": "/tiles/kerranova-canyon/kerranova-k905-1.jpg",
+     "images": [
+      "/tiles/kerranova-canyon/kerranova-k905-1.jpg",
+      "/tiles/kerranova-canyon/kerranova-k905-2.jpg",
+      "/tiles/kerranova-canyon/kerranova-k905-3.jpg",
+      "/tiles/kerranova-canyon/kerranova-k905-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 704,
+       "m2": 506.88,
+       "label": "K 905 LR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Лаппатированная",
+       "pcs": 670,
+       "m2": 241.2,
+       "label": "K 905 LR (60*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Структурная",
+       "pcs": 164,
+       "m2": 59.04,
+       "label": "K 905 SR (60*60) (T-44,K-4/5)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/kanon/canyon_k_905/"
+    }
+   ],
+   "stockM2": 807.1
+  },
+  {
+   "slug": "sinara",
+   "name": "Sinara",
+   "nameRu": "Синара",
+   "brand": "granitea",
+   "look": "marble",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRANITEA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/sinara/g311-sinara-elegant-1.jpg",
+   "gallery": [
+    "/tiles/sinara/g311-sinara-elegant-1.jpg",
+    "/tiles/sinara/g312-sinara-beige-1.jpg",
+    "/tiles/sinara/g315-sinara-black-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/sinara/g311-sinara-elegant-1.jpg",
+    "/tiles/sinara/g312-sinara-beige-1.jpg",
+    "/tiles/sinara/g315-sinara-black-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g311-sinara-elegant",
+     "name": "Sinara Elegant",
+     "nameRu": "Синара элегантный",
+     "color": "элегантный",
+     "article": "G311",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/sinara/g311-sinara-elegant-1.jpg",
+     "images": [
+      "/tiles/sinara/g311-sinara-elegant-1.jpg",
+      "/tiles/sinara/g311-sinara-elegant-2.jpg",
+      "/tiles/sinara/g311-sinara-elegant-3.jpg",
+      "/tiles/sinara/g311-sinara-elegant-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 1524,
+       "m2": 548.64,
+       "label": "G 311 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/sinara/g311-sinara-elegant/"
+    },
+    {
+     "slug": "g312-sinara-beige",
+     "name": "Sinara Beige",
+     "nameRu": "Синара бежевый",
+     "color": "бежевый",
+     "article": "G312",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/sinara/g312-sinara-beige-1.jpg",
+     "images": [
+      "/tiles/sinara/g312-sinara-beige-1.jpg",
+      "/tiles/sinara/g312-sinara-beige-2.jpg",
+      "/tiles/sinara/g312-sinara-beige-3.jpg",
+      "/tiles/sinara/g312-sinara-beige-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 230,
+       "m2": 165.6,
+       "label": "G 312 MR (120*60) ЗКС"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/sinara/g312-sinara-beige/"
+    },
+    {
+     "slug": "g315-sinara-black",
+     "name": "Sinara Black",
+     "nameRu": "Синара черный",
+     "color": "черный",
+     "article": "G315",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/sinara/g315-sinara-black-1.jpg",
+     "images": [
+      "/tiles/sinara/g315-sinara-black-1.jpg",
+      "/tiles/sinara/g315-sinara-black-2.jpg",
+      "/tiles/sinara/g315-sinara-black-3.jpg",
+      "/tiles/sinara/g315-sinara-black-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 56,
+       "m2": 40.32,
+       "label": "G 315 МR (120*60) T-12"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/sinara/g315-sinara-black/"
+    }
+   ],
+   "stockM2": 754.6
+  },
+  {
+   "slug": "dolomiti",
+   "name": "Dolomiti",
+   "nameRu": "Доломиты",
+   "brand": "idalgo",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая",
+    "Структурная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/dolomiti/dolomiti-antelao-1.jpg",
+   "gallery": [
+    "/tiles/dolomiti/dolomiti-antelao-1.jpg",
+    "/tiles/dolomiti/dolomiti-sass-light-1.jpg",
+    "/tiles/dolomiti/dolomiti-lavaredo-dark-1.jpg",
+    "/tiles/dolomiti/dolomiti-lavaredo-light-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/dolomiti/dolomiti-antelao-1.jpg",
+    "/tiles/dolomiti/dolomiti-sass-light-1.jpg",
+    "/tiles/dolomiti/dolomiti-lavaredo-dark-1.jpg",
+    "/tiles/dolomiti/dolomiti-lavaredo-light-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "dolomiti-antelao",
+     "name": "Dolomiti Antelao",
+     "nameRu": "Доломиты Антелао",
+     "color": "Антелао",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/dolomiti/dolomiti-antelao-1.jpg",
+     "images": [
+      "/tiles/dolomiti/dolomiti-antelao-1.jpg",
+      "/tiles/dolomiti/dolomiti-antelao-2.jpg",
+      "/tiles/dolomiti/dolomiti-antelao-3.jpg",
+      "/tiles/dolomiti/dolomiti-antelao-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Структурная",
+       "pcs": 40,
+       "m2": 28.8,
+       "label": "Доломинти антелано SR(120*60) T-n51"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/dolomiti/dolomiti-antelao/"
+    },
+    {
+     "slug": "dolomiti-sass-light",
+     "name": "Dolomiti Sass Light",
+     "nameRu": "Доломиты Сасс Светлый",
+     "color": "Светлый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/dolomiti/dolomiti-sass-light-1.jpg",
+     "images": [
+      "/tiles/dolomiti/dolomiti-sass-light-1.jpg",
+      "/tiles/dolomiti/dolomiti-sass-light-2.jpg",
+      "/tiles/dolomiti/dolomiti-sass-light-3.jpg",
+      "/tiles/dolomiti/dolomiti-sass-light-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Структурная",
+       "pcs": 112,
+       "m2": 80.64,
+       "label": "Доломинти сас лайт SR(120*60) T-к49"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/dolomiti/dolomiti-sass-light/"
+    },
+    {
+     "slug": "dolomiti-lavaredo-dark",
+     "name": "Dolomiti Lavaredo Dark",
+     "nameRu": "Доломиты Лаваредо Тёмный",
+     "color": "Тёмный",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/dolomiti/dolomiti-lavaredo-dark-1.jpg",
+     "images": [
+      "/tiles/dolomiti/dolomiti-lavaredo-dark-1.jpg",
+      "/tiles/dolomiti/dolomiti-lavaredo-dark-2.jpg",
+      "/tiles/dolomiti/dolomiti-lavaredo-dark-3.jpg",
+      "/tiles/dolomiti/dolomiti-lavaredo-dark-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 647,
+       "m2": 465.84,
+       "label": "Доломити лаваредо дарк MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/dolomiti/dolomiti-lavaredo-dark/"
+    },
+    {
+     "slug": "dolomiti-lavaredo-light",
+     "name": "Dolomiti Lavaredo Light",
+     "nameRu": "Доломиты Лаваредо Светлый",
+     "color": "Светлый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/dolomiti/dolomiti-lavaredo-light-1.jpg",
+     "images": [
+      "/tiles/dolomiti/dolomiti-lavaredo-light-1.jpg",
+      "/tiles/dolomiti/dolomiti-lavaredo-light-2.jpg",
+      "/tiles/dolomiti/dolomiti-lavaredo-light-3.jpg",
+      "/tiles/dolomiti/dolomiti-lavaredo-light-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 246,
+       "m2": 177.12,
+       "label": "Доломити лаваредо лайт MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/dolomiti/dolomiti-lavaredo-light/"
+    }
+   ],
+   "stockM2": 752.4
+  },
+  {
+   "slug": "marta",
+   "name": "Marta",
+   "nameRu": "Марта",
+   "brand": "idalgo",
+   "look": "loft",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/marta/marta-grey-1.jpg",
+   "gallery": [
+    "/tiles/marta/marta-grey-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/marta/marta-grey-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "marta-grey",
+     "name": "Marta Grey",
+     "nameRu": "Марта Серый",
+     "color": "Серый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/marta/marta-grey-1.jpg",
+     "images": [
+      "/tiles/marta/marta-grey-1.jpg",
+      "/tiles/marta/marta-grey-2.jpg",
+      "/tiles/marta/marta-grey-3.jpg",
+      "/tiles/marta/marta-grey-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 994,
+       "m2": 715.68,
+       "label": "Марта грей MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/marta/marta-grey/"
+    }
+   ],
+   "stockM2": 715.7
+  },
+  {
+   "slug": "payer",
+   "name": "Payer",
+   "nameRu": "Пайер",
+   "brand": "granitea",
+   "look": "marble",
+   "sizes": [
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая",
+    "Полированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRANITEA · 600×600 мм",
+   "description": "",
+   "hero": "/tiles/payer/g281-payer-elegant-1.jpg",
+   "gallery": [
+    "/tiles/payer/g281-payer-elegant-1.jpg",
+    "/tiles/payer/g282-payer-beige-1.jpg",
+    "/tiles/payer/g285-payer-black-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/payer/g281-payer-elegant-1.jpg",
+    "/tiles/payer/g282-payer-beige-1.jpg",
+    "/tiles/payer/g285-payer-black-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g281-payer-elegant",
+     "name": "Payer Elegant",
+     "nameRu": "Пайер элегантный",
+     "color": "элегантный",
+     "article": "G281",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая",
+      "Полированная"
+     ],
+     "image": "/tiles/payer/g281-payer-elegant-1.jpg",
+     "images": [
+      "/tiles/payer/g281-payer-elegant-1.jpg",
+      "/tiles/payer/g281-payer-elegant-2.jpg",
+      "/tiles/payer/g281-payer-elegant-3.jpg",
+      "/tiles/payer/g281-payer-elegant-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 926,
+       "m2": 333.36,
+       "label": "G 281 MR (60*60) T9L"
+      },
+      {
+       "size": "600×600",
+       "surface": "Полированная",
+       "pcs": 850,
+       "m2": 306.0,
+       "label": "G 281 PR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/payer/g281-payer-elegant/"
+    },
+    {
+     "slug": "g282-payer-beige",
+     "name": "Payer Beige",
+     "nameRu": "Пайер бежевый",
+     "color": "бежевый",
+     "article": "G282",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "/tiles/payer/g282-payer-beige-1.jpg",
+     "images": [
+      "/tiles/payer/g282-payer-beige-1.jpg",
+      "/tiles/payer/g282-payer-beige-2.jpg",
+      "/tiles/payer/g282-payer-beige-3.jpg",
+      "/tiles/payer/g282-payer-beige-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Полированная",
+       "pcs": 54,
+       "m2": 19.44,
+       "label": "G 282 PR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/payer/g282-payer-beige/"
+    },
+    {
+     "slug": "g285-payer-black",
+     "name": "Payer Black",
+     "nameRu": "Пайер черный",
+     "color": "черный",
+     "article": "G285",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Полированная"
+     ],
+     "image": "/tiles/payer/g285-payer-black-1.jpg",
+     "images": [
+      "/tiles/payer/g285-payer-black-1.jpg",
+      "/tiles/payer/g285-payer-black-2.jpg",
+      "/tiles/payer/g285-payer-black-3.jpg",
+      "/tiles/payer/g285-payer-black-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Полированная",
+       "pcs": 38,
+       "m2": 13.68,
+       "label": "G 285 PR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/payer/g285-payer-black/"
+    }
+   ],
+   "stockM2": 672.5
+  },
+  {
+   "slug": "perla",
+   "name": "Perla",
+   "nameRu": "Перла",
+   "brand": "idalgo",
+   "look": "loft",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Лаппатированная",
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/perla/perla-light-grey-1.jpg",
+   "gallery": [
+    "/tiles/perla/perla-light-grey-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/perla/perla-light-grey-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "perla-light-grey",
+     "name": "Perla Light Grey",
+     "nameRu": "Перла Светло-Серый",
+     "color": "Светло-Серый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная",
+      "Матовая"
+     ],
+     "image": "/tiles/perla/perla-light-grey-1.jpg",
+     "images": [
+      "/tiles/perla/perla-light-grey-1.jpg",
+      "/tiles/perla/perla-light-grey-2.jpg",
+      "/tiles/perla/perla-light-grey-3.jpg",
+      "/tiles/perla/perla-light-grey-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 660,
+       "m2": 475.2,
+       "label": "Перла лайт грей MR (120*60)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 35,
+       "m2": 25.2,
+       "label": "Перла лайт грей ллр (120*60) т-д53"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/perla/perla-light-grey/"
+    }
+   ],
+   "stockM2": 500.4
+  },
+  {
+   "slug": "lusso",
+   "name": "Lusso",
+   "nameRu": "Люссо",
+   "brand": "idalgo",
+   "look": "marble",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/lusso/lusso-nebbia-1.jpg",
+   "gallery": [
+    "/tiles/lusso/lusso-nebbia-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/lusso/lusso-nebbia-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "lusso-nebbia",
+     "name": "Lusso Nebbia",
+     "nameRu": "Люссо Небья",
+     "color": "Небья",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/lusso/lusso-nebbia-1.jpg",
+     "images": [
+      "/tiles/lusso/lusso-nebbia-1.jpg",
+      "/tiles/lusso/lusso-nebbia-2.jpg",
+      "/tiles/lusso/lusso-nebbia-3.jpg",
+      "/tiles/lusso/lusso-nebbia-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 666,
+       "m2": 479.52,
+       "label": "Люссо Неро MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/lusso/lusso-nebbia/"
+    }
+   ],
+   "stockM2": 479.5
+  },
+  {
+   "slug": "victoria",
+   "name": "Victoria",
+   "nameRu": "Виктория",
+   "brand": "idalgo",
+   "look": "wood",
+   "sizes": [
+    "1200×300"
+   ],
+   "surfaces": [
+    "Структурная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Спальни",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Тёплый пол"
+   ],
+   "tagline": "IDALGO · 1200×300 мм",
+   "description": "",
+   "hero": "/tiles/victoria/victoria-white-1.jpg",
+   "gallery": [
+    "/tiles/victoria/victoria-white-1.jpg",
+    "/tiles/victoria/victoria-natural-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/victoria/victoria-white-1.jpg",
+    "/tiles/victoria/victoria-natural-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "victoria-white",
+     "name": "Victoria White",
+     "nameRu": "Виктория Белый",
+     "color": "Белый",
+     "article": null,
+     "sizes": [
+      "1200×300"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/victoria/victoria-white-1.jpg",
+     "images": [
+      "/tiles/victoria/victoria-white-1.jpg",
+      "/tiles/victoria/victoria-white-2.jpg",
+      "/tiles/victoria/victoria-white-3.jpg",
+      "/tiles/victoria/victoria-white-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×300",
+       "surface": "Структурная",
+       "pcs": 469,
+       "m2": 168.84,
+       "label": "Виктория вайт SR (120*30) tk51"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/victoria/victoria-white/"
+    },
+    {
+     "slug": "victoria-natural",
+     "name": "Victoria Naturel",
+     "nameRu": "Виктория Натуральный",
+     "color": "Натуральный",
+     "article": null,
+     "sizes": [],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/victoria/victoria-natural-1.jpg",
+     "images": [
+      "/tiles/victoria/victoria-natural-1.jpg",
+      "/tiles/victoria/victoria-natural-2.jpg",
+      "/tiles/victoria/victoria-natural-3.jpg",
+      "/tiles/victoria/victoria-natural-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "",
+       "surface": "Структурная",
+       "pcs": 762,
+       "m2": 269.75,
+       "label": "Виктория Натурал SR (1,2*0,295) m50"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/victoria/victoria-natural/"
+    }
+   ],
+   "stockM2": 438.6
+  },
+  {
+   "slug": "sofia",
+   "name": "Sofia",
+   "nameRu": "София",
+   "brand": "idalgo",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/sofia/sofia-veolur-1.jpg",
+   "gallery": [
+    "/tiles/sofia/sofia-veolur-1.jpg",
+    "/tiles/sofia/sofia-grey-anthracite-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/sofia/sofia-veolur-1.jpg",
+    "/tiles/sofia/sofia-grey-anthracite-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "sofia-veolur",
+     "name": "Sofia Veolur",
+     "nameRu": "София Велюр",
+     "color": "Велюр",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/sofia/sofia-veolur-1.jpg",
+     "images": [
+      "/tiles/sofia/sofia-veolur-1.jpg",
+      "/tiles/sofia/sofia-veolur-2.jpg",
+      "/tiles/sofia/sofia-veolur-3.jpg",
+      "/tiles/sofia/sofia-veolur-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 547,
+       "m2": 393.84,
+       "label": "София велюр MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/sofia/sofia-veolur/"
+    },
+    {
+     "slug": "sofia-grey-anthracite",
+     "name": "Sofia Grey Anthracite",
+     "nameRu": "София Серый Антрацит",
+     "color": "Антрацит",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/sofia/sofia-grey-anthracite-1.jpg",
+     "images": [
+      "/tiles/sofia/sofia-grey-anthracite-1.jpg",
+      "/tiles/sofia/sofia-grey-anthracite-2.jpg",
+      "/tiles/sofia/sofia-grey-anthracite-3.jpg",
+      "/tiles/sofia/sofia-grey-anthracite-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 60,
+       "m2": 43.2,
+       "label": "София Серый антрацит MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/sofia/sofia-grey-anthracite/"
+    }
+   ],
+   "stockM2": 437.0
+  },
+  {
+   "slug": "kondjak",
+   "name": "Kondjak",
+   "nameRu": "Конжак",
+   "brand": "granitea",
+   "look": "loft",
+   "sizes": [
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры"
+   ],
+   "tagline": "GRANITEA · 600×600 мм",
+   "description": "",
+   "hero": "/tiles/kondjak/g261-kondjak-elegant-1.jpg",
+   "gallery": [
+    "/tiles/kondjak/g261-kondjak-elegant-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kondjak/g261-kondjak-elegant-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g261-kondjak-elegant",
+     "name": "Kondjak Elegant",
+     "nameRu": "Конжак элегантный",
+     "color": "элегантный",
+     "article": "G261",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/kondjak/g261-kondjak-elegant-1.jpg",
+     "images": [
+      "/tiles/kondjak/g261-kondjak-elegant-1.jpg",
+      "/tiles/kondjak/g261-kondjak-elegant-2.jpg",
+      "/tiles/kondjak/g261-kondjak-elegant-3.jpg",
+      "/tiles/kondjak/g261-kondjak-elegant-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 1176,
+       "m2": 423.36,
+       "label": "G 261 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/kondjak/g261-kondjak-elegant/"
+    }
+   ],
+   "stockM2": 423.4
+  },
+  {
+   "slug": "sunset",
+   "name": "Sunset",
+   "nameRu": "Сансет",
+   "brand": "idalgo",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/sunset/sunset-argento-1.jpg",
+   "gallery": [
+    "/tiles/sunset/sunset-argento-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/sunset/sunset-argento-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "sunset-argento",
+     "name": "Sunset Argento",
+     "nameRu": "Сансет Серебряный",
+     "color": "Серебряный",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/sunset/sunset-argento-1.jpg",
+     "images": [
+      "/tiles/sunset/sunset-argento-1.jpg",
+      "/tiles/sunset/sunset-argento-2.jpg",
+      "/tiles/sunset/sunset-argento-3.jpg",
+      "/tiles/sunset/sunset-argento-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 585,
+       "m2": 421.2,
+       "label": "Сансет ардженто MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/sunset/sunset-argento/"
+    }
+   ],
+   "stockM2": 421.2
+  },
+  {
+   "slug": "avellano",
+   "name": "Avellano",
+   "nameRu": "Авеллано",
+   "brand": "idalgo",
+   "look": "wood",
+   "sizes": [
+    "1200×195"
+   ],
+   "surfaces": [
+    "Структурная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Спальни",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Тёплый пол"
+   ],
+   "tagline": "IDALGO · 1200×195 мм",
+   "description": "",
+   "hero": "/tiles/avellano/avellano-beige-1.jpg",
+   "gallery": [
+    "/tiles/avellano/avellano-beige-1.jpg",
+    "/tiles/avellano/avellano-grey-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/avellano/avellano-beige-1.jpg",
+    "/tiles/avellano/avellano-grey-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "avellano-beige",
+     "name": "Avellano Beige",
+     "nameRu": "Авеллано Бежевый",
+     "color": "Бежевый",
+     "article": null,
+     "sizes": [
+      "1200×195"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/avellano/avellano-beige-1.jpg",
+     "images": [
+      "/tiles/avellano/avellano-beige-1.jpg",
+      "/tiles/avellano/avellano-beige-2.jpg",
+      "/tiles/avellano/avellano-beige-3.jpg",
+      "/tiles/avellano/avellano-beige-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×195",
+       "surface": "Структурная",
+       "pcs": 985,
+       "m2": 230.49,
+       "label": "Авеллано Бежевый SR (120*195)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/avellano/avellano-beige/"
+    },
+    {
+     "slug": "avellano-grey",
+     "name": "Avellano Grey",
+     "nameRu": "Авеллано Серый",
+     "color": "Серый",
+     "article": null,
+     "sizes": [
+      "1200×195"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/avellano/avellano-grey-1.jpg",
+     "images": [
+      "/tiles/avellano/avellano-grey-1.jpg",
+      "/tiles/avellano/avellano-grey-2.jpg",
+      "/tiles/avellano/avellano-grey-3.jpg",
+      "/tiles/avellano/avellano-grey-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×195",
+       "surface": "Структурная",
+       "pcs": 711,
+       "m2": 166.37,
+       "label": "Авеллано Серый SR (120*195)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/avellano/avellano-grey/"
+    }
+   ],
+   "stockM2": 396.9
+  },
+  {
+   "slug": "kerranova-usadba",
+   "name": "Usadba",
+   "nameRu": "Усадьба",
+   "brand": "kerranova",
+   "look": "marble",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "KERRANOVA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/kerranova-usadba/kerranova-k2601-1.jpg",
+   "gallery": [
+    "/tiles/kerranova-usadba/kerranova-k2601-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kerranova-usadba/kerranova-k2601-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "kerranova-k2601",
+     "name": "K-2601",
+     "nameRu": "Усадьба K-2601",
+     "color": "Серо-бежевый",
+     "article": "K2601",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/kerranova-usadba/kerranova-k2601-1.jpg",
+     "images": [
+      "/tiles/kerranova-usadba/kerranova-k2601-1.jpg",
+      "/tiles/kerranova-usadba/kerranova-k2601-2.jpg",
+      "/tiles/kerranova-usadba/kerranova-k2601-3.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 475,
+       "m2": 342.0,
+       "label": "K 2601 MR (120*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 144,
+       "m2": 51.84,
+       "label": "K 2601 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/usadba1/usadba_k_2601/"
+    }
+   ],
+   "stockM2": 393.8
+  },
+  {
+   "slug": "amarillo",
+   "name": "Amarillo",
+   "nameRu": "Амарилло",
+   "brand": "idalgo",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Лаппатированная",
+    "Структурная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/amarillo/amarillo-delicate-1.jpg",
+   "gallery": [
+    "/tiles/amarillo/amarillo-delicate-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/amarillo/amarillo-delicate-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "amarillo-delicate",
+     "name": "Amarillo Delicate",
+     "nameRu": "Амарилло Деликатный",
+     "color": "Деликатный",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная",
+      "Структурная"
+     ],
+     "image": "/tiles/amarillo/amarillo-delicate-1.jpg",
+     "images": [
+      "/tiles/amarillo/amarillo-delicate-1.jpg",
+      "/tiles/amarillo/amarillo-delicate-2.jpg",
+      "/tiles/amarillo/amarillo-delicate-3.jpg",
+      "/tiles/amarillo/amarillo-delicate-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 246,
+       "m2": 177.12,
+       "label": "Амарилло Деликат LLR (120*60)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Структурная",
+       "pcs": 276,
+       "m2": 198.72,
+       "label": "Амарилло Деликат SR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/amarillo/amarillo-delicate/"
+    }
+   ],
+   "stockM2": 375.8
+  },
+  {
+   "slug": "lunar",
+   "name": "Lunar",
+   "nameRu": "Лунар",
+   "brand": "idalgo",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Лаппатированная",
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/lunar/lunar-grey-light-1.jpg",
+   "gallery": [
+    "/tiles/lunar/lunar-grey-light-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/lunar/lunar-grey-light-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "lunar-grey-light",
+     "name": "Lunar Light Grey",
+     "nameRu": "Лунар Светло-Серый",
+     "color": "Светло-Серый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная",
+      "Матовая"
+     ],
+     "image": "/tiles/lunar/lunar-grey-light-1.jpg",
+     "images": [
+      "/tiles/lunar/lunar-grey-light-1.jpg",
+      "/tiles/lunar/lunar-grey-light-2.jpg",
+      "/tiles/lunar/lunar-grey-light-3.jpg",
+      "/tiles/lunar/lunar-grey-light-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 12,
+       "m2": 8.64,
+       "label": "Лунар светло-серый MR (120*60)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 494,
+       "m2": 355.68,
+       "label": "Лунар светло-серый LLR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/lunar/lunar-grey-light/"
+    }
+   ],
+   "stockM2": 364.3
+  },
+  {
+   "slug": "shikhan",
+   "name": "Shikhan",
+   "nameRu": "Шихан",
+   "brand": "granitea",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRANITEA · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/shikhan/g290-shikhan-white-1.jpg",
+   "gallery": [
+    "/tiles/shikhan/g290-shikhan-white-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/shikhan/g290-shikhan-white-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g290-shikhan-white",
+     "name": "Shikhan White",
+     "nameRu": "Шихан белый",
+     "color": "белый",
+     "article": "G290",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/shikhan/g290-shikhan-white-1.jpg",
+     "images": [
+      "/tiles/shikhan/g290-shikhan-white-1.jpg",
+      "/tiles/shikhan/g290-shikhan-white-2.jpg",
+      "/tiles/shikhan/g290-shikhan-white-3.jpg",
+      "/tiles/shikhan/g290-shikhan-white-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 481,
+       "m2": 346.32,
+       "label": "ГР 290 MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/shikhan/g290-shikhan-white/"
+    }
+   ],
+   "stockM2": 346.3
+  },
+  {
+   "slug": "kerranova-vetro",
+   "name": "Vetro",
+   "nameRu": "Ветро",
+   "brand": "kerranova",
+   "look": "wood",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Спальни",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Тёплый пол"
+   ],
+   "tagline": "KERRANOVA · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/kerranova-vetro/kerranova-k340-1.jpg",
+   "gallery": [
+    "/tiles/kerranova-vetro/kerranova-k340-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kerranova-vetro/kerranova-k340-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "kerranova-k340",
+     "name": "K-340",
+     "nameRu": "Ветро K-340",
+     "color": "Белый",
+     "article": "K340",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/kerranova-vetro/kerranova-k340-1.jpg",
+     "images": [
+      "/tiles/kerranova-vetro/kerranova-k340-1.jpg",
+      "/tiles/kerranova-vetro/kerranova-k340-2.jpg",
+      "/tiles/kerranova-vetro/kerranova-k340-3.jpg",
+      "/tiles/kerranova-vetro/kerranova-k340-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 412,
+       "m2": 296.64,
+       "label": "K 340 MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/vetro1/vetro_k_340/"
+    }
+   ],
+   "stockM2": 296.6
+  },
+  {
+   "slug": "siena",
+   "name": "Siena",
+   "nameRu": "Сиена",
+   "brand": "idalgo",
+   "look": "marble",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Лаппатированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/siena/siena-white-1.jpg",
+   "gallery": [
+    "/tiles/siena/siena-white-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/siena/siena-white-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "siena-white",
+     "name": "Siena White",
+     "nameRu": "Сиена Белый",
+     "color": "Белый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "/tiles/siena/siena-white-1.jpg",
+     "images": [
+      "/tiles/siena/siena-white-1.jpg",
+      "/tiles/siena/siena-white-2.jpg",
+      "/tiles/siena/siena-white-3.jpg",
+      "/tiles/siena/siena-white-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 353,
+       "m2": 254.16,
+       "label": "Сиена вайт LLR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/siena/siena-white/"
+    }
+   ],
+   "stockM2": 254.2
+  },
+  {
+   "slug": "kerranova-butik",
+   "name": "Butik",
+   "nameRu": "Бутик",
+   "brand": "kerranova",
+   "look": "marble",
+   "sizes": [
+    "600×600"
+   ],
+   "surfaces": [
+    "Лаппатированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "KERRANOVA · 600×600 мм",
+   "description": "",
+   "hero": "/tiles/kerranova-butik/kerranova-k2020-1.jpg",
+   "gallery": [
+    "/tiles/kerranova-butik/kerranova-k2020-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kerranova-butik/kerranova-k2020-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "kerranova-k2020",
+     "name": "K-2020",
+     "nameRu": "Бутик K-2020",
+     "color": "Белый",
+     "article": "K2020",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "/tiles/kerranova-butik/kerranova-k2020-1.jpg",
+     "images": [
+      "/tiles/kerranova-butik/kerranova-k2020-1.jpg",
+      "/tiles/kerranova-butik/kerranova-k2020-2.jpg",
+      "/tiles/kerranova-butik/kerranova-k2020-3.jpg",
+      "/tiles/kerranova-butik/kerranova-k2020-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Лаппатированная",
+       "pcs": 692,
+       "m2": 249.12,
+       "label": "K 2020 LR (60*60) T52"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://kerranova.ru/catalog/butik1/butik_k_2020/"
+    }
+   ],
+   "stockM2": 249.1
+  },
+  {
+   "slug": "iset",
+   "name": "Iset",
+   "nameRu": "Исеть",
+   "brand": "granitea",
+   "look": "marble",
+   "sizes": [
+    "1200×600",
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая",
+    "Полированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRANITEA · 1200×600, 600×600 мм",
+   "description": "",
+   "hero": "/tiles/iset/g231-iset-elegant-1.jpg",
+   "gallery": [
+    "/tiles/iset/g231-iset-elegant-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/iset/g231-iset-elegant-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g231-iset-elegant",
+     "name": "Iset Elegant",
+     "nameRu": "Исеть элегантный",
+     "color": "элегантный",
+     "article": "G231",
+     "sizes": [
+      "1200×600",
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая",
+      "Полированная"
+     ],
+     "image": "/tiles/iset/g231-iset-elegant-1.jpg",
+     "images": [
+      "/tiles/iset/g231-iset-elegant-1.jpg",
+      "/tiles/iset/g231-iset-elegant-2.jpg",
+      "/tiles/iset/g231-iset-elegant-3.jpg",
+      "/tiles/iset/g231-iset-elegant-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 404,
+       "m2": 145.44,
+       "label": "G 231 MR (60*60) t9"
+      },
+      {
+       "size": "600×600",
+       "surface": "Полированная",
+       "pcs": 72,
+       "m2": 25.92,
+       "label": "G 231 PR (60*60) t9"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 76,
+       "m2": 54.72,
+       "label": "G 231 МR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/iset/g231-iset-elegant/"
+    }
+   ],
+   "stockM2": 226.1
+  },
+  {
+   "slug": "arabesco",
+   "name": "Arabesco",
+   "nameRu": "Арабеска",
+   "brand": "idalgo",
+   "look": "marble",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Лаппатированная",
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/arabesco/arabesco-verde-1.jpg",
+   "gallery": [
+    "/tiles/arabesco/arabesco-verde-1.jpg",
+    "/tiles/arabesco/arabesco-lite-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/arabesco/arabesco-verde-1.jpg",
+    "/tiles/arabesco/arabesco-lite-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "arabesco-verde",
+     "name": "Arabesco Verde",
+     "nameRu": "Арабеска Зелёный",
+     "color": "Зелёный",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "/tiles/arabesco/arabesco-verde-1.jpg",
+     "images": [
+      "/tiles/arabesco/arabesco-verde-1.jpg",
+      "/tiles/arabesco/arabesco-verde-2.jpg",
+      "/tiles/arabesco/arabesco-verde-3.jpg",
+      "/tiles/arabesco/arabesco-verde-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 129,
+       "m2": 92.88,
+       "label": "Арабеско Верд ЛЛР (120*60) Та50)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/arabesco/arabesco-verde/"
+    },
+    {
+     "slug": "arabesco-lite",
+     "name": "Arabesco Light",
+     "nameRu": "Арабеска Светлый",
+     "color": "Светлый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/arabesco/arabesco-lite-1.jpg",
+     "images": [
+      "/tiles/arabesco/arabesco-lite-1.jpg",
+      "/tiles/arabesco/arabesco-lite-2.jpg",
+      "/tiles/arabesco/arabesco-lite-3.jpg",
+      "/tiles/arabesco/arabesco-lite-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 185,
+       "m2": 133.2,
+       "label": "Арабеско лайт MR (120*60) Тсс1"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/arabesco/arabesco-lite/"
+    }
+   ],
+   "stockM2": 226.1
+  },
+  {
+   "slug": "bardiglio",
+   "name": "Bardiglio",
+   "nameRu": "Бардильо",
+   "brand": "idalgo",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Лаппатированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/bardiglio/bardiglio-classic-1.jpg",
+   "gallery": [
+    "/tiles/bardiglio/bardiglio-classic-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/bardiglio/bardiglio-classic-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "bardiglio-classic",
+     "name": "Bardiglio Classic",
+     "nameRu": "Бардильо Классик",
+     "color": "Классик",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "/tiles/bardiglio/bardiglio-classic-1.jpg",
+     "images": [
+      "/tiles/bardiglio/bardiglio-classic-1.jpg",
+      "/tiles/bardiglio/bardiglio-classic-2.jpg",
+      "/tiles/bardiglio/bardiglio-classic-3.jpg",
+      "/tiles/bardiglio/bardiglio-classic-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 300,
+       "m2": 216.0,
+       "label": "Бардилио классик LLR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/bardiglio/bardiglio-classic/"
+    }
+   ],
+   "stockM2": 216.0
+  },
+  {
+   "slug": "china-stock",
+   "name": "China",
+   "nameRu": "Китай",
+   "brand": "china",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "Китай · 1200×600 мм",
+   "description": "",
+   "hero": "",
+   "gallery": [],
+   "swatches": [],
+   "products": [
+    {
+     "slug": "china-sn-612g-0914",
+     "name": "SN 612G 0914",
+     "nameRu": "SN 612G 0914",
+     "color": "",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [],
+     "image": "",
+     "images": [],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "",
+       "pcs": 298,
+       "m2": 214.56,
+       "label": "SN 612G 0914 (120*60)"
+      }
+     ],
+     "noPhoto": true,
+     "source": ""
+    }
+   ],
+   "stockM2": 214.6
+  },
+  {
+   "slug": "gabriella",
+   "name": "Gabriella",
+   "nameRu": "Габриэлла",
+   "brand": "idalgo",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/gabriella/gabriella-grey-1.jpg",
+   "gallery": [
+    "/tiles/gabriella/gabriella-grey-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/gabriella/gabriella-grey-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "gabriella-grey",
+     "name": "Gabriella Grey",
+     "nameRu": "Габриэлла Серый",
+     "color": "Серый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/gabriella/gabriella-grey-1.jpg",
+     "images": [
+      "/tiles/gabriella/gabriella-grey-1.jpg",
+      "/tiles/gabriella/gabriella-grey-2.jpg",
+      "/tiles/gabriella/gabriella-grey-3.jpg",
+      "/tiles/gabriella/gabriella-grey-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 298,
+       "m2": 214.56,
+       "label": "Габриелла грей MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/gabriella/gabriella-grey/"
+    }
+   ],
+   "stockM2": 214.6
+  },
+  {
+   "slug": "silver",
+   "name": "Silver",
+   "nameRu": "Сильвер",
+   "brand": "idalgo",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Лаппатированная",
+    "Структурная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/silver/silver-espero-1.jpg",
+   "gallery": [
+    "/tiles/silver/silver-espero-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/silver/silver-espero-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "silver-espero",
+     "name": "Silver Espero",
+     "nameRu": "Сильвер Веспер",
+     "color": "Веспер",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная",
+      "Структурная"
+     ],
+     "image": "/tiles/silver/silver-espero-1.jpg",
+     "images": [
+      "/tiles/silver/silver-espero-1.jpg",
+      "/tiles/silver/silver-espero-2.jpg",
+      "/tiles/silver/silver-espero-3.jpg",
+      "/tiles/silver/silver-espero-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Структурная",
+       "pcs": 73,
+       "m2": 52.56,
+       "label": "Сильвер эсперо SR (120*60)"
+      },
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 214,
+       "m2": 154.08,
+       "label": "Сильвер эсперо LLR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/silver/silver-espero/"
+    }
+   ],
+   "stockM2": 206.6
+  },
+  {
+   "slug": "neiva",
+   "name": "Neiva",
+   "nameRu": "Нейва",
+   "brand": "granitea",
+   "look": "marble",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRANITEA · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/neiva/g394-neiva-brown-1.jpg",
+   "gallery": [
+    "/tiles/neiva/g394-neiva-brown-1.jpg",
+    "/tiles/neiva/g395-neiva-black-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/neiva/g394-neiva-brown-1.jpg",
+    "/tiles/neiva/g395-neiva-black-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g394-neiva-brown",
+     "name": "Neiva Brown",
+     "nameRu": "Нейва коричневый",
+     "color": "коричневый",
+     "article": "G394",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/neiva/g394-neiva-brown-1.jpg",
+     "images": [
+      "/tiles/neiva/g394-neiva-brown-1.jpg",
+      "/tiles/neiva/g394-neiva-brown-2.jpg",
+      "/tiles/neiva/g394-neiva-brown-3.jpg",
+      "/tiles/neiva/g394-neiva-brown-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 205,
+       "m2": 147.6,
+       "label": "G 394 MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/neiva/g394-neiva-brown/"
+    },
+    {
+     "slug": "g395-neiva-black",
+     "name": "Neiva Black",
+     "nameRu": "Нейва черный",
+     "color": "черный",
+     "article": "G395",
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/neiva/g395-neiva-black-1.jpg",
+     "images": [
+      "/tiles/neiva/g395-neiva-black-1.jpg",
+      "/tiles/neiva/g395-neiva-black-2.jpg",
+      "/tiles/neiva/g395-neiva-black-3.jpg",
+      "/tiles/neiva/g395-neiva-black-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 37,
+       "m2": 26.64,
+       "label": "G 395 MR (120Х60 )"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/neiva/g395-neiva-black/"
+    }
+   ],
+   "stockM2": 174.2
+  },
+  {
+   "slug": "concepta",
+   "name": "Concepta",
+   "nameRu": "Концепта",
+   "brand": "idalgo",
+   "look": "loft",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/concepta/concepta-beige-1.jpg",
+   "gallery": [
+    "/tiles/concepta/concepta-beige-1.jpg",
+    "/tiles/concepta/concepta-pearl-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/concepta/concepta-beige-1.jpg",
+    "/tiles/concepta/concepta-pearl-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "concepta-beige",
+     "name": "Concepta Beige",
+     "nameRu": "Концепта Бежевый",
+     "color": "Бежевый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/concepta/concepta-beige-1.jpg",
+     "images": [
+      "/tiles/concepta/concepta-beige-1.jpg",
+      "/tiles/concepta/concepta-beige-2.jpg",
+      "/tiles/concepta/concepta-beige-3.jpg",
+      "/tiles/concepta/concepta-beige-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 158,
+       "m2": 113.76,
+       "label": "Концепта бейдж MR (120*60) m48"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/concepta/concepta-beige/"
+    },
+    {
+     "slug": "concepta-pearl",
+     "name": "Concepta Pearl",
+     "nameRu": "Концепта Жемчуг",
+     "color": "Жемчуг",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/concepta/concepta-pearl-1.jpg",
+     "images": [
+      "/tiles/concepta/concepta-pearl-1.jpg",
+      "/tiles/concepta/concepta-pearl-2.jpg",
+      "/tiles/concepta/concepta-pearl-3.jpg",
+      "/tiles/concepta/concepta-pearl-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 49,
+       "m2": 35.28,
+       "label": "Концепта Жемчук MR(Т-к50)120*60"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/concepta/concepta-pearl/"
+    }
+   ],
+   "stockM2": 149.0
+  },
+  {
+   "slug": "cement",
+   "name": "Cement",
+   "nameRu": "Цемент",
+   "brand": "idalgo",
+   "look": "concrete",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Структурная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры",
+    "Террасы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/cement/cement-white-1.jpg",
+   "gallery": [
+    "/tiles/cement/cement-white-1.jpg",
+    "/tiles/cement/cement-classic-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/cement/cement-white-1.jpg",
+    "/tiles/cement/cement-classic-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "cement-white",
+     "name": "Cement White",
+     "nameRu": "Цемент Белый",
+     "color": "Белый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/cement/cement-white-1.jpg",
+     "images": [
+      "/tiles/cement/cement-white-1.jpg",
+      "/tiles/cement/cement-white-2.jpg",
+      "/tiles/cement/cement-white-3.jpg",
+      "/tiles/cement/cement-white-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Структурная",
+       "pcs": 145,
+       "m2": 104.4,
+       "label": "Стоун цемент вайт SR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/cement/cement-white/"
+    },
+    {
+     "slug": "cement-classic",
+     "name": "Cement Classic",
+     "nameRu": "Цемент Классик",
+     "color": "Классик",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/cement/cement-classic-1.jpg",
+     "images": [
+      "/tiles/cement/cement-classic-1.jpg",
+      "/tiles/cement/cement-classic-2.jpg",
+      "/tiles/cement/cement-classic-3.jpg",
+      "/tiles/cement/cement-classic-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Структурная",
+       "pcs": 56,
+       "m2": 40.32,
+       "label": "Стоун цемент класс SR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/cement/cement-classic/"
+    }
+   ],
+   "stockM2": 144.7
+  },
+  {
+   "slug": "grasaro-granito",
+   "name": "Granito",
+   "nameRu": "Гранито",
+   "brand": "grasaro",
+   "look": "stone",
+   "sizes": [
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRASARO · 600×600 мм",
+   "description": "",
+   "hero": "/tiles/grasaro-granito/grasaro-g1152-1.jpg",
+   "gallery": [
+    "/tiles/grasaro-granito/grasaro-g1152-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/grasaro-granito/grasaro-g1152-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "grasaro-g1152",
+     "name": "G-1152",
+     "nameRu": "Гранито G-1152",
+     "color": "Серый",
+     "article": "G1152",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/grasaro-granito/grasaro-g1152-1.jpg",
+     "images": [
+      "/tiles/grasaro-granito/grasaro-g1152-1.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 367,
+       "m2": 132.12,
+       "label": "G 1152 MR (60*60) t52"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://grasaro.ru/catalog/granito2/granito-g-1152/"
+    }
+   ],
+   "stockM2": 132.1
+  },
+  {
+   "slug": "ural-palette",
+   "name": "Ural Palette",
+   "nameRu": "Уральская палитра",
+   "brand": "uralgranit",
+   "look": "technical",
+   "sizes": [
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Помещения с высокой проходимостью",
+    "Производственные помещения",
+    "Лестницы и ступени",
+    "Входные группы",
+    "Террасы"
+   ],
+   "tagline": "Уральский Гранит · 600×600 мм",
+   "description": "",
+   "hero": "/tiles/ural-palette/up059-1.jpg",
+   "gallery": [
+    "/tiles/ural-palette/up059-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/ural-palette/up059-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "up059",
+     "name": "UP059",
+     "nameRu": "Сангин",
+     "color": "Сангин",
+     "article": "UP059",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/ural-palette/up059-1.jpg",
+     "images": [
+      "/tiles/ural-palette/up059-1.jpg",
+      "/tiles/ural-palette/up059-2.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 320,
+       "m2": 115.2,
+       "label": "UP 059 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/ural-granite/ural-palette/up059/"
+    }
+   ],
+   "stockM2": 115.2
+  },
+  {
+   "slug": "carolina",
+   "name": "Carolina",
+   "nameRu": "Каролина",
+   "brand": "idalgo",
+   "look": "loft",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Структурная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры",
+    "Террасы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/carolina/carolina-pearl-1.jpg",
+   "gallery": [
+    "/tiles/carolina/carolina-pearl-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/carolina/carolina-pearl-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "carolina-pearl",
+     "name": "Carolina Pearl",
+     "nameRu": "Каролина Жемчуг",
+     "color": "Жемчуг",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/carolina/carolina-pearl-1.jpg",
+     "images": [
+      "/tiles/carolina/carolina-pearl-1.jpg",
+      "/tiles/carolina/carolina-pearl-2.jpg",
+      "/tiles/carolina/carolina-pearl-3.jpg",
+      "/tiles/carolina/carolina-pearl-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Структурная",
+       "pcs": 134,
+       "m2": 96.48,
+       "label": "Королина перл SR (120*60) T k48"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/carolina/carolina-pearl/"
+    }
+   ],
+   "stockM2": 96.5
+  },
+  {
+   "slug": "arkaim",
+   "name": "Arkaim",
+   "nameRu": "Аркаим",
+   "brand": "granitea",
+   "look": "loft",
+   "sizes": [
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры"
+   ],
+   "tagline": "GRANITEA · 600×600 мм",
+   "description": "",
+   "hero": "/tiles/arkaim/g215-arkaim-black-1.jpg",
+   "gallery": [
+    "/tiles/arkaim/g215-arkaim-black-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/arkaim/g215-arkaim-black-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g215-arkaim-black",
+     "name": "Arkaim Black",
+     "nameRu": "Аркаим черный",
+     "color": "черный",
+     "article": "G215",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/arkaim/g215-arkaim-black-1.jpg",
+     "images": [
+      "/tiles/arkaim/g215-arkaim-black-1.jpg",
+      "/tiles/arkaim/g215-arkaim-black-2.jpg",
+      "/tiles/arkaim/g215-arkaim-black-3.jpg",
+      "/tiles/arkaim/g215-arkaim-black-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 236,
+       "m2": 84.96,
+       "label": "G 215 MR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/arkaim/g215-arkaim-black/"
+    }
+   ],
+   "stockM2": 85.0
+  },
+  {
+   "slug": "gloria",
+   "name": "Gloria",
+   "nameRu": "Глория",
+   "brand": "idalgo",
+   "look": "loft",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Структурная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Коммерческие интерьеры",
+    "Террасы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/gloria/gloria-grey-1.jpg",
+   "gallery": [
+    "/tiles/gloria/gloria-grey-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/gloria/gloria-grey-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "gloria-grey",
+     "name": "Gloria Grey",
+     "nameRu": "Глория Серый",
+     "color": "Серый",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Структурная"
+     ],
+     "image": "/tiles/gloria/gloria-grey-1.jpg",
+     "images": [
+      "/tiles/gloria/gloria-grey-1.jpg",
+      "/tiles/gloria/gloria-grey-2.jpg",
+      "/tiles/gloria/gloria-grey-3.jpg",
+      "/tiles/gloria/gloria-grey-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Структурная",
+       "pcs": 80,
+       "m2": 57.6,
+       "label": "Глория грей SR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/gloria/gloria-grey/"
+    }
+   ],
+   "stockM2": 57.6
+  },
+  {
+   "slug": "karatash",
+   "name": "Karatash",
+   "nameRu": "Караташ",
+   "brand": "granitea",
+   "look": "marble",
+   "sizes": [
+    "600×600"
+   ],
+   "surfaces": [
+    "Матовая",
+    "Полированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "GRANITEA · 600×600 мм",
+   "description": "",
+   "hero": "/tiles/karatash/g385-karatash-black-1.jpg",
+   "gallery": [
+    "/tiles/karatash/g385-karatash-black-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/karatash/g385-karatash-black-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "g385-karatash-black",
+     "name": "Karatash Black",
+     "nameRu": "Караташ черный",
+     "color": "черный",
+     "article": "G385",
+     "sizes": [
+      "600×600"
+     ],
+     "surfaces": [
+      "Матовая",
+      "Полированная"
+     ],
+     "image": "/tiles/karatash/g385-karatash-black-1.jpg",
+     "images": [
+      "/tiles/karatash/g385-karatash-black-1.jpg",
+      "/tiles/karatash/g385-karatash-black-2.jpg",
+      "/tiles/karatash/g385-karatash-black-3.jpg",
+      "/tiles/karatash/g385-karatash-black-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "600×600",
+       "surface": "Матовая",
+       "pcs": 11,
+       "m2": 3.96,
+       "label": "G 385 MR (60*60)"
+      },
+      {
+       "size": "600×600",
+       "surface": "Полированная",
+       "pcs": 48,
+       "m2": 17.28,
+       "label": "G 385 PR (60*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/granitea/karatash/g385-karatash-black/"
+    }
+   ],
+   "stockM2": 21.2
+  },
+  {
+   "slug": "namibia",
+   "name": "Namibia",
+   "nameRu": "Намибия",
+   "brand": "idalgo",
+   "look": "stone",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Лаппатированная"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Террасы",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/namibia/namibia-classic-1.jpg",
+   "gallery": [
+    "/tiles/namibia/namibia-classic-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/namibia/namibia-classic-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "namibia-classic",
+     "name": "Namibia Classic",
+     "nameRu": "Намибия Классик",
+     "color": "Классик",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Лаппатированная"
+     ],
+     "image": "/tiles/namibia/namibia-classic-1.jpg",
+     "images": [
+      "/tiles/namibia/namibia-classic-1.jpg",
+      "/tiles/namibia/namibia-classic-2.jpg",
+      "/tiles/namibia/namibia-classic-3.jpg",
+      "/tiles/namibia/namibia-classic-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Лаппатированная",
+       "pcs": 25,
+       "m2": 18.0,
+       "label": "Намибия классик LLR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/namibia/namibia-classic/"
+    }
+   ],
+   "stockM2": 18.0
+  },
+  {
+   "slug": "pallisandro",
+   "name": "Pallisandro",
+   "nameRu": "Палисандр",
+   "brand": "idalgo",
+   "look": "marble",
+   "sizes": [
+    "1200×600"
+   ],
+   "surfaces": [
+    "Матовая"
+   ],
+   "thickness": "10 мм",
+   "applications": [
+    "Гостиные",
+    "Ванные комнаты",
+    "Кухни",
+    "Прихожие",
+    "Коммерческие интерьеры",
+    "Входные группы"
+   ],
+   "tagline": "IDALGO · 1200×600 мм",
+   "description": "",
+   "hero": "/tiles/pallisandro/pallisandro-classic-1.jpg",
+   "gallery": [
+    "/tiles/pallisandro/pallisandro-classic-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/pallisandro/pallisandro-classic-1.jpg"
+   ],
+   "products": [
+    {
+     "slug": "pallisandro-classic",
+     "name": "Pallisandro Classic",
+     "nameRu": "Палисандр Классик",
+     "color": "Классик",
+     "article": null,
+     "sizes": [
+      "1200×600"
+     ],
+     "surfaces": [
+      "Матовая"
+     ],
+     "image": "/tiles/pallisandro/pallisandro-classic-1.jpg",
+     "images": [
+      "/tiles/pallisandro/pallisandro-classic-1.jpg",
+      "/tiles/pallisandro/pallisandro-classic-2.jpg",
+      "/tiles/pallisandro/pallisandro-classic-3.jpg",
+      "/tiles/pallisandro/pallisandro-classic-4.jpg"
+     ],
+     "stock": [
+      {
+       "size": "1200×600",
+       "surface": "Матовая",
+       "pcs": 6,
+       "m2": 4.32,
+       "label": "Палисандро классик MR (120*60)"
+      }
+     ],
+     "noPhoto": false,
+     "source": "https://www.uralgres.com/catalog/idalgo/pallisandro/pallisandro-classic/"
+    }
+   ],
+   "stockM2": 4.3
+  }
+ ]
+}

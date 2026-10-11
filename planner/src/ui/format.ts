@@ -1,3 +1,4 @@
+/** @author Erbol king */
 /** Russian number formatting: 2.5 → "2,5", 12 → "12". */
 export const fmt = (n: number, digits = 1) =>
   n.toLocaleString('ru-RU', { maximumFractionDigits: digits, minimumFractionDigits: 0 });

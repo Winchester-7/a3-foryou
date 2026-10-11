@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { ReactNode } from 'react';
 import { SiteHeader } from './SiteHeader';
 

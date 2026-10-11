@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import { blurData } from '@/lib/media';
@@ -44,7 +46,7 @@ export function FurnitureDetail({
   const images = useMemo(() => {
     const list = [...gallery];
     if (activeColor?.image && !list.includes(activeColor.image)) list.unshift(activeColor.image);
-    return list.length ? list : ['/doors/placeholder.jpg'];
+    return list.length ? list : [''];
   }, [gallery, activeColor]);
 
   const shown = activeColor?.image ?? images[imgIdx] ?? images[0];
@@ -55,17 +57,19 @@ export function FurnitureDetail({
         {/* Gallery */}
         <div className="lg:sticky lg:top-[calc(var(--header-h)+24px)]">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-surface">
-            <Image
-              key={shown}
-              src={shown}
-              alt={title}
-              fill
-              sizes="(max-width: 1024px) 100vw, 45vw"
-              className="img-in object-cover"
-              placeholder="blur"
-              blurDataURL={blurData('#e8e4de')}
-              priority
-            />
+            {shown ? (
+              <Image
+                key={shown}
+                src={shown}
+                alt={title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className={`img-in ${kind === 'door' ? 'object-contain p-6 mix-blend-multiply' : 'object-cover'}`}
+                placeholder="blur"
+                blurDataURL={blurData('#e8e4de')}
+                priority
+              />
+            ) : null}
           </div>
           {images.length > 1 && (
             <div className="mt-4 grid grid-cols-5 gap-3">
@@ -82,7 +86,7 @@ export function FurnitureDetail({
                   }`}
                   aria-label={`Фото ${i + 1}`}
                 >
-                  <Image src={src} alt="" fill sizes="120px" className="object-cover" />
+                  {src ? <Image src={src} alt="" fill sizes="120px" className={kind === 'door' ? 'object-contain p-1 mix-blend-multiply' : 'object-cover'} /> : null}
                 </button>
               ))}
             </div>

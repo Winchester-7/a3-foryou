@@ -10,3 +10,10 @@ npm-debug.log*
 next-env.d.ts.bak
 tsconfig.tsbuildinfo
 public/catalog/_wood/
+
+# import scripts: intermediate files
+scripts/import/*.json
+scripts/import/img_cache/
+scripts/import/door_cache/
+scripts/import/__pycache__/
+planner/dist

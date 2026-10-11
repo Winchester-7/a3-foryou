@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';

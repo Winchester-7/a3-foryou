@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import { create } from 'zustand';
 import { findDecor } from './data/catalog';
 import {
@@ -30,11 +31,26 @@ export interface Surface {
   finish: string;
 }
 
-export type WallMode = 'full' | 'panel' | 'none';
+/** Where the tiled zone of a partly tiled floor starts. */
+export type FloorFrom = 'back' | 'front' | 'left' | 'right';
+export interface Floor extends Surface {
+  /** share of the floor area that is tiled, 0.1–1 */
+  coverage: number;
+  from: FloorFrom;
+  /** colour of the untiled part (screed) */
+  base: string;
+}
+
+/** full wall, half the height, a custom height ("panel") or nothing. */
+export type WallMode = 'full' | 'half' | 'panel' | 'none';
 export interface Walls extends Surface {
   mode: WallMode;
   panelHeight: number;
   paint: string;
+  /** which of the four walls are tiled: back, right, front, left */
+  sides: boolean[];
+  /** share of each wall's width that is tiled, 0.1–1 (centred) */
+  span: number;
 }
 
 export type Tab = 'floor' | 'walls' | 'objects' | 'estimate';
@@ -42,7 +58,7 @@ export type View = '3d' | 'top';
 
 interface Snapshot {
   room: Room;
-  floor: Surface;
+  floor: Floor;
   walls: Walls;
   objects: PlacedObject[];
 }
@@ -60,7 +76,7 @@ interface State extends Snapshot {
   start: (room: Room) => void;
   backToSetup: () => void;
   resize: (patch: Partial<Room>) => void;
-  setFloor: (patch: Partial<Surface>) => void;
+  setFloor: (patch: Partial<Floor>) => void;
   setWalls: (patch: Partial<Walls>) => void;
   setTab: (t: Tab) => void;
   setView: (v: View) => void;
@@ -88,6 +104,33 @@ export function surfaceFor(decorId: string, wall = false): Surface {
     grout: collection.look === 'marble' ? 'light' : 'mid',
     finish: collection.surfaces[0] ?? 'Матовая',
   };
+}
+
+export const floorFor = (decorId: string): Floor => ({
+  ...surfaceFor(decorId),
+  coverage: 1,
+  from: 'back',
+  base: '#d9d4cc',
+});
+
+/** Height of the tiled band on a wall, metres. */
+export function wallTileHeight(walls: Walls, room: Room): { base: number; height: number } {
+  const base = walls.mode === 'panel' && room.type === 'kitchen' ? 0.88 : 0;
+  if (walls.mode === 'full') return { base: 0, height: room.height };
+  if (walls.mode === 'half') return { base: 0, height: room.height / 2 };
+  if (walls.mode === 'panel') return { base, height: Math.min(walls.panelHeight, room.height - base) };
+  return { base: 0, height: 0 };
+}
+
+/** Older saved / shared projects miss the newer fields — fill them in. */
+function normalize<T extends Partial<Snapshot>>(s: T): T {
+  const floor = s.floor as Partial<Floor> | undefined;
+  const walls = s.walls as Partial<Walls> | undefined;
+  return {
+    ...s,
+    floor: floor && { coverage: 1, from: 'back', base: '#d9d4cc', ...floor },
+    walls: walls && { sides: [true, true, true, true], span: 1, ...walls },
+  } as T;
 }
 
 const WALL_EPS = 0.01;
@@ -128,14 +171,14 @@ function initial(): Snapshot & { step: 'setup' | 'editor'; hasSaved: boolean } {
     const hash = location.hash.startsWith('#p=') ? location.hash.slice(3) : '';
     if (hash) {
       const json = decodeURIComponent(escape(atob(hash.replace(/-/g, '+').replace(/_/g, '/'))));
-      return { ...(JSON.parse(json) as Snapshot), step: 'editor', hasSaved: false };
+      return { ...normalize(JSON.parse(json) as Snapshot), step: 'editor', hasSaved: false };
     }
   } catch {
     /* broken link — fall through */
   }
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) return { ...(JSON.parse(saved) as Snapshot), step: 'setup', hasSaved: true };
+    if (saved) return { ...normalize(JSON.parse(saved) as Snapshot), step: 'setup', hasSaved: true };
   } catch {
     /* storage unavailable */
   }
@@ -145,8 +188,8 @@ function initial(): Snapshot & { step: 'setup' | 'editor'; hasSaved: boolean } {
     step: 'setup',
     hasSaved: false,
     room,
-    floor: surfaceFor(p.floorDecor),
-    walls: { ...surfaceFor(p.wallDecor, true), mode: p.wallMode, panelHeight: 1.2, paint: '#ece8e1' },
+    floor: floorFor(p.floorDecor),
+    walls: { ...surfaceFor(p.wallDecor, true), mode: p.wallMode, panelHeight: 1.2, paint: '#ece8e1', sides: [true, true, true, true], span: 1 },
     objects: presetObjects(p.type, p.length, p.width),
   };
 }
@@ -176,10 +219,17 @@ export const usePlanner = create<State>((set, get) => {
       set({
         step: 'editor',
         room,
-        floor: sameType ? prev.floor : surfaceFor(preset.floorDecor),
+        floor: sameType ? prev.floor : floorFor(preset.floorDecor),
         walls: sameType
           ? prev.walls
-          : { ...surfaceFor(preset.wallDecor, true), mode: preset.wallMode, panelHeight: room.type === 'kitchen' ? 0.6 : 1.2, paint: '#ece8e1' },
+          : {
+              ...surfaceFor(preset.wallDecor, true),
+              mode: preset.wallMode,
+              panelHeight: room.type === 'kitchen' ? 0.6 : 1.2,
+              paint: '#ece8e1',
+              sides: [true, true, true, true],
+              span: 1,
+            },
         objects: sameType
           ? prev.objects.map((o) => ({ ...o, ...placeObject(o, room, o.x, o.z) }))
           : presetObjects(room.type, room.length, room.width),

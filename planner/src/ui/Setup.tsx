@@ -1,7 +1,9 @@
+/** @author Erbol king */
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { ROOM_PRESETS, type RoomType } from '../data/objects';
-import { SITE_URL } from '../data/catalog';
+import { SITE_URL, tileCollections } from '../data/catalog';
+import { LanguageSwitch } from '../i18n/LocaleProvider';
 import { usePlanner } from '../store';
 import { Icon } from './icons';
 import { Logo } from './Logo';
@@ -82,9 +84,12 @@ export function Setup() {
     <div className="min-h-[100svh] bg-surface">
       <header className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5">
         <Logo />
-        <a href={SITE_URL} className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-paper hover:text-ink">
-          <Icon name="back" width={16} height={16} /> На сайт
-        </a>
+        <div className="flex items-center gap-2">
+          <LanguageSwitch />
+          <a href={SITE_URL} className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-paper hover:text-ink">
+            <Icon name="back" width={16} height={16} /> На сайт
+          </a>
+        </div>
       </header>
 
       <main className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-4 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pt-10">
@@ -98,7 +103,7 @@ export function Setup() {
             реальном формате, всё меняется мгновенно.
           </p>
           <ul className="mt-8 grid max-w-lg gap-3 text-sm text-ink-soft sm:grid-cols-2">
-            {['Более 190 декоров керамогранита', 'Двери Diford и диваны Delavega', 'Расчёт плитки с запасом 10%', 'Отправка проекта в WhatsApp'].map((t) => (
+            {[`${tileCollections.reduce((n, c) => n + c.decors.length, 0)} декоров керамогранита`, 'Двери и диваны', 'Расчёт плитки с запасом 10%', 'Отправка проекта в WhatsApp'].map((t) => (
               <li key={t} className="flex items-center gap-2.5">
                 <span className="grid h-6 w-6 place-items-center rounded-full bg-paper text-accent shadow-card">
                   <Icon name="check" width={13} height={13} strokeWidth={2.2} />

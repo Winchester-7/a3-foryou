@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { backdrop, modalIn, modalOut } from '@/lib/motion';

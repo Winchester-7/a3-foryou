@@ -1,7 +1,9 @@
-import doorsImages from './doors-images.json';
-
-type PageCrops = { life: string[]; doors: string[] };
-const IMG = doorsImages as Record<string, PageCrops>;
+/**
+ * Door catalogue — loaded from src/data/doors.json (interior and entrance
+ * doors). The file is edited by the Telegram bot as well as by the importer.
+ * @author Erbol king
+ */
+import data from '@/data/doors.json';
 
 export interface DoorColor {
   name: string;
@@ -12,9 +14,10 @@ export interface DoorColor {
 export interface DoorModel {
   slug: string;
   name: string;
+  /** series / collection the model belongs to */
   brand: string;
   style: string;
-  types: string[]; // ДГ / ДО
+  types: string[]; // ДГ — глухая / ДО — со стеклом
   description: string;
   colors: DoorColor[];
   sizes: string[];
@@ -22,228 +25,14 @@ export interface DoorModel {
   hero: string;
   image: string;
   gallery: string[];
+  kind?: 'interior' | 'entrance';
+  source?: string;
 }
 
-const HEX: Record<string, string> = {
-  'Белый матовый': '#f4f2ee',
-  'Арктик': '#eceae4',
-  'Ваниль софт': '#e8ddc8',
-  'Шоколад софт': '#4f4038',
-  'Серый ПВХ': '#b9b9b7',
-  'Светло-серый полипропилен': '#c9c9c6',
-  'Бежевый полипропилен': '#d9cfbe',
-  'Графит полипропилен': '#4a4d50',
-  'Графит софт': '#454749',
-  'Квартит ПЭТ': '#d7d2c8',
-  'Шале графит': '#6f6f6f',
-  'Канадский дуб арктик': '#dcd2c2',
-  'Старый дуб': '#8a6a49',
-  'Антрацит': '#3c3f42',
-  'Бетон серый': '#a8a8a6',
-  'Бетон антрацит': '#4b4e50',
-  'Бетон известковый': '#dedcd6',
-  'Дюна солано': '#c7b79c',
-  'Белая шагрень': '#f2f1ee',
-  'Астана табака': '#c98f5e',
-  'Ривьера айс': '#dcdcda',
-  'Сиена белая': '#e7e2d8',
-  'Под покраску': '#efefef',
-};
-
-const SIZES = ['600 × 2000', '700 × 2000', '800 × 2000', '900 × 2000'];
-
-const BASE_SPECS: [string, string][] = [
-  ['Полотно', 'МДФ, покрытие эмаль / ПВХ / полипропилен'],
-  ['Толщина полотна', '40 мм'],
-  ['Кромка', 'ABS по периметру'],
-  ['Петли', 'Скрытые или карточные (на выбор)'],
-  ['Фурнитура', 'Ручка, замок, комплект петель'],
-  ['Комплектация', 'Полотно, коробка, наличник, добор — по запросу'],
-  ['Гарантия', '12 месяцев'],
-];
-
-type Row = {
-  slug: string;
-  name: string;
-  style: string;
-  types: string[];
-  page: number;
-  colors: string[];
-  glass?: string;
-  description: string;
-};
-
-const ROWS: Row[] = [
-  {
-    slug: 'model-241', name: 'Модель 241', style: 'Неоклассика', types: ['ДГ', 'ДО'], page: 3,
-    colors: ['Белый матовый', 'Светло-серый полипропилен', 'Графит полипропилен', 'Ваниль софт', 'Шоколад софт'],
-    description: 'Классическая филёнчатая дверь с тремя горизонтальными филёнками. Строгая геометрия и мягкие фаски — универсальное решение для гостиных, спален и прихожих.',
-  },
-  {
-    slug: 'model-242', name: 'Модель 242', style: 'Современная классика', types: ['ДГ', 'ДО'], page: 5,
-    colors: ['Белый матовый', 'Светло-серый полипропилен', 'Бежевый полипропилен'],
-    glass: 'Английская решётка 10 стёкол', description: 'Дверь с вертикальной филёнкой и опциональным остеклением «английская решётка». Лёгкий, воздушный рисунок для светлых интерьеров.',
-  },
-  {
-    slug: 'model-243', name: 'Модель 243', style: 'Классика', types: ['ДГ', 'ДО'], page: 6,
-    colors: ['Белый матовый', 'Светло-серый полипропилен', 'Квартит ПЭТ'],
-    description: 'Двухфилёнчатая классическая дверь с выраженным багетом. Спокойный, представительный характер.',
-  },
-  {
-    slug: 'model-140', name: 'Модель 140', style: 'Модерн', types: ['ДО'], page: 3,
-    colors: ['Белый матовый'], glass: '4 горизонтальных стекла',
-    description: 'Горизонтальные стеклянные вставки визуально расширяют проём. Современное решение для кухни и столовой.',
-  },
-  {
-    slug: 'model-220', name: 'Модель 220', style: 'Классика', types: ['ДГ', 'ДО'], page: 9,
-    colors: ['Белый матовый'], glass: 'Фотопечать / решётка гравировка',
-    description: 'Нарядная классическая дверь с фигурной филёнкой и декоративным остеклением с гравировкой.',
-  },
-  {
-    slug: 'model-014', name: 'Модель 014', style: 'Лофт', types: ['ДГ'], page: 16,
-    colors: ['Канадский дуб арктик', 'Старый дуб', 'Антрацит'],
-    description: 'Дверь в древесном декоре с горизонтальной вставкой-порезкой. Контрастное сочетание тёплого дуба и тёмной рамки — акцент индустриального интерьера.',
-  },
-  {
-    slug: 'model-025', name: 'Модель 025', style: 'Минимализм', types: ['ДГ', 'ДО'], page: 15,
-    colors: ['Белый матовый', 'Шале графит'], glass: 'Чёрное / зеркало графит',
-    description: 'Гладкое полотно с узкой вертикальной вставкой из чёрного стекла. Лаконичный минимализм.',
-  },
-  {
-    slug: 'model-026', name: 'Модель 026', style: 'Лофт', types: ['ДГ'], page: 16,
-    colors: ['Старый дуб', 'Антрацит'],
-    description: 'Двухцветное полотно с диагональной вставкой из натурального шпона. Смелая геометрия для современных пространств.',
-  },
-  {
-    slug: 'ermitazh', name: 'Эрмитаж', style: 'Классика', types: ['ДГ', 'ДО'], page: 7,
-    colors: ['Белый матовый'], glass: 'Решётка гравировка',
-    description: 'Дворцовая классика: багетная филёнка, изящные пропорции, остекление с гравированной решёткой.',
-  },
-  {
-    slug: 'ermitazh-2', name: 'Эрмитаж-2', style: 'Классика', types: ['ДГ', 'ДО'], page: 7,
-    colors: ['Серый ПВХ', 'Ваниль софт', 'Шоколад софт', 'Белый матовый'],
-    description: 'Двухфилёнчатая версия «Эрмитажа» с рельефным багетом. Богатая палитра софт-тонов.',
-  },
-  {
-    slug: 'madrid', name: 'Мадрид', style: 'Современная классика', types: ['ДГ'], page: 9,
-    colors: ['Белый матовый', 'Светло-серый полипропилен', 'Графит полипропилен'],
-    description: 'Однофилёнчатая дверь со скруглённым багетом. Мягкая классика без лишних деталей.',
-  },
-  {
-    slug: 'germes', name: 'Гермес', style: 'Классика', types: ['ДО'], page: 6,
-    colors: ['Квартит ПЭТ'], glass: 'Фацет прозрачное',
-    description: 'Многочастное остекление с фацетными стёклами в классической раме. Витринный, «библиотечный» характер.',
-  },
-  {
-    slug: 'vena', name: 'Вена', style: 'Неоклассика', types: ['ДГ', 'ДО'], page: 11,
-    colors: ['Белый матовый', 'Светло-серый полипропилен'], glass: 'Решётка гравировка',
-    description: 'Трёхфилёнчатая дверь строгих пропорций. Классика, уместная в любом интерьере.',
-  },
-  {
-    slug: 'vesta', name: 'Веста', style: 'Классика', types: ['ДГ', 'ДО'], page: 12,
-    colors: ['Ваниль софт', 'Белый матовый'],
-    description: 'Двухфилёнчатая классическая дверь с чётким багетом и тёплым софт-покрытием.',
-  },
-  {
-    slug: 'grand', name: 'Гранд', style: 'Классика', types: ['ДО'], page: 12,
-    colors: ['Белый матовый', 'Шоколад софт'],
-    description: 'Трёхфилёнчатая представительная дверь. Глубокий багет и матовое покрытие премиум-класса.',
-  },
-  {
-    slug: 'manchester', name: 'Манчестер', style: 'Английская классика', types: ['ДГ', 'ДО'], page: 12,
-    colors: ['Белый матовый'], glass: 'Гравировка',
-    description: 'Английская классика: две квадратные филёнки с выраженным профилем. Стабильно популярная модель.',
-  },
-  {
-    slug: 'praga', name: 'Прага', style: 'Минимализм', types: ['ДО'], page: 13,
-    colors: ['Белый матовый', 'Серый ПВХ'], glass: 'Матовое',
-    description: 'Дверь с крупной матовой стеклянной вставкой в тонкой рамке. Максимум света при закрытой двери.',
-  },
-  {
-    slug: 'fly', name: 'Флай', style: 'Современная классика', types: ['ДО'], page: 13,
-    colors: ['Белый матовый', 'Серый ПВХ'],
-    description: 'Две горизонтальные филёнки с тонкой алюминиевой окантовкой. Спокойный переход между классикой и модерном.',
-  },
-  {
-    slug: 'rein', name: 'Рейн', style: 'Ар-деко', types: ['ДО'], page: 14,
-    colors: ['Арктик'], glass: 'Зеркало, вертикальная порезка',
-    description: 'Зеркальная вставка с вертикальными полосами-порезками. Эффектная дверь в духе ар-деко.',
-  },
-  {
-    slug: 'imperial', name: 'Империал', style: 'Неоклассика', types: ['ДГ', 'ДО'], page: 14,
-    colors: ['Арктик', 'Графит софт', 'Серый ПВХ'], glass: 'Рифлёное',
-    description: 'Дверь с вертикальным рифлением (флютами) на филёнках. Тактильная фактура и благородный силуэт.',
-  },
-  {
-    slug: 'imperial-2', name: 'Империал-2', style: 'Неоклассика', types: ['ДГ', 'ДО'], page: 14,
-    colors: ['Арктик', 'Графит софт', 'Серый ПВХ'],
-    description: 'Версия «Империала» с двумя рифлёными филёнками. Глубокий рельеф и графитовые оттенки.',
-  },
-  {
-    slug: 'liberty-3', name: 'Liberty-3', style: 'Классика', types: ['ДГ', 'ДО'], page: 11,
-    colors: ['Белый матовый', 'Бежевый полипропилен'], glass: 'Решётка гравировка',
-    description: 'Классическая двухфилёнчатая дверь с чёрной контурной окантовкой полотна.',
-  },
-  {
-    slug: 'geometry', name: 'Геометрия', style: 'Лофт', types: ['ДГ', 'ДО'], page: 16,
-    colors: ['Бетон серый', 'Старый дуб', 'Белая шагрень', 'Антрацит'], glass: 'Чёрное',
-    description: 'Абстрактный рисунок фрезеровки «геометрия» на гладком полотне. Арт-объект для минималистичного дома.',
-  },
-  {
-    slug: 'legenda', name: 'Легенда', style: 'Лофт', types: ['ДГ', 'ДО'], page: 17,
-    colors: ['Дюна солано', 'Бетон серый', 'Бетон антрацит', 'Бетон известковый'],
-    description: 'Вертикальное рифление по всей высоте полотна в бетонных и песочных декорах. Современная фактурная дверь.',
-  },
-  {
-    slug: 'vega-2', name: 'Вега-2', style: 'Минимализм', types: ['ДО'], page: 17,
-    colors: ['Бетон антрацит', 'Бетон известковый', 'Бетон серый'], glass: 'Зеркало графит',
-    description: 'Гладкое полотно в бетонном декоре с узкой вертикальной вставкой из графитового зеркала.',
-  },
-];
-
-function pick(page: number, idxs: number[]): string[] {
-  const crops = IMG[String(page)]?.doors ?? [];
-  return idxs.map((i) => crops[i]).filter(Boolean);
-}
-
-export const doorModels: DoorModel[] = ROWS.map((r) => {
-  const page = IMG[String(r.page)] ?? { life: [], doors: [] };
-  const doorCrops = page.doors ?? [];
-  const life = page.life ?? [];
-
-  const colors: DoorColor[] = r.colors.map((c, i) => ({
-    name: c,
-    hex: HEX[c] ?? '#d8d5cf',
-    image: doorCrops[i] ?? doorCrops[0],
-  }));
-
-  const hero = life[0] ?? doorCrops[0] ?? '/doors/placeholder.jpg';
-  const image = doorCrops[0] ?? hero;
-  const gallery = Array.from(new Set([...doorCrops.slice(0, 6), ...life])).filter(Boolean);
-
-  const specs: [string, string][] = [
-    ['Стиль', r.style],
-    ['Тип', r.types.map((t) => (t === 'ДГ' ? 'глухая (ДГ)' : 'остеклённая (ДО)')).join(', ')],
-    ...(r.glass ? ([['Остекление', r.glass]] as [string, string][]) : []),
-    ...BASE_SPECS,
-  ];
-
-  return {
-    slug: r.slug,
-    name: r.name,
-    brand: 'Diford',
-    style: r.style,
-    types: r.types,
-    description: r.description,
-    colors,
-    sizes: SIZES,
-    specs,
-    hero,
-    image,
-    gallery: gallery.length ? gallery : [image],
-  };
-});
+export const doorModels: DoorModel[] = data as unknown as DoorModel[];
 
 export function getDoor(slug: string): DoorModel | undefined {
   return doorModels.find((d) => d.slug === slug);
 }
+
+export const doorKindLabel = (d: DoorModel) => (d.kind === 'entrance' ? 'Входная' : 'Межкомнатная');

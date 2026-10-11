@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { CartDrawer } from './CartDrawer';

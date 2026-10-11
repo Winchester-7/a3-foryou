@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'motion/react';

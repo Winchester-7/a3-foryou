@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useMemo, useState } from 'react';
 import type { Collection, Product } from '@/lib/types';
 import { brandName } from '@/lib/catalog';

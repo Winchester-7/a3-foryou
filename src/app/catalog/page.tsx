@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageShell } from '@/components/layout/PageShell';
@@ -6,12 +7,13 @@ import { CatalogView } from '@/components/catalog/CatalogView';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
 import { TileImage } from '@/components/media/TileImage';
-import { categories, collections, buildFacets, allProducts, getCollection } from '@/lib/catalog';
+import { categories, collections, buildFacets, allProducts, getCollection, FALLBACK_HERO } from '@/lib/catalog';
+import { BrandLogo } from '@/components/brand/BrandLogo';
 
 export const metadata: Metadata = {
   title: 'Каталог керамогранита',
   description:
-    'Каталог керамогранита A3 FOR YOU в Бишкеке: коллекции IDALGO, GRANITEA и «Уральский Гранит» под мрамор, камень, дерево, бетон, для фасадов и террас.',
+    'Каталог керамогранита A3 FOR YOU в Бишкеке: только то, что есть на складе — IDALGO, GRANITEA, KERRANOVA, GRASARO и другие заводы.',
   alternates: { canonical: '/catalog' },
 };
 
@@ -25,16 +27,21 @@ export default function CatalogPage() {
       <div className="container-x pb-4 pt-8">
         <h1 className="h-display max-w-3xl text-balance">Каталог керамогранита</h1>
         <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-soft">
-          {collections.length} коллекций и {allProducts.length} декоров трёх заводов — IDALGO, GRANITEA
-          и «Уральский Гранит». Фильтруйте по типу поверхности, бренду, размеру и области применения.
+          {collections.length} коллекций и {allProducts.length} декоров, которые есть у нас в наличии.
+          Фильтруйте по типу поверхности, бренду, размеру и области применения.
         </p>
+        <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3">
+          <BrandLogo brand="idalgo" height={26} />
+          <BrandLogo brand="granitea" height={26} />
+          <BrandLogo brand="uralgranit" height={26} />
+        </div>
       </div>
 
       <section className="container-x py-10">
         <SectionHeading eyebrow="Категории" title="Выберите направление" />
         <StaggerGroup className="mt-10 grid grid-cols-2 gap-x-5 gap-y-9 md:grid-cols-3">
           {categories.map((c) => {
-            const hero = getCollection(c.heroCollection)?.hero ?? '/catalog/lusso/hero.jpg';
+            const hero = getCollection(c.heroCollection)?.hero || FALLBACK_HERO;
             return (
               <StaggerItem key={c.slug}>
                 <Link href={`/catalog/${c.slug}`} className="group block">

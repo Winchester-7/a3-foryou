@@ -2,6 +2,7 @@
   "name": "a3-foryou-gres",
   "version": "1.0.0",
   "private": true,
+  "author": "Erbol king",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

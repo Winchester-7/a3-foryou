@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import { RoundedBox } from '@react-three/drei';
 import type { ReactNode } from 'react';
 import { findDoor, findSofa, sofaDims } from '../data/catalog';

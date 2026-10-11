@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useLeadDialog } from './LeadDialog';
 import type { LeadKind } from './LeadForm';
 

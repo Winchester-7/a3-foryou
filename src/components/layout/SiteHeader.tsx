@@ -1,5 +1,5 @@
+/** @author Erbol king */
 import { collections, categories, allProducts, brandName } from '@/lib/catalog';
-import { interiorCategories } from '@/lib/interior';
 import { Header } from './Header';
 
 export type SearchDoc = {
@@ -31,13 +31,5 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     tagline: c.tagline,
   }));
 
-  const interiorMenu = interiorCategories
-    .filter((c) => c.slug !== 'divany' && c.slug !== 'dveri')
-    .map((c) => ({
-      slug: c.slug,
-      title: c.menuTitle,
-      tagline: c.tagline,
-    }));
-
-  return <Header overlay={overlay} index={index} catalogMenu={catalogMenu} interiorMenu={interiorMenu} />;
+  return <Header overlay={overlay} index={index} catalogMenu={catalogMenu} />;
 }

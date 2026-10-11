@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import Image from 'next/image';
 import { blurData, photoUrl } from '@/lib/media';
 

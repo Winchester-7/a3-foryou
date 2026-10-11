@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { Collection } from '@/lib/types';
 import { CollectionCard } from '@/components/catalog/CollectionCard';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -10,7 +11,7 @@ export function FeaturedProducts({ collections }: { collections: Collection[] })
         <SectionHeading
           eyebrow="Избранное"
           title="Коллекции, которые выбирают"
-          text="Флагманские серии из ассортимента — от белого мрамора Lusso до окисленного металла Armor и природного травертина Villa Alba."
+          text="Самые крупные коллекции, которые есть у нас на складе: мрамор, камень, дерево и бетон."
           link={{ href: '/catalog', label: 'Смотреть все' }}
         />
         <StaggerGroup className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4">

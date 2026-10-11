@@ -1,25 +1,22 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { Logo } from '@/components/brand/Logo';
-import { mainNav, site } from '@/lib/site';
+import { catalogExtras, mainNav, site } from '@/lib/site';
 import type { SearchDoc } from './SiteHeader';
 import { useCart } from '@/components/cart/CartProvider';
 import { CartIcon } from '@/components/cart/CartDrawer';
 import { drawerIn, drawerOut, easeOut } from '@/lib/motion';
+import { LanguageSwitch } from '@/components/i18n/LanguageSwitch';
 
 type MenuItem = { slug: string; title: string; tagline: string };
 
 const ease = easeOut;
-
-const FURNITURE_LINKS = [
-  { href: '/doors', title: 'Двери', tagline: 'Межкомнатные двери Diford' },
-  { href: '/sofas', title: 'Диваны', tagline: 'Диваны и кресла Delavega' },
-  { href: site.plannerUrl, title: 'Создать свой интерьер', tagline: '3D-планировщик: ваша комната, наш керамогранит' },
-];
 
 const WA_ICON = (
   <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -31,17 +28,15 @@ export function Header({
   overlay,
   index,
   catalogMenu,
-  interiorMenu,
 }: {
   overlay: boolean;
   index: SearchDoc[];
   catalogMenu: MenuItem[];
-  interiorMenu: MenuItem[];
 }) {
   const reduce = useReducedMotion();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [openMega, setOpenMega] = useState<null | 'catalog' | 'interior'>(null);
+  const [openMega, setOpenMega] = useState<null | 'catalog'>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -98,19 +93,32 @@ export function Header({
               const active = pathname === item.href || pathname.startsWith(item.href + '/');
               return (
                 <div key={item.href} className="relative shrink-0" onMouseEnter={() => setOpenMega(item.mega ?? null)}>
-                  <Link
-                    href={item.href}
-                    className={`link-underline whitespace-nowrap py-2 text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] xl:tracking-wide2 transition-colors duration-200 ${
-                      solid ? 'text-ink' : 'text-white'
-                    } ${active ? 'text-accent opacity-100' : 'opacity-80 hover:opacity-100'}`}
-                  >
-                    {item.label}
-                    {item.mega && (
-                      <svg width="10" height="10" viewBox="0 0 10 10" className="ml-1.5 opacity-60" aria-hidden>
-                        <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.4" fill="none" />
-                      </svg>
-                    )}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      className={`whitespace-nowrap rounded-full border px-4 py-2 text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] transition-colors duration-200 ${
+                        solid
+                          ? 'border-ink text-ink hover:bg-ink hover:text-paper'
+                          : 'border-white/70 text-white hover:bg-white hover:text-ink'
+                      }`}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`link-underline whitespace-nowrap py-2 text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] xl:tracking-wide2 transition-colors duration-200 ${
+                        solid ? 'text-ink' : 'text-white'
+                      } ${active ? 'text-accent opacity-100' : 'opacity-80 hover:opacity-100'}`}
+                    >
+                      {item.label}
+                      {item.mega && (
+                        <svg width="10" height="10" viewBox="0 0 10 10" className="ml-1.5 opacity-60" aria-hidden>
+                          <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.4" fill="none" />
+                        </svg>
+                      )}
+                    </Link>
+                  )}
                 </div>
               );
             })}
@@ -123,6 +131,8 @@ export function Header({
             >
               {site.phone}
             </a>
+
+            <LanguageSwitch tone={tone} className="mx-1 hidden sm:inline-flex" />
 
             {/* mobile call button */}
             <a
@@ -178,42 +188,26 @@ export function Header({
               <div className="container-x py-10">
                 <div className="grid grid-cols-[1.1fr_2fr] gap-12">
                   <div>
-                    <p className="eyebrow">{openMega === 'catalog' ? 'Каталог керамогранита' : 'Интерьер и мебель'}</p>
+                    <p className="eyebrow">Каталог</p>
                     <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-soft">
-                      {openMega === 'catalog'
-                        ? 'Коллекции IDALGO, GRANITEA и «Уральский Гранит» — под мрамор, камень, дерево, бетон, для фасадов и террас.'
-                        : 'Мебель и сантехника, подобранные под палитру наших коллекций керамогранита.'}
+                      Керамогранит в наличии на складе в Бишкеке, межкомнатные и входные двери, диваны и кресла.
                     </p>
-                    <Link href={openMega === 'catalog' ? '/catalog' : '/interior'} className="btn-outline mt-6">
-                      {openMega === 'catalog' ? 'Весь каталог' : 'Весь раздел'}
+                    <Link href="/catalog" className="btn-outline mt-6">
+                      Весь каталог
                     </Link>
                   </div>
                   <div>
-                    {openMega === 'interior' && (
-                      <div className="mb-6 grid grid-cols-3 gap-x-8 gap-y-4 border-b border-line pb-6">
-                        {FURNITURE_LINKS.map((c) => (
-                          <Link key={c.href} href={c.href} className="group block">
-                            <span className="block text-[15px] font-medium text-accent">{c.title}</span>
-                            <span className="mt-1 block text-xs leading-snug text-ink-faint">{c.tagline}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                    <div className="mb-6 grid grid-cols-3 gap-x-8 gap-y-4 border-b border-line pb-6">
+                      {catalogExtras.map((c) => (
+                        <Link key={c.href} href={c.href} className="group block">
+                          <span className="block text-[15px] font-medium text-accent">{c.title}</span>
+                          <span className="mt-1 block text-xs leading-snug text-ink-faint">{c.tagline}</span>
+                        </Link>
+                      ))}
+                    </div>
                     <div className="grid grid-cols-3 gap-x-8 gap-y-5">
-                      {(openMega === 'catalog' ? catalogMenu : interiorMenu).map((c) => (
-                        <Link
-                          key={c.slug}
-                          href={
-                            openMega === 'catalog'
-                              ? `/catalog/${c.slug}`
-                              : c.slug === 'divany'
-                                ? '/sofas'
-                                : c.slug === 'dveri'
-                                  ? '/doors'
-                                  : `/interior/${c.slug}`
-                          }
-                          className="group block"
-                        >
+                      {catalogMenu.map((c) => (
+                        <Link key={c.slug} href={`/catalog/${c.slug}`} className="group block">
                           <span className="block text-[15px] font-medium text-ink transition-colors group-hover:text-accent">
                             {c.title}
                           </span>
@@ -229,7 +223,7 @@ export function Header({
         </AnimatePresence>
       </header>
 
-      <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} catalogMenu={catalogMenu} interiorMenu={interiorMenu} />
+      <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} catalogMenu={catalogMenu} />
       <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} index={index} />
     </>
   );
@@ -239,14 +233,12 @@ function MobileNav({
   open,
   onClose,
   catalogMenu,
-  interiorMenu,
 }: {
   open: boolean;
   onClose: () => void;
   catalogMenu: MenuItem[];
-  interiorMenu: MenuItem[];
 }) {
-  const [section, setSection] = useState<null | 'catalog' | 'interior'>(null);
+  const [section, setSection] = useState<null | 'catalog'>(null);
 
   return (
     <AnimatePresence>
@@ -259,6 +251,7 @@ function MobileNav({
           >
             <div className="flex h-[var(--header-h)] items-center justify-between border-b border-line px-5">
               <span className="eyebrow">Меню</span>
+              <LanguageSwitch tone="dark" className="ml-auto mr-2" />
               <button type="button" aria-label="Закрыть меню" onClick={onClose} className="grid h-10 w-10 place-items-center rounded-full hover:bg-surface">
                 <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.6" /></svg>
               </button>
@@ -275,15 +268,16 @@ function MobileNav({
                           <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden><path d="M5 2l5 5-5 5" stroke="currentColor" strokeWidth="1.6" fill="none" /></svg>
                         </button>
                       </li>
+                    ) : item.external ? (
+                      <li key={item.href}>
+                        <a href={item.href} className="block py-3 text-lg font-medium text-accent">{item.label}</a>
+                      </li>
                     ) : (
                       <li key={item.href}>
                         <Link href={item.href} onClick={onClose} className="block py-3 text-lg font-medium text-ink">{item.label}</Link>
                       </li>
                     ),
                   )}
-                  <li>
-                    <a href={site.plannerUrl} className="block py-3 text-lg font-medium text-ink">Создать свой интерьер в 3D</a>
-                  </li>
                 </ul>
               )}
 
@@ -294,27 +288,22 @@ function MobileNav({
                     Назад
                   </button>
                   <ul className="space-y-1">
-                    {(section === 'catalog' ? catalogMenu : interiorMenu).map((c) => (
+                    {catalogExtras.map((c) => (
+                      <li key={c.href}>
+                        <Link href={c.href} onClick={onClose} className="block py-2.5 text-base font-medium text-accent">
+                          {c.title}
+                        </Link>
+                      </li>
+                    ))}
+                    {catalogMenu.map((c) => (
                       <li key={c.slug}>
-                        <Link
-                          href={
-                            section === 'catalog'
-                              ? `/catalog/${c.slug}`
-                              : c.slug === 'divany'
-                                ? '/sofas'
-                                : c.slug === 'dveri'
-                                  ? '/doors'
-                                  : `/interior/${c.slug}`
-                          }
-                          onClick={onClose}
-                          className="block py-2.5 text-base text-ink"
-                        >
+                        <Link href={`/catalog/${c.slug}`} onClick={onClose} className="block py-2.5 text-base text-ink">
                           {c.title}
                         </Link>
                       </li>
                     ))}
                     <li className="pt-3">
-                      <Link href={section === 'catalog' ? '/catalog' : '/interior'} onClick={onClose} className="text-sm font-medium text-accent">
+                      <Link href="/catalog" onClick={onClose} className="text-sm font-medium text-accent">
                         Смотреть всё →
                       </Link>
                     </li>
@@ -471,3 +460,4 @@ function CartButton({ className }: { className: string }) {
     </button>
   );
 }
+

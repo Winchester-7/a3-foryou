@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import Link from 'next/link';
 import { ParallaxImage } from '@/components/media/ParallaxImage';
 import { Reveal } from '@/components/motion/Reveal';
@@ -7,7 +8,7 @@ export function CtaSection() {
   return (
     <section className="relative overflow-hidden">
       <ParallaxImage
-        src="/catalog/concepta/hero.jpg"
+        src="/tiles/concepta/interior-hero.jpg"
         alt="Керамогранит A3 FOR YOU в интерьере"
         fill
         overlay="from-ink/85 via-ink/70 to-ink/75"

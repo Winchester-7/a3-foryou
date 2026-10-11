@@ -1,69 +1,4 @@
-export interface NewsPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  category: string;
-  imageSeed: string;
-}
-
-export const news: NewsPost[] = [
-  {
-    slug: 'kollekciya-villa-alba-2025',
-    title: 'Новинка 2025: коллекция Villa Alba от IDALGO',
-    excerpt:
-      'Травертин в поперечном и продольном распиле — Villa Alba Cross и Villa Alba River. Форматы 1200×600 и 600×600, матовая и лаппатированная поверхность. Уже на складе в Бишкеке.',
-    date: '2025-08-20',
-    category: 'Коллекции',
-    imageSeed: 'news-villa-alba',
-  },
-  {
-    slug: 'granitea-kapsulnaya-sistema-2026',
-    title: 'GRANITEA 2026: капсульная система коллекций',
-    excerpt:
-      'Обновлённые серии Нейва, Исеть, Юрма, Шихан и новая коллекция «Алатау». Теперь коллекции сочетаются между собой по фактуре, формату и цвету.',
-    date: '2026-01-15',
-    category: 'Коллекции',
-    imageSeed: 'news-granitea-2026',
-  },
-  {
-    slug: 'keramogranit-dlya-terras-gid',
-    title: 'Керамогранит на террасе: гид по укладке',
-    excerpt:
-      'Структурные поверхности R10–R11, морозостойкость F100 и три способа монтажа — на опоры, на гравий и на клей. Разбираем на примере коллекции Dolomiti.',
-    date: '2025-06-30',
-    category: 'Технологии',
-    imageSeed: 'news-terrace',
-  },
-  {
-    slug: 'trend-tyoplyj-minimalizm',
-    title: 'Тренд сезона: тёплый минимализм',
-    excerpt:
-      'Песочные и глиняные оттенки, матовые поверхности и крупный формат. Собрали палитру из коллекций Siena, Denia Marfil, Cement и Wood Classic.',
-    date: '2025-05-22',
-    category: 'Тренды',
-    imageSeed: 'news-trend',
-  },
-  {
-    slug: 'partnyoram-arhitektoram',
-    title: 'Условия для архитекторов и дизайнеров',
-    excerpt:
-      'Персональные цены, образцы для проектов, спецификации, раскладка и техподдержка на объекте в Бишкеке и по Кыргызстану. Рассказываем, как присоединиться.',
-    date: '2025-04-18',
-    category: 'Партнёрам',
-    imageSeed: 'news-partners',
-  },
-  {
-    slug: 'uhod-za-keramogranitom-pod-mramor',
-    title: 'Как ухаживать за керамогранитом под мрамор',
-    excerpt:
-      'Полированные и лаппатированные поверхности требуют минимума усилий. Короткая памятка по средствам и частоте уборки.',
-    date: '2025-03-12',
-    category: 'Уход',
-    imageSeed: 'news-care',
-  },
-];
-
+/** @author Erbol king */
 export interface Promotion {
   slug: string;
   title: string;
@@ -86,11 +21,11 @@ export const promotions: Promotion[] = [
     accent: true,
   },
   {
-    slug: 'komplekt-vannaya',
-    title: 'Комплект для ванной комнаты',
+    slug: 'plitka-i-dver',
+    title: 'Плитка и дверь одним заказом',
     offer: '−15%',
     description:
-      'При заказе керамогранита для стен и пола одной коллекции — скидка на раковину и смеситель из раздела «Интерьер и мебель».',
+      'При заказе керамогранита для стен и пола одной коллекции — скидка на межкомнатную дверь из каталога.',
     until: '2026-04-15',
     imageSeed: 'promo-bathset',
   },

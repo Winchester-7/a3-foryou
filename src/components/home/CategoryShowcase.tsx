@@ -1,5 +1,6 @@
+/** @author Erbol king */
 import Link from 'next/link';
-import { categories, getCollection } from '@/lib/catalog';
+import { categories, getCollection, FALLBACK_HERO } from '@/lib/catalog';
 import { TileImage } from '@/components/media/TileImage';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
@@ -9,14 +10,14 @@ export function CategoryShowcase() {
     <section className="container-x py-20 lg:py-28">
       <SectionHeading
         eyebrow="Каталог керамогранита"
-        title="Девять направлений — одна система качества"
-        text="Коллекции IDALGO, GRANITEA и «Уральский Гранит»: ректифицированные форматы, равномерный прокрас и износостойкие поверхности. Выберите фактуру — от тёплого дерева до архитектурного бетона."
+        title={`Направлений: ${categories.length} — всё из наличия на складе`}
+        text="Керамогранит IDALGO, GRANITEA, KERRANOVA, GRASARO и других заводов. Выберите фактуру — от тёплого дерева до архитектурного бетона."
         link={{ href: '/catalog', label: 'Весь каталог' }}
       />
 
       <StaggerGroup className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-3">
         {categories.map((c) => {
-          const hero = getCollection(c.heroCollection)?.hero ?? '/catalog/lusso/hero.jpg';
+          const hero = getCollection(c.heroCollection)?.hero || FALLBACK_HERO;
           return (
             <StaggerItem key={c.slug}>
               <Link href={`/catalog/${c.slug}`} className="group block">

@@ -1,8 +1,12 @@
 'use client';
 
+/** @author Erbol king */
+
 import Link from 'next/link';
 import type { Collection, Product } from '@/lib/types';
 import { TileImage } from '@/components/media/TileImage';
+import { BrandBadge } from '@/components/brand/BrandLogo';
+import { formatM2, productStockM2 } from '@/lib/catalog';
 import { QuickAdd } from '@/components/cart/AddToCart';
 import { tileCartItem } from '@/lib/cart-items';
 
@@ -29,11 +33,7 @@ export function ProductCard({
           </div>
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100" />
 
-          {product.article && (
-            <span className="absolute left-4 top-4 rounded-full bg-paper/95 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide2 text-ink">
-              {product.article}
-            </span>
-          )}
+          {collection && <BrandBadge brand={collection.brand} className="absolute left-4 top-4" />}
 
           {onQuickView && (
             <button
@@ -60,8 +60,11 @@ export function ProductCard({
             </h3>
           </Link>
           <p className="mt-1 text-xs text-ink-faint">
-            {product.sizes.join(' · ')} см{brand ? ` · ${brand}` : ''}
+            {[product.article, product.sizes.join(' · ') && `${product.sizes.join(' · ')} мм`].filter(Boolean).join(' · ')}
           </p>
+          {productStockM2(product) > 0 && (
+            <p className="mt-1 text-xs font-medium text-[#1f8f4c]">В наличии · {formatM2(productStockM2(product))}</p>
+          )}
         </div>
       </div>
     </article>

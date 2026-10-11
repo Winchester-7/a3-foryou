@@ -1,4 +1,15 @@
-export type Brand = 'idalgo' | 'granitea' | 'uralgranit';
+/** @author Erbol king */
+export type Brand =
+  | 'idalgo'
+  | 'granitea'
+  | 'uralgranit'
+  | 'grasaro'
+  | 'kerranova'
+  | 'china'
+  | 'axima'
+  | 'kazakhstan'
+  | 'uzbekistan'
+  | 'tianshan';
 
 export type LookSlug =
   | 'marble'
@@ -17,6 +28,14 @@ export interface Look {
   description: string;
 }
 
+/** One line of the warehouse list: a format + surface with the quantity in stock. */
+export interface StockLine {
+  size: string;
+  surface: string;
+  pcs: number;
+  m2: number;
+}
+
 export interface Product {
   slug: string;
   name: string;         // 'Lusso Santo'
@@ -25,8 +44,14 @@ export interface Product {
   article?: string;     // 'G390'
   sizes: string[];
   surfaces: string[];
-  image: string;        // card image (real photo)
+  image: string;        // card image (real photo), '' when there is none yet
   images: string[];     // gallery
+  /** quantities from the warehouse list */
+  stock?: StockLine[];
+  /** no manufacturer photo found for this model yet */
+  noPhoto?: boolean;
+  /** manufacturer page the data came from */
+  source?: string;
 }
 
 export interface Collection {
@@ -47,6 +72,8 @@ export interface Collection {
   gallery: string[];
   swatches: string[];
   products: Product[];
+  /** total m² in stock across the collection */
+  stockM2?: number;
 }
 
 export interface Category {

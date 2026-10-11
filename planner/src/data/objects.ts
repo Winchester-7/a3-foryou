@@ -1,4 +1,5 @@
-import { doorModels, sofaModels, sofaDims, type Swatch } from './catalog';
+/** @author Erbol king */
+import { doorDims, doorModels, sofaModels, sofaDims, tileCollections, type Swatch } from './catalog';
 
 export type ObjKind =
   | 'door'
@@ -26,15 +27,22 @@ export interface ObjDef {
   /** backs onto the nearest wall when moved */
   wall: boolean;
   colors?: Swatch[];
+  /** selectable widths, metres (the model is stretched along its width) */
+  widths?: number[];
+  /** depth follows the width proportionally (rugs, tables) */
+  keepRatio?: boolean;
   icon: string;
 }
 
 const FRONTS: Swatch[] = [
   { name: 'Белый', hex: '#f1efeb' },
   { name: 'Дуб', hex: '#b08a62' },
+  { name: 'Орех', hex: '#6b4a2f' },
   { name: 'Графит', hex: '#45474a' },
+  { name: 'Чёрный', hex: '#1f1f1f' },
   { name: 'Шалфей', hex: '#9aa593' },
   { name: 'Кашемир', hex: '#d8ccb9' },
+  { name: 'Тёмно-синий', hex: '#2f3b52' },
 ];
 const TEXTILE: Swatch[] = [
   { name: 'Лён', hex: '#e6dfd3' },
@@ -42,23 +50,25 @@ const TEXTILE: Swatch[] = [
   { name: 'Олива', hex: '#6f6b49' },
   { name: 'Терракота', hex: '#a45c43' },
   { name: 'Индиго', hex: '#3f4a63' },
+  { name: 'Бордо', hex: '#6d2b33' },
+  { name: 'Тауп', hex: '#9a8f80' },
 ];
 
 export const OBJECTS: Record<ObjKind, ObjDef> = {
-  door: { kind: 'door', label: 'Дверь Diford', group: 'Двери', w: 0.9, d: 0.1, wall: true, icon: 'door' },
-  bathtub: { kind: 'bathtub', label: 'Ванна', group: 'Ванная', w: 1.7, d: 0.75, wall: true, icon: 'bath' },
-  shower: { kind: 'shower', label: 'Душевая', group: 'Ванная', w: 0.9, d: 0.9, wall: true, icon: 'shower' },
-  vanity: { kind: 'vanity', label: 'Тумба с раковиной', group: 'Ванная', w: 0.8, d: 0.48, wall: true, colors: FRONTS, icon: 'vanity' },
+  door: { kind: 'door', label: 'Дверь', group: 'Двери', w: 0.9, d: 0.1, wall: true, icon: 'door' },
+  bathtub: { kind: 'bathtub', label: 'Ванна', group: 'Ванная', w: 1.7, d: 0.75, wall: true, widths: [1.5, 1.6, 1.7, 1.8], icon: 'bath' },
+  shower: { kind: 'shower', label: 'Душевая', group: 'Ванная', w: 0.9, d: 0.9, wall: true, widths: [0.8, 0.9, 1.0, 1.2], keepRatio: true, icon: 'shower' },
+  vanity: { kind: 'vanity', label: 'Тумба с раковиной', group: 'Ванная', w: 0.8, d: 0.48, wall: true, colors: FRONTS, widths: [0.6, 0.8, 1.0, 1.2], icon: 'vanity' },
   toilet: { kind: 'toilet', label: 'Унитаз', group: 'Ванная', w: 0.4, d: 0.62, wall: true, icon: 'toilet' },
-  kitchen: { kind: 'kitchen', label: 'Кухонный гарнитур', group: 'Кухня', w: 2.4, d: 0.62, wall: true, colors: FRONTS, icon: 'kitchen' },
-  island: { kind: 'island', label: 'Остров', group: 'Кухня', w: 1.6, d: 0.9, wall: false, colors: FRONTS, icon: 'island' },
-  table: { kind: 'table', label: 'Стол со стульями', group: 'Кухня', w: 1.4, d: 0.8, wall: false, icon: 'table' },
+  kitchen: { kind: 'kitchen', label: 'Кухонный гарнитур', group: 'Кухня', w: 2.4, d: 0.62, wall: true, colors: FRONTS, widths: [1.8, 2.4, 3.0, 3.6], icon: 'kitchen' },
+  island: { kind: 'island', label: 'Остров', group: 'Кухня', w: 1.6, d: 0.9, wall: false, colors: FRONTS, widths: [1.2, 1.6, 2.0], icon: 'island' },
+  table: { kind: 'table', label: 'Стол со стульями', group: 'Кухня', w: 1.4, d: 0.8, wall: false, widths: [1.2, 1.4, 1.8], keepRatio: true, icon: 'table' },
   sofa: { kind: 'sofa', label: 'Диван Delavega', group: 'Мебель', w: 2.0, d: 0.95, wall: false, icon: 'sofa' },
-  bed: { kind: 'bed', label: 'Кровать', group: 'Мебель', w: 1.7, d: 2.15, wall: true, colors: TEXTILE, icon: 'bed' },
-  wardrobe: { kind: 'wardrobe', label: 'Шкаф', group: 'Мебель', w: 1.6, d: 0.6, wall: true, colors: FRONTS, icon: 'wardrobe' },
-  tv: { kind: 'tv', label: 'ТВ-зона', group: 'Мебель', w: 1.8, d: 0.42, wall: true, colors: FRONTS, icon: 'tv' },
+  bed: { kind: 'bed', label: 'Кровать', group: 'Мебель', w: 1.7, d: 2.15, wall: true, colors: TEXTILE, widths: [1.4, 1.6, 1.7, 1.8, 2.0], icon: 'bed' },
+  wardrobe: { kind: 'wardrobe', label: 'Шкаф', group: 'Мебель', w: 1.6, d: 0.6, wall: true, colors: FRONTS, widths: [1.0, 1.6, 2.0, 2.4], icon: 'wardrobe' },
+  tv: { kind: 'tv', label: 'ТВ-зона', group: 'Мебель', w: 1.8, d: 0.42, wall: true, colors: FRONTS, widths: [1.2, 1.8, 2.2], icon: 'tv' },
   plant: { kind: 'plant', label: 'Растение', group: 'Декор', w: 0.5, d: 0.5, wall: false, icon: 'plant' },
-  rug: { kind: 'rug', label: 'Ковёр', group: 'Декор', w: 2.0, d: 1.4, wall: false, colors: TEXTILE, icon: 'rug' },
+  rug: { kind: 'rug', label: 'Ковёр', group: 'Декор', w: 2.0, d: 1.4, wall: false, colors: TEXTILE, widths: [1.4, 2.0, 2.4, 3.0], keepRatio: true, icon: 'rug' },
 };
 
 export interface PlacedObject {
@@ -72,8 +82,10 @@ export interface PlacedObject {
   colorName?: string;
   /** door / sofa model slug */
   ref?: string;
-  /** sofa size label, e.g. "230 × 95" */
+  /** sofa size label ("230 × 95", cm) or door size label ("800 × 2000", mm) */
   size?: string;
+  /** chosen width for resizable furniture, metres */
+  w?: number;
 }
 
 /** Real footprint (sofas depend on the chosen model size). */
@@ -83,13 +95,84 @@ export function footprint(o: PlacedObject): { w: number; d: number } {
     return sofaDims(o.size ?? m.sizes[0]);
   }
   const def = OBJECTS[o.kind];
-  return { w: def.w, d: def.d };
+  if (o.kind === 'door') {
+    const m = doorModels.find((d) => d.slug === o.ref) ?? doorModels[0];
+    return { w: doorDims(o.size ?? m?.sizes?.[0] ?? '800 × 2000').w + 0.14, d: def.d };
+  }
+  const k = o.w && def.w ? o.w / def.w : 1;
+  return { w: o.w ?? def.w, d: def.keepRatio ? def.d * k : def.d };
+}
+
+/** Scale to apply to the procedural model so it matches the chosen size. */
+export function modelScale(o: PlacedObject): [number, number, number] {
+  const def = OBJECTS[o.kind];
+  if (o.kind === 'door') {
+    const m = doorModels.find((d) => d.slug === o.ref) ?? doorModels[0];
+    const { w, h } = doorDims(o.size ?? m?.sizes?.[0] ?? '800 × 2000');
+    return [w / 0.8, h / 2.0, 1];
+  }
+  if (o.kind === 'sofa' || !o.w) return [1, 1, 1];
+  const k = o.w / def.w;
+  return [k, 1, def.keepRatio ? k : 1];
+}
+
+export interface SizeOption {
+  id: string;
+  label: string;
+  patch: Partial<PlacedObject>;
+  active: boolean;
+}
+
+/** Everything the panel needs to let the client resize / recolour / re-model an object. */
+export function objectOptions(o: PlacedObject): {
+  title: string;
+  sizes: SizeOption[];
+  colors: Swatch[];
+  href: string | null;
+  unit: string;
+} {
+  const def = OBJECTS[o.kind];
+  if (o.kind === 'door') {
+    const m = doorModels.find((d) => d.slug === o.ref) ?? doorModels[0];
+    const cur = o.size ?? m?.sizes?.[0];
+    return {
+      title: `${m?.kind === 'entrance' ? 'Входная' : 'Межкомнатная'} дверь ${m?.name ?? ''}`.trim(),
+      sizes: (m?.sizes ?? []).map((s) => ({ id: s, label: s, patch: { size: s }, active: s === cur })),
+      colors: m?.colors ?? [],
+      href: m?.href ?? null,
+      unit: 'мм',
+    };
+  }
+  if (o.kind === 'sofa') {
+    const m = sofaModels.find((s) => s.slug === o.ref) ?? sofaModels[0];
+    const cur = o.size ?? m.sizes[0];
+    return {
+      title: `${m.kind} ${m.name}`,
+      sizes: m.sizes.map((s) => ({ id: s, label: s, patch: { size: s }, active: s === cur })),
+      colors: m.fabrics,
+      href: m.href,
+      unit: 'см',
+    };
+  }
+  const cur = o.w ?? def.w;
+  return {
+    title: def.label,
+    sizes: (def.widths ?? []).map((w) => ({
+      id: String(w),
+      label: `${w.toLocaleString('ru-RU')} м`,
+      patch: { w },
+      active: Math.abs(w - cur) < 0.001,
+    })),
+    colors: def.colors ?? [],
+    href: null,
+    unit: 'м',
+  };
 }
 
 export function defaultsFor(kind: ObjKind): Partial<PlacedObject> {
   if (kind === 'door') {
     const d = doorModels[0];
-    return { ref: d.slug, color: d.colors[0].hex, colorName: d.colors[0].name };
+    return { ref: d.slug, size: d.sizes?.[0], color: d.colors[0]?.hex, colorName: d.colors[0]?.name };
   }
   if (kind === 'sofa') {
     const s = sofaModels.find((m) => m.kind === 'Диван') ?? sofaModels[0];
@@ -113,12 +196,21 @@ export interface RoomPreset {
   wallMode: 'full' | 'panel' | 'none';
 }
 
+/** First decor of the first look that has anything in stock — keeps presets valid when the catalogue changes. */
+function firstDecor(looks: string[], n = 0): string {
+  for (const look of looks) {
+    const list = tileCollections.filter((c) => c.look === look).flatMap((c) => c.decors);
+    if (list.length) return list[Math.min(n, list.length - 1)].id;
+  }
+  return tileCollections[0]?.decors[0]?.id ?? '';
+}
+
 export const ROOM_PRESETS: RoomPreset[] = [
-  { type: 'bath', title: 'Ванная', hint: 'Пол и стены до потолка', length: 2.6, width: 1.9, height: 2.6, floorDecor: 'karatash-1', wallDecor: 'lusso-4', wallMode: 'full' },
-  { type: 'kitchen', title: 'Кухня', hint: 'Пол и фартук', length: 4, width: 3.2, height: 2.7, floorDecor: 'cement-1', wallDecor: 'calacatta-1', wallMode: 'panel' },
-  { type: 'living', title: 'Гостиная', hint: 'Крупный формат на пол', length: 5.5, width: 4.2, height: 2.8, floorDecor: 'lusso-1', wallDecor: 'neiva-1', wallMode: 'none' },
-  { type: 'bedroom', title: 'Спальня', hint: 'Тёплый пол под дерево', length: 4.2, width: 3.6, height: 2.7, floorDecor: 'wood-classic-2', wallDecor: 'neiva-1', wallMode: 'none' },
-  { type: 'hall', title: 'Прихожая', hint: 'Износостойкий пол', length: 3, width: 1.8, height: 2.7, floorDecor: 'armor-1', wallDecor: 'concepta-1', wallMode: 'none' },
+  { type: 'bath', title: 'Ванная', hint: 'Пол и стены до потолка', length: 2.6, width: 1.9, height: 2.6, floorDecor: firstDecor(['stone', 'concrete', 'marble']), wallDecor: firstDecor(['marble', 'stone'], 1), wallMode: 'full' },
+  { type: 'kitchen', title: 'Кухня', hint: 'Пол и фартук', length: 4, width: 3.2, height: 2.7, floorDecor: firstDecor(['concrete', 'stone'], 1), wallDecor: firstDecor(['marble', 'stone']), wallMode: 'panel' },
+  { type: 'living', title: 'Гостиная', hint: 'Крупный формат на пол', length: 5.5, width: 4.2, height: 2.8, floorDecor: firstDecor(['marble', 'stone']), wallDecor: firstDecor(['concrete', 'stone'], 2), wallMode: 'none' },
+  { type: 'bedroom', title: 'Спальня', hint: 'Тёплый пол под дерево', length: 4.2, width: 3.6, height: 2.7, floorDecor: firstDecor(['wood', 'stone']), wallDecor: firstDecor(['concrete', 'stone'], 3), wallMode: 'none' },
+  { type: 'hall', title: 'Прихожая', hint: 'Износостойкий пол', length: 3, width: 1.8, height: 2.7, floorDecor: firstDecor(['technical', 'concrete', 'stone'], 2), wallDecor: firstDecor(['concrete', 'stone']), wallMode: 'none' },
 ];
 
 let seq = 0;

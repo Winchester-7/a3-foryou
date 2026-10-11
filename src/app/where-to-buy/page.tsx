@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { Metadata } from 'next';
 import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';

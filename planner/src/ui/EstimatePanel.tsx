@@ -1,6 +1,7 @@
+/** @author Erbol king */
 import { findDecor, findDoor, findSofa, SITE_URL, WHATSAPP } from '../data/catalog';
 import type { PlacedObject } from '../data/objects';
-import { encodeShare, usePlanner, type Room, type Surface, type Walls } from '../store';
+import { encodeShare, usePlanner, wallTileHeight, type Floor, type Room, type Surface, type Walls } from '../store';
 import { Icon } from './icons';
 import { fmt, plural } from './format';
 import { Section } from './SurfacePanel';
@@ -24,16 +25,26 @@ function calc(surface: Surface, area: number): TileCalc {
   return { surface, area, tiles, m2: Math.round(tiles * tileArea * 100) / 100 };
 }
 
-export function estimate(room: Room, floor: Surface, walls: Walls, objects: PlacedObject[]) {
-  const floorCalc = calc(floor, room.length * room.width);
+/** Which wall (0 back, 1 right, 2 front, 3 left) a door stands in. */
+function wallOfDoor(o: PlacedObject): number {
+  const turns = Math.round((((o.rot % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2)) / (Math.PI / 2)) % 4;
+  return [0, 3, 2, 1][turns];
+}
+
+export function estimate(room: Room, floor: Floor, walls: Walls, objects: PlacedObject[]) {
+  const floorCalc = calc(floor, room.length * room.width * Math.min(1, Math.max(0.1, floor.coverage)));
   let wallCalc: TileCalc | null = null;
-  if (walls.mode !== 'none') {
-    const base = walls.mode === 'panel' && room.type === 'kitchen' ? 0.88 : 0;
-    const h = walls.mode === 'full' ? room.height : Math.min(walls.panelHeight, room.height - base);
-    const doors = objects.filter((o) => o.kind === 'door').length;
+  const { base, height: h } = wallTileHeight(walls, room);
+  if (walls.mode !== 'none' && h > 0) {
+    const lengths = [room.length, room.width, room.length, room.width];
+    const span = Math.min(1, Math.max(0.1, walls.span));
+    const on = [0, 1, 2, 3].filter((i) => walls.sides[i] !== false);
+    let area = on.reduce((n, i) => n + lengths[i] * span * h, 0);
+    // a door in a tiled wall takes its opening out of the area (full-width tiling only)
     const doorOverlap = Math.max(0, Math.min(DOOR_H, base + h) - base);
-    const area = Math.max(0, 2 * (room.length + room.width) * h - doors * DOOR_W * doorOverlap);
-    wallCalc = calc(walls, area);
+    const doors = objects.filter((o) => o.kind === 'door' && on.includes(wallOfDoor(o))).length;
+    if (span >= 0.999) area -= doors * DOOR_W * doorOverlap;
+    wallCalc = calc(walls, Math.max(0, area));
   }
   return { floorCalc, wallCalc };
 }
@@ -71,7 +82,7 @@ export function projectItems() {
   for (const o of objects) {
     if (o.kind !== 'door' && o.kind !== 'sofa') continue;
     const m = o.kind === 'door' ? findDoor(o.ref) : findSofa(o.ref);
-    const variant = o.kind === 'sofa' ? `${o.colorName ?? ''} · ${o.size ?? ''} см` : o.colorName ?? '';
+    const variant = o.kind === 'sofa' ? `${o.colorName ?? ''} · ${o.size ?? ''} см` : `${o.colorName ?? ''}${o.size ? ` · ${o.size} мм` : ''}`;
     const id = `${o.kind}:${m.href}|${variant}`;
     const hit = items.find((i) => i.id === id);
     if (hit) hit.qty += 1;
@@ -80,7 +91,7 @@ export function projectItems() {
         id,
         kind: o.kind,
         title: o.kind === 'door' ? `Дверь ${m.name}` : `${(m as ReturnType<typeof findSofa>).kind} ${m.name}`,
-        details: `${o.kind === 'door' ? 'Diford' : 'Delavega'} · ${variant}`,
+        details: `${o.kind === 'door' ? 'Дверь' : 'Delavega'} · ${variant}`,
         image: m.image,
         href: m.href,
         qty: 1,
@@ -130,14 +141,14 @@ export function EstimatePanel() {
       <Section title="Расчёт керамогранита">
         <p className="mb-3 text-xs leading-relaxed text-ink-faint">С запасом 10% на подрезку и бой. Точную раскладку подготовит менеджер.</p>
         <CalcCard label="Пол" calc={floorCalc} />
-        {wallCalc ? <CalcCard label={walls.mode === 'full' ? 'Стены' : room.type === 'kitchen' ? 'Фартук' : 'Панель'} calc={wallCalc} /> : null}
+        {wallCalc ? <CalcCard label={walls.mode === 'full' ? 'Стены' : walls.mode === 'half' ? 'Стены (половина)' : room.type === 'kitchen' ? 'Фартук' : 'Стены (часть)'} calc={wallCalc} /> : null}
       </Section>
       {(doors > 0 || sofas > 0) && (
         <Section title="Двери и мебель">
           <ul className="space-y-1.5 text-sm text-ink">
             {doors > 0 && (
               <li className="flex justify-between">
-                <span>Двери Diford</span>
+                <span>Двери</span>
                 <span className="tabular-nums text-ink-soft">
                   {doors} {plural(doors, 'шт.', 'шт.', 'шт.')}
                 </span>

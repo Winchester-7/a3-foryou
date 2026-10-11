@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { Transition } from 'motion/react';
 
 /** Mirrors the CSS tokens in globals.css (--ease-out / --ease-in-out / --ease-drawer). */

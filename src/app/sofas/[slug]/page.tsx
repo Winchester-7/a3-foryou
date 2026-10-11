@@ -1,3 +1,4 @@
+/** @author Erbol king */
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -47,7 +48,7 @@ export default function SofaPage({ params }: { params: { slug: string } }) {
       />
       <Breadcrumbs
         items={[
-          { label: 'Интерьер и мебель', href: '/interior' },
+          { label: 'Каталог', href: '/catalog' },
           { label: 'Диваны', href: '/sofas' },
           { label: `${s.kind} ${s.name}` },
         ]}

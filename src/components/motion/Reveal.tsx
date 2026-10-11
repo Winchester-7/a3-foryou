@@ -1,5 +1,7 @@
 'use client';
 
+/** @author Erbol king */
+
 import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion, type Variants } from 'motion/react';
 import { easeOut } from '@/lib/motion';

@@ -5,7 +5,14 @@ const nextConfig = {
   reactStrictMode: true,
   // the old flat configurator now lives as a standalone 3D planner on its own domain
   async redirects() {
-    return [{ source: '/configurator', destination: PLANNER_URL, permanent: false }];
+    return [
+      { source: '/configurator', destination: PLANNER_URL, permanent: false },
+      { source: '/news', destination: '/portfolio', permanent: true },
+      { source: '/news/:slug*', destination: '/portfolio', permanent: true },
+      { source: '/interior', destination: '/catalog', permanent: true },
+      { source: '/interior/:category*', destination: '/catalog', permanent: true },
+      { source: '/catalog-almaty', destination: '/catalog', permanent: true },
+    ];
   },
   images: {
     formats: ['image/avif', 'image/webp'],
