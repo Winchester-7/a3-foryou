@@ -38,7 +38,13 @@ function normStock(v: unknown): StockLine[] {
   if (!Array.isArray(v)) return [];
   return v
     .filter(isRecord)
-    .map((s) => ({ size: str(s.size, 40), surface: str(s.surface, 60), pcs: Math.max(0, Math.round(num(s.pcs))), m2: Math.max(0, Math.round(num(s.m2) * 100) / 100) }))
+    .map((s) => ({
+      size: str(s.size, 40),
+      surface: str(s.surface, 60),
+      pcs: Math.max(0, Math.round(num(s.pcs))),
+      m2: Math.max(0, Math.round(num(s.m2) * 100) / 100),
+      ...(str(s.label, 200) ? { label: str(s.label, 200) } : {}),
+    }))
     .filter((s) => s.size || s.surface || s.m2 || s.pcs);
 }
 

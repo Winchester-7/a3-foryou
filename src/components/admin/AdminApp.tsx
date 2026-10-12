@@ -8,11 +8,13 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { DoorsEditor } from './DoorsEditor';
 import { SofasEditor } from './SofasEditor';
+import { StockImport } from './StockImport';
 import { TilesEditor } from './TilesEditor';
 import { LeadsView, PortfolioEditor, PromotionsEditor, SettingsEditor } from './ContentEditors';
 
 const SECTIONS: { id: string; label: string; hint: string }[] = [
   { id: 'tiles', label: 'Керамогранит', hint: 'Коллекции, позиции, остатки, фото' },
+  { id: 'stock', label: 'Остатки Excel', hint: 'Загрузить складскую таблицу .xlsx' },
   { id: 'doors', label: 'Двери', hint: 'Межкомнатные и входные' },
   { id: 'sofas', label: 'Диваны', hint: 'Диваны и кресла' },
   { id: 'portfolio', label: 'Портфолио', hint: 'Проекты и интерьеры' },
@@ -23,6 +25,7 @@ const SECTIONS: { id: string; label: string; hint: string }[] = [
 
 const EDITORS: Record<string, () => ReactNode> = {
   tiles: () => <TilesEditor />,
+  stock: () => <StockImport />,
   doors: () => <DoorsEditor />,
   sofas: () => <SofasEditor />,
   portfolio: () => <PortfolioEditor />,
