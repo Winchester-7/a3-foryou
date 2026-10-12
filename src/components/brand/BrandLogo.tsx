@@ -10,6 +10,9 @@ const LOGO_FILES: Record<string, { src: string; w: number; h: number }> = {
   idalgo: { src: '/brands/idalgo.png', w: 426, h: 148 },
   granitea: { src: '/brands/granitea.png', w: 570, h: 148 },
   uralgranit: { src: '/brands/uralgranit.png', w: 458, h: 148 },
+  // Kerranova: horizontal lockup of the supplied artwork (the stacked original is unreadable at 16 px)
+  kerranova: { src: '/brands/kerranova.png', w: 835, h: 148 },
+  grasaro: { src: '/brands/grasaro.png', w: 489, h: 148 },
 };
 
 export function hasBrandLogo(brand: string): boolean {

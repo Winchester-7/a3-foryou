@@ -38,6 +38,8 @@ export default function CatalogPage() {
           <BrandLogo brand="idalgo" height={26} />
           <BrandLogo brand="granitea" height={26} />
           <BrandLogo brand="uralgranit" height={26} />
+          <BrandLogo brand="kerranova" height={26} />
+          <BrandLogo brand="grasaro" height={26} />
         </div>
       </div>
 
