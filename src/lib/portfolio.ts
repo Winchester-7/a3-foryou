@@ -1,9 +1,8 @@
 /**
- * Portfolio projects. The list lives in src/data/portfolio.json so it can be
- * edited without touching code (the Telegram bot writes to that file).
+ * Portfolio projects — read from the data store (portfolio.json), edited in the admin panel.
  * @author Erbol king
  */
-import raw from '@/data/portfolio.json';
+import { readData } from './store';
 
 export interface PortfolioProject {
   slug: string;
@@ -20,10 +19,10 @@ export interface PortfolioProject {
   gallery: string[];
 }
 
-export const portfolio: PortfolioProject[] = raw as PortfolioProject[];
-
-export function getProject(slug: string): PortfolioProject | undefined {
-  return portfolio.find((p) => p.slug === slug);
+export function getPortfolio(): PortfolioProject[] {
+  return readData<PortfolioProject[]>('portfolio');
 }
 
-export const portfolioKinds: string[] = Array.from(new Set(portfolio.map((p) => p.kind)));
+export function getProject(slug: string): PortfolioProject | undefined {
+  return getPortfolio().find((p) => p.slug === slug);
+}

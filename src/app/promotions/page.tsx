@@ -6,7 +6,7 @@ import { PageHeader } from '@/components/ui/PageHeader';
 import { Photo } from '@/components/media/Photo';
 import { CallbackTrigger } from '@/components/forms/CallbackTrigger';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
-import { promotions, formatDate } from '@/lib/editorial';
+import { getPromotions, formatDate } from '@/lib/editorial';
 
 export const metadata: Metadata = {
   title: 'Акции',
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function PromotionsPage() {
+  const promotions = getPromotions();
   return (
     <PageShell>
       <Breadcrumbs items={[{ label: 'Акции' }]} />

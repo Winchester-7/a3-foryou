@@ -5,12 +5,8 @@ import { notFound } from 'next/navigation';
 import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { FurnitureDetail } from '@/components/furniture/FurnitureDetail';
-import { sofaModels, getSofa } from '@/lib/sofas';
+import { getSofas, getSofa } from '@/lib/sofas';
 import { site } from '@/lib/site';
-
-export function generateStaticParams() {
-  return sofaModels.map((s) => ({ slug: s.slug }));
-}
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const s = getSofa(params.slug);
@@ -27,7 +23,7 @@ export default function SofaPage({ params }: { params: { slug: string } }) {
   const s = getSofa(params.slug);
   if (!s) notFound();
 
-  const related = sofaModels.filter((x) => x.kind === s.kind && x.slug !== s.slug).slice(0, 3);
+  const related = getSofas().filter((x) => x.kind === s.kind && x.slug !== s.slug).slice(0, 3);
 
   return (
     <PageShell>

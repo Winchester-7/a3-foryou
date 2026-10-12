@@ -1,11 +1,12 @@
 /** @author Erbol king */
 import Image from 'next/image';
 import Link from 'next/link';
-import { portfolio } from '@/lib/portfolio';
+import { getPortfolio } from '@/lib/portfolio';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
 
 export function PortfolioTeaser() {
+  const portfolio = getPortfolio();
   if (portfolio.length === 0) return null;
 
   return (

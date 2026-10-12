@@ -1,14 +1,16 @@
 /** @author Erbol king */
 import Image from 'next/image';
 import Link from 'next/link';
-import { doorModels } from '@/lib/doors';
-import { sofaModels } from '@/lib/sofas';
+import { getDoors } from '@/lib/doors';
+import { getSofas } from '@/lib/sofas';
 import { site } from '@/lib/site';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
 
 /** Doors, sofas and the 3D planner — the part of the offer beyond tile. */
 export function InteriorTeaser() {
+  const doorModels = getDoors();
+  const sofaModels = getSofas();
   const cards = [
     {
       title: 'Двери',

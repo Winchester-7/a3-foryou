@@ -6,7 +6,7 @@ import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
-import { portfolio } from '@/lib/portfolio';
+import { getPortfolio } from '@/lib/portfolio';
 
 export const metadata: Metadata = {
   title: 'Портфолио',
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function PortfolioPage() {
+  const portfolio = getPortfolio();
   return (
     <PageShell>
       <Breadcrumbs items={[{ label: 'Портфолио' }]} />

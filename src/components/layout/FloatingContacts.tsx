@@ -5,12 +5,13 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { easeOut } from '@/lib/motion';
-import { site } from '@/lib/site';
+import { useSite } from './SiteProvider';
 import { useLeadDialog } from '@/components/forms/LeadDialog';
 
 const ease = easeOut;
 
 export function FloatingContacts() {
+  const site = useSite();
   const { open } = useLeadDialog();
   const [showTop, setShowTop] = useState(false);
 

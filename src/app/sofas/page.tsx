@@ -4,7 +4,7 @@ import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { CategoryBanner } from '@/components/catalog/CategoryBanner';
 import { FurnitureCatalog, type FurnitureItem } from '@/components/furniture/FurnitureCatalog';
-import { sofaModels } from '@/lib/sofas';
+import { getSofas } from '@/lib/sofas';
 import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function SofasPage() {
+  const sofaModels = getSofas();
   const items: FurnitureItem[] = sofaModels.map((s) => ({
     slug: s.slug,
     name: `${s.kind} ${s.name}`,

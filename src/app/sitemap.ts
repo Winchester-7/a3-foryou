@@ -1,9 +1,14 @@
 /** @author Erbol king */
 import type { MetadataRoute } from 'next';
-import { categories, collections, allProducts } from '@/lib/catalog';
+import { getCategories, getCollections, getAllProducts } from '@/lib/catalog';
 import { site } from '@/lib/site';
 
+export const dynamic = 'force-dynamic';
+
 export default function sitemap(): MetadataRoute.Sitemap {
+  const categories = getCategories();
+  const collections = getCollections();
+  const allProducts = getAllProducts();
   const now = new Date();
   const base = site.url;
 

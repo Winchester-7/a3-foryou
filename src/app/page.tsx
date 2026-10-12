@@ -8,7 +8,7 @@ import { Advantages } from '@/components/home/Advantages';
 import { InteriorTeaser } from '@/components/home/InteriorTeaser';
 import { PortfolioTeaser } from '@/components/home/PortfolioTeaser';
 import { CtaSection } from '@/components/home/CtaSection';
-import { collections, getFeaturedCollections, getLook } from '@/lib/catalog';
+import { getCollections, getFeaturedCollections, getLook } from '@/lib/catalog';
 
 /**
  * Home page. Spotlight blocks pick their collection from the current stock
@@ -17,7 +17,7 @@ import { collections, getFeaturedCollections, getLook } from '@/lib/catalog';
  */
 export default function HomePage() {
   const featured = getFeaturedCollections(8);
-  const withPhoto = collections.filter((c) => c.hero);
+  const withPhoto = getCollections().filter((c) => c.hero);
   const bigFormat = withPhoto.find((c) => c.sizes.some((s) => s.startsWith('1200'))) ?? withPhoto[0];
   const spotlight = withPhoto.find((c) => c.look === 'marble') ?? featured[0];
   const outdoor = withPhoto.find((c) => c.applications.includes('Террасы') && c.slug !== bigFormat?.slug) ?? withPhoto[1];

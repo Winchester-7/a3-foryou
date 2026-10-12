@@ -1,0 +1,14 @@
+.git
+.gitlab-ci.yml
+.next
+node_modules
+npm-debug.log*
+planner
+scripts
+docs
+deploy
+data
+*.md
+.env*
+.netlify
+tsconfig.tsbuildinfo

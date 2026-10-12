@@ -1,7 +1,7 @@
 /** @author Erbol king */
 import type { Collection, Product } from './types';
 import type { CartItem } from '@/components/cart/CartProvider';
-import { brandName } from './catalog';
+import { brandName } from './brands';
 
 /** Cart payload for a keramogranit decor — keeps the article and sizes so the manager knows the exact SKU. */
 export function tileCartItem(product: Product, collection?: Collection): Omit<CartItem, 'qty' | 'unit'> {

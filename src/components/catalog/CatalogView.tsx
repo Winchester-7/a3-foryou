@@ -6,7 +6,8 @@ import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { backdrop, drawerIn, drawerOut } from '@/lib/motion';
 import type { Collection, Facets } from '@/lib/types';
-import { brandName, getLook } from '@/lib/catalog';
+import { brandName } from '@/lib/brands';
+import { getLook } from '@/lib/looks';
 import { CollectionCard } from './CollectionCard';
 import { Filters, type FilterKey, type FilterState } from './Filters';
 

@@ -1,0 +1,19 @@
+# Example for the server (one copy per environment: a3.kg and a3-dev.xyz).
+# Put a `.env` next to this file (see .env.example) and run:
+#   docker compose pull && docker compose up -d
+services:
+  a3-site:
+    image: ${A3_IMAGE:-registry.gitlab.com/OWNER/GROUP/a3-site:latest}
+    container_name: ${A3_CONTAINER:-a3-site}
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATA_DIR: /data
+    ports:
+      # only localhost: nginx is the public entry point
+      - "127.0.0.1:${A3_PORT:-3000}:3000"
+    volumes:
+      - a3-data:/data
+
+volumes:
+  a3-data:

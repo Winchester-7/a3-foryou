@@ -3,6 +3,8 @@ const PLANNER_URL = process.env.NEXT_PUBLIC_PLANNER_URL ?? 'https://a3-foryou-3d
 
 const nextConfig = {
   reactStrictMode: true,
+  // Docker image: self-contained server (see Dockerfile). Netlify keeps its own runtime.
+  output: process.env.BUILD_TARGET === 'docker' ? 'standalone' : undefined,
   // the old flat configurator now lives as a standalone 3D planner on its own domain
   async redirects() {
     return [
@@ -12,6 +14,14 @@ const nextConfig = {
       { source: '/interior', destination: '/catalog', permanent: true },
       { source: '/interior/:category*', destination: '/catalog', permanent: true },
       { source: '/catalog-almaty', destination: '/catalog', permanent: true },
+    ];
+  },
+  // the 3D planner (another origin) loads tile textures from here
+  async headers() {
+    return [
+      { source: '/tiles/:path*', headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }] },
+      { source: '/doors2/:path*', headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }] },
+      { source: '/sofas/:path*', headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }] },
     ];
   },
   images: {

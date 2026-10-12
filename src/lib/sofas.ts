@@ -1,9 +1,8 @@
 /**
- * Sofas and armchairs — loaded from src/data/sofas.json, which the Telegram
- * bot can edit (add / remove models).
+ * Sofas and armchairs — read from the data store (sofas.json), edited in the admin panel.
  * @author Erbol king
  */
-import data from '@/data/sofas.json';
+import { readData } from './store';
 
 export interface FabricColor {
   name: string;
@@ -28,8 +27,10 @@ export interface SofaModel {
   gallery: string[];
 }
 
-export const sofaModels: SofaModel[] = data as unknown as SofaModel[];
+export function getSofas(): SofaModel[] {
+  return readData<SofaModel[]>('sofas');
+}
 
 export function getSofa(slug: string): SofaModel | undefined {
-  return sofaModels.find((s) => s.slug === slug);
+  return getSofas().find((s) => s.slug === slug);
 }

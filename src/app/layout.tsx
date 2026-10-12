@@ -3,11 +3,17 @@ import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { site } from '@/lib/site';
+import { getSite } from '@/lib/site-server';
+import { SiteProvider } from '@/components/layout/SiteProvider';
+import { ChromeGate } from '@/components/layout/ChromeGate';
 import { LeadDialogProvider } from '@/components/forms/LeadDialog';
 import { Footer } from '@/components/layout/Footer';
 import { FloatingContacts } from '@/components/layout/FloatingContacts';
 import { CartProvider } from '@/components/cart/CartProvider';
 import { LocaleProvider } from '@/components/i18n/LocaleProvider';
+
+/** Content is edited in the admin panel and must show up on the next request. */
+export const dynamic = 'force-dynamic';
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
@@ -52,6 +58,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const site = getSite();
   const orgJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'HomeAndConstructionBusiness',
@@ -84,15 +91,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           К основному содержанию
         </a>
-        <LocaleProvider>
-          <LeadDialogProvider>
-            <CartProvider>
-              {children}
-              <Footer />
-              <FloatingContacts />
-            </CartProvider>
-          </LeadDialogProvider>
-        </LocaleProvider>
+        <SiteProvider value={site}>
+          <LocaleProvider>
+            <LeadDialogProvider>
+              <CartProvider>
+                {children}
+                <ChromeGate>
+                  <Footer />
+                  <FloatingContacts />
+                </ChromeGate>
+              </CartProvider>
+            </LeadDialogProvider>
+          </LocaleProvider>
+        </SiteProvider>
       </body>
     </html>
   );

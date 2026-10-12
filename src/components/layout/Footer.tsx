@@ -1,11 +1,13 @@
 /** @author Erbol king */
 import Link from 'next/link';
-import { categories } from '@/lib/catalog';
-import { site } from '@/lib/site';
+import { getCategories } from '@/lib/catalog';
+import { getSite } from '@/lib/site-server';
 import { Logo } from '@/components/brand/Logo';
 import { CallbackTrigger } from '@/components/forms/CallbackTrigger';
 
 export function Footer() {
+  const site = getSite();
+  const categories = getCategories();
   return (
     <footer className="border-t border-line bg-paper">
       <div className="container-x py-16 lg:py-20">

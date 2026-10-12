@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import type { Facets } from '@/lib/types';
 import { BrandLogo, hasBrandLogo } from '@/components/brand/BrandLogo';
-import { brandKeyFromName } from '@/lib/catalog';
+import { brandKeyFromName } from '@/lib/brands';
 
 export type FilterKey = 'looks' | 'brands' | 'sizes' | 'surfaces' | 'applications';
 export type FilterState = Record<FilterKey, string[]>;

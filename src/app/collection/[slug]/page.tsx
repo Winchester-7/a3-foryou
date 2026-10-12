@@ -8,14 +8,11 @@ import { CategoryBanner } from '@/components/catalog/CategoryBanner';
 import { ProductGrid } from '@/components/catalog/ProductGrid';
 import { Reveal } from '@/components/motion/Reveal';
 import { CallbackTrigger } from '@/components/forms/CallbackTrigger';
-import { collections, getCollection, getLook, brandName, formatM2, FALLBACK_HERO, PRICE_LABEL } from '@/lib/catalog';
+import { getCollections, getCollection, getLook, brandName, formatM2, getFallbackHero, PRICE_LABEL } from '@/lib/catalog';
 import { BrandBadge } from '@/components/brand/BrandLogo';
 import { TECH_SPECS } from '@/lib/specs';
 import { site } from '@/lib/site';
-
-export function generateStaticParams() {
-  return collections.map((c) => ({ slug: c.slug }));
-}
+import { getSite } from '@/lib/site-server';
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const c = getCollection(params.slug);
@@ -34,7 +31,8 @@ export default function CollectionPage({ params }: { params: { slug: string } })
 
   const look = getLook(collection.look)!;
   const items = collection.products.map((product) => ({ product, collection }));
-  const related = collections
+  const FALLBACK_HERO = getFallbackHero();
+  const related = getCollections()
     .filter((c) => c.look === collection.look && c.slug !== collection.slug)
     .slice(0, 3);
 
@@ -119,7 +117,7 @@ export default function CollectionPage({ params }: { params: { slug: string } })
                 проверим наличие на складе в Бишкеке.
               </p>
               <CallbackTrigger kind="request" subject={`Коллекция ${collection.nameRu}`} label="Запросить цену" className="btn-accent mt-5 w-full" />
-              <a href={site.whatsapp} target="_blank" rel="noreferrer noopener" className="btn-outline mt-3 w-full">
+              <a href={getSite().whatsapp} target="_blank" rel="noreferrer noopener" className="btn-outline mt-3 w-full">
                 Написать в WhatsApp
               </a>
             </div>

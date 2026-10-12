@@ -4,7 +4,7 @@
  * @author Erbol king
  */
 import Image from 'next/image';
-import { brandName } from '@/lib/catalog';
+import { brandName } from '@/lib/brands';
 
 const LOGO_FILES: Record<string, { src: string; w: number; h: number }> = {
   idalgo: { src: '/brands/idalgo.png', w: 426, h: 148 },

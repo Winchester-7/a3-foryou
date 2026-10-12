@@ -7,7 +7,7 @@ import { CatalogView } from '@/components/catalog/CatalogView';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
 import { TileImage } from '@/components/media/TileImage';
-import { categories, collections, buildFacets, allProducts, getCollection, FALLBACK_HERO } from '@/lib/catalog';
+import { getCategories, getCollections, buildFacets, getAllProducts, getCollection, getFallbackHero } from '@/lib/catalog';
 import { BrandLogo } from '@/components/brand/BrandLogo';
 
 export const metadata: Metadata = {
@@ -18,6 +18,10 @@ export const metadata: Metadata = {
 };
 
 export default function CatalogPage() {
+  const categories = getCategories();
+  const collections = getCollections();
+  const allProducts = getAllProducts();
+  const FALLBACK_HERO = getFallbackHero();
   const facets = buildFacets(collections);
 
   return (

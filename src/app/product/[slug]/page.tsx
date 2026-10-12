@@ -10,15 +10,11 @@ import { RelatedProducts } from '@/components/catalog/RelatedProducts';
 import { Reveal } from '@/components/motion/Reveal';
 import { ColorPicker } from '@/components/furniture/ColorPicker';
 import { colorHex } from '@/lib/color';
-import { allProducts, getProduct, getRelatedProducts, getLook, brandName, getCollectionByProduct, formatM2, productStockM2, PRICE_LABEL } from '@/lib/catalog';
+import { getProduct, getRelatedProducts, getLook, brandName, getCollectionByProduct, formatM2, productStockM2, PRICE_LABEL } from '@/lib/catalog';
 import { BrandLogo } from '@/components/brand/BrandLogo';
 import { TECH_SPECS } from '@/lib/specs';
 import { site } from '@/lib/site';
 import { tileCartItem } from '@/lib/cart-items';
-
-export function generateStaticParams() {
-  return allProducts.map((p) => ({ slug: p.slug }));
-}
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const hit = getProduct(params.slug);

@@ -4,7 +4,7 @@
 
 import { useMemo, useState } from 'react';
 import type { Collection, Product } from '@/lib/types';
-import { brandName } from '@/lib/catalog';
+import { brandName } from '@/lib/brands';
 import { ProductCard } from './ProductCard';
 import { QuickView } from './QuickView';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
