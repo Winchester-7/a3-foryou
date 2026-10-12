@@ -34,6 +34,8 @@ export interface StockLine {
   surface: string;
   pcs: number;
   m2: number;
+  /** name of the line in the warehouse list — the key for the Excel import */
+  label?: string;
 }
 
 export interface Product {
