@@ -13,8 +13,8 @@ tsconfig.tsbuildinfo
 public/catalog/_wood/
 
 # runtime data of the admin panel (lives in the Docker volume on the server)
-.data/
-data/
+/.data/
+/data/
 
 # import scripts: intermediate files
 scripts/import/*.json
