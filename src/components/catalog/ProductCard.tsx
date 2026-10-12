@@ -6,7 +6,7 @@ import Link from 'next/link';
 import type { Collection, Product } from '@/lib/types';
 import { TileImage } from '@/components/media/TileImage';
 import { BrandBadge } from '@/components/brand/BrandLogo';
-import { formatM2, productStockM2 } from '@/lib/catalog';
+import { formatM2, productStockM2 } from '@/lib/format';
 import { QuickAdd } from '@/components/cart/AddToCart';
 import { tileCartItem } from '@/lib/cart-items';
 

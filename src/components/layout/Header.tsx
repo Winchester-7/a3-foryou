@@ -7,7 +7,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { Logo } from '@/components/brand/Logo';
-import { catalogExtras, mainNav, site } from '@/lib/site';
+import { catalogExtras, mainNav } from '@/lib/site';
+import { useSite } from './SiteProvider';
 import type { SearchDoc } from './SiteHeader';
 import { useCart } from '@/components/cart/CartProvider';
 import { CartIcon } from '@/components/cart/CartDrawer';
@@ -33,6 +34,7 @@ export function Header({
   index: SearchDoc[];
   catalogMenu: MenuItem[];
 }) {
+  const site = useSite();
   const reduce = useReducedMotion();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -238,6 +240,7 @@ function MobileNav({
   onClose: () => void;
   catalogMenu: MenuItem[];
 }) {
+  const site = useSite();
   const [section, setSection] = useState<null | 'catalog'>(null);
 
   return (

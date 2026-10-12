@@ -5,12 +5,8 @@ import { notFound } from 'next/navigation';
 import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { FurnitureDetail } from '@/components/furniture/FurnitureDetail';
-import { doorKindLabel, doorModels, getDoor } from '@/lib/doors';
+import { doorKindLabel, getDoors, getDoor } from '@/lib/doors';
 import { site } from '@/lib/site';
-
-export function generateStaticParams() {
-  return doorModels.map((d) => ({ slug: d.slug }));
-}
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const d = getDoor(params.slug);
@@ -27,7 +23,7 @@ export default function DoorPage({ params }: { params: { slug: string } }) {
   const d = getDoor(params.slug);
   if (!d) notFound();
 
-  const related = doorModels
+  const related = getDoors()
     .filter((x) => x.slug !== d.slug && x.kind === d.kind && (d.brand ? x.brand === d.brand : x.style === d.style))
     .slice(0, 3);
 

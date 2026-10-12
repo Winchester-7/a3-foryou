@@ -1,9 +1,8 @@
 /**
- * Door catalogue — loaded from src/data/doors.json (interior and entrance
- * doors). The file is edited by the Telegram bot as well as by the importer.
+ * Door catalogue — read from the data store (doors.json), edited in the admin panel.
  * @author Erbol king
  */
-import data from '@/data/doors.json';
+import { readData } from './store';
 
 export interface DoorColor {
   name: string;
@@ -29,10 +28,12 @@ export interface DoorModel {
   source?: string;
 }
 
-export const doorModels: DoorModel[] = data as unknown as DoorModel[];
+export function getDoors(): DoorModel[] {
+  return readData<DoorModel[]>('doors');
+}
 
 export function getDoor(slug: string): DoorModel | undefined {
-  return doorModels.find((d) => d.slug === slug);
+  return getDoors().find((d) => d.slug === slug);
 }
 
 export const doorKindLabel = (d: DoorModel) => (d.kind === 'entrance' ? 'Входная' : 'Межкомнатная');

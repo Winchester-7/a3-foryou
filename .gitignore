@@ -5,11 +5,16 @@ build
 .DS_Store
 *.pem
 npm-debug.log*
+.env
 .env*.local
 .vercel
 next-env.d.ts.bak
 tsconfig.tsbuildinfo
 public/catalog/_wood/
+
+# runtime data of the admin panel (lives in the Docker volume on the server)
+.data/
+data/
 
 # import scripts: intermediate files
 scripts/import/*.json

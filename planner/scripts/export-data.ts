@@ -7,10 +7,10 @@
 import { copyFileSync, existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { collections } from '../../src/lib/collections';
+import { getCollections } from '../../src/lib/collections';
 import { looks } from '../../src/lib/looks';
-import { doorModels } from '../../src/lib/doors';
-import { sofaModels } from '../../src/lib/sofas';
+import { getDoors } from '../../src/lib/doors';
+import { getSofas } from '../../src/lib/sofas';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const SITE_PUBLIC = resolve(here, '../../public');
@@ -47,6 +47,10 @@ const parseSize = (s: string) => {
   const [w, h] = s.split('×').map((n) => parseInt(n, 10));
   return { label: s, w: w / 1000, h: h / 1000 }; // metres
 };
+
+const collections = getCollections();
+const doorModels = getDoors();
+const sofaModels = getSofas();
 
 const tiles = collections
   .filter((c) => c.swatches.length > 0 && c.sizes.length > 0)

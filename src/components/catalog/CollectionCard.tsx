@@ -1,7 +1,7 @@
 /** @author Erbol king */
 import Link from 'next/link';
 import type { Collection } from '@/lib/types';
-import { formatM2 } from '@/lib/catalog';
+import { formatM2 } from '@/lib/format';
 import { BrandBadge } from '@/components/brand/BrandLogo';
 import { TileImage } from '@/components/media/TileImage';
 

@@ -1,11 +1,13 @@
 /** @author Erbol king */
 import Link from 'next/link';
-import { categories, getCollection, FALLBACK_HERO } from '@/lib/catalog';
+import { getCategories, getCollection, getFallbackHero } from '@/lib/catalog';
 import { TileImage } from '@/components/media/TileImage';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
 
 export function CategoryShowcase() {
+  const categories = getCategories();
+  const FALLBACK_HERO = getFallbackHero();
   return (
     <section className="container-x py-20 lg:py-28">
       <SectionHeading

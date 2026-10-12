@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useCart, MAX_QTY, type CartItem, type CartUnit } from './CartProvider';
 import { site } from '@/lib/site';
+import { useSite } from '@/components/layout/SiteProvider';
 import { backdrop, drawerIn, drawerOut, easeOut } from '@/lib/motion';
 
 const field =
@@ -35,6 +36,7 @@ function buildMessage(items: CartItem[], contact: { name: string; phone: string;
 
 export function CartDrawer() {
   const { items, isOpen, closeCart, setQty, setUnit, remove, clear } = useCart();
+  const contacts = useSite();
   const reduce = useReducedMotion();
   const [contact, setContact] = useState({ name: '', phone: '', comment: '' });
   const [confirmClear, setConfirmClear] = useState(false);
@@ -57,8 +59,8 @@ export function CartDrawer() {
   }, [isOpen, closeCart]);
 
   const message = buildMessage(items, contact);
-  const waHref = `${site.whatsapp}?text=${encodeURIComponent(message)}`;
-  const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(`Заказ с сайта ${site.name}`)}&body=${encodeURIComponent(message)}`;
+  const waHref = `${contacts.whatsapp}?text=${encodeURIComponent(message)}`;
+  const mailHref = `mailto:${contacts.email}?subject=${encodeURIComponent(`Заказ с сайта ${site.name}`)}&body=${encodeURIComponent(message)}`;
 
   return (
     <AnimatePresence>

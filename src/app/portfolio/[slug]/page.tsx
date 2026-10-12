@@ -7,11 +7,7 @@ import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { Reveal } from '@/components/motion/Reveal';
 import { getCollection } from '@/lib/catalog';
-import { getProject, portfolio } from '@/lib/portfolio';
-
-export function generateStaticParams() {
-  return portfolio.map((p) => ({ slug: p.slug }));
-}
+import { getProject, getPortfolio } from '@/lib/portfolio';
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const project = getProject(params.slug);
@@ -30,7 +26,7 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
   const used = (project.collections ?? [])
     .map((s) => getCollection(s))
     .filter((c): c is NonNullable<typeof c> => Boolean(c));
-  const more = portfolio.filter((p) => p.slug !== project.slug).slice(0, 3);
+  const more = getPortfolio().filter((p) => p.slug !== project.slug).slice(0, 3);
   const images = [project.cover, ...project.gallery.filter((g) => g !== project.cover)];
 
   return (

@@ -5,12 +5,8 @@ import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { CategoryBanner } from '@/components/catalog/CategoryBanner';
 import { CatalogView } from '@/components/catalog/CatalogView';
-import { categories, getCategory, getCategoryCollections, getCollection, buildFacets, FALLBACK_HERO } from '@/lib/catalog';
+import { getCategory, getCategoryCollections, getCollection, buildFacets, getFallbackHero } from '@/lib/catalog';
 import { site } from '@/lib/site';
-
-export function generateStaticParams() {
-  return categories.map((c) => ({ category: c.slug }));
-}
 
 export function generateMetadata({ params }: { params: { category: string } }): Metadata {
   const cat = getCategory(params.category);
@@ -29,7 +25,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
 
   const list = getCategoryCollections(cat.slug);
   const facets = buildFacets(list);
-  const hero = getCollection(cat.heroCollection)?.hero || FALLBACK_HERO;
+  const hero = getCollection(cat.heroCollection)?.hero || getFallbackHero();
   const decorCount = list.reduce((n, c) => n + c.products.length, 0);
   const sizes = new Set(list.flatMap((c) => c.sizes)).size;
 

@@ -1,5 +1,5 @@
 /** @author Erbol king */
-import { collections, categories, allProducts, brandName } from '@/lib/catalog';
+import { getCollections, getCategories, getAllProducts, brandName } from '@/lib/catalog';
 import { Header } from './Header';
 
 export type SearchDoc = {
@@ -10,6 +10,9 @@ export type SearchDoc = {
 };
 
 export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
+  const collections = getCollections();
+  const categories = getCategories();
+  const allProducts = getAllProducts();
   const index: SearchDoc[] = [
     ...collections.map((c) => ({
       href: `/collection/${c.slug}`,

@@ -4,9 +4,9 @@ import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { CategoryBanner } from '@/components/catalog/CategoryBanner';
 import { FurnitureCatalog, type FurnitureItem } from '@/components/furniture/FurnitureCatalog';
-import { doorKindLabel, doorModels } from '@/lib/doors';
+import { doorKindLabel, getDoors } from '@/lib/doors';
 import { site } from '@/lib/site';
-import { FALLBACK_HERO, getCollection } from '@/lib/catalog';
+import { getFallbackHero, getCollection } from '@/lib/catalog';
 
 export const metadata: Metadata = {
   title: 'Двери — межкомнатные и входные',
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default function DoorsPage() {
+  const doorModels = getDoors();
   const items: FurnitureItem[] = doorModels.map((d) => ({
     slug: d.slug,
     name: d.name,
@@ -32,7 +33,7 @@ export default function DoorsPage() {
         eyebrow="Каталог"
         title="Двери"
         text="Межкомнатные и входные двери: глухие и остеклённые полотна, десятки цветов и покрытий, стандартные размеры и изготовление под проём."
-        src={getCollection('lusso')?.hero || FALLBACK_HERO}
+        src={getCollection('lusso')?.hero || getFallbackHero()}
         stats={[
           { value: String(doorModels.length), label: 'моделей' },
           { value: String(doorModels.filter((d) => d.kind !== 'entrance').length), label: 'межкомнатных' },

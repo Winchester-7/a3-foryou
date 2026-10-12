@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { CallbackTrigger } from '@/components/forms/CallbackTrigger';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
-import { site } from '@/lib/site';
+import { getSite } from '@/lib/site-server';
 
 export const metadata: Metadata = {
   title: 'Где купить',
@@ -18,7 +18,7 @@ const MAP_QUERY = encodeURIComponent('Бишкек, улица Анкара, 1А
 const MAP_GOOGLE = `https://www.google.com/maps/search/?api=1&query=${MAP_QUERY}`;
 const MAP_2GIS = `https://2gis.kg/bishkek/search/${MAP_QUERY}`;
 
-const points = [
+const buildPoints = (site: ReturnType<typeof getSite>) => [
   {
     city: 'Бишкек',
     name: 'Шоурум и склад A3 FOR YOU',
@@ -46,6 +46,8 @@ const points = [
 ];
 
 export default function WhereToBuyPage() {
+  const site = getSite();
+  const points = buildPoints(site);
   return (
     <PageShell>
       <Breadcrumbs items={[{ label: 'Где купить' }]} />
