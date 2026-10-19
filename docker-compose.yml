@@ -1,3 +1,5 @@
+# NOT used by the GitLab pipeline (it recreates the container with `docker run`, see deploy/deploy.sh).
+# Kept for running the shop on a plain server without CI.
 # Example for the server (one copy per environment: a3.kg and a3-dev.xyz).
 # Put a `.env` next to this file (see .env.example) and run:
 #   docker compose pull && docker compose up -d

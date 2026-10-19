@@ -19,36 +19,50 @@ Cloudflare ──► Nginx (сервер) ──► контейнер a3-site :
                                      └──────────────────────── └─ uploads/         загруженные фото
 ```
 
-## 1. Переменные окружения (`.env` рядом с `docker-compose.yml`)
+## 1. Переменные окружения контейнера
 
-| Переменная | Обязательно | Значение |
+На сервере не хранится ни `docker-compose.yml`, ни `.env`: значения берутся из переменных
+GitLab CI и передаются контейнеру при выкатке.
+
+| Переменная | Откуда | Значение |
 |---|---|---|
-| `ADMIN_PASSWORD` | да | пароль входа в `/admin` (без него админка выключена) |
-| `ADMIN_SESSION_SECRET` | желательно | длинная случайная строка для подписи cookie |
+| `ADMIN_PASSWORD` | CI-переменная проекта `ADMIN_PASSWORD_DEV` / `ADMIN_PASSWORD_PROD` | пароль входа в `/admin` (без него админка выключена) |
+| `ADMIN_SESSION_SECRET` | `ADMIN_SESSION_SECRET_DEV` / `_PROD` | длинная случайная строка для подписи cookie |
 | `DATA_DIR` | задан в образе | `/data` — папка тома с данными |
-| `NEXT_PUBLIC_SITE_URL` | при сборке | `https://a3.kg` (в образ подставляет CI) |
+| `NEXT_PUBLIC_SITE_URL` | при сборке, `SITE_URL_DEV` / `SITE_URL_PROD` | `https://a3.kg` |
 | `NEXT_PUBLIC_PLANNER_URL` | при сборке | адрес 3D-планировщика |
 
 ## 2. Сборка и поставка (GitLab CI/CD)
 
-В репозитории уже лежат `Dockerfile`, `docker-compose.yml` и `.gitlab-ci.yml`.
+Схема такая же, как у остальных проектов: раннер собирает образ, кладёт его в GitLab
+Registry, заходит на сервер по SSH, тянет образ и пересоздаёт контейнер
+(`deploy/deploy.sh`). Старый контейнер останавливается только после того, как новый
+ответил на `/api/health`; если не ответил, старый запускается обратно.
 
-- ветка `dev` → образ `:dev` → контейнер на порту `3001` → **a3-dev.xyz**
-- ветка `main` → образ `:latest` → контейнер на порту `3000` → **a3.kg**
+Этапы (`.gitlab-ci.yml`): `typecheck` → `build` → `deploy`. Раннер выбирается тегом `a-3`.
+
+- ветка `dev` → образ `:dev` → контейнер `a3-site-dev`, порт `3001` → **a3-dev.xyz**, выкатка автоматическая
+- ветка `main` → образ `:latest` → контейнер `a3-site`, порт `3000` → **a3.kg**, выкатка кнопкой «Run» (manual)
+
+Контейнер слушает только `127.0.0.1:<порт>` на сервере; данные лежат в Docker-томах
+`a3-data` (prod) и `a3-data-dev` (dev).
 
 Что нужно один раз настроить:
 
-1. Создать репозиторий в GitLab и запушить код (в нём есть папка `planner/` — 3D-планировщик,
-   в Docker-образ магазина она не попадает, см. `.dockerignore`).
-2. В GitLab → Settings → CI/CD → Variables задать `SSH_PRIVATE_KEY`, `DEPLOY_HOST`, `DEPLOY_USER`
-   (и при необходимости `DEV_DIR` / `PROD_DIR`, `SITE_URL_DEV` / `SITE_URL_PROD`).
-3. На сервере создать папки `/srv/a3-site-dev` и `/srv/a3-site-prod`, положить туда
-   `docker-compose.yml` и `.env` (для dev: `A3_PORT=3001`, `A3_CONTAINER=a3-site-dev`).
+1. Групповые переменные (уже есть): `DEPLOY_SERVER_DEV`, `DEPLOY_SERVER_PRODUCTION`, `SSH_PRIVATE_KEY`.
+2. Переменные проекта (Settings → CI/CD → Variables, Masked, без пробелов в значениях):
+   `ADMIN_PASSWORD_DEV`, `ADMIN_PASSWORD_PROD`, `ADMIN_SESSION_SECRET_DEV`, `ADMIN_SESSION_SECRET_PROD`.
+3. По желанию: `DEPLOY_USER` (по умолчанию `root`), `A3_PORT_DEV` / `A3_PORT_PROD`
+   (по умолчанию 3001 / 3000 — должны быть свободны), `A3_DOCKER_NETWORK` (если Nginx в контейнере).
 4. Раннеру нужен Docker-in-Docker (используется `docker:26-dind`).
+
+`docker-compose.yml` в репозитории оставлен для запуска на собственном сервере без CI,
+в этой схеме не используется.
 
 ## 3. Nginx
 
-Готовый фрагмент — `deploy/nginx/a3-site.conf`: `a3.kg` и `www.a3.kg` → `127.0.0.1:3000`,
+У сервера свой Nginx — достаточно добавить в него два виртуальных хоста по образцу
+`deploy/nginx/a3-site.conf`: `a3.kg` и `www.a3.kg` → `127.0.0.1:3000`,
 `a3-dev.xyz` → `127.0.0.1:3001`. Записи для `app.a3.kg` и `backend.a3.kg` не меняются.
 В `client_max_body_size` стоит 12 МБ — под загрузку фото (до 10 МБ).
 

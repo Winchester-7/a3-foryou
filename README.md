@@ -15,7 +15,7 @@
 | `src/lib/store.ts` | Хранилище: JSON-файлы в `DATA_DIR`, чтение с проверкой времени изменения |
 | `src/app/admin`, `src/app/api/admin` | Админ-панель и её API |
 | `planner/` | 3D-планировщик (Vite + React Three Fiber), отдельное приложение |
-| `Dockerfile`, `docker-compose.yml`, `.gitlab-ci.yml`, `deploy/` | Сборка образа, поставка на сервер, Nginx |
+| `Dockerfile`, `.gitlab-ci.yml`, `deploy/` | Сборка образа, выкатка на сервер (`deploy.sh`), образец конфига Nginx |
 | `docs/DEPLOY.md` | Развёртывание, резервные копии, работа с админкой |
 | `scripts/import/` | Скрипты первичного импорта каталога (Excel остатков, сайты заводов) |
 

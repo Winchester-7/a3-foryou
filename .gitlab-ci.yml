@@ -1,24 +1,55 @@
-# CI/CD for GitLab: build the Docker image and roll it out on the server.
-#   branch dev  -> a3-dev.xyz (test)
-#   branch main -> a3.kg      (production)
+# CI/CD for GitLab: check -> build image -> roll it out on the server over SSH.
+#   branch dev  -> a3-dev.xyz (test, deploys automatically)
+#   branch main -> a3.kg      (production, deploy is started by hand)
 #
-# Variables to set in GitLab (Settings -> CI/CD -> Variables):
-#   SSH_PRIVATE_KEY   private key of the deploy user on the server (type: Variable, masked)
-#   DEPLOY_HOST       server address
-#   DEPLOY_USER       deploy user (member of the docker group)
-#   DEV_DIR / PROD_DIR  folders with docker-compose.yml + .env on the server (defaults below)
-#   SITE_URL_DEV / SITE_URL_PROD  public addresses (defaults below)
+# Same scheme as the other projects: the runner builds the image, pushes it to the
+# GitLab registry, logs in to the server, pulls it and recreates the container.
+# No docker-compose or .env files are kept on the server; the secrets below are
+# written to a temporary file for the moment of `docker run` and removed afterwards.
+#
+# Group variables (already exist):
+#   DEPLOY_SERVER_DEV, DEPLOY_SERVER_PRODUCTION   server addresses
+#   SSH_PRIVATE_KEY                               deploy key (Variable or File type)
+# Project variables to add (Settings -> CI/CD -> Variables, masked, no spaces in values):
+#   ADMIN_PASSWORD_DEV,        ADMIN_PASSWORD_PROD         password of /admin
+#   ADMIN_SESSION_SECRET_DEV,  ADMIN_SESSION_SECRET_PROD   random string, 40+ characters
+# Optional (defaults below):
+#   DEPLOY_USER (root), A3_PORT_DEV (3001), A3_PORT_PROD (3000), A3_DOCKER_NETWORK,
+#   SITE_URL_DEV, SITE_URL_PROD, NEXT_PUBLIC_PLANNER_URL
 
 stages:
+  - check
   - build
   - deploy
+
+default:
+  tags:
+    - a-3
 
 variables:
   DOCKER_TLS_CERTDIR: "/certs"
   SITE_URL_DEV: "https://a3-dev.xyz"
   SITE_URL_PROD: "https://a3.kg"
-  DEV_DIR: "/srv/a3-site-dev"
-  PROD_DIR: "/srv/a3-site-prod"
+  NEXT_PUBLIC_PLANNER_URL: "https://a3-foryou-3d.netlify.app"
+  DEPLOY_USER: "root"
+  A3_PORT_DEV: "3001"
+  A3_PORT_PROD: "3000"
+
+
+typecheck:
+  stage: check
+  image: node:20-alpine
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - .npm/
+  script:
+    - npm ci --cache .npm --prefer-offline
+    - npx tsc --noEmit
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev" || $CI_COMMIT_BRANCH == "main"
 
 .build:
   stage: build
@@ -31,6 +62,7 @@ variables:
     - >
       docker build
       --build-arg NEXT_PUBLIC_SITE_URL="$SITE_URL"
+      --build-arg NEXT_PUBLIC_PLANNER_URL="$NEXT_PUBLIC_PLANNER_URL"
       -t "$CI_REGISTRY_IMAGE:$IMAGE_TAG"
       -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA" .
     - docker push "$CI_REGISTRY_IMAGE:$IMAGE_TAG"
@@ -57,25 +89,38 @@ build_prod:
   image: alpine:3.20
   before_script:
     - apk add --no-cache openssh-client
-    - eval "$(ssh-agent -s)"
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - '[ -n "$ADMIN_PASSWORD" ] || { echo "Set ADMIN_PASSWORD_DEV / ADMIN_PASSWORD_PROD in the project CI/CD variables"; exit 1; }'
+    - '[ -n "$DEPLOY_SERVER" ] || { echo "DEPLOY_SERVER_* group variable is empty"; exit 1; }'
     - mkdir -p ~/.ssh && chmod 700 ~/.ssh
-    - ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+    - eval "$(ssh-agent -s)"
+    # SSH_PRIVATE_KEY may be a plain variable or a File-type variable
+    - |
+      if [ -f "$SSH_PRIVATE_KEY" ]; then cp "$SSH_PRIVATE_KEY" /tmp/deploy_key; else printf '%s\n' "$SSH_PRIVATE_KEY" | tr -d '\r' > /tmp/deploy_key; fi
+      chmod 600 /tmp/deploy_key
+      ssh-add /tmp/deploy_key
+      rm -f /tmp/deploy_key
+    - ssh-keyscan -H "$DEPLOY_SERVER" >> ~/.ssh/known_hosts
   script:
-    - >
-      ssh "$DEPLOY_USER@$DEPLOY_HOST"
-      "cd $TARGET_DIR &&
-      echo '$CI_REGISTRY_PASSWORD' | docker login -u '$CI_REGISTRY_USER' --password-stdin '$CI_REGISTRY' &&
-      A3_IMAGE=$CI_REGISTRY_IMAGE:$IMAGE_TAG docker compose pull &&
-      A3_IMAGE=$CI_REGISTRY_IMAGE:$IMAGE_TAG docker compose up -d &&
-      docker image prune -f"
+    - export TARGET="$DEPLOY_USER@$DEPLOY_SERVER"
+    - export ENV_FILE="/tmp/$CONTAINER.env"
+    # secrets travel over stdin, never on a command line
+    - printf 'ADMIN_PASSWORD=%s\nADMIN_SESSION_SECRET=%s\n' "$ADMIN_PASSWORD" "$ADMIN_SESSION_SECRET" | ssh "$TARGET" "umask 077 && cat > $ENV_FILE"
+    - echo "$CI_REGISTRY_PASSWORD" | ssh "$TARGET" "docker login -u '$CI_REGISTRY_USER' --password-stdin '$CI_REGISTRY' >/dev/null"
+    - ssh "$TARGET" "IMAGE='$CI_REGISTRY_IMAGE:$IMAGE_TAG' CONTAINER='$CONTAINER' PORT='$PORT' VOLUME='$VOLUME' ENV_FILE='$ENV_FILE' NETWORK='$A3_DOCKER_NETWORK' sh -s" < deploy/deploy.sh
+    - ssh "$TARGET" "docker logout '$CI_REGISTRY' >/dev/null 2>&1; docker image prune -f >/dev/null" || true
+
 
 deploy_dev:
   extends: .deploy
   needs: [build_dev]
   variables:
     IMAGE_TAG: dev
-    TARGET_DIR: $DEV_DIR
+    CONTAINER: a3-site-dev
+    VOLUME: a3-data-dev
+    PORT: $A3_PORT_DEV
+    DEPLOY_SERVER: $DEPLOY_SERVER_DEV
+    ADMIN_PASSWORD: $ADMIN_PASSWORD_DEV
+    ADMIN_SESSION_SECRET: $ADMIN_SESSION_SECRET_DEV
   environment:
     name: dev
     url: $SITE_URL_DEV
@@ -87,9 +132,16 @@ deploy_prod:
   needs: [build_prod]
   variables:
     IMAGE_TAG: latest
-    TARGET_DIR: $PROD_DIR
+    CONTAINER: a3-site
+    VOLUME: a3-data
+    PORT: $A3_PORT_PROD
+    DEPLOY_SERVER: $DEPLOY_SERVER_PRODUCTION
+    ADMIN_PASSWORD: $ADMIN_PASSWORD_PROD
+    ADMIN_SESSION_SECRET: $ADMIN_SESSION_SECRET_PROD
   environment:
     name: production
     url: $SITE_URL_PROD
   rules:
+    # production is switched on by hand: press "Run" on the job once dev is checked
     - if: $CI_COMMIT_BRANCH == "main"
+      when: manual
