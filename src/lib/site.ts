@@ -82,9 +82,11 @@ export type NavItem = {
 };
 
 /** Doors and sofas are part of the catalog now, not separate top-level entries. */
+/** The «Каталог» dropdown: exactly these three entries. */
 export const catalogExtras = [
   { href: '/doors', title: 'Двери', tagline: 'Межкомнатные и входные двери' },
   { href: '/sofas', title: 'Диваны', tagline: 'Диваны и кресла для интерьера' },
+  { href: '/catalog', title: 'Весь каталог', tagline: 'Керамогранит со склада в Бишкеке' },
 ] as const;
 
 export const mainNav: NavItem[] = [

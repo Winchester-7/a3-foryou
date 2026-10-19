@@ -1,5 +1,5 @@
 /** @author Erbol king */
-import { getCollections, getCategories, getAllProducts, brandName } from '@/lib/catalog';
+import { getCollections, getAllProducts, brandName } from '@/lib/catalog';
 import { Header } from './Header';
 
 export type SearchDoc = {
@@ -11,7 +11,6 @@ export type SearchDoc = {
 
 export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   const collections = getCollections();
-  const categories = getCategories();
   const allProducts = getAllProducts();
   const index: SearchDoc[] = [
     ...collections.map((c) => ({
@@ -28,11 +27,5 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     })),
   ];
 
-  const catalogMenu = categories.map((c) => ({
-    slug: c.slug,
-    title: c.menuTitle,
-    tagline: c.tagline,
-  }));
-
-  return <Header overlay={overlay} index={index} catalogMenu={catalogMenu} />;
+  return <Header overlay={overlay} index={index} />;
 }

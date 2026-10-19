@@ -15,7 +15,6 @@ import { CartIcon } from '@/components/cart/CartDrawer';
 import { drawerIn, drawerOut, easeOut } from '@/lib/motion';
 import { LanguageSwitch } from '@/components/i18n/LanguageSwitch';
 
-type MenuItem = { slug: string; title: string; tagline: string };
 
 const ease = easeOut;
 
@@ -28,11 +27,9 @@ const WA_ICON = (
 export function Header({
   overlay,
   index,
-  catalogMenu,
 }: {
   overlay: boolean;
   index: SearchDoc[];
-  catalogMenu: MenuItem[];
 }) {
   const site = useSite();
   const reduce = useReducedMotion();
@@ -94,14 +91,19 @@ export function Header({
             {mainNav.map((item) => {
               const active = pathname === item.href || pathname.startsWith(item.href + '/');
               return (
-                <div key={item.href} className="relative shrink-0" onMouseEnter={() => setOpenMega(item.mega ?? null)}>
+                <div
+                  key={item.href}
+                  className="relative shrink-0"
+                  onMouseEnter={() => setOpenMega(item.mega ?? null)}
+                  onMouseLeave={() => item.mega && setOpenMega(null)}
+                >
                   {item.external ? (
                     <a
                       href={item.href}
                       className={`whitespace-nowrap rounded-full border px-4 py-2 text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] transition-colors duration-200 ${
                         solid
-                          ? 'border-ink text-ink hover:bg-ink hover:text-paper'
-                          : 'border-white/70 text-white hover:bg-white hover:text-ink'
+                          ? 'border-ink text-ink hover:border-accent hover:bg-accent hover:text-paper'
+                          : 'border-white/70 text-white hover:border-accent hover:bg-accent hover:text-paper'
                       }`}
                     >
                       {item.label}
@@ -109,17 +111,61 @@ export function Header({
                   ) : (
                     <Link
                       href={item.href}
-                      className={`link-underline whitespace-nowrap py-2 text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] xl:tracking-wide2 transition-colors duration-200 ${
-                        solid ? 'text-ink' : 'text-white'
-                      } ${active ? 'text-accent opacity-100' : 'opacity-80 hover:opacity-100'}`}
+                      aria-haspopup={item.mega ? 'menu' : undefined}
+                      aria-expanded={item.mega ? openMega === item.mega : undefined}
+                      onFocus={() => item.mega && setOpenMega(item.mega)}
+                      className={`nav-link link-underline whitespace-nowrap py-2 text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] xl:tracking-wide2 transition-colors duration-200 hover:text-accent ${
+                        active || (item.mega && openMega === item.mega) ? 'text-accent' : solid ? 'text-ink' : 'text-white'
+                      }`}
                     >
                       {item.label}
                       {item.mega && (
-                        <svg width="10" height="10" viewBox="0 0 10 10" className="ml-1.5 opacity-60" aria-hidden>
+                        <svg
+                          width="10"
+                          height="10"
+                          viewBox="0 0 10 10"
+                          className={`ml-1.5 transition-transform duration-200 ease-out-strong ${openMega === item.mega ? 'rotate-180' : ''}`}
+                          aria-hidden
+                        >
                           <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.4" fill="none" />
                         </svg>
                       )}
                     </Link>
+                  )}
+
+                  {item.mega && (
+                    <AnimatePresence>
+                      {openMega === item.mega && (
+                        <motion.div
+                          role="menu"
+                          initial={reduce ? { opacity: 0 } : { opacity: 0, y: -6, scale: 0.97 }}
+                          animate={{ opacity: 1, y: 0, scale: 1, transition: { duration: 0.18, ease } }}
+                          exit={{ opacity: 0, transition: { duration: 0.12, ease } }}
+                          style={{ transformOrigin: 'top left' }}
+                          className="absolute left-0 top-full z-10 pt-3"
+                        >
+                          <div className="w-72 overflow-hidden rounded-2xl border border-line bg-paper p-2 shadow-float">
+                            {catalogExtras.map((c) => (
+                              <Link
+                                key={c.href}
+                                href={c.href}
+                                role="menuitem"
+                                onClick={() => setOpenMega(null)}
+                                className="group flex items-center justify-between gap-3 rounded-xl px-4 py-3 transition-colors duration-150 hover:bg-surface focus-visible:bg-surface"
+                              >
+                                <span>
+                                  <span className="block text-[15px] font-medium text-ink transition-colors duration-150 group-hover:text-accent">{c.title}</span>
+                                  <span className="mt-0.5 block text-xs leading-snug text-ink-faint">{c.tagline}</span>
+                                </span>
+                                <svg width="14" height="14" viewBox="0 0 16 16" className="shrink-0 text-ink-faint transition-[color,transform] duration-150 ease-out-strong group-hover:translate-x-0.5 group-hover:text-accent" aria-hidden>
+                                  <path d="M3 8h10M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                                </svg>
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   )}
                 </div>
               );
@@ -177,55 +223,9 @@ export function Header({
           </div>
         </div>
 
-        <AnimatePresence>
-          {openMega && (
-            <motion.div
-              key={openMega}
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={reduce ? { opacity: 0 } : { opacity: 0, y: -4, transition: { duration: 0.15, ease } }}
-              transition={{ duration: 0.22, ease }}
-              className="absolute inset-x-0 top-[var(--header-h)] hidden border-t border-line bg-paper shadow-card lg:block"
-            >
-              <div className="container-x py-10">
-                <div className="grid grid-cols-[1.1fr_2fr] gap-12">
-                  <div>
-                    <p className="eyebrow">Каталог</p>
-                    <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-soft">
-                      Керамогранит в наличии на складе в Бишкеке, межкомнатные и входные двери, диваны и кресла.
-                    </p>
-                    <Link href="/catalog" className="btn-outline mt-6">
-                      Весь каталог
-                    </Link>
-                  </div>
-                  <div>
-                    <div className="mb-6 grid grid-cols-3 gap-x-8 gap-y-4 border-b border-line pb-6">
-                      {catalogExtras.map((c) => (
-                        <Link key={c.href} href={c.href} className="group block">
-                          <span className="block text-[15px] font-medium text-accent">{c.title}</span>
-                          <span className="mt-1 block text-xs leading-snug text-ink-faint">{c.tagline}</span>
-                        </Link>
-                      ))}
-                    </div>
-                    <div className="grid grid-cols-3 gap-x-8 gap-y-5">
-                      {catalogMenu.map((c) => (
-                        <Link key={c.slug} href={`/catalog/${c.slug}`} className="group block">
-                          <span className="block text-[15px] font-medium text-ink transition-colors group-hover:text-accent">
-                            {c.title}
-                          </span>
-                          <span className="mt-1 block text-xs leading-snug text-ink-faint">{c.tagline}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </header>
 
-      <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} catalogMenu={catalogMenu} />
+      <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
       <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} index={index} />
     </>
   );
@@ -234,11 +234,9 @@ export function Header({
 function MobileNav({
   open,
   onClose,
-  catalogMenu,
 }: {
   open: boolean;
   onClose: () => void;
-  catalogMenu: MenuItem[];
 }) {
   const site = useSite();
   const [section, setSection] = useState<null | 'catalog'>(null);
@@ -266,7 +264,7 @@ function MobileNav({
                   {mainNav.map((item) =>
                     item.mega ? (
                       <li key={item.href}>
-                        <button type="button" onClick={() => setSection(item.mega!)} className="flex w-full items-center justify-between py-3 text-lg font-medium text-ink">
+                        <button type="button" onClick={() => setSection(item.mega!)} className="flex w-full items-center justify-between py-3 text-lg font-medium text-ink transition-colors hover:text-accent active:text-accent">
                           {item.label}
                           <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden><path d="M5 2l5 5-5 5" stroke="currentColor" strokeWidth="1.6" fill="none" /></svg>
                         </button>
@@ -277,7 +275,7 @@ function MobileNav({
                       </li>
                     ) : (
                       <li key={item.href}>
-                        <Link href={item.href} onClick={onClose} className="block py-3 text-lg font-medium text-ink">{item.label}</Link>
+                        <Link href={item.href} onClick={onClose} className="block py-3 text-lg font-medium text-ink transition-colors hover:text-accent active:text-accent">{item.label}</Link>
                       </li>
                     ),
                   )}
@@ -293,23 +291,11 @@ function MobileNav({
                   <ul className="space-y-1">
                     {catalogExtras.map((c) => (
                       <li key={c.href}>
-                        <Link href={c.href} onClick={onClose} className="block py-2.5 text-base font-medium text-accent">
+                        <Link href={c.href} onClick={onClose} className="block py-2.5 text-lg font-medium text-ink transition-colors hover:text-accent active:text-accent">
                           {c.title}
                         </Link>
                       </li>
                     ))}
-                    {catalogMenu.map((c) => (
-                      <li key={c.slug}>
-                        <Link href={`/catalog/${c.slug}`} onClick={onClose} className="block py-2.5 text-base text-ink">
-                          {c.title}
-                        </Link>
-                      </li>
-                    ))}
-                    <li className="pt-3">
-                      <Link href="/catalog" onClick={onClose} className="text-sm font-medium text-accent">
-                        Смотреть всё →
-                      </Link>
-                    </li>
                   </ul>
                 </div>
               )}
