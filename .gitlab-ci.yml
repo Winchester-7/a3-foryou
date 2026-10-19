@@ -14,7 +14,7 @@
 #   ADMIN_PASSWORD_DEV,        ADMIN_PASSWORD_PROD         password of /admin
 #   ADMIN_SESSION_SECRET_DEV,  ADMIN_SESSION_SECRET_PROD   random string, 40+ characters
 # Optional (defaults below):
-#   DEPLOY_USER (root), A3_PORT_DEV (3001), A3_PORT_PROD (3000), A3_DOCKER_NETWORK,
+#   DEPLOY_USER (root), DEPLOY_SSH_PORT (22), A3_PORT_DEV (3001), A3_PORT_PROD (3000), A3_DOCKER_NETWORK,
 #   SITE_URL_DEV, SITE_URL_PROD, NEXT_PUBLIC_PLANNER_URL
 
 stages:
@@ -99,9 +99,11 @@ build_prod:
       chmod 600 /tmp/deploy_key
       ssh-add /tmp/deploy_key
       rm -f /tmp/deploy_key
-    - ssh-keyscan -H "$DEPLOY_SERVER" >> ~/.ssh/known_hosts
+    # the host key is remembered on first connect; DEPLOY_SSH_PORT is only needed when sshd is not on 22
+    - printf 'Host *\n  StrictHostKeyChecking accept-new\n  ConnectTimeout 20\n  Port %s\n' "${DEPLOY_SSH_PORT:-22}" > ~/.ssh/config
   script:
     - export TARGET="$DEPLOY_USER@$DEPLOY_SERVER"
+    - ssh "$TARGET" "echo connected to \$(hostname)" || { echo "SSH to the server failed - check DEPLOY_USER (now $DEPLOY_USER), DEPLOY_SSH_PORT, firewall and the key"; exit 1; }
     - export ENV_FILE="/tmp/$CONTAINER.env"
     # secrets travel over stdin, never on a command line
     - printf 'ADMIN_PASSWORD=%s\nADMIN_SESSION_SECRET=%s\n' "$ADMIN_PASSWORD" "$ADMIN_SESSION_SECRET" | ssh "$TARGET" "umask 077 && cat > $ENV_FILE"

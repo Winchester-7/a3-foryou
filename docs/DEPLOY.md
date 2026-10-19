@@ -52,7 +52,7 @@ Registry, заходит на сервер по SSH, тянет образ и п
 1. Групповые переменные (уже есть): `DEPLOY_SERVER_DEV`, `DEPLOY_SERVER_PRODUCTION`, `SSH_PRIVATE_KEY`.
 2. Переменные проекта (Settings → CI/CD → Variables, Masked, без пробелов в значениях):
    `ADMIN_PASSWORD_DEV`, `ADMIN_PASSWORD_PROD`, `ADMIN_SESSION_SECRET_DEV`, `ADMIN_SESSION_SECRET_PROD`.
-3. По желанию: `DEPLOY_USER` (по умолчанию `root`), `A3_PORT_DEV` / `A3_PORT_PROD`
+3. По желанию: `DEPLOY_USER` (по умолчанию `root`), `DEPLOY_SSH_PORT` (по умолчанию 22), `A3_PORT_DEV` / `A3_PORT_PROD`
    (по умолчанию 3001 / 3000 — должны быть свободны), `A3_DOCKER_NETWORK` (если Nginx в контейнере).
 4. Раннеру нужен Docker-in-Docker (используется `docker:26-dind`).
 
