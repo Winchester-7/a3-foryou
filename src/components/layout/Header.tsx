@@ -9,7 +9,8 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { Logo } from '@/components/brand/Logo';
 import { catalogExtras, mainNav } from '@/lib/site';
 import { useSite } from './SiteProvider';
-import type { SearchDoc } from './SiteHeader';
+import type { SearchDoc } from '@/lib/search';
+import { SearchOverlay } from './SearchOverlay';
 import { useCart } from '@/components/cart/CartProvider';
 import { CartIcon } from '@/components/cart/CartDrawer';
 import { drawerIn, drawerOut, easeOut } from '@/lib/motion';
@@ -87,7 +88,7 @@ export function Header({
         <div className="container-x flex h-[var(--header-h)] items-center justify-between gap-6">
           <Logo tone={tone} />
 
-          <nav className="hidden items-center gap-x-4 xl:gap-x-6 2xl:gap-x-7 lg:flex">
+          <nav className="hidden items-center gap-x-4 xl:gap-x-5 lg:flex">
             {mainNav.map((item) => {
               const active = pathname === item.href || pathname.startsWith(item.href + '/');
               return (
@@ -114,7 +115,7 @@ export function Header({
                       aria-haspopup={item.mega ? 'menu' : undefined}
                       aria-expanded={item.mega ? openMega === item.mega : undefined}
                       onFocus={() => item.mega && setOpenMega(item.mega)}
-                      className={`nav-link link-underline whitespace-nowrap py-2 text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] xl:tracking-wide2 transition-colors duration-200 hover:text-accent ${
+                      className={`nav-link link-underline whitespace-nowrap py-2 text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] transition-colors duration-200 hover:text-accent ${
                         active || (item.mega && openMega === item.mega) ? 'text-accent' : solid ? 'text-ink' : 'text-white'
                       }`}
                     >
@@ -175,8 +176,11 @@ export function Header({
           <div className="flex items-center gap-1.5">
             <a
               href={`tel:${site.phoneHref}`}
-              className={`hidden text-[13px] font-medium tracking-wide2 xl:block ${solid ? 'text-ink' : 'text-white'}`}
+              className={`hidden items-center gap-2 whitespace-nowrap text-[13px] font-medium tabular-nums tracking-[0.04em] transition-colors duration-200 hover:text-accent xl:inline-flex ${solid ? 'text-ink' : 'text-white'}`}
             >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden className="shrink-0">
+                <path d="M4 5c0 8.3 6.7 15 15 15 .6 0 1-.4 1-1v-3.3c0-.4-.3-.8-.7-.9l-3.6-1a1 1 0 0 0-1 .3l-1 1.2A12 12 0 0 1 8.4 9.3l1.2-1a1 1 0 0 0 .3-1l-1-3.6A1 1 0 0 0 8 3H4.7c-.4 0-.7.3-.7.7Z" stroke="currentColor" strokeWidth="1.8" />
+              </svg>
               {site.phone}
             </a>
 
@@ -313,98 +317,6 @@ function MobileNav({
             </div>
           </motion.aside>
         </>
-      )}
-    </AnimatePresence>
-  );
-}
-
-function SearchOverlay({ open, onClose, index }: { open: boolean; onClose: () => void; index: SearchDoc[] }) {
-  const [q, setQ] = useState('');
-  useEffect(() => {
-    if (!open) setQ('');
-  }, [open]);
-
-  const results = useMemo(() => {
-    const term = q.trim().toLowerCase();
-    if (term.length < 2) return [];
-    return index.filter((d) => d.keywords.includes(term)).slice(0, 8);
-  }, [q, index]);
-
-  return (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          className="fixed inset-0 z-[60] bg-paper/95 backdrop-blur-lg"
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}
-        >
-          <div className="container-x flex h-[var(--header-h)] items-center justify-between">
-            <span className="eyebrow">Поиск</span>
-            <button type="button" aria-label="Закрыть поиск" onClick={onClose} className="grid h-10 w-10 place-items-center rounded-full hover:bg-surface">
-              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.6" /></svg>
-            </button>
-          </div>
-
-          <div className="container-x">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease, delay: 0.05 }}
-              className="mx-auto max-w-3xl pt-[8vh]"
-            >
-              <div className="flex items-center gap-4 border-b-2 border-ink pb-4">
-                <svg width="24" height="24" viewBox="0 0 20 20" fill="none" aria-hidden>
-                  <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.6" />
-                  <path d="M17 17l-3.5-3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                </svg>
-                <input
-                  autoFocus
-                  value={q}
-                  onChange={(e) => setQ(e.target.value)}
-                  placeholder="Коллекция, декор, артикул…"
-                  className="w-full bg-transparent text-2xl font-light tracking-tight text-ink outline-none placeholder:text-ink-faint md:text-3xl"
-                />
-              </div>
-
-              <div className="mt-6">
-                <AnimatePresence mode="popLayout">
-                  {results.map((r, i) => (
-                    <motion.div
-                      key={r.href}
-                      initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3, ease, delay: i * 0.04 }}
-                    >
-                      <Link href={r.href} onClick={onClose} className="group flex items-center justify-between border-b border-line py-4">
-                        <span>
-                          <span className="block text-base font-medium text-ink group-hover:text-accent">{r.title}</span>
-                          <span className="block text-xs text-ink-faint">{r.subtitle}</span>
-                        </span>
-                        <svg width="16" height="16" viewBox="0 0 16 16" className="text-ink-faint transition-transform group-hover:translate-x-1" aria-hidden>
-                          <path d="M3 8h10M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                        </svg>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-
-                {q.trim().length >= 2 && results.length === 0 && (
-                  <p className="py-6 text-sm text-ink-faint">Ничего не найдено. Попробуйте другой запрос.</p>
-                )}
-                {q.trim().length < 2 && (
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {['мрамор', 'дуб', 'бетон', 'терраса', 'фасад', 'IDALGO', 'GRANITEA'].map((tag) => (
-                      <button
-                        key={tag}
-                        type="button"
-                        onClick={() => setQ(tag.toLowerCase())}
-                        className="rounded-full border border-line px-4 py-2 text-xs uppercase tracking-wide2 text-ink-soft hover:border-accent hover:text-accent"
-                      >
-                        {tag}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
       )}
     </AnimatePresence>
   );

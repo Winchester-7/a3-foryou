@@ -2,7 +2,7 @@
 import raw from './catalog.json';
 
 export const SITE_URL = (import.meta.env.VITE_SITE_URL as string | undefined) ?? 'https://legendary-cobbler-91081f.netlify.app';
-export const WHATSAPP = 'https://wa.me/996706010321';
+export const WHATSAPP = 'https://wa.me/996556076773';
 
 export interface TileSize { label: string; w: number; h: number }
 export interface Decor { id: string; name: string; article: string | null; texture: string; image: string; href: string }
