@@ -166,3 +166,84 @@ body {
     transform: none;
   }
 }
+
+/* ---- Logo: the 2×2 window lights up pane by pane on hover/focus ---- */
+.logo-window rect {
+  fill: #c9c3b9;
+  transition: fill 260ms var(--ease-out);
+}
+.logo-glow {
+  opacity: 0;
+  transition: opacity 320ms var(--ease-out) 120ms;
+}
+.logo-mark--light .logo-window rect {
+  fill: rgba(255, 255, 255, 0.38);
+}
+@media (hover: hover) and (pointer: fine) {
+  .logo-link:hover .logo-window rect {
+    fill: #ffc93c;
+  }
+  .logo-link:hover .logo-glow {
+    opacity: 0.85;
+  }
+  /* on white the halo is subtler and the panes a deeper amber, so they stay legible */
+  .logo-link:hover .logo-mark:not(.logo-mark--light) .logo-window rect {
+    fill: #f5a50a;
+  }
+  .logo-link:hover .logo-mark:not(.logo-mark--light) .logo-glow {
+    opacity: 0.35;
+  }
+}
+.logo-link:focus-visible .logo-window rect {
+  fill: #ffc93c;
+}
+.logo-link:focus-visible .logo-glow {
+  opacity: 0.85;
+}
+/* lights go off together and quickly — the stagger is only for switching on */
+.logo-link:not(:hover):not(:focus-visible) .logo-window rect,
+.logo-link:not(:hover):not(:focus-visible) .logo-glow {
+  transition-delay: 0ms !important;
+  transition-duration: 180ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-window rect {
+    transition-delay: 0ms !important;
+  }
+}
+
+/* ---- Window icons in "Почему у нас удобно": one pane per item lights up when the section appears ---- */
+.window-icon .pane {
+  fill: #e4dfd7;
+  transition: fill 420ms var(--ease-out);
+}
+[data-lit] .window-icon .pane--on {
+  fill: #f5a50a;
+}
+/* stagger across the four items: the "lights" switch on left to right */
+[data-lit] > div > div:nth-child(1) .pane--on { transition-delay: 150ms; }
+[data-lit] > div > div:nth-child(2) .pane--on { transition-delay: 330ms; }
+[data-lit] > div > div:nth-child(3) .pane--on { transition-delay: 510ms; }
+[data-lit] > div > div:nth-child(4) .pane--on { transition-delay: 690ms; }
+@media (prefers-reduced-motion: reduce) {
+  [data-lit] .window-icon .pane--on { transition-delay: 0ms !important; }
+}
+
+/* ---- Factory logos: quiet grey row, full colour on hover/focus ---- */
+.brand-chip img {
+  filter: grayscale(1);
+  opacity: 0.55;
+  transition:
+    filter 220ms ease,
+    opacity 220ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .brand-chip:hover img {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+}
+.brand-chip:focus-visible img {
+  filter: grayscale(0);
+  opacity: 1;
+}

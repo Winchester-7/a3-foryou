@@ -1,6 +1,7 @@
 import { PageShell } from '@/components/layout/PageShell';
 import { Hero } from '@/components/home/Hero';
 import { CategoryShowcase } from '@/components/home/CategoryShowcase';
+import { BrandStrip } from '@/components/home/BrandStrip';
 import { FeaturedProducts } from '@/components/home/FeaturedProducts';
 import { EditorialSplit } from '@/components/home/EditorialSplit';
 import { CollectionSpotlight } from '@/components/home/CollectionSpotlight';
@@ -26,6 +27,7 @@ export default function HomePage() {
     <PageShell overlay>
       <Hero />
       <CategoryShowcase />
+      <BrandStrip />
       {bigFormat && (
         <EditorialSplit
           title="Плиты 1200×600 мм — меньше швов"

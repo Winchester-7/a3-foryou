@@ -2,7 +2,7 @@
 
 /** @author Erbol king */
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { backdrop, drawerIn, drawerOut } from '@/lib/motion';
 import type { Collection, Facets } from '@/lib/types';
@@ -24,6 +24,12 @@ export function CatalogView({ collections, facets }: { collections: Collection[]
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState('featured');
   const [drawer, setDrawer] = useState(false);
+
+  // /catalog?brand=idalgo — opened from the factory logos on the home page
+  useEffect(() => {
+    const key = new URLSearchParams(window.location.search).get('brand');
+    if (key && collections.some((c) => c.brand === key)) setFilters({ ...empty, brands: [brandName(key)] });
+  }, [collections]);
 
   const toggle = (key: FilterKey, value: string) =>
     setFilters((s) => ({

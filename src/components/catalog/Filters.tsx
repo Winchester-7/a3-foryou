@@ -3,6 +3,7 @@
 /** @author Erbol king */
 
 import { useState } from 'react';
+import { plural } from '@/lib/color';
 import { AnimatePresence, motion } from 'motion/react';
 import type { Facets } from '@/lib/types';
 import { BrandLogo, hasBrandLogo } from '@/components/brand/BrandLogo';
@@ -120,7 +121,7 @@ export function Filters({
         })}
       </div>
 
-      <p className="pt-4 text-xs text-ink-faint">{resultCount} коллекций подходит под запрос</p>
+      <p className="pt-4 text-xs text-ink-faint">{resultCount} {plural(resultCount, 'коллекция подходит', 'коллекции подходят', 'коллекций подходят')} под запрос</p>
     </div>
   );
 }
