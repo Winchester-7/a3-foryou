@@ -181,7 +181,7 @@ export function getFeaturedCollections(limit = 8): Collection[] {
 
 /** A photo that is guaranteed to exist — used when a banner has no image of its own. */
 export function getFallbackHero(): string {
-  return getCollections().find((c) => c.hero)?.hero ?? '/hero/keramo-scene.jpg';
+  return getCollections().find((c) => c.hero)?.hero ?? '/hero/hero-showroom.jpg';
 }
 
 export function buildFacets(list: Collection[]): Facets {

@@ -5,7 +5,6 @@ import { getDoors } from '@/lib/doors';
 import { getSofas } from '@/lib/sofas';
 import { site } from '@/lib/site';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
 
 /** Doors, sofas and the 3D planner — the part of the offer beyond tile. */
 export function InteriorTeaser() {
@@ -25,11 +24,11 @@ export function InteriorTeaser() {
       image: sofaModels[0]?.image,
     },
     {
-      title: 'Создать свой интерьер',
-      text: '3D-планировщик: примерьте плитку, двери и мебель в вашей комнате.',
+      title: 'Интерьер в 3D',
+      text: 'Задайте размеры своей комнаты и примерьте плитку, двери и мебель до покупки.',
       href: site.plannerUrl,
       external: true,
-      image: '/hero/keramo-scene.jpg',
+      image: '/hero/hero-showroom.jpg',
     },
   ] as const;
 
@@ -37,12 +36,11 @@ export function InteriorTeaser() {
     <section className="bg-surface py-20 lg:py-28">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Не только плитка"
-          title="Цельный интерьер от пола до дверей"
-          text="Керамогранит, двери и мебель, подобранные в одну палитру — и 3D-планировщик, чтобы увидеть результат до покупки."
+          title="Двери и мебель в тон плитке"
+          text="Подберите всё для комнаты в одном магазине, а в 3D-планировщике посмотрите, как это будет выглядеть вместе."
         />
 
-        <StaggerGroup className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
           {cards.map((c) => {
             const body = (
               <>
@@ -61,17 +59,13 @@ export function InteriorTeaser() {
                 <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{c.text}</p>
               </>
             );
-            return (
-              <StaggerItem key={c.title}>
-                {'external' in c ? (
-                  <a href={c.href} className="group block">{body}</a>
-                ) : (
-                  <Link href={c.href} className="group block">{body}</Link>
-                )}
-              </StaggerItem>
+            return 'external' in c ? (
+              <a key={c.title} href={c.href} className="group block">{body}</a>
+            ) : (
+              <Link key={c.title} href={c.href} className="group block">{body}</Link>
             );
           })}
-        </StaggerGroup>
+        </div>
       </div>
     </section>
   );

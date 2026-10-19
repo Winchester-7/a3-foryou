@@ -167,8 +167,7 @@ export function Hero() {
             >
               <div className="-translate-x-1/2 -translate-y-[calc(100%+14px)] whitespace-nowrap rounded-full bg-paper/95 py-2 pl-4 pr-3 text-ink shadow-float backdrop-blur">
                 <span className="text-[13px] font-semibold">{SLABS[active].label}</span>
-                <span className="mx-2 text-ink-faint">·</span>
-                <span className="text-[12px] text-ink-soft">{SLABS[active].hint}</span>
+                <span className="ml-2 text-[12px] text-ink-soft">{SLABS[active].hint}</span>
                 <span className="ml-2 inline-grid h-6 w-6 place-items-center rounded-full bg-ink text-paper">
                   <svg width="10" height="10" viewBox="0 0 16 16" aria-hidden>
                     <path d="M3 8h10M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.8" fill="none" />
@@ -196,18 +195,15 @@ export function Hero() {
       <div aria-hidden className="hero-curtain pointer-events-none absolute inset-0 bg-ink" />
 
       <div className="container-x pointer-events-none relative flex h-full flex-col justify-end pb-[12vh] pt-[var(--header-h)]">
-        <p className="hero-fade text-[11px] font-medium uppercase tracking-brand text-white/70" style={{ animationDelay: '0.5s' }}>
-          A3 FOR YOU · Бишкек
-        </p>
         <h1
-          className="hero-fade mt-5 max-w-4xl text-balance font-semibold leading-[1.03] tracking-[-0.02em] text-white"
+          className="hero-fade max-w-4xl text-balance font-semibold leading-[1.03] tracking-[-0.02em] text-white"
           style={{ fontSize: 'clamp(2.5rem, 6.4vw, 5rem)', animationDelay: '0.6s' }}
         >
           Керамогранит под любой интерьер и&nbsp;бюджет
         </h1>
         <p className="hero-fade mt-5 max-w-xl text-pretty text-lg leading-relaxed text-white/80" style={{ animationDelay: '0.7s' }}>
-          От доступных решений на каждый день до коллекций, которые невозможно забыть. Сотни декоров под мрамор, камень,
-          дерево и бетон — поможем выбрать свой.
+          От доступных серий на каждый день до дизайнерских коллекций. Сотни декоров под мрамор, камень, дерево и бетон —
+          со склада в Бишкеке.
         </p>
         <div className="hero-fade pointer-events-auto mt-9 flex flex-wrap gap-3" style={{ animationDelay: '0.8s' }}>
           <Link href="/catalog" className="btn bg-paper text-ink hover:bg-white">
@@ -219,9 +215,6 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="hero-fade pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 sm:block" style={{ animationDelay: '1.4s' }}>
-        <span className="hero-bob block text-[10px] uppercase tracking-brand text-white/60">Листайте</span>
-      </div>
     </section>
   );
 }

@@ -3,7 +3,7 @@ import { Hero } from '@/components/home/Hero';
 import { CategoryShowcase } from '@/components/home/CategoryShowcase';
 import { FeaturedProducts } from '@/components/home/FeaturedProducts';
 import { EditorialSplit } from '@/components/home/EditorialSplit';
-import { VideoCollectionBanner } from '@/components/home/VideoCollectionBanner';
+import { CollectionSpotlight } from '@/components/home/CollectionSpotlight';
 import { Advantages } from '@/components/home/Advantages';
 import { InteriorTeaser } from '@/components/home/InteriorTeaser';
 import { PortfolioTeaser } from '@/components/home/PortfolioTeaser';
@@ -28,9 +28,8 @@ export default function HomePage() {
       <CategoryShowcase />
       {bigFormat && (
         <EditorialSplit
-          eyebrow="Крупный формат"
-          title="Плиты 1200×600 мм с минимальным швом"
-          text="Большие форматы визуально расширяют пространство и сокращают количество стыков. Идеальны для полов, стеновых панелей и столешниц."
+          title="Плиты 1200×600 мм — меньше швов"
+          text="Чем крупнее плита, тем меньше стыков: комната кажется просторнее, а пол и стены выглядят цельными. Подходит для пола, стен и столешниц."
           src={bigFormat.hero}
           href={`/collection/${bigFormat.slug}`}
           linkLabel={`Коллекция «${bigFormat.nameRu}»`}
@@ -38,19 +37,17 @@ export default function HomePage() {
       )}
       <FeaturedProducts collections={featured} />
       {spotlight && (
-        <VideoCollectionBanner
-          src="/hero/calacatta-banner.mp4"
-          eyebrow="Коллекция месяца"
-          title={`${spotlight.nameRu} — в наличии на складе в Бишкеке`}
-          text={getLook(spotlight.look)?.description ?? spotlight.description}
+        <CollectionSpotlight
+          image={spotlight.hero}
+          name={spotlight.nameRu}
+          text={spotlight.description || getLook(spotlight.look)?.description || ''}
           href={`/collection/${spotlight.slug}`}
         />
       )}
       {outdoor && (
         <EditorialSplit
-          eyebrow="Улица и интерьер"
-          title="Один дизайн для гостиной и террасы"
-          text="Структурные поверхности и морозостойкость позволяют использовать одну коллекцию в интерьере и на открытой террасе. Граница между домом и садом исчезает."
+          title="Одна плитка для гостиной и террасы"
+          text="У этих коллекций есть морозостойкие плиты со структурной поверхностью. Их можно положить и в доме, и на открытой террасе — пол будет одинаковым внутри и снаружи."
           src={outdoor.hero}
           href="/catalog/dlya-terras"
           linkLabel="Керамогранит для террас"
