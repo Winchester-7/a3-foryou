@@ -41,19 +41,23 @@ Registry, заходит на сервер по SSH, тянет образ и п
 
 Этапы (`.gitlab-ci.yml`): `typecheck` → `build` → `deploy`. Раннер выбирается тегом `a-3`.
 
-- ветка `dev` → образ `:dev` → контейнер `a3-site-dev`, порт `3001` → **a3-dev.xyz**, выкатка автоматическая
-- ветка `main` → образ `:latest` → контейнер `a3-site`, порт `3000` → **a3.kg**, выкатка кнопкой «Run» (manual)
+- ветка `dev` → образ `:dev` → dev-сервер (`DEPLOY_SERVER_DEV`) → **a3-dev.xyz**, выкатка автоматическая
+- ветка `main` → образ `:latest` → прод-сервер (`DEPLOY_SERVER_PRODUCTION`) → **a3.kg**, выкатка кнопкой «Run» (manual)
 
-Контейнер слушает только `127.0.0.1:<порт>` на сервере; данные лежат в Docker-томах
+На обоих серверах контейнер называется `a3-web`, подключается к Docker-сети `a3-network`
+и слушает порт 3000 внутри неё; Nginx (тоже контейнер) проксирует на `a3-web:3000`.
+Порты хоста не публикуются (если нужно, задаётся переменной `A3_HOST_PORT`).
+Подключение по SSH: пользователь `deploy-manager`, порт `2222`. Данные лежат в Docker-томах
 `a3-data` (prod) и `a3-data-dev` (dev).
 
 Что нужно один раз настроить:
 
 1. Групповые переменные (уже есть): `DEPLOY_SERVER_DEV`, `DEPLOY_SERVER_PRODUCTION`, `SSH_PRIVATE_KEY`.
+   Если они помечены Protected, ветка `dev` тоже должна быть защищённой (Settings → Repository → Protected branches).
 2. Переменные проекта (Settings → CI/CD → Variables, Masked, без пробелов в значениях):
    `ADMIN_PASSWORD_DEV`, `ADMIN_PASSWORD_PROD`, `ADMIN_SESSION_SECRET_DEV`, `ADMIN_SESSION_SECRET_PROD`.
-3. По желанию: `DEPLOY_USER` (по умолчанию `root`), `DEPLOY_SSH_PORT` (по умолчанию 22), `A3_PORT_DEV` / `A3_PORT_PROD`
-   (по умолчанию 3001 / 3000 — должны быть свободны), `A3_DOCKER_NETWORK` (если Nginx в контейнере).
+3. По желанию (значения по умолчанию заданы в `.gitlab-ci.yml`): `DEPLOY_USER` (`deploy-manager`),
+   `DEPLOY_SSH_PORT` (`2222`), `A3_DOCKER_NETWORK` (`a3-network`), `A3_HOST_PORT` (не задан).
 4. Раннеру нужен Docker-in-Docker (используется `docker:26-dind`).
 
 `docker-compose.yml` в репозитории оставлен для запуска на собственном сервере без CI,
@@ -61,9 +65,15 @@ Registry, заходит на сервер по SSH, тянет образ и п
 
 ## 3. Nginx
 
-У сервера свой Nginx — достаточно добавить в него два виртуальных хоста по образцу
-`deploy/nginx/a3-site.conf`: `a3.kg` и `www.a3.kg` → `127.0.0.1:3000`,
-`a3-dev.xyz` → `127.0.0.1:3001`. Записи для `app.a3.kg` и `backend.a3.kg` не меняются.
+Nginx на сервере — отдельный контейнер в сети `a3-network`. В нём нужно направить
+`a3.kg` / `www.a3.kg` (прод-сервер) и `a3-dev.xyz` (dev-сервер) на `a3-web:3000`
+по образцу `deploy/nginx/a3-site.conf`. Записи для `app.a3.kg` и `backend.a3.kg` не меняются.
+
+Важно: при каждой выкатке контейнер пересоздаётся и получает новый IP, поэтому в образце имя
+разрешается при каждом запросе (`resolver 127.0.0.11` и `proxy_pass` через переменную). Если
+написать `proxy_pass http://a3-web:3000;` напрямую, Nginx запомнит старый адрес и после деплоя
+будет отдавать 502 до своей перезагрузки.
+
 В `client_max_body_size` стоит 12 МБ — под загрузку фото (до 10 МБ).
 
 ## 4. Админ-панель

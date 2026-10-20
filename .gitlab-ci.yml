@@ -13,9 +13,10 @@
 # Project variables to add (Settings -> CI/CD -> Variables, masked, no spaces in values):
 #   ADMIN_PASSWORD_DEV,        ADMIN_PASSWORD_PROD         password of /admin
 #   ADMIN_SESSION_SECRET_DEV,  ADMIN_SESSION_SECRET_PROD   random string, 40+ characters
-# Optional (defaults below):
-#   DEPLOY_USER (root), DEPLOY_SSH_PORT (22), A3_PORT_DEV (3001), A3_PORT_PROD (3000), A3_DOCKER_NETWORK,
-#   SITE_URL_DEV, SITE_URL_PROD, NEXT_PUBLIC_PLANNER_URL
+# Server facts are the defaults below: ssh user deploy-manager on port 2222; the container joins
+# the docker network a3-network and nginx (a container too) proxies to it by name: a3-web:3000.
+# Optional overrides: DEPLOY_USER, DEPLOY_SSH_PORT, A3_DOCKER_NETWORK, SITE_URL_DEV, SITE_URL_PROD,
+#   NEXT_PUBLIC_PLANNER_URL, A3_HOST_PORT (also publish 127.0.0.1:<port> on the host; normally not needed)
 
 stages:
   - check
@@ -31,9 +32,9 @@ variables:
   SITE_URL_DEV: "https://a3-dev.xyz"
   SITE_URL_PROD: "https://a3.kg"
   NEXT_PUBLIC_PLANNER_URL: "https://a3-foryou-3d.netlify.app"
-  DEPLOY_USER: "root"
-  A3_PORT_DEV: "3001"
-  A3_PORT_PROD: "3000"
+  DEPLOY_USER: "deploy-manager"
+  DEPLOY_SSH_PORT: "2222"
+  A3_DOCKER_NETWORK: "a3-network"
 
 
 typecheck:
@@ -108,7 +109,7 @@ build_prod:
     # secrets travel over stdin, never on a command line
     - printf 'ADMIN_PASSWORD=%s\nADMIN_SESSION_SECRET=%s\n' "$ADMIN_PASSWORD" "$ADMIN_SESSION_SECRET" | ssh "$TARGET" "umask 077 && cat > $ENV_FILE"
     - echo "$CI_REGISTRY_PASSWORD" | ssh "$TARGET" "docker login -u '$CI_REGISTRY_USER' --password-stdin '$CI_REGISTRY' >/dev/null"
-    - ssh "$TARGET" "IMAGE='$CI_REGISTRY_IMAGE:$IMAGE_TAG' CONTAINER='$CONTAINER' PORT='$PORT' VOLUME='$VOLUME' ENV_FILE='$ENV_FILE' NETWORK='$A3_DOCKER_NETWORK' sh -s" < deploy/deploy.sh
+    - ssh "$TARGET" "IMAGE='$CI_REGISTRY_IMAGE:$IMAGE_TAG' CONTAINER='$CONTAINER' PORT='$A3_HOST_PORT' VOLUME='$VOLUME' ENV_FILE='$ENV_FILE' NETWORK='$A3_DOCKER_NETWORK' sh -s" < deploy/deploy.sh
     - ssh "$TARGET" "docker logout '$CI_REGISTRY' >/dev/null 2>&1; docker image prune -f >/dev/null" || true
 
 
@@ -117,9 +118,8 @@ deploy_dev:
   needs: [build_dev]
   variables:
     IMAGE_TAG: dev
-    CONTAINER: a3-site-dev
+    CONTAINER: a3-web
     VOLUME: a3-data-dev
-    PORT: $A3_PORT_DEV
     DEPLOY_SERVER: $DEPLOY_SERVER_DEV
     ADMIN_PASSWORD: $ADMIN_PASSWORD_DEV
     ADMIN_SESSION_SECRET: $ADMIN_SESSION_SECRET_DEV
@@ -134,9 +134,8 @@ deploy_prod:
   needs: [build_prod]
   variables:
     IMAGE_TAG: latest
-    CONTAINER: a3-site
+    CONTAINER: a3-web
     VOLUME: a3-data
-    PORT: $A3_PORT_PROD
     DEPLOY_SERVER: $DEPLOY_SERVER_PRODUCTION
     ADMIN_PASSWORD: $ADMIN_PASSWORD_PROD
     ADMIN_SESSION_SECRET: $ADMIN_SESSION_SECRET_PROD

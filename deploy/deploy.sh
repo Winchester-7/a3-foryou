@@ -5,10 +5,11 @@
 # Expected environment:
 #   IMAGE      full image name, e.g. registry.gitlab.com/group/a3-web:latest
 #   CONTAINER  container name (a3-site / a3-site-dev)
-#   PORT       host port on 127.0.0.1 that nginx proxies to (container listens on 3000)
+#   PORT       optional: also publish 127.0.0.1:<PORT> on the host (the container itself listens on 3000);
+#              not needed when nginx reaches it by name inside NETWORK
 #   VOLUME     docker volume with the admin data (catalogue JSON + uploaded photos)
 #   ENV_FILE   file with ADMIN_PASSWORD / ADMIN_SESSION_SECRET, removed when the script ends
-#   NETWORK    optional docker network (when nginx runs as a container)
+#   NETWORK    docker network shared with the nginx container (it proxies to <CONTAINER>:3000)
 #
 # The old container is kept until the new one answers /api/health; if it does not,
 # the old one is started again, so a broken build never takes the site down.
@@ -23,6 +24,11 @@ docker pull "$IMAGE"
 docker rm -f "$CONTAINER-old" >/dev/null 2>&1 || true
 had_old=0
 if docker inspect "$CONTAINER" >/dev/null 2>&1; then
+  # never replace somebody else's container that happens to have the same name
+  if [ "$(docker inspect -f '{{ index .Config.Labels "a3.site" }}' "$CONTAINER")" != "1" ]; then
+    echo "!! container $CONTAINER exists but was not started by this pipeline; refusing to replace it"
+    exit 1
+  fi
   docker rename "$CONTAINER" "$CONTAINER-old"
   docker stop "$CONTAINER-old" >/dev/null
   had_old=1
@@ -39,12 +45,13 @@ rollback() {
   exit 1
 }
 
-echo "==> start $CONTAINER on 127.0.0.1:$PORT"
+echo "==> start $CONTAINER${NETWORK:+ in network $NETWORK}${PORT:+, host port 127.0.0.1:$PORT}"
 # shellcheck disable=SC2086
 docker run -d \
   --name "$CONTAINER" \
   --restart unless-stopped \
-  -p "127.0.0.1:$PORT:3000" \
+  --label a3.site=1 \
+  ${PORT:+-p "127.0.0.1:$PORT:3000"} \
   -v "$VOLUME:/data" \
   --env-file "$ENV_FILE" \
   ${NETWORK:+--network "$NETWORK"} \
