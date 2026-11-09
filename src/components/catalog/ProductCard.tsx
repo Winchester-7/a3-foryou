@@ -6,7 +6,7 @@ import Link from 'next/link';
 import type { Collection, Product } from '@/lib/types';
 import { TileImage } from '@/components/media/TileImage';
 import { BrandBadge } from '@/components/brand/BrandLogo';
-import { formatM2, productStockM2 } from '@/lib/format';
+import { productStockM2 } from '@/lib/format';
 import { QuickAdd } from '@/components/cart/AddToCart';
 import { tileCartItem } from '@/lib/cart-items';
 
@@ -63,7 +63,7 @@ export function ProductCard({
             {[product.article, product.sizes.join(' · ') && `${product.sizes.join(' · ')} мм`].filter(Boolean).join(' · ')}
           </p>
           {productStockM2(product) > 0 && (
-            <p className="mt-1 text-xs font-medium text-[#1f8f4c]">В наличии · {formatM2(productStockM2(product))}</p>
+            <p className="mt-1 text-xs font-medium text-[#1f8f4c]">В наличии</p>
           )}
         </div>
       </div>

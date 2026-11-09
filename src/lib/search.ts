@@ -9,7 +9,7 @@
  * @author Erbol king
  */
 
-export type SearchKind = 'category' | 'collection' | 'product' | 'door' | 'sofa' | 'page';
+export type SearchKind = 'category' | 'collection' | 'product' | 'door' | 'sofa' | 'screw' | 'page';
 
 export interface SearchDoc {
   href: string;
@@ -29,6 +29,7 @@ export const KIND_LABEL: Record<SearchKind, string> = {
   product: 'Декор',
   door: 'Дверь',
   sofa: 'Мебель',
+  screw: 'Крепёж',
   page: 'Страница',
 };
 
@@ -76,7 +77,7 @@ function wordScore(token: string, words: string[]): number {
   return best;
 }
 
-const KIND_WEIGHT: Record<SearchKind, number> = { category: 4, collection: 3, door: 2, sofa: 2, product: 1, page: 0 };
+const KIND_WEIGHT: Record<SearchKind, number> = { category: 4, collection: 3, door: 2, sofa: 2, screw: 2, product: 1, page: 0 };
 
 export function search(index: SearchDoc[], query: string, limit = 12): SearchDoc[] {
   const tokens = toWords(query).filter((t) => !t.includes('×') || /\d/.test(t));

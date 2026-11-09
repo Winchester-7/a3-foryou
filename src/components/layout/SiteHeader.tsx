@@ -2,6 +2,7 @@
 import { getCollections, getAllProducts, getCategories, getCollectionByProduct, getLook, brandName } from '@/lib/catalog';
 import { getDoors, doorKindLabel } from '@/lib/doors';
 import { getSofas } from '@/lib/sofas';
+import { getScrews, screwPrice } from '@/lib/screws';
 import { site } from '@/lib/site';
 import { toWords, type SearchDoc } from '@/lib/search';
 import { Header } from './Header';
@@ -84,10 +85,20 @@ function buildIndex(): SearchDoc[] {
     );
   }
 
+  for (const s of getScrews()) {
+    out.push(
+      doc(
+        { href: `/screws/${s.slug}`, title: s.name, subtitle: `${s.kind} · ${screwPrice(s)}`, kind: 'screw', image: s.image },
+        'шурупы саморезы дюбели гвозди крепеж крепёж',
+      ),
+    );
+  }
+
   const pages: [string, string, string, string][] = [
-    ['/catalog', 'Весь каталог', 'Керамогранит со склада в Бишкеке', 'каталог керамогранит плитка'],
+    ['/catalog', 'Керамогранит', 'Весь раздел: коллекции, декоры, форматы', 'каталог керамогранит плитка'],
     ['/doors', 'Двери', 'Межкомнатные и входные двери', 'двери'],
     ['/sofas', 'Диваны', 'Диваны и кресла для интерьера', 'диваны кресла'],
+    ['/screws', 'Шурупы', 'Саморезы, дюбели и крепёж', 'шурупы саморезы дюбели гвозди крепеж крепёж'],
     ['/where-to-buy', 'Где купить', `${site.address} · шоурум и склад`, 'адрес контакты телефон шоурум склад доставка карта'],
     ['/promotions', 'Акции', 'Скидки и специальные предложения', 'акции скидки распродажа'],
     ['/portfolio', 'Портфолио', 'Коллекции в готовых интерьерах', 'портфолио интерьеры фото'],

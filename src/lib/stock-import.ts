@@ -12,6 +12,7 @@
 import readXlsxFile from 'read-excel-file/node';
 import type { Collection, Product, StockLine } from './types';
 import type { TilesFile } from './collections';
+import { HIDDEN_BRANDS } from './brands';
 import { slugify } from './slug';
 
 /* ------------------------------------------------------------------ rows */
@@ -90,17 +91,24 @@ const cellNum = (v: unknown): number | null => (typeof v === 'number' && Number.
 export interface ParsedWorkbook {
   rows: StockRow[];
   sheets: { sheet: string; factory: string; known: boolean; rows: number }[];
+  /** sheets of factories that are not sold through the site (HIDDEN_BRANDS) */
+  skipped: string[];
 }
 
 export async function parseWorkbook(buf: Buffer): Promise<ParsedWorkbook> {
   const book = await readXlsxFile(buf);
   const rows: StockRow[] = [];
   const sheets: ParsedWorkbook['sheets'] = [];
+  const skipped: string[] = [];
 
   for (const { sheet, data } of book) {
     const title = String(sheet).trim();
     const factory = FACTORY[title.toLowerCase()];
     const key = factory?.key ?? slugify(title) ?? title;
+    if (HIDDEN_BRANDS.has(key)) {
+      skipped.push(title);
+      continue;
+    }
     let count = 0;
 
     for (const cells of data.slice(1)) {
@@ -131,7 +139,7 @@ export async function parseWorkbook(buf: Buffer): Promise<ParsedWorkbook> {
     }
     sheets.push({ sheet: title, factory: key, known: Boolean(factory), rows: count });
   }
-  return { rows, sheets };
+  return { rows, sheets, skipped };
 }
 
 /* ------------------------------------------------------------------ names */
@@ -264,6 +272,7 @@ export function planImport(current: TilesFile, parsed: ParsedWorkbook, opts: Imp
     warnings: [],
   };
 
+  for (const title of parsed.skipped) report.warnings.push(`Лист «${title}» пропущен: этого завода нет на сайте.`);
   for (const s of parsed.sheets) if (!s.known) report.warnings.push(`Лист «${s.sheet}» не распознан как завод: новые позиции из него не создаются`);
 
   type Ref = { col: Collection; p: Product; factory: string; before: StockLine[] };

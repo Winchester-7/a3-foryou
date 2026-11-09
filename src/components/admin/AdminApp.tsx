@@ -8,6 +8,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { DoorsEditor } from './DoorsEditor';
 import { SofasEditor } from './SofasEditor';
+import { ScrewsEditor } from './ScrewsEditor';
 import { StockImport } from './StockImport';
 import { TilesEditor } from './TilesEditor';
 import { LeadsView, PortfolioEditor, PromotionsEditor, SettingsEditor } from './ContentEditors';
@@ -17,6 +18,7 @@ const SECTIONS: { id: string; label: string; hint: string }[] = [
   { id: 'stock', label: 'Остатки Excel', hint: 'Загрузить складскую таблицу .xlsx' },
   { id: 'doors', label: 'Двери', hint: 'Межкомнатные и входные' },
   { id: 'sofas', label: 'Диваны', hint: 'Диваны и кресла' },
+  { id: 'screws', label: 'Шурупы', hint: 'Саморезы, дюбели, гвозди и цены' },
   { id: 'portfolio', label: 'Портфолио', hint: 'Проекты и интерьеры' },
   { id: 'promotions', label: 'Акции', hint: 'Скидки и предложения' },
   { id: 'leads', label: 'Заявки', hint: 'Обращения с сайта' },
@@ -28,6 +30,7 @@ const EDITORS: Record<string, () => ReactNode> = {
   stock: () => <StockImport />,
   doors: () => <DoorsEditor />,
   sofas: () => <SofasEditor />,
+  screws: () => <ScrewsEditor />,
   portfolio: () => <PortfolioEditor />,
   promotions: () => <PromotionsEditor />,
   leads: () => <LeadsView />,

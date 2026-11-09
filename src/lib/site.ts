@@ -81,12 +81,13 @@ export type NavItem = {
   highlight?: boolean;
 };
 
-/** Doors and sofas are part of the catalog now, not separate top-level entries. */
-/** The «Каталог» dropdown: exactly these three entries. */
+/** Doors, sofas and screws are part of the catalog, not separate top-level entries. */
+/** The «Каталог» dropdown: exactly these four entries. */
 export const catalogExtras = [
+  { href: '/catalog', title: 'Керамогранит', tagline: 'Весь раздел: коллекции, декоры, форматы' },
   { href: '/doors', title: 'Двери', tagline: 'Межкомнатные и входные двери' },
   { href: '/sofas', title: 'Диваны', tagline: 'Диваны и кресла для интерьера' },
-  { href: '/catalog', title: 'Весь каталог', tagline: 'Керамогранит со склада в Бишкеке' },
+  { href: '/screws', title: 'Шурупы', tagline: 'Саморезы, дюбели и крепёж' },
 ] as const;
 
 export const mainNav: NavItem[] = [

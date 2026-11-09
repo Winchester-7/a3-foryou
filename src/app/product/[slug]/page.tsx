@@ -10,7 +10,7 @@ import { RelatedProducts } from '@/components/catalog/RelatedProducts';
 import { Reveal } from '@/components/motion/Reveal';
 import { ColorPicker } from '@/components/furniture/ColorPicker';
 import { colorHex } from '@/lib/color';
-import { getProduct, getRelatedProducts, getLook, brandName, getCollectionByProduct, formatM2, productStockM2, PRICE_LABEL } from '@/lib/catalog';
+import { getProduct, getRelatedProducts, getLook, brandName, getCollectionByProduct, productStockM2, PRICE_LABEL } from '@/lib/catalog';
 import { BrandLogo } from '@/components/brand/BrandLogo';
 import { TECH_SPECS } from '@/lib/specs';
 import { site } from '@/lib/site';
@@ -91,7 +91,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               <p className="mt-1 text-sm text-ink-soft">{product.name}</p>
               {productStockM2(product) > 0 && (
                 <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#1f8f4c]/10 px-3.5 py-1.5 text-sm font-medium text-[#1f8f4c]">
-                  <span className="h-2 w-2 rounded-full bg-[#1f8f4c]" /> В наличии · {formatM2(productStockM2(product))}
+                  <span className="h-2 w-2 rounded-full bg-[#1f8f4c]" /> В наличии
                 </p>
               )}
               <p className="mt-4 text-xl font-medium text-ink">{PRICE_LABEL}</p>
@@ -143,14 +143,12 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
               {product.stock && product.stock.length > 0 && (
                 <div className="mt-10">
-                  <h2 className="text-[13px] font-medium uppercase tracking-wide2 text-ink">Наличие на складе</h2>
+                  <h2 className="text-[13px] font-medium uppercase tracking-wide2 text-ink">В наличии на складе</h2>
                   <table className="mt-4 w-full border-y border-line text-sm">
                     <thead>
                       <tr className="text-left text-xs uppercase tracking-wide2 text-ink-faint">
                         <th className="py-3 font-medium">Формат, мм</th>
                         <th className="py-3 font-medium">Поверхность</th>
-                        <th className="py-3 text-right font-medium">Шт.</th>
-                        <th className="py-3 text-right font-medium">м²</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-line">
@@ -158,13 +156,11 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                         <tr key={`${s.size}-${s.surface}`}>
                           <td className="py-3 text-ink">{s.size || '—'}</td>
                           <td className="py-3 text-ink-soft">{s.surface || '—'}</td>
-                          <td className="py-3 text-right tabular-nums text-ink">{s.pcs.toLocaleString('ru-RU')}</td>
-                          <td className="py-3 text-right tabular-nums text-ink">{Math.round(s.m2).toLocaleString('ru-RU')}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
-                  <p className="mt-2 text-xs text-ink-faint">Остатки по данным склада в Бишкеке, уточняйте при заказе.</p>
+                  <p className="mt-2 text-xs text-ink-faint">Наличие по данным склада в Бишкеке, уточняйте при заказе.</p>
                 </div>
               )}
 

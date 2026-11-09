@@ -12,7 +12,7 @@ export type CartUnit = 'м²' | 'шт.';
 export interface CartItem {
   /** unique per product + chosen options */
   id: string;
-  kind: 'tile' | 'door' | 'sofa';
+  kind: 'tile' | 'door' | 'sofa' | 'screw';
   title: string;
   /** collection, article, colour, size — whatever identifies the variant */
   details: string;
@@ -67,7 +67,7 @@ function readPlannerImport(): CartItem[] {
     const list: unknown = JSON.parse(json);
     if (!Array.isArray(list)) return plannerImport;
     plannerImport = list.slice(0, 50).flatMap((i): CartItem[] => {
-      if (!i || !isText(i.id, 300) || !['tile', 'door', 'sofa'].includes(i.kind)) return [];
+      if (!i || !isText(i.id, 300) || !['tile', 'door', 'sofa', 'screw'].includes(i.kind)) return [];
       if (!isText(i.title, 200) || !isText(i.details, 500) || !isPath(i.image) || !isPath(i.href)) return [];
       const unit: CartUnit = i.unit === 'шт.' ? 'шт.' : 'м²';
       return [{ id: i.id, kind: i.kind, title: i.title, details: i.details, image: i.image, href: i.href, qty: clampQty(Number(i.qty)), unit }];

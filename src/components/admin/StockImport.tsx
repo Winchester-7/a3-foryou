@@ -117,7 +117,7 @@ export function StockImport() {
             <input type="checkbox" checked={zeroMissing} onChange={(e) => setZeroMissing(e.target.checked)} className="mt-0.5" />
             <span>
               Обнулить остаток у позиций, которых нет в файле
-              <span className="block text-xs text-ink-faint">Только у заводов, чьи листы есть в файле. Позиции остаются на сайте без отметки «в наличии».</span>
+              <span className="block text-xs text-ink-faint">Только у заводов, чьи листы есть в файле. Такие позиции исчезают с сайта, в админке остаются.</span>
             </span>
           </label>
           <label className="flex items-start gap-2">

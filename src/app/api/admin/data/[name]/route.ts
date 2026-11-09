@@ -6,7 +6,7 @@ import { canWrite, dataVersion, readData, writeData, type DataName } from '@/lib
 
 export const dynamic = 'force-dynamic';
 
-const NAMES: DataName[] = ['tiles', 'doors', 'sofas', 'portfolio', 'promotions', 'settings', 'leads'];
+const NAMES: DataName[] = ['tiles', 'doors', 'sofas', 'screws', 'portfolio', 'promotions', 'settings', 'leads'];
 const asName = (v: string): DataName | null => (NAMES.includes(v as DataName) ? (v as DataName) : null);
 
 const deny = () => NextResponse.json({ ok: false, error: 'Нужно войти в админ-панель' }, { status: 401 });

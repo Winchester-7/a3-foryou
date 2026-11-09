@@ -1,7 +1,6 @@
 /** @author Erbol king */
 import Link from 'next/link';
 import type { Collection } from '@/lib/types';
-import { formatM2 } from '@/lib/format';
 import { BrandBadge } from '@/components/brand/BrandLogo';
 import { TileImage } from '@/components/media/TileImage';
 
@@ -29,7 +28,7 @@ export function CollectionCard({ collection, priority = false }: { collection: C
       <p className="mt-3 text-xs leading-snug text-ink-faint">
         {collection.products.length}{' '}
         {plural(collection.products.length, 'декор', 'декора', 'декоров')} · {collection.sizes.join(', ')} мм
-        {collection.stockM2 ? ` · в наличии ${formatM2(collection.stockM2)}` : ''}
+        {collection.stockM2 ? ' · в наличии' : ''}
       </p>
     </article>
   );

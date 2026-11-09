@@ -15,6 +15,12 @@ export const BRAND_NAMES: Record<string, string> = {
   tianshan: 'Тянь-Шань',
 };
 
+/**
+ * Factories that are not sold through the site: their sheets are skipped by the Excel
+ * import and anything already filed under them is not shown to visitors.
+ */
+export const HIDDEN_BRANDS: ReadonlySet<string> = new Set(['kazakhstan', 'china', 'tianshan', 'uzbekistan']);
+
 export function brandName(b: string): string {
   return BRAND_NAMES[b] ?? b;
 }

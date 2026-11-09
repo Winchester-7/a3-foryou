@@ -44,7 +44,7 @@ export function Footer() {
               ))}
               <li>
                 <Link href="/catalog" className="text-ink transition-colors hover:text-accent">
-                  Весь каталог →
+                  Весь керамогранит →
                 </Link>
               </li>
             </ul>
@@ -58,6 +58,9 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/sofas" className="text-ink-soft transition-colors hover:text-ink">Диваны и кресла</Link>
+              </li>
+              <li>
+                <Link href="/screws" className="text-ink-soft transition-colors hover:text-ink">Шурупы и крепёж</Link>
               </li>
               <li>
                 <a href={site.plannerUrl} className="text-ink-soft transition-colors hover:text-ink">Создать свой интерьер</a>

@@ -1,0 +1,54 @@
+[
+ {
+  "slug": "gvozdi-dlya-montazhnogo-pistoleta",
+  "name": "Гвозди для монтажного пистолета",
+  "kind": "Гвозди",
+  "description": "",
+  "price": 0,
+  "unit": "уп.",
+  "image": "/screws/gvozdi.jpg",
+  "gallery": [
+   "/screws/gvozdi.jpg"
+  ],
+  "specs": []
+ },
+ {
+  "slug": "samorez-s-pressshayboy",
+  "name": "Саморез с прессшайбой",
+  "kind": "Саморезы",
+  "description": "",
+  "price": 0,
+  "unit": "уп.",
+  "image": "/screws/samorez-press-shayba.jpg",
+  "gallery": [
+   "/screws/samorez-press-shayba.jpg"
+  ],
+  "specs": []
+ },
+ {
+  "slug": "ramnyy-dyubel-s-shurupom",
+  "name": "Рамный дюбель с шурупом",
+  "kind": "Дюбели",
+  "description": "",
+  "price": 0,
+  "unit": "уп.",
+  "image": "/screws/dyubel-ramnyy.jpg",
+  "gallery": [
+   "/screws/dyubel-ramnyy.jpg"
+  ],
+  "specs": []
+ },
+ {
+  "slug": "dyubel-raspornyy",
+  "name": "Дюбель распорный",
+  "kind": "Дюбели",
+  "description": "",
+  "price": 0,
+  "unit": "уп.",
+  "image": "/screws/dyubel-raspornyy.jpg",
+  "gallery": [
+   "/screws/dyubel-raspornyy.jpg"
+  ],
+  "specs": []
+ }
+]

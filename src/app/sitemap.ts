@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     s('/catalog', 0.9),
     s('/doors', 0.8),
     s('/sofas', 0.8),
+    s('/screws', 0.7),
     s('/where-to-buy', 0.8),
     s('/about', 0.7),
     s('/portfolio', 0.7),

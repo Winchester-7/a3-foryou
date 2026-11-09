@@ -15,16 +15,18 @@ import path from 'node:path';
 import tilesSeed from '@/data/tiles.json';
 import doorsSeed from '@/data/doors.json';
 import sofasSeed from '@/data/sofas.json';
+import screwsSeed from '@/data/screws.json';
 import portfolioSeed from '@/data/portfolio.json';
 import promotionsSeed from '@/data/promotions.json';
 import settingsSeed from '@/data/settings.json';
 
-export type DataName = 'tiles' | 'doors' | 'sofas' | 'portfolio' | 'promotions' | 'settings' | 'leads';
+export type DataName = 'tiles' | 'doors' | 'sofas' | 'screws' | 'portfolio' | 'promotions' | 'settings' | 'leads';
 
 const SEEDS: Record<DataName, unknown> = {
   tiles: tilesSeed,
   doors: doorsSeed,
   sofas: sofasSeed,
+  screws: screwsSeed,
   portfolio: portfolioSeed,
   promotions: promotionsSeed,
   settings: settingsSeed,

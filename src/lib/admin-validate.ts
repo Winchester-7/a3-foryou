@@ -208,6 +208,33 @@ function normSofas(input: unknown): Result {
   return dup ? { ok: false, error: dup } : { ok: true, data: out };
 }
 
+/* ------------------------------------------------------------------ screws */
+
+function normScrews(input: unknown): Result {
+  if (!Array.isArray(input)) return { ok: false, error: 'Ожидался список шурупов' };
+  const out = [];
+  for (const s of input) {
+    if (!isRecord(s)) continue;
+    const name = str(s.name, 160);
+    if (!name) return { ok: false, error: 'У позиции нет названия' };
+    const gallery = strList(s.gallery, 20).filter(urlOk);
+    const image = str(s.image, 300) && urlOk(str(s.image, 300)) ? str(s.image, 300) : gallery[0] ?? '';
+    out.push({
+      slug: str(s.slug, 100) || slugify(name),
+      name,
+      kind: str(s.kind, 60) || 'Крепёж',
+      description: str(s.description, 2000),
+      price: Math.max(0, Math.round(num(s.price) * 100) / 100),
+      unit: str(s.unit, 20),
+      image,
+      gallery: image && !gallery.includes(image) ? [image, ...gallery] : gallery,
+      specs: normSpecs(s.specs),
+    });
+  }
+  const dup = uniqueSlugs(out, 'Шурупы');
+  return dup ? { ok: false, error: dup } : { ok: true, data: out };
+}
+
 /* ------------------------------------------------------------------ portfolio / promotions / settings */
 
 function normPortfolio(input: unknown): Result {
@@ -276,6 +303,8 @@ export function validate(name: DataName, input: unknown): Result {
       return normDoors(input);
     case 'sofas':
       return normSofas(input);
+    case 'screws':
+      return normScrews(input);
     case 'portfolio':
       return normPortfolio(input);
     case 'promotions':

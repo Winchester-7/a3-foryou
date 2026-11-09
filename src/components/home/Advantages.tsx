@@ -25,12 +25,10 @@ export function Advantages() {
   const site = getSite();
   const collections = getCollections();
   const decors = collections.reduce((n, c) => n + c.products.length, 0);
-  const stockM2 = Math.round(collections.reduce((n, c) => n + (c.stockM2 ?? 0), 0));
 
   const stats = [
     { value: collections.length, label: plural(collections.length, 'коллекция', 'коллекции', 'коллекций') },
     { value: decors, label: plural(decors, 'декор', 'декора', 'декоров') },
-    ...(stockM2 > 0 ? [{ value: stockM2, label: 'м² плитки на складе' }] : []),
   ];
 
   const items = [

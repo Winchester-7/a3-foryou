@@ -22,6 +22,7 @@ export function FurnitureDetail({
   specs,
   gallery,
   requestSubject,
+  priceLabel = 'Цена по запросу',
 }: {
   kicker: string;
   title: string;
@@ -34,10 +35,13 @@ export function FurnitureDetail({
   specs: [string, string][];
   gallery: string[];
   requestSubject: string;
+  priceLabel?: string;
 }) {
   const { open } = useLeadDialog();
   const pathname = usePathname();
-  const kind = pathname.startsWith('/sofas') ? 'sofa' : 'door';
+  const kind = pathname.startsWith('/sofas') ? 'sofa' : pathname.startsWith('/screws') ? 'screw' : 'door';
+  /** cut-outs on white are shown whole, room photos fill the frame */
+  const cutout = kind !== 'sofa';
   const [color, setColor] = useState(colors[0]?.name ?? '');
   const [size, setSize] = useState(sizes[0] ?? '');
   const [imgIdx, setImgIdx] = useState(0);
@@ -64,7 +68,7 @@ export function FurnitureDetail({
                 alt={title}
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
-                className={`img-in ${kind === 'door' ? 'object-contain p-6 mix-blend-multiply' : 'object-cover'}`}
+                className={`img-in ${cutout ? 'object-contain p-6 mix-blend-multiply' : 'object-cover'}`}
                 placeholder="blur"
                 blurDataURL={blurData('#e8e4de')}
                 priority
@@ -86,7 +90,7 @@ export function FurnitureDetail({
                   }`}
                   aria-label={`Фото ${i + 1}`}
                 >
-                  {src ? <Image src={src} alt="" fill sizes="120px" className={kind === 'door' ? 'object-contain p-1 mix-blend-multiply' : 'object-cover'} /> : null}
+                  {src ? <Image src={src} alt="" fill sizes="120px" className={cutout ? 'object-contain p-1 mix-blend-multiply' : 'object-cover'} /> : null}
                 </button>
               ))}
             </div>
@@ -98,7 +102,7 @@ export function FurnitureDetail({
           <p className="eyebrow">{kicker}</p>
           <h1 className="h-section mt-3">{title}</h1>
           <p className="mt-1 text-sm text-ink-soft">{subtitle}</p>
-          <p className="mt-4 text-xl font-medium text-ink">Цена по запросу</p>
+          <p className="mt-4 text-xl font-medium text-ink">{priceLabel}</p>
           <p className="mt-5 max-w-prose2 text-[15px] leading-relaxed text-ink-soft">{description}</p>
 
           {colors.length > 1 && (

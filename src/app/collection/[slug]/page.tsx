@@ -8,7 +8,7 @@ import { CategoryBanner } from '@/components/catalog/CategoryBanner';
 import { ProductGrid } from '@/components/catalog/ProductGrid';
 import { Reveal } from '@/components/motion/Reveal';
 import { CallbackTrigger } from '@/components/forms/CallbackTrigger';
-import { getCollections, getCollection, getLook, brandName, formatM2, getFallbackHero, PRICE_LABEL } from '@/lib/catalog';
+import { getCollections, getCollection, getLook, brandName, getFallbackHero, PRICE_LABEL } from '@/lib/catalog';
 import { BrandBadge } from '@/components/brand/BrandLogo';
 import { TECH_SPECS } from '@/lib/specs';
 import { site } from '@/lib/site';
@@ -68,7 +68,7 @@ export default function CollectionPage({ params }: { params: { slug: string } })
         stats={[
           { value: String(collection.products.length), label: 'декоров' },
           { value: collection.sizes.join(' · '), label: 'форматы, мм' },
-          ...(collection.stockM2 ? [{ value: formatM2(collection.stockM2), label: 'в наличии' }] : []),
+          ...(collection.stockM2 ? [{ value: 'В наличии', label: 'на складе в Бишкеке' }] : []),
         ]}
       />
       <Breadcrumbs
