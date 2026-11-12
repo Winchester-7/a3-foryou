@@ -35,7 +35,7 @@ export function ScrewsEditor() {
 
   return (
     <>
-      <SaveBar dirty={r.dirty} saving={r.saving} canWrite={r.canWrite} message={r.message} onSave={r.save} onReload={r.reload} />
+      <SaveBar dirty={r.dirty} saving={r.saving} canWrite={r.canWrite} message={r.message} onSave={r.save} onReload={r.reload} onResetSeed={r.resetToSeed} />
       <ListDetail
         items={items}
         selected={slug}

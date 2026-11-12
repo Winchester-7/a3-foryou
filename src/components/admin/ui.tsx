@@ -239,7 +239,25 @@ export function useResource<T>(name: string) {
     }
   }, [draft, meta.version, name]);
 
-  return { data: draft, loading, saving, dirty, message, canWrite: meta.canWrite, update, save, reload: load, setMessage };
+  /** Back to the version that came with the site (asks first; edits made in the admin are lost). */
+  const resetToSeed = useCallback(async () => {
+    if (!confirm('Вернуть версию, которая пришла вместе с сайтом? Все правки этого раздела, сделанные в админке, пропадут.')) return;
+    setSaving(true);
+    setMessage(null);
+    try {
+      const res = await fetch(`/api/admin/data/${name}`, { method: 'DELETE' });
+      const json = (await res.json()) as { ok: boolean; error?: string };
+      if (!res.ok || !json.ok) throw new Error(json.error ?? 'Не удалось сбросить');
+      await load();
+      setMessage({ kind: 'ok', text: 'Возвращена версия сайта' });
+    } catch (e) {
+      setMessage({ kind: 'error', text: (e as Error).message });
+    } finally {
+      setSaving(false);
+    }
+  }, [load, name]);
+
+  return { data: draft, loading, saving, dirty, message, canWrite: meta.canWrite, update, save, reload: load, resetToSeed, setMessage };
 }
 
 /** Sticky bar with the save button and the status message. */
@@ -250,6 +268,7 @@ export function SaveBar({
   message,
   onSave,
   onReload,
+  onResetSeed,
 }: {
   dirty: boolean;
   saving: boolean;
@@ -257,6 +276,8 @@ export function SaveBar({
   message: { kind: 'ok' | 'error'; text: string } | null;
   onSave: () => void;
   onReload: () => void;
+  /** shows «Вернуть версию сайта» (only for sections that ship with the site) */
+  onResetSeed?: () => void;
 }) {
   return (
     <div className="sticky top-0 z-20 -mx-4 mb-5 flex flex-wrap items-center gap-3 border-b border-line bg-paper/95 px-4 py-3 backdrop-blur">
@@ -269,6 +290,11 @@ export function SaveBar({
         </Btn>
       )}
       <span className="text-xs text-ink-faint">{dirty ? 'Есть несохранённые изменения' : 'Всё сохранено'}</span>
+      {onResetSeed && canWrite && (
+        <button type="button" onClick={onResetSeed} disabled={saving} className="ml-auto text-xs text-ink-faint underline-offset-2 hover:text-accent hover:underline disabled:opacity-40">
+          Вернуть версию сайта
+        </button>
+      )}
       {!canWrite && <span className="text-xs text-accent">Режим просмотра: на сервере не настроено хранилище (DATA_DIR)</span>}
       {message && <span className={`text-xs ${message.kind === 'ok' ? 'text-[#1f8f4c]' : 'text-accent'}`}>{message.text}</span>}
     </div>

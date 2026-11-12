@@ -2,11 +2,13 @@
 import { NextResponse } from 'next/server';
 import { isAdmin } from '@/lib/admin-auth';
 import { validate } from '@/lib/admin-validate';
-import { canWrite, dataVersion, readData, writeData, type DataName } from '@/lib/store';
+import { canWrite, dataVersion, readData, resetData, writeData, type DataName } from '@/lib/store';
 
 export const dynamic = 'force-dynamic';
 
 const NAMES: DataName[] = ['tiles', 'doors', 'sofas', 'screws', 'portfolio', 'promotions', 'settings', 'leads'];
+/** sections that ship with the site and may be reset to the bundled version (never the leads) */
+const RESETTABLE: DataName[] = ['tiles', 'doors', 'sofas', 'screws', 'portfolio', 'promotions'];
 const asName = (v: string): DataName | null => (NAMES.includes(v as DataName) ? (v as DataName) : null);
 
 const deny = () => NextResponse.json({ ok: false, error: 'Нужно войти в админ-панель' }, { status: 401 });
@@ -54,4 +56,19 @@ export async function PUT(request: Request, { params }: { params: { name: string
     return NextResponse.json({ ok: false, error: 'Не удалось записать данные на сервере' }, { status: 500 });
   }
   return NextResponse.json({ ok: true, data: checked.data, version: dataVersion(name) });
+}
+
+/** Throws away the edited copy: the version that came with the site is shown again. */
+export async function DELETE(_req: Request, { params }: { params: { name: string } }) {
+  if (!isAdmin()) return deny();
+  const name = asName(params.name);
+  if (!name || !RESETTABLE.includes(name)) return NextResponse.json({ ok: false, error: 'Этот раздел нельзя сбросить' }, { status: 404 });
+  if (!canWrite) return NextResponse.json({ ok: false, error: 'Сохранение отключено: на сервере не задан DATA_DIR.' }, { status: 503 });
+  try {
+    await resetData(name);
+  } catch (e) {
+    console.error('[admin] reset failed', e);
+    return NextResponse.json({ ok: false, error: 'Не удалось сбросить данные на сервере' }, { status: 500 });
+  }
+  return NextResponse.json({ ok: true });
 }

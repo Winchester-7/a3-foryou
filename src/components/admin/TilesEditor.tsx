@@ -91,7 +91,7 @@ export function TilesEditor() {
 
   return (
     <>
-      <SaveBar dirty={r.dirty} saving={r.saving} canWrite={r.canWrite} message={r.message} onSave={r.save} onReload={r.reload} />
+      <SaveBar dirty={r.dirty} saving={r.saving} canWrite={r.canWrite} message={r.message} onSave={r.save} onReload={r.reload} onResetSeed={r.resetToSeed} />
 
       <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
         {/* collections list */}

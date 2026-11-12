@@ -88,4 +88,21 @@ export function writeData(name: DataName, value: unknown): Promise<void> {
   return next;
 }
 
+/** Drops the edited copy so the version bundled with the site is served again. */
+export function resetData(name: DataName): Promise<void> {
+  const file = fileOf(name);
+  if (!file) return Promise.reject(new Error('read-only'));
+  const run = async () => {
+    try {
+      await fs.promises.unlink(file);
+    } catch (e) {
+      if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
+    }
+    cache.delete(name);
+  };
+  const next = writing.then(run, run);
+  writing = next.catch(() => undefined);
+  return next;
+}
+
 export const uploadsDir = (): string | null => (DIR ? path.join(DIR, 'uploads') : null);
