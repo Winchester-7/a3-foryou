@@ -1,11 +1,77 @@
 [
  {
+  "slug": "shurup-po-metallu-so-sverlom-4-2x19",
+  "name": "Шуруп по металлу со сверлом 4,2×19",
+  "kind": "Шурупы",
+  "description": "Шуруп со сверлом на конце и широкой шляпкой: сверлит и скрепляет тонкий металл и профиль без предварительного отверстия.",
+  "price": 330,
+  "unit": "кг",
+  "image": "/screws/shurup-po-metallu.jpg",
+  "gallery": [
+   "/screws/shurup-po-metallu.jpg"
+  ],
+  "specs": [
+   [
+    "Размер",
+    "4,2×19 мм"
+   ],
+   [
+    "Производство",
+    "Китай"
+   ]
+  ]
+ },
+ {
+  "slug": "shurup-po-derevu-4-2x60",
+  "name": "Шуруп по дереву 4,2×60",
+  "kind": "Шурупы",
+  "description": "Чёрный шуруп с потайной головкой и крестообразным шлицем для работы по дереву.",
+  "price": 320,
+  "unit": "кг",
+  "image": "/screws/shurup-po-derevu.jpg",
+  "gallery": [
+   "/screws/shurup-po-derevu.jpg"
+  ],
+  "specs": [
+   [
+    "Размер",
+    "4,2×60 мм"
+   ],
+   [
+    "Производство",
+    "Китай"
+   ]
+  ]
+ },
+ {
+  "slug": "shurup-dlya-gk-3-5x35-melkiy-rez",
+  "name": "Шуруп для Г/К 3,5×35 мелкий рез",
+  "kind": "Шурупы",
+  "description": "Фосфатированный шуруп с мелким шагом резьбы для крепления гипсокартона к металлическому профилю.",
+  "price": 320,
+  "unit": "кг",
+  "image": "/screws/shurup-gk.jpg",
+  "gallery": [
+   "/screws/shurup-gk.jpg"
+  ],
+  "specs": [
+   [
+    "Размер",
+    "3,5×35 мм"
+   ],
+   [
+    "Производство",
+    "Китай"
+   ]
+  ]
+ },
+ {
   "slug": "gvozdi-dlya-montazhnogo-pistoleta",
   "name": "Гвозди для монтажного пистолета",
   "kind": "Гвозди",
   "description": "",
-  "price": 0,
-  "unit": "уп.",
+  "price": 280,
+  "unit": "кг",
   "image": "/screws/gvozdi.jpg",
   "gallery": [
    "/screws/gvozdi.jpg"
@@ -17,8 +83,8 @@
   "name": "Саморез с прессшайбой",
   "kind": "Саморезы",
   "description": "",
-  "price": 0,
-  "unit": "уп.",
+  "price": 280,
+  "unit": "кг",
   "image": "/screws/samorez-press-shayba.jpg",
   "gallery": [
    "/screws/samorez-press-shayba.jpg"
@@ -30,8 +96,8 @@
   "name": "Рамный дюбель с шурупом",
   "kind": "Дюбели",
   "description": "",
-  "price": 0,
-  "unit": "уп.",
+  "price": 280,
+  "unit": "кг",
   "image": "/screws/dyubel-ramnyy.jpg",
   "gallery": [
    "/screws/dyubel-ramnyy.jpg"
@@ -43,8 +109,8 @@
   "name": "Дюбель распорный",
   "kind": "Дюбели",
   "description": "",
-  "price": 0,
-  "unit": "уп.",
+  "price": 280,
+  "unit": "кг",
   "image": "/screws/dyubel-raspornyy.jpg",
   "gallery": [
    "/screws/dyubel-raspornyy.jpg"

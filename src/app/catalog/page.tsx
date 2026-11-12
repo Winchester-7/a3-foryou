@@ -1,14 +1,12 @@
 /** @author Erbol king */
 import type { Metadata } from 'next';
 import { plural } from '@/lib/color';
-import Link from 'next/link';
 import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { CatalogView } from '@/components/catalog/CatalogView';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { StaggerGroup, StaggerItem } from '@/components/motion/Reveal';
-import { TileImage } from '@/components/media/TileImage';
-import { getCategories, getCollections, buildFacets, getAllProducts, getCollection, getFallbackHero } from '@/lib/catalog';
+import { DirectionGrid } from '@/components/catalog/DirectionGrid';
+import { getCollections, buildFacets, getAllProducts } from '@/lib/catalog';
 import { BrandLogo } from '@/components/brand/BrandLogo';
 
 export const metadata: Metadata = {
@@ -19,10 +17,8 @@ export const metadata: Metadata = {
 };
 
 export default function CatalogPage() {
-  const categories = getCategories();
   const collections = getCollections();
   const allProducts = getAllProducts();
-  const FALLBACK_HERO = getFallbackHero();
   const facets = buildFacets(collections);
 
   return (
@@ -45,28 +41,13 @@ export default function CatalogPage() {
       </div>
 
       <section className="container-x py-10">
-        <SectionHeading eyebrow="Категории" title="Выберите направление" />
-        <StaggerGroup className="mt-10 grid grid-cols-2 gap-x-5 gap-y-9 md:grid-cols-3">
-          {categories.map((c) => {
-            const hero = getCollection(c.heroCollection)?.hero || FALLBACK_HERO;
-            return (
-              <StaggerItem key={c.slug}>
-                <Link href={`/catalog/${c.slug}`} className="group block">
-                  <div className="relative aspect-[5/4] overflow-hidden rounded-2xl bg-surface">
-                    <div className="absolute inset-0 transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
-                      <TileImage src={hero} alt={c.title} sizes="(max-width: 768px) 50vw, 33vw" />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/45 to-transparent" />
-                    <span className="absolute inset-x-5 bottom-5 text-sm font-medium text-white">{c.menuTitle}</span>
-                  </div>
-                </Link>
-              </StaggerItem>
-            );
-          })}
-        </StaggerGroup>
+        <SectionHeading eyebrow="Направления" title="Выберите направление" />
+        <div className="mt-10">
+          <DirectionGrid />
+        </div>
       </section>
 
-      <div className="border-t border-line">
+      <div id="vse-kollekcii" className="scroll-mt-24 border-t border-line">
         <div className="container-x pt-12">
           <SectionHeading eyebrow="Все коллекции" title="Полный ассортимент" />
         </div>

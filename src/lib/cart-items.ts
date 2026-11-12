@@ -4,7 +4,7 @@ import type { CartItem } from '@/components/cart/CartProvider';
 import { brandName } from './brands';
 
 /** Cart payload for a keramogranit decor — keeps the article and sizes so the manager knows the exact SKU. */
-export function tileCartItem(product: Product, collection?: Collection): Omit<CartItem, 'qty' | 'unit'> {
+export function tileCartItem(product: Product, collection?: Pick<Collection, 'brand' | 'nameRu'>): Omit<CartItem, 'qty' | 'unit'> {
   const details = [
     collection && `${brandName(collection.brand)}, коллекция «${collection.nameRu}»`,
     product.article && `арт. ${product.article}`,

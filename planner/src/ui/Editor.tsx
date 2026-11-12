@@ -75,11 +75,17 @@ export function Editor() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  const snapshot = () => {
+  const snapshot = async () => {
     const c = canvasRef.current;
     if (!c) return;
+    // the red "what you are editing" outlines must not end up on the picture
+    const st = usePlanner.getState();
+    st.setHideGuides(true);
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    const data = c.toDataURL('image/png');
+    st.setHideGuides(false);
     const a = document.createElement('a');
-    a.href = c.toDataURL('image/png');
+    a.href = data;
     a.download = `A3-FOR-YOU-интерьер-${new Date().toISOString().slice(0, 10)}.png`;
     a.click();
     setToast('Снимок сохранён');
@@ -159,22 +165,23 @@ export function Editor() {
 
         <aside
           className={`relative z-10 flex shrink-0 flex-col border-line bg-paper transition-[height] duration-300 ease-drawer lg:h-auto lg:w-[400px] lg:border-l ${
-            sheet ? 'h-[46svh]' : 'h-[52px]'
+            sheet ? 'h-[46svh]' : 'h-[60px]'
           }`}
         >
-          <nav className="flex shrink-0 items-center gap-1 border-b border-line px-2">
+          <nav className="flex shrink-0 items-center gap-1 border-b border-line px-2 py-2" aria-label="Что меняем">
             {TABS.map(([t, label]) => (
               <button
                 key={t}
                 type="button"
+                aria-current={tab === t ? 'true' : undefined}
                 onClick={() => {
                   setTab(t);
                   setSheet(true);
                 }}
-                className={`relative flex-1 whitespace-nowrap py-3.5 text-[12.5px] font-medium transition-colors duration-150 ${tab === t ? 'text-ink' : 'text-ink-faint hover:text-ink-soft'}`}
+                className={`relative flex-1 whitespace-nowrap rounded-full py-2.5 text-[12.5px] font-semibold transition-colors duration-150 ${tab === t ? 'text-white' : 'text-ink-soft hover:bg-surface hover:text-ink'}`}
               >
-                {label}
-                {tab === t && <motion.span layoutId="tab-underline" className="absolute inset-x-3 bottom-0 h-0.5 rounded-full bg-accent" transition={{ type: 'spring', duration: 0.35, bounce: 0.15 }} />}
+                {tab === t && <motion.span layoutId="tab-pill" className="absolute inset-0 rounded-full bg-accent shadow-[0_4px_14px_-4px_rgba(224,36,27,0.6)]" transition={{ type: 'spring', duration: 0.35, bounce: 0.15 }} />}
+                <span className="relative">{label}</span>
               </button>
             ))}
             <button type="button" aria-label={sheet ? 'Свернуть панель' : 'Развернуть панель'} onClick={() => setSheet((v) => !v)} className="grid h-9 w-9 place-items-center rounded-full text-ink-soft lg:hidden">

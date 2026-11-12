@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { PageShell } from '@/components/layout/PageShell';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { CategoryBanner } from '@/components/catalog/CategoryBanner';
-import { CatalogView } from '@/components/catalog/CatalogView';
+import { DirectionView, type DirectionItem } from '@/components/catalog/DirectionView';
 import { getCategory, getCategoryCollections, getCollection, buildFacets, getFallbackHero } from '@/lib/catalog';
 import { site } from '@/lib/site';
 
@@ -28,6 +28,9 @@ export default function CategoryPage({ params }: { params: { category: string } 
   const hero = getCollection(cat.heroCollection)?.hero || getFallbackHero();
   const decorCount = list.reduce((n, c) => n + c.products.length, 0);
   const sizes = new Set(list.flatMap((c) => c.sizes)).size;
+  const items: DirectionItem[] = list.flatMap((c) =>
+    c.products.map((product) => ({ product, collection: { slug: c.slug, brand: c.brand, nameRu: c.nameRu, name: c.name } })),
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -57,7 +60,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
         ]}
       />
       <Breadcrumbs items={[{ label: 'Каталог', href: '/catalog' }, { label: cat.menuTitle }]} flush />
-      <CatalogView collections={list} facets={facets} />
+      <DirectionView items={items} facets={facets} />
     </PageShell>
   );
 }

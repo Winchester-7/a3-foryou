@@ -14,6 +14,10 @@ const nextConfig = {
       { source: '/interior', destination: '/catalog', permanent: true },
       { source: '/interior/:category*', destination: '/catalog', permanent: true },
       { source: '/catalog-almaty', destination: '/catalog', permanent: true },
+      // directions that no longer exist
+      { source: '/catalog/dlya-terras', destination: '/catalog', permanent: true },
+      { source: '/catalog/dlya-vannoy', destination: '/catalog', permanent: true },
+      { source: '/catalog/dlya-kuhni', destination: '/catalog', permanent: true },
     ];
   },
   // the 3D planner (another origin) loads tile textures from here

@@ -25,6 +25,7 @@ const ALL_CATEGORIES: Category[] = [
     description: getLook('wood')!.description,
     match: (c) => c.look === 'wood',
     heroCollection: '',
+    cover: '/directions/pod-derevo.jpg',
   },
   {
     slug: 'pod-kamen',
@@ -34,6 +35,7 @@ const ALL_CATEGORIES: Category[] = [
     description: getLook('stone')!.description,
     match: (c) => c.look === 'stone',
     heroCollection: '',
+    cover: '/directions/pod-kamen.jpg',
   },
   {
     slug: 'pod-mramor',
@@ -43,6 +45,7 @@ const ALL_CATEGORIES: Category[] = [
     description: getLook('marble')!.description,
     match: (c) => c.look === 'marble',
     heroCollection: '',
+    cover: '/directions/pod-mramor.jpg',
   },
   {
     slug: 'loft',
@@ -52,6 +55,7 @@ const ALL_CATEGORIES: Category[] = [
     description: getLook('loft')!.description,
     match: (c) => c.look === 'loft',
     heroCollection: '',
+    cover: '/directions/loft.jpg',
   },
   {
     slug: 'pod-beton',
@@ -61,6 +65,7 @@ const ALL_CATEGORIES: Category[] = [
     description: getLook('concrete')!.description,
     match: (c) => c.look === 'concrete' || Boolean(c.concrete),
     heroCollection: '',
+    cover: '/directions/pod-beton.jpg',
   },
   {
     slug: 'dlya-fasadov',
@@ -70,36 +75,17 @@ const ALL_CATEGORIES: Category[] = [
     description: getLook('facade')!.description,
     match: (c) => c.look === 'facade' || c.applications.some((a) => a.includes('фасад') || a.includes('Фасад')),
     heroCollection: '',
+    cover: '/directions/dlya-fasadov.jpg',
   },
   {
-    slug: 'dlya-terras',
-    title: 'Керамогранит для террас',
-    menuTitle: 'Для террас',
-    tagline: 'Противоскользящие поверхности для улицы',
-    description:
-      'Структурные и противоскользящие поверхности, устойчивость к морозу и нагрузкам. Единый дизайн для интерьера и открытой террасы, зоны барбекю, входной группы.',
-    match: (c) => c.applications.includes('Террасы'),
+    slug: 'tehnicheskiy',
+    title: 'Технический керамогранит',
+    menuTitle: 'Технический',
+    tagline: 'Для магазинов, входных групп и ступеней',
+    description: getLook('technical')!.description,
+    match: (c) => c.look === 'technical',
     heroCollection: '',
-  },
-  {
-    slug: 'dlya-vannoy',
-    title: 'Керамогранит для ванной',
-    menuTitle: 'Для ванной',
-    tagline: 'Влагостойкие поверхности «пол-в-стену»',
-    description:
-      'Ректифицированные форматы для бесшовной раскладки стен и пола, гигиеничная поверхность, простая в уходе. Коллекции под мрамор, камень и бетон для спа-атмосферы.',
-    match: (c) => c.applications.includes('Ванные комнаты'),
-    heroCollection: '',
-  },
-  {
-    slug: 'dlya-kuhni',
-    title: 'Керамогранит для кухни',
-    menuTitle: 'Для кухни',
-    tagline: 'Фартук, столешница и пол в одном материале',
-    description:
-      'Устойчивость к пятнам, кислотам и высоким температурам. Крупноформатные плиты для стеновых панелей и износостойкие поверхности для пола.',
-    match: (c) => c.applications.includes('Кухни'),
-    heroCollection: '',
+    cover: '/directions/tehnicheskiy.jpg',
   },
 ];
 

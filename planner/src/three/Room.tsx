@@ -2,12 +2,14 @@
 import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
+import { Line } from '@react-three/drei';
 import { usePlanner, wallTileHeight, type Surface } from '../store';
 import { findDecor, FINISH_ROUGHNESS } from '../data/catalog';
 import { useTileTexture } from './tileTexture';
 
 const WALL_T = 0.12;
 const BASEBOARD = '#f4f2ee';
+const GUIDE = '#E0241B';
 
 function specFor(s: Surface) {
   const { decor, collection } = findDecor(s.decorId);
@@ -21,6 +23,7 @@ function specFor(s: Surface) {
 function Floor() {
   const room = usePlanner((s) => s.room);
   const floor = usePlanner((s) => s.floor);
+  const guide = usePlanner((s) => s.tab === 'floor' && !s.hideGuides);
   const { spec, roughness } = specFor(floor);
 
   // the tiled zone: a band of `coverage` of the room, starting from one side
@@ -45,6 +48,19 @@ function Floor() {
         {/* keyed by texture: adding a map to a live material needs a shader rebuild */}
         <meshStandardMaterial key={map?.uuid ?? 'plain'} map={map} color={map ? '#ffffff' : '#d9d4cc'} roughness={roughness} metalness={0} envMapIntensity={roughness < 0.3 ? 0.9 : 0.5} />
       </mesh>
+      {guide && (
+        <Line
+          points={[
+            [cx - zoneW / 2, 0.02, cz - zoneD / 2],
+            [cx + zoneW / 2, 0.02, cz - zoneD / 2],
+            [cx + zoneW / 2, 0.02, cz + zoneD / 2],
+            [cx - zoneW / 2, 0.02, cz + zoneD / 2],
+            [cx - zoneW / 2, 0.02, cz - zoneD / 2],
+          ]}
+          color={GUIDE}
+          lineWidth={3.5}
+        />
+      )}
     </group>
   );
 }
@@ -53,6 +69,7 @@ function Floor() {
 function Wall({ index, length }: { index: number; length: number }) {
   const room = usePlanner((s) => s.room);
   const walls = usePlanner((s) => s.walls);
+  const guide = usePlanner((s) => s.tab === 'walls' && !s.hideGuides);
   const full = useRef<THREE.Group>(null);
   const stub = useRef<THREE.Group>(null);
 
@@ -106,6 +123,19 @@ function Wall({ index, length }: { index: number; length: number }) {
             <planeGeometry args={[tileW, tileH]} />
             <meshStandardMaterial key={map?.uuid ?? 'plain'} map={map} color={map ? '#ffffff' : '#d9d4cc'} roughness={Math.max(roughness, 0.2)} envMapIntensity={0.45} />
           </mesh>
+        )}
+        {tiled && guide && (
+          <Line
+            points={[
+              [-tileW / 2, base, 0.012],
+              [tileW / 2, base, 0.012],
+              [tileW / 2, base + tileH, 0.012],
+              [-tileW / 2, base + tileH, 0.012],
+              [-tileW / 2, base, 0.012],
+            ]}
+            color={GUIDE}
+            lineWidth={3.5}
+          />
         )}
         {base === 0 && tiled ? null : (
           <mesh position={[0, 0.04, 0.008]} receiveShadow>

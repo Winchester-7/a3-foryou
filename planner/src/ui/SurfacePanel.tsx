@@ -1,9 +1,9 @@
 /** @author Erbol king */
 import { useMemo, useState } from 'react';
 import { findDecor, lookLabels, SITE_URL, tileCollections } from '../data/catalog';
-import { usePlanner, type FloorFrom, type Surface, type WallMode } from '../store';
+import { usePlanner, wallTileHeight, type FloorFrom, type Surface, type WallMode } from '../store';
 import { GROUT_COLORS, GROUT_LABELS, LAYOUT_LABELS, type Grout, type Layout } from '../three/tileOptions';
-import { fmt } from './format';
+import { fmt, plural } from './format';
 
 export function Chips<T extends string>({ value, options, onChange, label }: { value: T; options: [T, string][]; onChange: (v: T) => void; label: string }) {
   return (
@@ -35,6 +35,20 @@ export function Section({ title, children, aside }: { title: string; children: R
       </div>
       {children}
     </section>
+  );
+}
+
+
+/** Red strip on top of a panel: tells the client which part of the room the controls change. */
+function EditingBadge({ what }: { what: string }) {
+  return (
+    <div className="flex items-center gap-2.5 border-b border-accent/20 bg-accent/10 px-5 py-2.5 text-[12px] font-semibold text-accent">
+      <span className="relative flex h-2.5 w-2.5">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
+      </span>
+      Сейчас вы меняете: {what}
+    </div>
   );
 }
 
@@ -197,7 +211,7 @@ export function RoomSizePanel() {
 }
 
 /** Whole / half / custom amount — shared by the floor and the walls. */
-function AmountChips({ value, onChange, label }: { value: number; onChange: (v: number) => void; label: string }) {
+function AmountChips({ value, onChange, label, allLabel = 'Весь' }: { value: number; onChange: (v: number) => void; label: string; allLabel?: string }) {
   const preset = value >= 0.999 ? 'all' : Math.abs(value - 0.5) < 0.001 ? 'half' : 'custom';
   return (
     <>
@@ -205,7 +219,7 @@ function AmountChips({ value, onChange, label }: { value: number; onChange: (v: 
         label={label}
         value={preset}
         options={[
-          ['all', 'Весь'],
+          ['all', allLabel],
           ['half', 'Половина'],
           ['custom', 'Своё количество'],
         ]}
@@ -241,6 +255,7 @@ export function FloorPanel() {
   const pick = useDecorPick(floor, setFloor);
   return (
     <>
+      <EditingBadge what="ПОЛ" />
       <RoomSizePanel />
       <Section title={`Сколько пола выложить плиткой · ${fmt(room.length * room.width * floor.coverage)} м²`}>
         <AmountChips label="Покрытие пола" value={floor.coverage} onChange={(v) => setFloor({ coverage: v })} />
@@ -285,79 +300,197 @@ export function FloorPanel() {
 
 const PAINTS = ['#ece8e1', '#f6f4f0', '#d9d3c9', '#c9cfc8', '#b8b2a8', '#8f8a83', '#4a4b4d'];
 
+const SIDE_NAMES = ['Дальняя', 'Правая', 'Ближняя', 'Левая'] as const;
+const SIDE_PRESETS: [string, string, boolean[]][] = [
+  ['all', 'Все 4 стены', [true, true, true, true]],
+  ['accent', 'Одна (акцент)', [true, false, false, false]],
+  ['sides', 'Боковые две', [false, true, false, true]],
+  ['ends', 'Напротив друг друга', [true, false, true, false]],
+];
+
+/** Top-down sketch of the room: tap a side to tile / untile that wall. */
+function WallPicker({ sides, onChange }: { sides: boolean[]; onChange: (s: boolean[]) => void }) {
+  const on = (i: number) => sides[i] !== false;
+  const toggle = (i: number) => onChange([0, 1, 2, 3].map((k) => (k === i ? !on(k) : on(k))));
+  // [x1, y1, x2, y2] of each wall in the sketch: back, right, front, left
+  const lines: [number, number, number, number][] = [
+    [40, 22, 120, 22],
+    [120, 22, 120, 78],
+    [40, 78, 120, 78],
+    [40, 22, 40, 78],
+  ];
+  const labels: [number, number, 'middle' | 'start' | 'end'][] = [
+    [80, 12, 'middle'],
+    [129, 52, 'start'],
+    [80, 92, 'middle'],
+    [31, 52, 'end'],
+  ];
+  return (
+    <svg viewBox="0 0 160 100" className="mx-auto block w-full max-w-[260px]" role="group" aria-label="Какие стены выложить плиткой">
+      <rect x="40" y="22" width="80" height="56" rx="2" fill="#f6f5f3" />
+      {lines.map(([x1, y1, x2, y2], i) => (
+        <g
+          key={i}
+          role="button"
+          tabIndex={0}
+          aria-pressed={on(i)}
+          aria-label={`${SIDE_NAMES[i]} стена`}
+          className="cursor-pointer outline-none"
+          onClick={() => toggle(i)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggle(i);
+            }
+          }}
+        >
+          <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="transparent" strokeWidth="16" strokeLinecap="round" />
+          <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={on(i) ? '#E0241B' : '#cfcac2'} strokeWidth="5" strokeLinecap="round" style={{ transition: 'stroke 150ms' }} />
+        </g>
+      ))}
+      {labels.map(([x, y, anchor], i) => (
+        <text key={i} x={x} y={y} textAnchor={anchor} fontSize="7" fontWeight={on(i) ? 700 : 400} fill={on(i) ? '#E0241B' : '#8a8a8a'} style={{ pointerEvents: 'none' }}>
+          {SIDE_NAMES[i]}
+        </text>
+      ))}
+      <text x="80" y="52" textAnchor="middle" fontSize="6.5" fill="#b3aea5" style={{ pointerEvents: 'none' }}>
+        вид сверху
+      </text>
+    </svg>
+  );
+}
+
+type HeightKey = 'full' | 'p75' | 'half' | 'p25' | 'apron' | 'custom';
+
+function heightKeyOf(walls: { mode: WallMode; panelHeight: number }, roomH: number, kitchen: boolean): HeightKey {
+  if (walls.mode === 'full') return 'full';
+  if (walls.mode === 'half') return 'half';
+  if (kitchen && Math.abs(walls.panelHeight - 0.6) < 0.02) return 'apron';
+  const share = walls.panelHeight / roomH;
+  if (!kitchen && Math.abs(share - 0.75) < 0.02) return 'p75';
+  if (!kitchen && Math.abs(share - 0.25) < 0.02) return 'p25';
+  return 'custom';
+}
+
 export function WallsPanel() {
   const walls = usePlanner((s) => s.walls);
   const room = usePlanner((s) => s.room);
   const setWalls = usePlanner((s) => s.setWalls);
   const pick = useDecorPick(walls, setWalls);
+
+  const kitchen = room.type === 'kitchen';
+  const { base, height: tileH } = wallTileHeight(walls, room);
+  const maxH = Math.round((room.height - base) * 100) / 100;
+  const sliderMax = Math.min(maxH, 3.5);
+  const hKey = heightKeyOf(walls, room.height, kitchen);
+  const lengths = [room.length, room.width, room.length, room.width];
+  const sidesOn = [0, 1, 2, 3].filter((i) => walls.sides[i] !== false);
+  const span = Math.min(1, Math.max(0.1, walls.span));
+  const area = walls.mode === 'none' ? 0 : sidesOn.reduce((n, i) => n + lengths[i] * span * tileH, 0);
+  const wallsTotal = lengths.reduce((n, l) => n + l * room.height, 0);
+
+  const sidePreset = SIDE_PRESETS.find(([, , v]) => v.every((x, i) => x === (walls.sides[i] !== false)))?.[0] ?? 'custom';
+  const setHeight = (k: HeightKey) => {
+    const r2 = (v: number) => Math.round(v * 100) / 100;
+    if (k === 'full') setWalls({ mode: 'full' });
+    else if (k === 'half') setWalls({ mode: 'half' });
+    else if (k === 'p75') setWalls({ mode: 'panel', panelHeight: r2(room.height * 0.75) });
+    else if (k === 'p25') setWalls({ mode: 'panel', panelHeight: r2(room.height * 0.25) });
+    else if (k === 'apron') setWalls({ mode: 'panel', panelHeight: 0.6 });
+  };
+  const heightOptions: [HeightKey, string][] = kitchen
+    ? [
+        ['full', 'До потолка'],
+        ['half', 'Половина'],
+        ['apron', 'Фартук'],
+      ]
+    : [
+        ['full', 'До потолка'],
+        ['p75', '3/4'],
+        ['half', 'Половина'],
+        ['p25', '1/4'],
+      ];
+  const chipCls = (active: boolean, tone: 'red' | 'dark' = 'red') =>
+    `rounded-full border px-3 py-1.5 text-xs transition-[color,background-color,border-color,transform] duration-150 ease-out-strong active:scale-[0.96] ${
+      active ? (tone === 'red' ? 'border-accent bg-accent text-paper' : 'border-ink bg-ink text-paper') : 'border-line text-ink-soft hover:border-ink-faint hover:text-ink'
+    }`;
+
   return (
     <>
-      <Section title="Сколько стены выложить плиткой">
-        <Chips<WallMode>
-          label="Облицовка"
-          value={walls.mode}
-          options={[
-            ['full', 'Вся стена'],
-            ['half', 'Половина'],
-            ['panel', room.type === 'kitchen' ? 'Фартук' : 'Своё количество'],
-            ['none', 'Без плитки'],
-          ]}
-          onChange={(v) => setWalls({ mode: v })}
-        />
-        {walls.mode === 'panel' && (
+      <EditingBadge what="СТЕНЫ" />
+      <Section title="1 · Выберите стены">
+        {walls.mode === 'none' ? (
+          <p className="text-sm text-ink-soft">Сейчас стены без плитки. Выберите высоту ниже, и они появятся.</p>
+        ) : (
+          <>
+            <WallPicker sides={walls.sides} onChange={(sides) => setWalls({ sides })} />
+            <div className="mt-3">
+              <Chips
+                label="Быстрый выбор стен"
+                value={sidePreset}
+                options={SIDE_PRESETS.map(([k, text]) => [k, text] as [string, string])}
+                onChange={(k) => setWalls({ sides: SIDE_PRESETS.find(([key]) => key === k)![2] })}
+              />
+            </div>
+          </>
+        )}
+      </Section>
+      <Section title={`2 · На какую высоту${walls.mode === 'none' ? '' : ` · ${fmt(tileH, 2)} м`}`}>
+        <div className="flex flex-wrap gap-1.5">
+          {heightOptions.map(([k, text]) => (
+            <button key={k} type="button" aria-pressed={walls.mode !== 'none' && hKey === k} onClick={() => setHeight(k)} className={chipCls(walls.mode !== 'none' && hKey === k)}>
+              {text}
+            </button>
+          ))}
+          <button type="button" aria-pressed={walls.mode === 'none'} onClick={() => setWalls({ mode: 'none' })} className={chipCls(walls.mode === 'none', 'dark')}>
+            Без плитки
+          </button>
+        </div>
+        {walls.mode !== 'none' && (
           <label className="mt-3 block">
             <span className="flex justify-between text-xs text-ink-soft">
-              <span>Высота {room.type === 'kitchen' ? 'фартука' : 'плитки'}</span>
+              <span>{kitchen && hKey === 'apron' ? 'Высота фартука' : 'Точная высота плитки'}</span>
               <span className="font-medium tabular-nums text-ink">
-                {fmt(walls.panelHeight, 2)} м · {Math.round((walls.panelHeight / room.height) * 100)}%
+                {fmt(tileH, 2)} м · {Math.round((tileH / room.height) * 100)}% стены
               </span>
             </span>
             <input
               type="range"
               min={0.3}
-              max={Math.min(room.height, 3)}
+              max={sliderMax}
               step={0.05}
-              value={walls.panelHeight}
-              onChange={(e) => setWalls({ panelHeight: parseFloat(e.target.value) })}
+              value={Math.min(tileH, sliderMax)}
+              onChange={(e) => {
+                const v = parseFloat(e.target.value);
+                setWalls(v >= maxH - 0.02 && !kitchen ? { mode: 'full' } : { mode: 'panel', panelHeight: v });
+              }}
               className="mt-2 w-full accent-[#E0241B]"
             />
           </label>
         )}
-        {walls.mode !== 'none' && (
-          <>
-            <p className="mb-1.5 mt-4 text-[11px] font-semibold uppercase tracking-wide2 text-ink-faint">Какие стены</p>
-            <div className="flex flex-wrap gap-1.5">
-              {(
-                [
-                  ['Дальняя', 0],
-                  ['Правая', 1],
-                  ['Ближняя', 2],
-                  ['Левая', 3],
-                ] as const
-              ).map(([name, i]) => {
-                const on = walls.sides[i] !== false;
-                return (
-                  <button
-                    key={name}
-                    type="button"
-                    aria-pressed={on}
-                    onClick={() => setWalls({ sides: walls.sides.map((v, k) => (k === i ? !on : v)) })}
-                    className={`rounded-full border px-3 py-1.5 text-xs transition-[color,background-color,border-color,transform] duration-150 ease-out-strong active:scale-[0.96] ${
-                      on ? 'border-ink bg-ink text-paper' : 'border-line text-ink-soft hover:border-ink-faint hover:text-ink'
-                    }`}
-                  >
-                    {name}
-                  </button>
-                );
-              })}
-            </div>
-            <div className="mt-4">
-              <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide2 text-ink-faint">Ширина плитки на стене</p>
-              <AmountChips label="Ширина покрытия" value={walls.span} onChange={(v) => setWalls({ span: v })} />
-            </div>
-          </>
-        )}
       </Section>
+      {walls.mode !== 'none' && (
+        <Section title="3 · Какая часть стены по ширине">
+          <AmountChips label="Ширина покрытия" value={walls.span} onChange={(v) => setWalls({ span: v })} allLabel="Вся ширина" />
+        </Section>
+      )}
+      <div className="px-5 pb-1 pt-4">
+        <div className="rounded-2xl border border-accent/30 bg-accent/10 px-4 py-3">
+          {walls.mode === 'none' || sidesOn.length === 0 ? (
+            <p className="text-sm font-medium text-accent">Плитка на стенах не выбрана</p>
+          ) : (
+            <>
+              <p className="text-[11px] font-semibold uppercase tracking-wide2 text-accent/80">Итого плитки на стенах</p>
+              <p className="mt-0.5 text-lg font-semibold tabular-nums text-ink">
+                ≈ {fmt(area)} м² <span className="text-sm font-normal text-ink-soft">из {fmt(wallsTotal)} м² всех стен · {Math.round((area / wallsTotal) * 100)}%</span>
+              </p>
+              <p className="mt-0.5 text-xs text-ink-soft">
+                {sidesOn.length} {plural(sidesOn.length, 'стена', 'стены', 'стен')}, высота {fmt(tileH, 2)} м, ширина {Math.round(span * 100)}%
+              </p>
+            </>
+          )}
+        </div>
+      </div>
       <Section title="Цвет покраски">
         <div className="flex flex-wrap gap-2">
           {PAINTS.map((p) => (

@@ -26,12 +26,15 @@ export function Filters({
   onToggle,
   onReset,
   resultCount,
+  noun = 'collections',
 }: {
   facets: Facets;
   state: FilterState;
   onToggle: (key: FilterKey, value: string) => void;
   onReset: () => void;
   resultCount: number;
+  /** what is being counted: collections (default) or single decors */
+  noun?: 'collections' | 'decors';
 }) {
   const [open, setOpen] = useState<Record<string, boolean>>({
     looks: true,
@@ -121,7 +124,13 @@ export function Filters({
         })}
       </div>
 
-      <p className="pt-4 text-xs text-ink-faint">{resultCount} {plural(resultCount, 'коллекция подходит', 'коллекции подходят', 'коллекций подходят')} под запрос</p>
+      <p className="pt-4 text-xs text-ink-faint">
+        {resultCount}{' '}
+        {noun === 'decors'
+          ? plural(resultCount, 'декор подходит', 'декора подходят', 'декоров подходят')
+          : plural(resultCount, 'коллекция подходит', 'коллекции подходят', 'коллекций подходят')}{' '}
+        под запрос
+      </p>
     </div>
   );
 }

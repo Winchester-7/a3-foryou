@@ -19,7 +19,7 @@ export function ProductCard({
 }: {
   product: Product;
   brand?: string;
-  collection?: Collection;
+  collection?: Pick<Collection, 'brand' | 'nameRu'>;
   onQuickView?: (slug: string) => void;
   priority?: boolean;
 }) {

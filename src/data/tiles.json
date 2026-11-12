@@ -487,9 +487,24 @@
    ],
    "tagline": "Аксима · 1200×600, 600×600 мм",
    "description": "",
-   "hero": "",
-   "gallery": [],
-   "swatches": [],
+   "hero": "/tiles/axima-stock/axima-bern-svetlobezhevyy-1.jpg",
+   "gallery": [
+    "/tiles/axima-stock/axima-bern-svetlobezhevyy-1.jpg",
+    "/tiles/axima-stock/axima-bern-seraya-1.jpg",
+    "/tiles/axima-stock/axima-bern-antracit-1.jpg",
+    "/tiles/axima-stock/axima-medan-svetlo-seraya-1.jpg",
+    "/tiles/axima-stock/axima-medan-seraya-1.jpg",
+    "/tiles/axima-stock/axima-ronda-svetlo-seraya-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/axima-stock/axima-bern-svetlobezhevyy-1.jpg",
+    "/tiles/axima-stock/axima-bern-seraya-1.jpg",
+    "/tiles/axima-stock/axima-bern-antracit-1.jpg",
+    "/tiles/axima-stock/axima-medan-svetlo-seraya-1.jpg",
+    "/tiles/axima-stock/axima-medan-seraya-1.jpg",
+    "/tiles/axima-stock/axima-ronda-svetlo-seraya-1.jpg",
+    "/tiles/axima-stock/axima-ronda-seraya-1.jpg"
+   ],
    "products": [
     {
      "slug": "axima-bern-svetlobezhevyy",
@@ -500,8 +515,10 @@
       "1200×600"
      ],
      "surfaces": [],
-     "image": "",
-     "images": [],
+     "image": "/tiles/axima-stock/axima-bern-svetlobezhevyy-1.jpg",
+     "images": [
+      "/tiles/axima-stock/axima-bern-svetlobezhevyy-1.jpg"
+     ],
      "stock": [
       {
        "size": "1200×600",
@@ -511,7 +528,7 @@
        "label": "BERN светлобежевый (600*1200*)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "axima-bern-seraya",
@@ -522,8 +539,10 @@
       "1200×600"
      ],
      "surfaces": [],
-     "image": "",
-     "images": [],
+     "image": "/tiles/axima-stock/axima-bern-seraya-1.jpg",
+     "images": [
+      "/tiles/axima-stock/axima-bern-seraya-1.jpg"
+     ],
      "stock": [
       {
        "size": "1200×600",
@@ -533,7 +552,7 @@
        "label": "BERN серая (600*1200*)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "axima-bern-antracit",
@@ -544,8 +563,10 @@
       "1200×600"
      ],
      "surfaces": [],
-     "image": "",
-     "images": [],
+     "image": "/tiles/axima-stock/axima-bern-antracit-1.jpg",
+     "images": [
+      "/tiles/axima-stock/axima-bern-antracit-1.jpg"
+     ],
      "stock": [
       {
        "size": "1200×600",
@@ -555,7 +576,7 @@
        "label": "BERN антрацит (600*1200)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "axima-medan-svetlo-seraya",
@@ -567,8 +588,10 @@
       "600×600"
      ],
      "surfaces": [],
-     "image": "",
-     "images": [],
+     "image": "/tiles/axima-stock/axima-medan-svetlo-seraya-1.jpg",
+     "images": [
+      "/tiles/axima-stock/axima-medan-svetlo-seraya-1.jpg"
+     ],
      "stock": [
       {
        "size": "1200×600",
@@ -585,7 +608,7 @@
        "label": "MEDAN светло серая (600*600)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "axima-medan-seraya",
@@ -597,8 +620,10 @@
       "1200×600"
      ],
      "surfaces": [],
-     "image": "",
-     "images": [],
+     "image": "/tiles/axima-stock/axima-medan-seraya-1.jpg",
+     "images": [
+      "/tiles/axima-stock/axima-medan-seraya-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -615,7 +640,7 @@
        "label": "MEDAN серая (600*1200)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "axima-ronda-svetlo-seraya",
@@ -626,8 +651,10 @@
       "600×600"
      ],
      "surfaces": [],
-     "image": "",
-     "images": [],
+     "image": "/tiles/axima-stock/axima-ronda-svetlo-seraya-1.jpg",
+     "images": [
+      "/tiles/axima-stock/axima-ronda-svetlo-seraya-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -637,7 +664,7 @@
        "label": "Ронда светло серая (600*600)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "axima-ronda-seraya",
@@ -648,8 +675,10 @@
       "600×600"
      ],
      "surfaces": [],
-     "image": "",
-     "images": [],
+     "image": "/tiles/axima-stock/axima-ronda-seraya-1.jpg",
+     "images": [
+      "/tiles/axima-stock/axima-ronda-seraya-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -659,7 +688,7 @@
        "label": "Ронда серая (600*600)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     }
    ],
    "stockM2": 4926.2
@@ -1132,9 +1161,24 @@
    ],
    "tagline": "KERRANOVA · 1200×600, 600×600 мм",
    "description": "",
-   "hero": "",
-   "gallery": [],
-   "swatches": [],
+   "hero": "/tiles/kerranova-stock/kerranova-k-101-1.jpg",
+   "gallery": [
+    "/tiles/kerranova-stock/kerranova-k-101-1.jpg",
+    "/tiles/kerranova-stock/kerranova-k-103-1.jpg",
+    "/tiles/kerranova-stock/kerranova-k-105lr-1.jpg",
+    "/tiles/kerranova-stock/kerranova-k-108-1.jpg",
+    "/tiles/kerranova-stock/kerranova-k-583-1.jpg",
+    "/tiles/kerranova-stock/kerranova-k-90-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/kerranova-stock/kerranova-k-101-1.jpg",
+    "/tiles/kerranova-stock/kerranova-k-103-1.jpg",
+    "/tiles/kerranova-stock/kerranova-k-105lr-1.jpg",
+    "/tiles/kerranova-stock/kerranova-k-108-1.jpg",
+    "/tiles/kerranova-stock/kerranova-k-583-1.jpg",
+    "/tiles/kerranova-stock/kerranova-k-90-1.jpg",
+    "/tiles/kerranova-stock/kerranova-k-95-1.jpg"
+   ],
    "products": [
     {
      "slug": "kerranova-k-101",
@@ -1148,8 +1192,10 @@
      "surfaces": [
       "Лаппатированная"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/kerranova-stock/kerranova-k-101-1.jpg",
+     "images": [
+      "/tiles/kerranova-stock/kerranova-k-101-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1159,7 +1205,7 @@
        "label": "K 101 LR (60*60)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "kerranova-k-103",
@@ -1173,8 +1219,10 @@
      "surfaces": [
       "Лаппатированная"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/kerranova-stock/kerranova-k-103-1.jpg",
+     "images": [
+      "/tiles/kerranova-stock/kerranova-k-103-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1184,12 +1232,12 @@
        "label": "K 103 LR (60*60)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "kerranova-k-105lr",
-     "name": "K 105LR",
-     "nameRu": "K 105LR",
+     "name": "K 105",
+     "nameRu": "K 105",
      "color": "",
      "sizes": [
       "600×600"
@@ -1197,8 +1245,10 @@
      "surfaces": [
       "Лаппатированная"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/kerranova-stock/kerranova-k-105lr-1.jpg",
+     "images": [
+      "/tiles/kerranova-stock/kerranova-k-105lr-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1208,7 +1258,8 @@
        "label": "K 105LR (60*60)(T-43)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false,
+     "article": "K105"
     },
     {
      "slug": "kerranova-k-108",
@@ -1222,8 +1273,10 @@
      "surfaces": [
       "Структурная"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/kerranova-stock/kerranova-k-108-1.jpg",
+     "images": [
+      "/tiles/kerranova-stock/kerranova-k-108-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1233,7 +1286,7 @@
        "label": "K 108 SR (60*60)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "kerranova-k-583",
@@ -1247,8 +1300,10 @@
      "surfaces": [
       "Матовая"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/kerranova-stock/kerranova-k-583-1.jpg",
+     "images": [
+      "/tiles/kerranova-stock/kerranova-k-583-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1258,7 +1313,7 @@
        "label": "K 583 MR (60*60)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "kerranova-k-90",
@@ -1273,8 +1328,10 @@
      "surfaces": [
       "Лаппатированная"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/kerranova-stock/kerranova-k-90-1.jpg",
+     "images": [
+      "/tiles/kerranova-stock/kerranova-k-90-1.jpg"
+     ],
      "stock": [
       {
        "size": "1200×600",
@@ -1291,7 +1348,7 @@
        "label": "K 90 LR (60*60)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "kerranova-k-95",
@@ -1306,8 +1363,10 @@
      "surfaces": [
       "Лаппатированная"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/kerranova-stock/kerranova-k-95-1.jpg",
+     "images": [
+      "/tiles/kerranova-stock/kerranova-k-95-1.jpg"
+     ],
      "stock": [
       {
        "size": "1200×600",
@@ -1324,7 +1383,7 @@
        "label": "K 95 LR (60*60)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     }
    ],
    "stockM2": 2760.5
@@ -1353,9 +1412,21 @@
    ],
    "tagline": "GRASARO · 600×600 мм",
    "description": "",
-   "hero": "",
-   "gallery": [],
-   "swatches": [],
+   "hero": "/tiles/grasaro-stock/grasaro-g-1150-1.jpg",
+   "gallery": [
+    "/tiles/grasaro-stock/grasaro-g-1150-1.jpg",
+    "/tiles/grasaro-stock/grasaro-g-1303-1.jpg",
+    "/tiles/grasaro-stock/grasaro-g-1301-1.jpg",
+    "/tiles/grasaro-stock/grasaro-g-1153-t58-1.jpg",
+    "/tiles/grasaro-stock/grasaro-g-610-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/grasaro-stock/grasaro-g-1150-1.jpg",
+    "/tiles/grasaro-stock/grasaro-g-1303-1.jpg",
+    "/tiles/grasaro-stock/grasaro-g-1301-1.jpg",
+    "/tiles/grasaro-stock/grasaro-g-1153-t58-1.jpg",
+    "/tiles/grasaro-stock/grasaro-g-610-1.jpg"
+   ],
    "products": [
     {
      "slug": "grasaro-g-1150",
@@ -1369,8 +1440,10 @@
      "surfaces": [
       "Матовая"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/grasaro-stock/grasaro-g-1150-1.jpg",
+     "images": [
+      "/tiles/grasaro-stock/grasaro-g-1150-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1380,7 +1453,7 @@
        "label": "G 1150 MR (60*60)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "grasaro-g-1303",
@@ -1394,8 +1467,10 @@
      "surfaces": [
       "Матовая"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/grasaro-stock/grasaro-g-1303-1.jpg",
+     "images": [
+      "/tiles/grasaro-stock/grasaro-g-1303-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1405,7 +1480,7 @@
        "label": "G 1303 MR (60*60)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "grasaro-g-1301",
@@ -1419,8 +1494,10 @@
      "surfaces": [
       "Матовая"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/grasaro-stock/grasaro-g-1301-1.jpg",
+     "images": [
+      "/tiles/grasaro-stock/grasaro-g-1301-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1430,12 +1507,12 @@
        "label": "G 1301 MR (60*60)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "grasaro-g-1153-t58",
-     "name": "G 1153 t58",
-     "nameRu": "G 1153 t58",
+     "name": "G 1153",
+     "nameRu": "G 1153",
      "color": "",
      "article": "G1153",
      "sizes": [
@@ -1444,8 +1521,10 @@
      "surfaces": [
       "Матовая"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/grasaro-stock/grasaro-g-1153-t58-1.jpg",
+     "images": [
+      "/tiles/grasaro-stock/grasaro-g-1153-t58-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1455,7 +1534,7 @@
        "label": "G 1153 MR (60*60) t58"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "grasaro-g-610",
@@ -1469,8 +1548,10 @@
      "surfaces": [
       "Полированная"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/grasaro-stock/grasaro-g-610-1.jpg",
+     "images": [
+      "/tiles/grasaro-stock/grasaro-g-610-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1480,7 +1561,7 @@
        "label": "G 610 PR (60*60)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     }
    ],
    "stockM2": 2522.5
@@ -1666,15 +1747,23 @@
    ],
    "tagline": "GRANITEA · 600×600 мм",
    "description": "",
-   "hero": "",
-   "gallery": [],
-   "swatches": [],
+   "hero": "/tiles/granitea-stock/granitea-up-072-1.jpg",
+   "gallery": [
+    "/tiles/granitea-stock/granitea-up-072-1.jpg",
+    "/tiles/granitea-stock/granitea-u-119-t-66t-1.jpg",
+    "/tiles/granitea-stock/granitea-u-126-mr-60-60-t-60-b4-1.jpg"
+   ],
+   "swatches": [
+    "/tiles/granitea-stock/granitea-up-072-1.jpg",
+    "/tiles/granitea-stock/granitea-u-119-t-66t-1.jpg",
+    "/tiles/granitea-stock/granitea-u-126-mr-60-60-t-60-b4-1.jpg"
+   ],
    "products": [
     {
      "slug": "granitea-up-072",
-     "name": "UP 072",
-     "nameRu": "UP 072",
-     "color": "",
+     "name": "UP 072 Изумруд",
+     "nameRu": "UP 072 Изумруд",
+     "color": "Изумруд",
      "article": "UP072",
      "sizes": [
       "600×600"
@@ -1682,8 +1771,10 @@
      "surfaces": [
       "Матовая"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/granitea-stock/granitea-up-072-1.jpg",
+     "images": [
+      "/tiles/granitea-stock/granitea-up-072-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1693,12 +1784,12 @@
        "label": "UP 072 MR (60*60)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "granitea-u-119-t-66t",
-     "name": "U 119 T-66t)",
-     "nameRu": "U 119 T-66t)",
+     "name": "U 119",
+     "nameRu": "U 119",
      "color": "",
      "article": "U119",
      "sizes": [
@@ -1707,8 +1798,10 @@
      "surfaces": [
       "Матовая"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/granitea-stock/granitea-u-119-t-66t-1.jpg",
+     "images": [
+      "/tiles/granitea-stock/granitea-u-119-t-66t-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1718,12 +1811,12 @@
        "label": "U 119 MR (60*60) T-66t)"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     },
     {
      "slug": "granitea-u-126-mr-60-60-t-60-b4",
-     "name": "U 126 МR 60*60 T-60 b4",
-     "nameRu": "U 126 МR 60*60 T-60 b4",
+     "name": "U 126",
+     "nameRu": "U 126",
      "color": "",
      "article": "U126",
      "sizes": [
@@ -1732,8 +1825,10 @@
      "surfaces": [
       "Матовая"
      ],
-     "image": "",
-     "images": [],
+     "image": "/tiles/granitea-stock/granitea-u-126-mr-60-60-t-60-b4-1.jpg",
+     "images": [
+      "/tiles/granitea-stock/granitea-u-126-mr-60-60-t-60-b4-1.jpg"
+     ],
      "stock": [
       {
        "size": "600×600",
@@ -1743,7 +1838,7 @@
        "label": "U 126 МR 60*60 T-60 b4"
       }
      ],
-     "noPhoto": true
+     "noPhoto": false
     }
    ],
    "stockM2": 3260.5

@@ -86,6 +86,8 @@ export interface Category {
   description: string;
   match: (c: Collection) => boolean;
   heroCollection: string; // slug used for the banner image
+  /** cover picture of the direction card (an interior photo) */
+  cover: string;
 }
 
 export interface Facets {

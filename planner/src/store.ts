@@ -71,6 +71,8 @@ interface State extends Snapshot {
   view: View;
   selectedId: string | null;
   dragging: boolean;
+  /** red outlines that show which surface is being edited; switched off for snapshots */
+  hideGuides: boolean;
   history: Snapshot[];
 
   start: (room: Room) => void;
@@ -82,6 +84,7 @@ interface State extends Snapshot {
   setView: (v: View) => void;
   select: (id: string | null) => void;
   setDragging: (d: boolean) => void;
+  setHideGuides: (h: boolean) => void;
   addObject: (kind: ObjKind, extra?: Partial<PlacedObject>) => void;
   updateObject: (id: string, patch: Partial<PlacedObject>, record?: boolean) => void;
   moveObject: (id: string, x: number, z: number) => void;
@@ -210,6 +213,7 @@ export const usePlanner = create<State>((set, get) => {
     view: '3d',
     selectedId: null,
     dragging: false,
+    hideGuides: false,
     history: [],
 
     start: (room) => {
@@ -258,6 +262,7 @@ export const usePlanner = create<State>((set, get) => {
     setView: (view) => set({ view }),
     select: (selectedId) => set({ selectedId }),
     setDragging: (dragging) => set({ dragging }),
+    setHideGuides: (hideGuides) => set({ hideGuides }),
 
     addObject: (kind, extra = {}) => {
       record();
