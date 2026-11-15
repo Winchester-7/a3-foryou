@@ -2,6 +2,8 @@
 import type { ReactNode } from 'react';
 import { ParallaxImage } from '@/components/media/ParallaxImage';
 import { Reveal } from '@/components/motion/Reveal';
+import { Words } from '@/components/motion/Words';
+import { CountText } from '@/components/motion/CountText';
 
 export function CategoryBanner({
   eyebrow,
@@ -33,7 +35,7 @@ export function CategoryBanner({
         <Reveal>
           <div className="text-[11px] font-medium uppercase tracking-brand text-white/65">{eyebrow}</div>
           <h1 className="mt-4 max-w-3xl text-balance font-semibold leading-[1.05] tracking-[-0.02em] text-white" style={{ fontSize: 'clamp(2.1rem, 4.6vw, 3.6rem)' }}>
-            {title}
+            <Words text={title} />
           </h1>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/80">{text}</p>
         </Reveal>
@@ -42,7 +44,7 @@ export function CategoryBanner({
             <dl className="mt-10 flex flex-wrap gap-x-12 gap-y-4">
               {stats.map((s) => (
                 <div key={s.label}>
-                  <dt className="text-2xl font-semibold text-white">{s.value}</dt>
+                  <dt className="text-2xl font-semibold text-white"><CountText value={s.value} /></dt>
                   <dd className="mt-1 text-xs uppercase tracking-wide2 text-white/60">{s.label}</dd>
                 </div>
               ))}

@@ -13,7 +13,7 @@ import { CartProvider } from '@/components/cart/CartProvider';
 import { LocaleProvider } from '@/components/i18n/LocaleProvider';
 import { Intro } from '@/components/intro/Intro';
 
-const HEAD_SCRIPT = `(function(){try{var d=document.documentElement;d.classList.add('js');var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;var s=0;try{s=sessionStorage.getItem('a3-intro-seen')}catch(e){}if(location.pathname==='/'&&!s&&!r){d.classList.add('intro-on')}else{d.classList.add('no-intro')}}catch(e){}})();`;
+const HEAD_SCRIPT = `(function(){try{var d=document.documentElement;d.classList.add('js');var s=0;try{s=sessionStorage.getItem('a3-intro-seen')}catch(e){}if(location.pathname==='/'&&!s){d.classList.add('intro-on')}else{d.classList.add('no-intro')}}catch(e){}})();`;
 
 /** Content is edited in the admin panel and must show up on the next request. */
 export const dynamic = 'force-dynamic';

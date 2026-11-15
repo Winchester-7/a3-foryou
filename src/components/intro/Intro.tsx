@@ -60,6 +60,30 @@ export function Intro() {
     };
 
     html.classList.add('intro-on');
+
+    // "reduce motion" is on: no spinning, flying or flipping — the mark simply fades in, its
+    // window lights up, and the screen fades away. Short, and nothing moves across the screen.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      run(mark.current, [{ opacity: 0 }, { opacity: 1 }], { duration: 700, delay: 100, easing: 'ease-out' });
+      run(sub.current, [{ opacity: 0 }, { opacity: 1 }], { duration: 700, delay: 400, easing: 'ease-out' });
+      el.querySelectorAll<SVGRectElement>('.logo-window rect').forEach((p, i) => {
+        run(p, [{ fill: 'rgba(255,255,255,0.18)' }, { fill: '#ffc93c' }], { duration: 300, delay: 800 + i * 120, easing: 'ease-out' });
+      });
+      run(el.querySelector('.logo-glow'), [{ opacity: 0 }, { opacity: 0.9 }], { duration: 400, delay: 1100, easing: 'ease-out' });
+      run(el, [{ opacity: 1 }, { opacity: 0 }], { duration: 500, delay: 1700, easing: 'ease-in-out' });
+      timers.push(window.setTimeout(() => html.classList.remove('intro-on'), 1700));
+      timers.push(window.setTimeout(finish, 2300));
+      timers.push(window.setTimeout(finish, 5000)); // failsafe
+      const skipCalm = () => finish();
+      el.addEventListener('click', skipCalm);
+      return () => {
+        el.removeEventListener('click', skipCalm);
+        timers.forEach((t) => window.clearTimeout(t));
+        anims.forEach((a) => a.cancel());
+        html.classList.remove('intro-on');
+      };
+    }
+
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 

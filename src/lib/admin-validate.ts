@@ -226,6 +226,7 @@ function normScrews(input: unknown): Result {
       description: str(s.description, 2000),
       price: Math.max(0, Math.round(num(s.price) * 100) / 100),
       unit: str(s.unit, 20),
+      sizes: strList(s.sizes, 30),
       image,
       gallery: image && !gallery.includes(image) ? [image, ...gallery] : gallery,
       specs: normSpecs(s.specs),

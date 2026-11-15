@@ -14,6 +14,8 @@ export interface ScrewItem {
   price: number;
   /** unit the price is for: шт., уп., кг */
   unit: string;
+  /** available sizes in mm, e.g. 3,5×25 — shown as a size picker on the product page */
+  sizes: string[];
   image: string;
   gallery: string[];
   specs: [string, string][];

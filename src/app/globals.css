@@ -334,10 +334,56 @@ body {
   opacity: 1;
   animation: tileGloss 1.1s var(--ease-out) calc(var(--d, 0ms) + 420ms) both;
 }
-/* after the entrance, a finished card must not keep a stacking context/clip it does not need */
+/* "reduce motion": cards only fade in, nothing tilts, slides or sweeps */
+@keyframes tileFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .js .tile-in:not(.tile-go) { opacity: 1; }
-  .tile-in.tile-go { animation: none; }
+  .tile-in.tile-go { animation: tileFade 0.5s ease var(--d, 0ms) backwards; }
   .tile-go .tile-gloss { animation: none; opacity: 0; }
-  .js .intro { display: none; }
+}
+
+/* ---- Headings, numbers, page changes ---- */
+.word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.14em; margin-bottom: -0.14em; }
+.word-in { display: inline-block; }
+@keyframes wordRise {
+  from { transform: translateY(112%) rotate(4deg); }
+  to { transform: translateY(0) rotate(0deg); }
+}
+.js .words:not(.tile-go) .word-in { transform: translateY(112%); }
+.words.tile-go .word-in {
+  animation: wordRise 0.8s var(--ease-out) calc(var(--d, 0ms) + var(--i, 0) * 70ms) backwards;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.page-in { animation: pageIn 0.45s var(--ease-out) both; }
+.intro-on .page-in { animation-play-state: paused; }
+
+/* pointer light and a gentle tilt on cards (mouse only) */
+.tile-glare {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.38), transparent 62%);
+}
+@media (hover: hover) and (pointer: fine) {
+  .tile-in.tile-go {
+    transition: transform 0.35s var(--ease-out);
+    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  }
+  .tile-in:hover .tile-glare { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .words.tile-go .word-in { animation: none; }
+  .js .words:not(.tile-go) .word-in { transform: none; }
+  .page-in { animation: none; }
+  .tile-in.tile-go { transform: none !important; }
+  .tile-glare { display: none; }
 }

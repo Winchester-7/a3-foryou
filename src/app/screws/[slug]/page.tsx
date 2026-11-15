@@ -56,7 +56,8 @@ export default function ScrewPage({ params }: { params: { slug: string } }) {
         priceLabel={screwPrice(s)}
         colors={[]}
         colorLabel=""
-        sizes={[]}
+        sizes={s.sizes ?? []}
+        sizeUnit="мм"
         specs={s.specs}
         gallery={s.gallery}
         requestSubject={s.name}

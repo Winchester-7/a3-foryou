@@ -70,31 +70,59 @@ function getObserver(): IntersectionObserver | null {
   return observer;
 }
 
-export function TileIn({ children, className = '' }: { children: ReactNode; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-
+/** Adds `tile-go` (and a stagger delay `--d`) to the element once it scrolls into view. */
+export function useLand<T extends HTMLElement>(ref: { current: T | null }) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     pending.add(el);
     getObserver()?.observe(el);
     startListening();
-    schedule(); // cards already on screen at mount
+    schedule(); // already on screen at mount
     return () => {
       pending.delete(el);
       observer?.unobserve(el);
       if (pending.size === 0) stopListening();
     };
-  }, []);
+  }, [ref]);
+}
+
+export function TileIn({ children, className = '' }: { children: ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useLand(ref);
+
+  // a mouse over the card tips it a few degrees towards the pointer and a light spot follows it
+  const onMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== 'mouse') return;
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width;
+    const y = (e.clientY - r.top) / r.height;
+    el.style.setProperty('--mx', `${Math.round(x * 100)}%`);
+    el.style.setProperty('--my', `${Math.round(y * 100)}%`);
+    el.style.setProperty('--ry', `${((x - 0.5) * 7).toFixed(2)}deg`);
+    el.style.setProperty('--rx', `${((0.5 - y) * 7).toFixed(2)}deg`);
+  };
+  const onLeave = () => {
+    const el = ref.current;
+    if (!el) return;
+    ['--rx', '--ry'].forEach((p) => el.style.setProperty(p, '0deg'));
+  };
 
   return (
-    <div ref={ref} className={`tile-in ${className}`}>
+    <div ref={ref} className={`tile-in ${className}`} onPointerMove={onMove} onPointerLeave={onLeave}>
       {children}
     </div>
   );
 }
 
-/** The band of light — put it inside the photo container (relative, overflow-hidden). */
+/** The band of light and the pointer glare — put it inside the photo container (relative, overflow-hidden). */
 export function TileGloss() {
-  return <span className="tile-gloss" aria-hidden />;
+  return (
+    <>
+      <span className="tile-gloss" aria-hidden />
+      <span className="tile-glare" aria-hidden />
+    </>
+  );
 }

@@ -12,13 +12,18 @@
   ],
   "specs": [
    [
-    "Размер",
-    "4,2×19 мм"
+    "Тип",
+    "С буром («семечки»)"
    ],
    [
     "Производство",
     "Китай"
    ]
+  ],
+  "sizes": [
+   "4,2×13",
+   "4,2×16",
+   "4,2×19"
   ]
  },
  {
@@ -34,13 +39,19 @@
   ],
   "specs": [
    [
-    "Размер",
-    "4,2×60 мм"
+    "Цвет",
+    "Чёрные"
    ],
    [
     "Производство",
     "Китай"
    ]
+  ],
+  "sizes": [
+   "4×40",
+   "4×50",
+   "4×60",
+   "4×80"
   ]
  },
  {
@@ -56,13 +67,18 @@
   ],
   "specs": [
    [
-    "Размер",
-    "3,5×35 мм"
+    "Цвет",
+    "Чёрные"
    ],
    [
     "Производство",
     "Китай"
    ]
+  ],
+  "sizes": [
+   "3,5×25",
+   "3,5×30",
+   "3,5×35"
   ]
  },
  {
@@ -76,7 +92,8 @@
   "gallery": [
    "/screws/gvozdi.jpg"
   ],
-  "specs": []
+  "specs": [],
+  "sizes": []
  },
  {
   "slug": "samorez-s-pressshayboy",
@@ -89,7 +106,8 @@
   "gallery": [
    "/screws/samorez-press-shayba.jpg"
   ],
-  "specs": []
+  "specs": [],
+  "sizes": []
  },
  {
   "slug": "ramnyy-dyubel-s-shurupom",
@@ -102,19 +120,7 @@
   "gallery": [
    "/screws/dyubel-ramnyy.jpg"
   ],
-  "specs": []
- },
- {
-  "slug": "dyubel-raspornyy",
-  "name": "Дюбель распорный",
-  "kind": "Дюбели",
-  "description": "",
-  "price": 280,
-  "unit": "кг",
-  "image": "/screws/dyubel-raspornyy.jpg",
-  "gallery": [
-   "/screws/dyubel-raspornyy.jpg"
-  ],
-  "specs": []
+  "specs": [],
+  "sizes": []
  }
 ]

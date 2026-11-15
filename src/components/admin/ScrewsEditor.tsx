@@ -22,7 +22,7 @@ export function ScrewsEditor() {
 
   const add = () => {
     const s = uniqueSlug('novyy-krepezh', items.map((x) => x.slug));
-    const m: ScrewItem = { slug: s, name: 'Новая позиция', kind: 'Саморезы', description: '', price: 0, unit: 'уп.', image: '', gallery: [], specs: [] };
+    const m: ScrewItem = { slug: s, name: 'Новая позиция', kind: 'Саморезы', description: '', price: 0, unit: 'кг', sizes: [], image: '', gallery: [], specs: [] };
     r.update((list) => [m, ...list]);
     setSlug(s);
   };
@@ -73,6 +73,9 @@ export function ScrewsEditor() {
                     <TextInput value={cur.unit} onChange={(v) => patch({ unit: v })} />
                   </Field>
                 </div>
+                <Field label="Размеры" hint="Через запятую, мм: 3,5×25, 3,5×30, 3,5×35 — покупатель выберет размер" className="sm:col-span-2">
+                  <TextInput value={(cur.sizes ?? []).join(", ")} onChange={(v) => patch({ sizes: v.split(",").map((s) => s.trim()).filter(Boolean) })} />
+                </Field>
                 <Field label="Описание" className="sm:col-span-2">
                   <TextArea value={cur.description} onChange={(v) => patch({ description: v })} />
                 </Field>

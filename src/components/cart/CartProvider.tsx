@@ -7,7 +7,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { CartDrawer } from './CartDrawer';
 import { easeOut } from '@/lib/motion';
 
-export type CartUnit = 'м²' | 'шт.';
+export type CartUnit = 'м²' | 'шт.' | 'кг';
 
 export interface CartItem {
   /** unique per product + chosen options */
@@ -47,7 +47,8 @@ export function useCart(): CartCtx {
   return ctx;
 }
 
-export const defaultUnit = (kind: CartItem['kind']): CartUnit => (kind === 'tile' ? 'м²' : 'шт.');
+/** tiles are sold by m², fasteners (screws, nails, dowels) by kg, doors and sofas by piece */
+export const defaultUnit = (kind: CartItem['kind']): CartUnit => (kind === 'tile' ? 'м²' : kind === 'screw' ? 'кг' : 'шт.');
 
 const isPath = (v: unknown): v is string => typeof v === 'string' && v.startsWith('/') && !v.startsWith('//') && v.length < 300;
 const isText = (v: unknown, max: number): v is string => typeof v === 'string' && v.length <= max;
@@ -69,7 +70,7 @@ function readPlannerImport(): CartItem[] {
     plannerImport = list.slice(0, 50).flatMap((i): CartItem[] => {
       if (!i || !isText(i.id, 300) || !['tile', 'door', 'sofa', 'screw'].includes(i.kind)) return [];
       if (!isText(i.title, 200) || !isText(i.details, 500) || !isPath(i.image) || !isPath(i.href)) return [];
-      const unit: CartUnit = i.unit === 'шт.' ? 'шт.' : 'м²';
+      const unit: CartUnit = i.kind === 'screw' ? 'кг' : i.unit === 'шт.' ? 'шт.' : 'м²';
       return [{ id: i.id, kind: i.kind, title: i.title, details: i.details, image: i.image, href: i.href, qty: clampQty(Number(i.qty)), unit }];
     });
   } catch {
@@ -95,7 +96,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const raw = window.localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed)) saved = parsed.filter((i) => i && typeof i.id === 'string');
+        if (Array.isArray(parsed))
+          saved = parsed
+            .filter((i) => i && typeof i.id === 'string')
+            // carts saved before fasteners were sold by weight
+            .map((i) => (i.kind === 'screw' ? { ...i, unit: 'кг' } : i));
       }
     } catch {
       /* storage unavailable — cart just starts empty */
