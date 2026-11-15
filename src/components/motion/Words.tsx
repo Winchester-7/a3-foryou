@@ -5,7 +5,7 @@
  * Plain text for search engines and screen readers; visible by default (see `.js` rule in CSS).
  * @author Erbol king
  */
-import { useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import { useLand } from './TileIn';
 
 export function Words({ text, className = '' }: { text: string; className?: string }) {
@@ -17,12 +17,15 @@ export function Words({ text, className = '' }: { text: string; className?: stri
       <span className="sr-only">{text}</span>
       <span aria-hidden>
         {words.map((w, i) => (
-          <span key={i} className="word">
-            <span className="word-in" style={{ ['--i' as string]: i }}>
-              {w}
+          <Fragment key={i}>
+            <span className="word">
+              <span className="word-in" style={{ ['--i' as string]: i }}>
+                {w}
+              </span>
             </span>
+            {/* the space must live outside the clipped box, or it collapses */}
             {i < words.length - 1 ? ' ' : ''}
-          </span>
+          </Fragment>
         ))}
       </span>
     </span>
