@@ -11,6 +11,9 @@ import { Footer } from '@/components/layout/Footer';
 import { FloatingContacts } from '@/components/layout/FloatingContacts';
 import { CartProvider } from '@/components/cart/CartProvider';
 import { LocaleProvider } from '@/components/i18n/LocaleProvider';
+import { Intro } from '@/components/intro/Intro';
+
+const HEAD_SCRIPT = `(function(){try{var d=document.documentElement;d.classList.add('js');var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;var s=0;try{s=sessionStorage.getItem('a3-intro-seen')}catch(e){}if(location.pathname==='/'&&!s&&!r){d.classList.add('intro-on')}else{d.classList.add('no-intro')}}catch(e){}})();`;
 
 /** Content is edited in the admin panel and must show up on the next request. */
 export const dynamic = 'force-dynamic';
@@ -79,8 +82,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="ru" className={inter.variable}>
+    <html lang="ru" className={inter.variable} suppressHydrationWarning>
+      <head>
+        {/* decides before first paint: do animations hide things (html.js), and does the opening scene play (once per visit, home only) */}
+        <script dangerouslySetInnerHTML={{ __html: HEAD_SCRIPT }} />
+      </head>
       <body className="min-h-screen bg-paper font-sans text-ink antialiased">
+        <Intro />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}

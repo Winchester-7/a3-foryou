@@ -9,6 +9,7 @@ import { BrandBadge } from '@/components/brand/BrandLogo';
 import { productStockM2 } from '@/lib/format';
 import { QuickAdd } from '@/components/cart/AddToCart';
 import { tileCartItem } from '@/lib/cart-items';
+import { TileGloss, TileIn } from '@/components/motion/TileIn';
 
 export function ProductCard({
   product,
@@ -24,9 +25,11 @@ export function ProductCard({
   priority?: boolean;
 }) {
   return (
+    <TileIn>
     <article className="group relative">
       <Link href={`/product/${product.slug}`} className="block">
         <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface">
+          <TileGloss />
           {/* slow, decorative zoom — hover only, never on touch */}
           <div className="absolute inset-0 transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
             <TileImage src={product.image} alt={product.nameRu} priority={priority} />
@@ -68,5 +71,6 @@ export function ProductCard({
         </div>
       </div>
     </article>
+    </TileIn>
   );
 }

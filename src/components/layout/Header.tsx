@@ -2,7 +2,7 @@
 
 /** @author Erbol king */
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
@@ -14,6 +14,7 @@ import { SearchOverlay } from './SearchOverlay';
 import { useCart } from '@/components/cart/CartProvider';
 import { CartIcon } from '@/components/cart/CartDrawer';
 import { drawerIn, drawerOut, easeOut } from '@/lib/motion';
+import { CART_BUMP_EVENT } from '@/lib/fly';
 import { LanguageSwitch } from '@/components/i18n/LanguageSwitch';
 
 
@@ -86,7 +87,7 @@ export function Header({
         onMouseLeave={() => setOpenMega(null)}
       >
         <div className="container-x flex h-[var(--header-h)] items-center justify-between gap-6">
-          <Logo tone={tone} />
+          <Logo tone={tone} siteLogo />
 
           <nav className="hidden items-center gap-x-4 xl:gap-x-5 lg:flex">
             {mainNav.map((item) => {
@@ -325,13 +326,45 @@ function MobileNav({
 function CartButton({ className }: { className: string }) {
   const { count, openCart } = useCart();
   const reduce = useReducedMotion();
+  const btn = useRef<HTMLButtonElement>(null);
+  const ring = useRef<HTMLSpanElement>(null);
+
+  // a product has just landed in the cart: the icon jolts and a ring spreads out
+  useEffect(() => {
+    const onBump = () => {
+      if (reduce) return;
+      btn.current?.animate(
+        [
+          { transform: 'scale(1) rotate(0deg)' },
+          { transform: 'scale(1.32) rotate(-12deg)', offset: 0.25 },
+          { transform: 'scale(.9) rotate(8deg)', offset: 0.5 },
+          { transform: 'scale(1.1) rotate(-3deg)', offset: 0.75 },
+          { transform: 'scale(1) rotate(0deg)' },
+        ],
+        { duration: 520, easing: 'cubic-bezier(.22,1,.36,1)' },
+      );
+      ring.current?.animate(
+        [
+          { transform: 'scale(.6)', opacity: 0.7 },
+          { transform: 'scale(2.1)', opacity: 0 },
+        ],
+        { duration: 650, easing: 'cubic-bezier(.2,.7,.3,1)' },
+      );
+    };
+    window.addEventListener(CART_BUMP_EVENT, onBump);
+    return () => window.removeEventListener(CART_BUMP_EVENT, onBump);
+  }, [reduce]);
+
   return (
     <button
+      ref={btn}
       type="button"
+      data-cart-target=""
       aria-label={count ? `Корзина: ${count}` : 'Корзина'}
       onClick={openCart}
       className={`relative grid h-10 w-10 place-items-center rounded-full transition-[background-color,color,transform] duration-150 ease-out-strong active:scale-95 ${className}`}
     >
+      <span ref={ring} aria-hidden className="pointer-events-none absolute inset-0 rounded-full border-2 border-accent opacity-0" />
       <CartIcon />
       <AnimatePresence initial={false}>
         {count > 0 && (

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useCart, defaultUnit, MAX_QTY, type CartItem } from './CartProvider';
 import { CartIcon } from './CartDrawer';
+import { flyToCart } from '@/lib/fly';
 
 type Payload = Omit<CartItem, 'qty' | 'unit'>;
 
@@ -19,7 +20,8 @@ export function AddToCart({ item, className = '' }: { item: Payload; className?:
 
   useEffect(() => () => window.clearTimeout(timer.current), []);
 
-  const onAdd = () => {
+  const onAdd = (e: React.MouseEvent<HTMLButtonElement>) => {
+    flyToCart(e.currentTarget, item.image);
     add({ ...item, qty });
     setDone(true);
     window.clearTimeout(timer.current);
@@ -106,6 +108,9 @@ export function QuickAdd({ item, className = '' }: { item: Payload; className?: 
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();
+        // the card's own photo takes off from where it lies
+        const photo = e.currentTarget.closest('article')?.querySelector('img') ?? e.currentTarget;
+        flyToCart(photo, item.image);
         add(item);
         setDone(true);
         window.clearTimeout(timer.current);

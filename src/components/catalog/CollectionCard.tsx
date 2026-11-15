@@ -3,12 +3,15 @@ import Link from 'next/link';
 import type { Collection } from '@/lib/types';
 import { BrandBadge } from '@/components/brand/BrandLogo';
 import { TileImage } from '@/components/media/TileImage';
+import { TileGloss, TileIn } from '@/components/motion/TileIn';
 
 export function CollectionCard({ collection, priority = false }: { collection: Collection; priority?: boolean }) {
   return (
+    <TileIn>
     <article className="group">
       <Link href={`/collection/${collection.slug}`} className="block">
         <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface">
+          <TileGloss />
           <div className="absolute inset-0 transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]">
             <TileImage
               src={collection.hero}
@@ -31,6 +34,7 @@ export function CollectionCard({ collection, priority = false }: { collection: C
         {collection.stockM2 ? ' · в наличии' : ''}
       </p>
     </article>
+    </TileIn>
   );
 }
 
