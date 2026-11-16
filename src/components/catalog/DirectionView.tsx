@@ -118,7 +118,7 @@ export function DirectionView({ items, facets }: { items: DirectionItem[]; facet
             <>
               <div className="mt-8 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-3">
                 {filtered.slice(0, limit).map(({ product, collection }, i) => (
-                  <ProductCard key={product.slug} product={product} collection={collection} priority={i < 6} />
+                  <ProductCard key={product.slug} product={product} collection={collection} priority={i < 3} />
                 ))}
               </div>
               {filtered.length > limit && (

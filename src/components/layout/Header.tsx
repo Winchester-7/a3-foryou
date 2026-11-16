@@ -9,7 +9,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { Logo } from '@/components/brand/Logo';
 import { catalogExtras, mainNav } from '@/lib/site';
 import { useSite } from './SiteProvider';
-import type { SearchDoc } from '@/lib/search';
+import { warmSearchIndex } from '@/lib/search-client';
 import { SearchOverlay } from './SearchOverlay';
 import { useCart } from '@/components/cart/CartProvider';
 import { CartIcon } from '@/components/cart/CartDrawer';
@@ -26,13 +26,7 @@ const WA_ICON = (
   </svg>
 );
 
-export function Header({
-  overlay,
-  index,
-}: {
-  overlay: boolean;
-  index: SearchDoc[];
-}) {
+export function Header({ overlay }: { overlay: boolean }) {
   const site = useSite();
   const reduce = useReducedMotion();
   const pathname = usePathname();
@@ -201,6 +195,8 @@ export function Header({
             <button
               type="button"
               aria-label="Поиск по каталогу"
+              onPointerEnter={warmSearchIndex}
+              onFocus={warmSearchIndex}
               onClick={() => setSearchOpen(true)}
               className={`grid h-10 w-10 place-items-center rounded-full transition-colors duration-200 ${iconBtn}`}
             >
@@ -231,7 +227,7 @@ export function Header({
       </header>
 
       <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
-      <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} index={index} />
+      <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 }

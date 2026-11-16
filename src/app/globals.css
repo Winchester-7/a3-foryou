@@ -314,8 +314,8 @@ body {
   }
 }
 @keyframes tileGloss {
-  from { transform: translateX(-130%) skewX(-14deg); }
-  to { transform: translateX(130%) skewX(-14deg); }
+  from { opacity: 1; transform: translateX(-130%) skewX(-14deg); }
+  to { opacity: 1; transform: translateX(130%) skewX(-14deg); }
 }
 .tile-in { transform-origin: 50% 100%; }
 .js .tile-in:not(.tile-go) { opacity: 0; }
@@ -330,9 +330,9 @@ body {
   opacity: 0;
   background: linear-gradient(100deg, transparent 32%, rgba(255, 255, 255, 0.5) 50%, transparent 68%);
 }
+/* "backwards": once the sweep is over the band is invisible again and costs nothing */
 .tile-go .tile-gloss {
-  opacity: 1;
-  animation: tileGloss 1.1s var(--ease-out) calc(var(--d, 0ms) + 420ms) both;
+  animation: tileGloss 1.1s var(--ease-out) calc(var(--d, 0ms) + 420ms) backwards;
 }
 /* "reduce motion": cards only fade in, nothing tilts, slides or sweeps */
 @keyframes tileFade {
@@ -374,10 +374,9 @@ body {
   background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.38), transparent 62%);
 }
 @media (hover: hover) and (pointer: fine) {
-  .tile-in.tile-go {
-    transition: transform 0.35s var(--ease-out);
-    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-  }
+  /* only the card under the mouse gets a transform — dozens of permanently transformed cards would each need their own GPU layer */
+  .tile-in.tile-go { transition: transform 0.35s var(--ease-out); }
+  .tile-in.tile-go:hover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
   .tile-in:hover .tile-glare { opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) {

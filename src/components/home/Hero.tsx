@@ -61,6 +61,22 @@ export function Hero() {
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
+    // the 3.7 MB video must never compete with the photos: it starts only after the page has
+    // loaded, and not at all on phones, with "data saver" or on a slow connection (the poster stays)
+    const nav = navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } };
+    const slow = nav.connection?.saveData || /(^|-)2g|3g/.test(nav.connection?.effectiveType ?? '');
+    if (slow || window.matchMedia('(max-width: 767px)').matches) return;
+    let started = false;
+    const begin = () => {
+      if (started) return;
+      started = true;
+      v.src = '/hero/hero-showroom.mp4';
+      v.load();
+    };
+    let t = 0;
+    if (document.readyState === 'complete') t = window.setTimeout(begin, 400);
+    else window.addEventListener('load', () => (t = window.setTimeout(begin, 400)), { once: true });
+    const fallback = window.setTimeout(begin, 4000); // if "load" is held up by something, start anyway
     const tryPlay = () => v.play().catch(() => {});
     tryPlay();
     v.addEventListener('canplay', tryPlay);
@@ -69,6 +85,8 @@ export function Hero() {
     };
     window.addEventListener('pointerdown', onInteract, { once: true });
     return () => {
+      window.clearTimeout(t);
+      window.clearTimeout(fallback);
       v.removeEventListener('canplay', tryPlay);
       window.removeEventListener('pointerdown', onInteract);
     };
@@ -94,13 +112,12 @@ export function Hero() {
         <video
           ref={videoRef}
           className="absolute inset-0 h-full w-full object-cover"
-          src="/hero/hero-showroom.mp4"
           poster="/hero/hero-showroom.jpg"
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
           disablePictureInPicture
           aria-hidden
         />
@@ -182,11 +199,12 @@ export function Hero() {
       {/* dynamic light that follows the cursor */}
       <motion.div
         aria-hidden
-        className="hero-scene pointer-events-none absolute inset-0 mix-blend-soft-light will-change-transform"
+        className="hero-scene pointer-events-none absolute inset-0 will-change-transform"
         style={{
           x: reduce ? 0 : lightX,
           y: reduce ? 0 : lightY,
-          background: 'radial-gradient(50% 45% at 62% 26%, rgba(255,243,222,0.45), rgba(255,243,222,0) 70%)',
+          // plain alpha instead of a blend mode: blending over a playing video is costly on weak GPUs
+          background: 'radial-gradient(50% 45% at 62% 26%, rgba(255,236,204,0.2), rgba(255,236,204,0) 70%)',
         }}
       />
 

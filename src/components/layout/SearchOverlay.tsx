@@ -8,18 +8,37 @@ import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion } from 'motion/react';
 import { KIND_LABEL, normalize, search, type SearchDoc } from '@/lib/search';
 import { easeOut } from '@/lib/motion';
+import { loadSearchIndex } from '@/lib/search-client';
 import { useSite } from './SiteProvider';
 
 const SUGGESTIONS = ['мрамор', 'дерево', 'бетон', 'для ванной', '1200×600', 'двери', 'диваны', 'KERRANOVA', 'IDALGO'];
 
-export function SearchOverlay({ open, onClose, index }: { open: boolean; onClose: () => void; index: SearchDoc[] }) {
+export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () => void }) {
   const site = useSite();
   const router = useRouter();
   const [q, setQ] = useState('');
   const [active, setActive] = useState(0);
 
+  // the index is not part of the page: it is fetched the first time search is needed
+  const [index, setIndex] = useState<SearchDoc[]>([]);
   useEffect(() => {
-    if (!open) setQ('');
+    if (!open) {
+      setQ('');
+      return;
+    }
+    let live = true;
+    let retry = 0;
+    const load = () =>
+      loadSearchIndex()
+        .then((d) => live && setIndex(d))
+        .catch(() => {
+          if (live) retry = window.setTimeout(load, 1500); // a slow moment on the server: try again
+        });
+    load();
+    return () => {
+      live = false;
+      window.clearTimeout(retry);
+    };
   }, [open]);
 
   const results = useMemo(() => search(index, q, 12), [q, index]);
