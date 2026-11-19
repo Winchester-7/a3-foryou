@@ -51,7 +51,25 @@ export interface Walls extends Surface {
   sides: boolean[];
   /** share of each wall's width that is tiled, 0.1–1 (centred) */
   span: number;
+  /** a wall's own tile (back, right, front, left); null = it uses the main tile above */
+  own: (Surface | null)[];
 }
+
+export const WALL_NAMES = ['Дальняя', 'Правая', 'Ближняя', 'Левая'] as const;
+
+/** Which wall the panel is editing: all four at once, or one of them (0 back, 1 right, 2 front, 3 left). */
+export type WallTarget = 'all' | 0 | 1 | 2 | 3;
+
+const SURFACE_KEYS = ['decorId', 'size', 'layout', 'grout', 'finish'] as const;
+const pickSurface = (s: Surface): Surface => ({ decorId: s.decorId, size: s.size, layout: s.layout, grout: s.grout, finish: s.finish });
+
+/** The tile a given wall actually carries. */
+export function wallSurface(walls: Walls, index: number): Surface {
+  return pickSurface(walls.own?.[index] ?? walls);
+}
+
+/** Same tile = same ordering line. */
+export const surfaceKey = (s: Surface) => SURFACE_KEYS.map((k) => s[k]).join('|');
 
 export type Tab = 'floor' | 'walls' | 'objects' | 'estimate';
 export type View = '3d' | 'top';
@@ -80,6 +98,10 @@ interface State extends Snapshot {
   resize: (patch: Partial<Room>) => void;
   setFloor: (patch: Partial<Floor>) => void;
   setWalls: (patch: Partial<Walls>) => void;
+  /** change the tile of all walls at once, or of one wall only */
+  setWallSurface: (target: WallTarget, patch: Partial<Surface>) => void;
+  wallTarget: WallTarget;
+  setWallTarget: (t: WallTarget) => void;
   setTab: (t: Tab) => void;
   setView: (v: View) => void;
   select: (id: string | null) => void;
@@ -132,7 +154,7 @@ function normalize<T extends Partial<Snapshot>>(s: T): T {
   return {
     ...s,
     floor: floor && { coverage: 1, from: 'back', base: '#d9d4cc', ...floor },
-    walls: walls && { sides: [true, true, true, true], span: 1, ...walls },
+    walls: walls && { sides: [true, true, true, true], span: 1, own: [null, null, null, null], ...walls },
   } as T;
 }
 
@@ -192,7 +214,7 @@ function initial(): Snapshot & { step: 'setup' | 'editor'; hasSaved: boolean } {
     hasSaved: false,
     room,
     floor: floorFor(p.floorDecor),
-    walls: { ...surfaceFor(p.wallDecor, true), mode: p.wallMode, panelHeight: 1.2, paint: '#ece8e1', sides: [true, true, true, true], span: 1 },
+    walls: { ...surfaceFor(p.wallDecor, true), mode: p.wallMode, panelHeight: 1.2, paint: '#ece8e1', sides: [true, true, true, true], span: 1, own: [null, null, null, null] },
     objects: presetObjects(p.type, p.length, p.width),
   };
 }
@@ -233,6 +255,7 @@ export const usePlanner = create<State>((set, get) => {
               paint: '#ece8e1',
               sides: [true, true, true, true],
               span: 1,
+              own: [null, null, null, null],
             },
         objects: sameType
           ? prev.objects.map((o) => ({ ...o, ...placeObject(o, room, o.x, o.z) }))
@@ -258,6 +281,22 @@ export const usePlanner = create<State>((set, get) => {
       record();
       set((s) => ({ walls: { ...s.walls, ...patch } }));
     },
+    setWallSurface: (target, patch) => {
+      record();
+      set((s) => {
+        if (target === 'all') {
+          // "all walls" means one tile everywhere: it replaces the walls' own tiles
+          return { walls: { ...s.walls, ...patch, own: [null, null, null, null] } };
+        }
+        const own = [...(s.walls.own ?? [null, null, null, null])];
+        own[target] = { ...wallSurface(s.walls, target), ...patch };
+        // choosing a tile for a wall means the wall is tiled
+        const sides = [0, 1, 2, 3].map((i) => (i === target ? true : s.walls.sides[i] !== false));
+        return { walls: { ...s.walls, own, sides } };
+      });
+    },
+    wallTarget: 'all',
+    setWallTarget: (wallTarget) => set({ wallTarget }),
     setTab: (tab) => set({ tab }),
     setView: (view) => set({ view }),
     select: (selectedId) => set({ selectedId }),

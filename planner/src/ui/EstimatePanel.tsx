@@ -1,7 +1,7 @@
 /** @author Erbol king */
 import { findDecor, findDoor, findSofa, SITE_URL, WHATSAPP } from '../data/catalog';
 import type { PlacedObject } from '../data/objects';
-import { encodeShare, usePlanner, wallTileHeight, type Floor, type Room, type Surface, type Walls } from '../store';
+import { encodeShare, surfaceKey, usePlanner, wallSurface, wallTileHeight, WALL_NAMES, type Floor, type Room, type Surface, type Walls } from '../store';
 import { Icon } from './icons';
 import { fmt, plural } from './format';
 import { Section } from './SurfacePanel';
@@ -31,28 +31,42 @@ function wallOfDoor(o: PlacedObject): number {
   return [0, 3, 2, 1][turns];
 }
 
+/** One order line per distinct wall tile: walls that carry the same tile are added together. */
+export interface WallCalc extends TileCalc {
+  /** which walls it covers, e.g. «Дальняя, Левая» */
+  where: string;
+}
+
 export function estimate(room: Room, floor: Floor, walls: Walls, objects: PlacedObject[]) {
   const floorCalc = calc(floor, room.length * room.width * Math.min(1, Math.max(0.1, floor.coverage)));
-  let wallCalc: TileCalc | null = null;
+  const wallCalcs: WallCalc[] = [];
   const { base, height: h } = wallTileHeight(walls, room);
   if (walls.mode !== 'none' && h > 0) {
     const lengths = [room.length, room.width, room.length, room.width];
     const span = Math.min(1, Math.max(0.1, walls.span));
-    const on = [0, 1, 2, 3].filter((i) => walls.sides[i] !== false);
-    let area = on.reduce((n, i) => n + lengths[i] * span * h, 0);
-    // a door in a tiled wall takes its opening out of the area (full-width tiling only)
     const doorOverlap = Math.max(0, Math.min(DOOR_H, base + h) - base);
-    const doors = objects.filter((o) => o.kind === 'door' && on.includes(wallOfDoor(o))).length;
-    if (span >= 0.999) area -= doors * DOOR_W * doorOverlap;
-    wallCalc = calc(walls, Math.max(0, area));
+    const groups = new Map<string, { surface: Surface; area: number; names: string[] }>();
+    for (const i of [0, 1, 2, 3].filter((k) => walls.sides[k] !== false)) {
+      let area = lengths[i] * span * h;
+      // a door in a tiled wall takes its opening out of the area (full-width tiling only)
+      const doors = objects.filter((o) => o.kind === 'door' && wallOfDoor(o) === i).length;
+      if (span >= 0.999) area -= doors * DOOR_W * doorOverlap;
+      const surface = wallSurface(walls, i);
+      const key = surfaceKey(surface);
+      const g = groups.get(key) ?? { surface, area: 0, names: [] };
+      g.area += Math.max(0, area);
+      g.names.push(WALL_NAMES[i]);
+      groups.set(key, g);
+    }
+    for (const g of groups.values()) wallCalcs.push({ ...calc(g.surface, g.area), where: g.names.join(', ') });
   }
-  return { floorCalc, wallCalc };
+  return { floorCalc, wallCalcs };
 }
 
 /** Everything the client picked, grouped for the site cart / the message. */
 export function projectItems() {
   const { room, floor, walls, objects } = usePlanner.getState();
-  const { floorCalc, wallCalc } = estimate(room, floor, walls, objects);
+  const { floorCalc, wallCalcs } = estimate(room, floor, walls, objects);
   const items: { id: string; kind: 'tile' | 'door' | 'sofa'; title: string; details: string; image: string; href: string; qty: number; unit: 'м²' | 'шт.' }[] = [];
 
   const tile = (c: TileCalc, where: string) => {
@@ -77,7 +91,8 @@ export function projectItems() {
     });
   };
   tile(floorCalc, 'пол');
-  if (wallCalc) tile(wallCalc, 'стены');
+  const allWalls = wallCalcs.length === 1 && wallCalcs[0].where.split(', ').length === 4;
+  for (const w of wallCalcs) tile(w, allWalls ? 'стены' : `стены: ${w.where.toLowerCase()}`);
 
   for (const o of objects) {
     if (o.kind !== 'door' && o.kind !== 'sofa') continue;
@@ -98,7 +113,7 @@ export function projectItems() {
         unit: 'шт.',
       });
   }
-  return { items, floorCalc, wallCalc };
+  return { items, floorCalc, wallCalcs };
 }
 
 export function shareUrl() {
@@ -112,7 +127,7 @@ export function EstimatePanel() {
   const floor = usePlanner((s) => s.floor);
   const walls = usePlanner((s) => s.walls);
   const objects = usePlanner((s) => s.objects);
-  const { floorCalc, wallCalc } = estimate(room, floor, walls, objects);
+  const { floorCalc, wallCalcs } = estimate(room, floor, walls, objects);
   const doors = objects.filter((o) => o.kind === 'door').length;
   const sofas = objects.filter((o) => o.kind === 'sofa').length;
 
@@ -141,7 +156,11 @@ export function EstimatePanel() {
       <Section title="Расчёт керамогранита">
         <p className="mb-3 text-xs leading-relaxed text-ink-faint">С запасом 10% на подрезку и бой. Точную раскладку подготовит менеджер.</p>
         <CalcCard label="Пол" calc={floorCalc} />
-        {wallCalc ? <CalcCard label={walls.mode === 'full' ? 'Стены' : walls.mode === 'half' ? 'Стены (половина)' : room.type === 'kitchen' ? 'Фартук' : 'Стены (часть)'} calc={wallCalc} /> : null}
+        {wallCalcs.map((w) => {
+          const kind = walls.mode === 'full' ? 'Стены' : walls.mode === 'half' ? 'Стены (половина)' : room.type === 'kitchen' ? 'Фартук' : 'Стены (часть)';
+          const all = wallCalcs.length === 1 && w.where.split(', ').length === 4;
+          return <CalcCard key={w.where} label={all ? kind : `${kind}: ${w.where}`} calc={w} />;
+        })}
       </Section>
       {(doors > 0 || sofas > 0) && (
         <Section title="Двери и мебель">

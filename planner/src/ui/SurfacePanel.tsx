@@ -1,7 +1,7 @@
 /** @author Erbol king */
 import { useMemo, useState } from 'react';
 import { findDecor, lookLabels, SITE_URL, tileCollections } from '../data/catalog';
-import { usePlanner, wallTileHeight, type FloorFrom, type Surface, type WallMode } from '../store';
+import { surfaceKey, usePlanner, wallSurface, wallTileHeight, WALL_NAMES, type FloorFrom, type Surface, type WallMode, type WallTarget } from '../store';
 import { GROUT_COLORS, GROUT_LABELS, LAYOUT_LABELS, type Grout, type Layout } from '../three/tileOptions';
 import { fmt, plural } from './format';
 
@@ -300,7 +300,6 @@ export function FloorPanel() {
 
 const PAINTS = ['#ece8e1', '#f6f4f0', '#d9d3c9', '#c9cfc8', '#b8b2a8', '#8f8a83', '#4a4b4d'];
 
-const SIDE_NAMES = ['Дальняя', 'Правая', 'Ближняя', 'Левая'] as const;
 const SIDE_PRESETS: [string, string, boolean[]][] = [
   ['all', 'Все 4 стены', [true, true, true, true]],
   ['accent', 'Одна (акцент)', [true, false, false, false]],
@@ -308,55 +307,42 @@ const SIDE_PRESETS: [string, string, boolean[]][] = [
   ['ends', 'Напротив друг друга', [true, false, true, false]],
 ];
 
-/** Top-down sketch of the room: tap a side to tile / untile that wall. */
-function WallPicker({ sides, onChange }: { sides: boolean[]; onChange: (s: boolean[]) => void }) {
-  const on = (i: number) => sides[i] !== false;
-  const toggle = (i: number) => onChange([0, 1, 2, 3].map((k) => (k === i ? !on(k) : on(k))));
-  // [x1, y1, x2, y2] of each wall in the sketch: back, right, front, left
-  const lines: [number, number, number, number][] = [
-    [40, 22, 120, 22],
-    [120, 22, 120, 78],
-    [40, 78, 120, 78],
-    [40, 22, 40, 78],
-  ];
-  const labels: [number, number, 'middle' | 'start' | 'end'][] = [
-    [80, 12, 'middle'],
-    [129, 52, 'start'],
-    [80, 92, 'middle'],
-    [31, 52, 'end'],
-  ];
+/** Which wall the controls below change: all four together, or one wall on its own. */
+function WallSelector({ target, onTarget }: { target: WallTarget; onTarget: (t: WallTarget) => void }) {
+  const walls = usePlanner((s) => s.walls);
+  const tileOf = (i: number) => (walls.sides[i] !== false && walls.mode !== 'none' ? wallSurface(walls, i) : null);
+  const label = (s: Surface) => findDecor(s.decorId).decor.name;
+  const same = [0, 1, 2, 3].every((i) => surfaceKey(wallSurface(walls, i)) === surfaceKey(wallSurface(walls, 0)));
+
+  const card = (t: WallTarget, title: string, surf: Surface | null, wide = false, note?: string) => {
+    const active = target === t;
+    return (
+      <button
+        key={String(t)}
+        type="button"
+        aria-pressed={active}
+        onClick={() => onTarget(t)}
+        className={`flex items-center gap-2.5 rounded-2xl border-2 p-2 text-left transition-[border-color,background-color,transform] duration-150 ease-out-strong active:scale-[0.98] ${wide ? 'col-span-2' : ''} ${
+          active ? 'border-accent bg-accent/10' : 'border-line bg-paper hover:border-ink-faint'
+        }`}
+      >
+        <span
+          className={`h-10 w-12 shrink-0 rounded-lg bg-cover bg-center ring-1 ring-black/10 ${surf ? '' : 'bg-[repeating-linear-gradient(45deg,#f1eee8,#f1eee8_5px,#e4dfd6_5px,#e4dfd6_10px)]'}`}
+          style={surf ? { backgroundImage: `url(${findDecor(surf.decorId).decor.texture})` } : undefined}
+        />
+        <span className="min-w-0">
+          <span className={`block text-[13px] font-semibold leading-tight ${active ? 'text-accent' : 'text-ink'}`}>{title}</span>
+          <span className="block truncate text-[11px] leading-tight text-ink-faint">{note ?? (surf ? label(surf) : 'без плитки')}</span>
+        </span>
+      </button>
+    );
+  };
+
   return (
-    <svg viewBox="0 0 160 100" className="mx-auto block w-full max-w-[260px]" role="group" aria-label="Какие стены выложить плиткой">
-      <rect x="40" y="22" width="80" height="56" rx="2" fill="#f6f5f3" />
-      {lines.map(([x1, y1, x2, y2], i) => (
-        <g
-          key={i}
-          role="button"
-          tabIndex={0}
-          aria-pressed={on(i)}
-          aria-label={`${SIDE_NAMES[i]} стена`}
-          className="cursor-pointer outline-none"
-          onClick={() => toggle(i)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              toggle(i);
-            }
-          }}
-        >
-          <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="transparent" strokeWidth="16" strokeLinecap="round" />
-          <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={on(i) ? '#E0241B' : '#cfcac2'} strokeWidth="5" strokeLinecap="round" style={{ transition: 'stroke 150ms' }} />
-        </g>
-      ))}
-      {labels.map(([x, y, anchor], i) => (
-        <text key={i} x={x} y={y} textAnchor={anchor} fontSize="7" fontWeight={on(i) ? 700 : 400} fill={on(i) ? '#E0241B' : '#8a8a8a'} style={{ pointerEvents: 'none' }}>
-          {SIDE_NAMES[i]}
-        </text>
-      ))}
-      <text x="80" y="52" textAnchor="middle" fontSize="6.5" fill="#b3aea5" style={{ pointerEvents: 'none' }}>
-        вид сверху
-      </text>
-    </svg>
+    <div className="grid grid-cols-2 gap-2" role="group" aria-label="Какую стену менять">
+      {card('all', 'Все стены сразу', tileOf(0) && same ? tileOf(0) : null, true, same ? undefined : 'у стен разная плитка')}
+      {([0, 1, 2, 3] as const).map((i) => card(i, `${WALL_NAMES[i]} стена`, tileOf(i)))}
+    </div>
   );
 }
 
@@ -376,7 +362,16 @@ export function WallsPanel() {
   const walls = usePlanner((s) => s.walls);
   const room = usePlanner((s) => s.room);
   const setWalls = usePlanner((s) => s.setWalls);
-  const pick = useDecorPick(walls, setWalls);
+  const setWallSurface = usePlanner((s) => s.setWallSurface);
+  const target = usePlanner((s) => s.wallTarget);
+  const setTarget = usePlanner((s) => s.setWallTarget);
+
+  // the tile controls below act on the chosen wall (or on all of them)
+  const surface: Surface = target === 'all' ? walls : wallSurface(walls, target);
+  const onSurface = (patch: Partial<Surface>) => setWallSurface(target, patch);
+  const pick = useDecorPick(surface, onSurface);
+  const targetName = target === 'all' ? 'все стены' : `${WALL_NAMES[target].toLowerCase()} стена`;
+  const targetOn = target === 'all' ? walls.sides.every((v) => v !== false) : walls.sides[target] !== false;
 
   const kitchen = room.type === 'kitchen';
   const { base, height: tileH } = wallTileHeight(walls, room);
@@ -415,27 +410,59 @@ export function WallsPanel() {
       active ? (tone === 'red' ? 'border-accent bg-accent text-paper' : 'border-ink bg-ink text-paper') : 'border-line text-ink-soft hover:border-ink-faint hover:text-ink'
     }`;
 
+  const toggleTarget = (on: boolean) =>
+    setWalls({ sides: [0, 1, 2, 3].map((i) => (target === 'all' || i === target ? on : walls.sides[i] !== false)) });
+  const anyOn = walls.sides.some((v) => v !== false);
+  const showTiles = walls.mode !== 'none' && (target !== 'all' || anyOn);
+
   return (
     <>
-      <EditingBadge what="СТЕНЫ" />
-      <Section title="1 · Выберите стены">
+      <EditingBadge what={target === 'all' ? 'ВСЕ СТЕНЫ' : `${WALL_NAMES[target].toUpperCase()} СТЕНУ`} />
+      <Section title="1 · Какую стену меняем">
+        <WallSelector target={target} onTarget={setTarget} />
         {walls.mode === 'none' ? (
-          <p className="text-sm text-ink-soft">Сейчас стены без плитки. Выберите высоту ниже, и они появятся.</p>
+          <p className="mt-3 text-sm text-ink-soft">Сейчас стены без плитки. Выберите высоту ниже, и они появятся.</p>
         ) : (
           <>
-            <WallPicker sides={walls.sides} onChange={(sides) => setWalls({ sides })} />
             <div className="mt-3">
-              <Chips
-                label="Быстрый выбор стен"
-                value={sidePreset}
-                options={SIDE_PRESETS.map(([k, text]) => [k, text] as [string, string])}
-                onChange={(k) => setWalls({ sides: SIDE_PRESETS.find(([key]) => key === k)![2] })}
+              <Chips<'on' | 'off'>
+                label="Плитка на выбранной стене"
+                value={targetOn ? 'on' : 'off'}
+                options={[
+                  ['on', target === 'all' ? 'Плитка на всех' : 'С плиткой'],
+                  ['off', target === 'all' ? 'Без плитки' : 'Без плитки (краска)'],
+                ]}
+                onChange={(v) => toggleTarget(v === 'on')}
               />
             </div>
+            {target === 'all' && (
+              <div className="mt-3">
+                <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide2 text-ink-faint">Быстро</p>
+                <Chips
+                  label="Быстрый выбор стен"
+                  value={sidePreset}
+                  options={SIDE_PRESETS.map(([k, text]) => [k, text] as [string, string])}
+                  onChange={(k) => setWalls({ sides: SIDE_PRESETS.find(([key]) => key === k)![2] })}
+                />
+              </div>
+            )}
+            <p className="mt-3 text-xs leading-relaxed text-ink-faint">
+              {target === 'all'
+                ? 'Плитка ниже ляжет на все стены. Чтобы сделать стены разными, выберите нужную стену выше.'
+                : `Плитка ниже — только для стены «${WALL_NAMES[target]}». Остальные стены не изменятся.`}
+            </p>
           </>
         )}
       </Section>
-      <Section title={`2 · На какую высоту${walls.mode === 'none' ? '' : ` · ${fmt(tileH, 2)} м`}`}>
+      {showTiles && (
+        <>
+          <Section title={`2 · Плитка: ${targetName}`}>
+            <DecorGrid key={String(target)} value={surface.decorId} onPick={pick} />
+          </Section>
+          <SurfaceControls surface={surface} onChange={onSurface} />
+        </>
+      )}
+      <Section title={`3 · На какую высоту${walls.mode === 'none' ? '' : ` · ${fmt(tileH, 2)} м`}`}>
         <div className="flex flex-wrap gap-1.5">
           {heightOptions.map(([k, text]) => (
             <button key={k} type="button" aria-pressed={walls.mode !== 'none' && hKey === k} onClick={() => setHeight(k)} className={chipCls(walls.mode !== 'none' && hKey === k)}>
@@ -470,7 +497,7 @@ export function WallsPanel() {
         )}
       </Section>
       {walls.mode !== 'none' && (
-        <Section title="3 · Какая часть стены по ширине">
+        <Section title="4 · Какая часть стены по ширине">
           <AmountChips label="Ширина покрытия" value={walls.span} onChange={(v) => setWalls({ span: v })} allLabel="Вся ширина" />
         </Section>
       )}
@@ -506,14 +533,6 @@ export function WallsPanel() {
           ))}
         </div>
       </Section>
-      {walls.mode !== 'none' && (
-        <>
-          <SurfaceControls surface={walls} onChange={setWalls} />
-          <Section title="Керамогранит для стен">
-            <DecorGrid value={walls.decorId} onPick={pick} />
-          </Section>
-        </>
-      )}
     </>
   );
 }

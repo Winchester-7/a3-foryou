@@ -3,7 +3,7 @@ import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 import { Line } from '@react-three/drei';
-import { usePlanner, wallTileHeight, type Surface } from '../store';
+import { usePlanner, wallSurface, wallTileHeight, type Surface } from '../store';
 import { findDecor, FINISH_ROUGHNESS } from '../data/catalog';
 import { useTileTexture } from './tileTexture';
 
@@ -69,7 +69,8 @@ function Floor() {
 function Wall({ index, length }: { index: number; length: number }) {
   const room = usePlanner((s) => s.room);
   const walls = usePlanner((s) => s.walls);
-  const guide = usePlanner((s) => s.tab === 'walls' && !s.hideGuides);
+  // the red outline shows only the wall(s) being edited
+  const guide = usePlanner((s) => s.tab === 'walls' && !s.hideGuides && (s.wallTarget === 'all' || s.wallTarget === index));
   const full = useRef<THREE.Group>(null);
   const stub = useRef<THREE.Group>(null);
 
@@ -77,7 +78,7 @@ function Wall({ index, length }: { index: number; length: number }) {
   const { base, height: tileH } = wallTileHeight(walls, room);
   const tiled = walls.mode !== 'none' && walls.sides[index] !== false && tileH > 0;
   const tileW = length * Math.min(1, Math.max(0.1, walls.span));
-  const { spec, roughness } = specFor(walls);
+  const { spec, roughness } = specFor(wallSurface(walls, index));
   const map = useTileTexture(spec, tileW, Math.max(tileH, 0.1));
 
   const L = room.length / 2;
